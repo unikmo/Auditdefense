@@ -24,6 +24,14 @@ Last updated: 2026-09-17
 - No Firebase Admin private key is stored in GitHub or browser code.
 - PowerGM remains scoped to session notes only.
 
+## Attorney workspace implemented
+
+- Separate attorney portal implemented at `/attorney.html` (also `/attorney`).
+- Firm/attorney onboarding, provider-client portfolio, multi-case dashboard, deadlines, counsel-only notes, team roles, invitations, cross-client reporting and case-plan pricing are implemented for the redacted pilot.
+- Attorney/provider case root access and counsel-only note separation are modeled separately in Firestore rules.
+- Provider Counsel Workspace links directly to the Attorney Workspace.
+- Netlify deployment of the attorney portal is verified READY; Firebase rule deployment remains a separate gate.
+
 ## External activation still required / not yet verified
 
 - Email/Password Authentication provider has been deployed/enabled and passes live sign-up/sign-in smoke testing.
