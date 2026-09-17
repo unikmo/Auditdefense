@@ -1,0 +1,8 @@
+{
+  "projectName": "AuditDefense",
+  "projectId": "auditdefense-2cb01",
+  "projectNumber": "146444139355",
+  "serviceAccountIdentity": "firebase-adminsdk-fbsvc@auditdefense-2cb01.iam.gserviceaccount.com",
+  "status": "identity-only-not-authenticated",
+  "notes": "No private key, Firebase Web App config, Auth, Firestore, Storage, or PHI ingestion is enabled or claimed by this demo."
+}
