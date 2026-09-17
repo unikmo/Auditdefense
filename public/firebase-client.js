@@ -1,151 +1,42 @@
 (() => {
-  const SDK_VERSION = '12.19.0';
-  const PROJECT_ID = 'auditdefense-2cb01';
-
-  // Firebase Web App config is public client configuration. Admin credentials
-  // and service-account private keys must never be placed in browser code.
-  const WEB_CONFIG = Object.freeze({
-    projectId: 'auditdefense-2cb01',
-    appId: '1:146444139355:web:5d3f7c9b4fad32cad5f87e',
-    storageBucket: 'auditdefense-2cb01.firebasestorage.app',
-    apiKey: 'AIzaSyAmwvYon32T72zBVJiz_CmJin5W9DXZFoU',
-    authDomain: 'auditdefense-2cb01.firebaseapp.com',
-    messagingSenderId: '146444139355'
-  });
-
-  const state = {
-    status: 'booting',
-    projectId: PROJECT_ID,
-    auth: 'initializing',
-    firestore: 'initializing',
-    storage: 'disabled-free-plan',
-    user: null,
-    error: null
-  };
-
-  const emit = () => {
-    window.AuditDefendFirebase = state;
-    document.dispatchEvent(new CustomEvent('auditdefend:firebase-status', { detail: { ...state } }));
-  };
-
-  function assertConfig(config) {
-    const required = ['projectId', 'appId', 'apiKey', 'authDomain', 'messagingSenderId'];
-    for (const key of required) {
-      if (!config[key]) throw new Error(`Firebase Web App config missing ${key}.`);
-    }
-    if (config.projectId !== PROJECT_ID) throw new Error('Firebase Web App config points to the wrong project.');
-    return config;
-  }
-
-  async function boot() {
-    emit();
-    try {
-      const config = assertConfig(WEB_CONFIG);
-      const base = `https://www.gstatic.com/firebasejs/${SDK_VERSION}`;
-      const [appSdk, authSdk, firestoreSdk] = await Promise.all([
-        import(`${base}/firebase-app.js`),
-        import(`${base}/firebase-auth.js`),
-        import(`${base}/firebase-firestore.js`)
-      ]);
-
-      const app = appSdk.initializeApp(config);
-      const auth = authSdk.getAuth(app);
-      const db = firestoreSdk.getFirestore(app);
-
-      state.status = 'sdk-initialized';
-      state.auth = 'available';
-      state.firestore = 'available';
-      state.storage = 'disabled-free-plan';
-      state.error = null;
-      emit();
-
-      authSdk.onAuthStateChanged(auth, user => {
-        state.user = user ? {
-          uid: user.uid,
-          email: user.email,
-          emailVerified: user.emailVerified
-        } : null;
-        emit();
-      });
-
-      const requireUser = () => {
-        if (!auth.currentUser) throw new Error('Authentication required.');
-        return auth.currentUser;
-      };
-
-      window.AuditDefendFirebaseAPI = Object.freeze({
-        async signUp(email, password) {
-          const result = await authSdk.createUserWithEmailAndPassword(auth, email, password);
-          await authSdk.sendEmailVerification(result.user);
-          return { uid: result.user.uid, email: result.user.email, emailVerified: result.user.emailVerified };
-        },
-        async signIn(email, password) {
-          const result = await authSdk.signInWithEmailAndPassword(auth, email, password);
-          return { uid: result.user.uid, email: result.user.email, emailVerified: result.user.emailVerified };
-        },
-        async sendPasswordReset(email) {
-          await authSdk.sendPasswordResetEmail(auth, email);
-          return { email };
-        },
-        async refreshUser() {
-          if (!auth.currentUser) return null;
-          await auth.currentUser.reload();
-          return { uid: auth.currentUser.uid, email: auth.currentUser.email, emailVerified: auth.currentUser.emailVerified };
-        },
-        async signOut() {
-          await authSdk.signOut(auth);
-        },
-        async saveSyntheticDemoCase(caseId, payload = {}) {
-          const user = requireUser();
-          if (!caseId || typeof caseId !== 'string') throw new Error('caseId is required.');
-          const safe = { ...payload, ownerUid: user.uid, synthetic: true, updatedAt: firestoreSdk.serverTimestamp() };
-          await firestoreSdk.setDoc(firestoreSdk.doc(db, 'demoCases', caseId), safe, { merge: true });
-          return { caseId };
-        },
-        async loadSyntheticDemoCase(caseId) {
-          requireUser();
-          const snapshot = await firestoreSdk.getDoc(firestoreSdk.doc(db, 'demoCases', caseId));
-          return snapshot.exists() ? { id: snapshot.id, ...snapshot.data() } : null;
-        },
-        async saveRedactedCase(caseId, payload = {}) {
-          const user = requireUser();
-          if (!caseId || typeof caseId !== 'string') throw new Error('caseId is required.');
-          if (!Array.isArray(payload.claims)) throw new Error('Redacted case requires a claims array.');
-          if (payload.claims.length > 100) throw new Error('Free-pilot redacted case is limited to 100 claim lines.');
-          const safe = {
-            ...payload,
-            ownerUid: user.uid,
-            caseType: 'redacted-real-case-demo',
-            redacted: true,
-            containsPhi: false,
-            updatedAt: firestoreSdk.serverTimestamp()
-          };
-          await firestoreSdk.setDoc(firestoreSdk.doc(db, 'redactedCases', caseId), safe, { merge: true });
-          return { caseId };
-        },
-        async loadRedactedCase(caseId) {
-          requireUser();
-          const snapshot = await firestoreSdk.getDoc(firestoreSdk.doc(db, 'redactedCases', caseId));
-          return snapshot.exists() ? { id: snapshot.id, ...snapshot.data() } : null;
-        },
-        async deleteRedactedCase(caseId) {
-          requireUser();
-          await firestoreSdk.deleteDoc(firestoreSdk.doc(db, 'redactedCases', caseId));
-          return { caseId };
-        },
-        getState() {
-          return { ...state };
-        }
-      });
-    } catch (error) {
-      state.status = 'initialization-error';
-      state.auth = 'unavailable';
-      state.firestore = 'unavailable';
-      state.storage = 'disabled-free-plan';
-      state.error = error instanceof Error ? error.message : String(error);
-      emit();
-    }
-  }
-
-  boot();
+const SDK_VERSION='12.19.0',PROJECT_ID='auditdefense-2cb01';
+const WEB_CONFIG=Object.freeze({projectId:PROJECT_ID,appId:'1:146444139355:web:5d3f7c9b4fad32cad5f87e',storageBucket:'auditdefense-2cb01.firebasestorage.app',apiKey:'AIzaSyAmwvYon32T72zBVJiz_CmJin5W9DXZFoU',authDomain:'auditdefense-2cb01.firebaseapp.com',messagingSenderId:'146444139355'});
+const state={status:'booting',projectId:PROJECT_ID,auth:'initializing',firestore:'initializing',storage:'disabled-free-plan',user:null,error:null};
+const emit=()=>{window.AuditDefendFirebase=state;document.dispatchEvent(new CustomEvent('auditdefend:firebase-status',{detail:{...state}}))};
+function assertConfig(c){for(const k of ['projectId','appId','apiKey','authDomain','messagingSenderId'])if(!c[k])throw new Error('Firebase Web App config missing '+k+'.');if(c.projectId!==PROJECT_ID)throw new Error('Firebase Web App config points to the wrong project.');return c}
+function cleanId(v,l='id'){if(!v||typeof v!=='string'||!/^[a-zA-Z0-9._-]{1,120}$/.test(v))throw new Error(l+' is invalid.');return v}
+async function boot(){emit();try{
+const base='https://www.gstatic.com/firebasejs/'+SDK_VERSION,[appSdk,authSdk,firestoreSdk]=await Promise.all([import(base+'/firebase-app.js'),import(base+'/firebase-auth.js'),import(base+'/firebase-firestore.js')]);
+const app=appSdk.initializeApp(assertConfig(WEB_CONFIG)),auth=authSdk.getAuth(app),db=firestoreSdk.getFirestore(app),now=()=>firestoreSdk.serverTimestamp(),docData=s=>s.exists()?{id:s.id,...s.data()}:null;
+state.status='sdk-initialized';state.auth='available';state.firestore='available';state.error=null;emit();
+authSdk.onAuthStateChanged(auth,u=>{state.user=u?{uid:u.uid,email:u.email,emailVerified:u.emailVerified}:null;emit()});
+const user=()=>{if(!auth.currentUser)throw new Error('Authentication required.');return auth.currentUser};
+window.AuditDefendFirebaseAPI=Object.freeze({
+async signUp(email,password){const r=await authSdk.createUserWithEmailAndPassword(auth,email,password);await authSdk.sendEmailVerification(r.user);return{uid:r.user.uid,email:r.user.email,emailVerified:r.user.emailVerified}},
+async signIn(email,password){const r=await authSdk.signInWithEmailAndPassword(auth,email,password);return{uid:r.user.uid,email:r.user.email,emailVerified:r.user.emailVerified}},
+async sendPasswordReset(email){await authSdk.sendPasswordResetEmail(auth,email);return{email}},
+async refreshUser(){if(!auth.currentUser)return null;await auth.currentUser.reload();return{uid:auth.currentUser.uid,email:auth.currentUser.email,emailVerified:auth.currentUser.emailVerified}},
+async signOut(){await authSdk.signOut(auth)},
+async saveSyntheticDemoCase(caseId,payload={}){const u=user();cleanId(caseId,'caseId');await firestoreSdk.setDoc(firestoreSdk.doc(db,'demoCases',caseId),{...payload,ownerUid:u.uid,synthetic:true,updatedAt:now()},{merge:true});return{caseId}},
+async loadSyntheticDemoCase(caseId){user();cleanId(caseId,'caseId');return docData(await firestoreSdk.getDoc(firestoreSdk.doc(db,'demoCases',caseId)))},
+async saveRedactedCase(caseId,payload={}){const u=user();cleanId(caseId,'caseId');if(!Array.isArray(payload.claims))throw new Error('Redacted case requires a claims array.');if(payload.claims.length>100)throw new Error('Free-pilot redacted case is limited to 100 claim lines.');await firestoreSdk.setDoc(firestoreSdk.doc(db,'redactedCases',caseId),{...payload,ownerUid:u.uid,caseType:'redacted-real-case-demo',redacted:true,containsPhi:false,updatedAt:now()},{merge:true});return{caseId}},
+async loadRedactedCase(caseId){user();cleanId(caseId,'caseId');return docData(await firestoreSdk.getDoc(firestoreSdk.doc(db,'redactedCases',caseId)))},
+async deleteRedactedCase(caseId){user();cleanId(caseId,'caseId');await firestoreSdk.deleteDoc(firestoreSdk.doc(db,'redactedCases',caseId));return{caseId}},
+async saveAttorneyProfile(payload={}){const u=user();await firestoreSdk.setDoc(firestoreSdk.doc(db,'attorneyProfiles',u.uid),{...payload,ownerUid:u.uid,email:u.email||payload.email||null,redacted:true,containsPhi:false,updatedAt:now()},{merge:true});return{uid:u.uid}},
+async loadAttorneyProfile(){const u=user();return docData(await firestoreSdk.getDoc(firestoreSdk.doc(db,'attorneyProfiles',u.uid)))},
+async saveAttorneyFirm(firmId,payload={}){const u=user();cleanId(firmId,'firmId');const ref=firestoreSdk.doc(db,'attorneyFirms',firmId),s=await firestoreSdk.getDoc(ref),old=s.exists()?s.data():null,members=Array.from(new Set([...(Array.isArray(old?.memberUids)?old.memberUids:[]),...(Array.isArray(payload.memberUids)?payload.memberUids:[]),u.uid]));const safe={...payload,ownerUid:old?.ownerUid||u.uid,memberUids:members,redacted:true,containsPhi:false,updatedAt:now()};if(!s.exists())safe.createdAt=now();await firestoreSdk.setDoc(ref,safe,{merge:true});return{firmId}},
+async loadAttorneyFirm(firmId){user();cleanId(firmId,'firmId');return docData(await firestoreSdk.getDoc(firestoreSdk.doc(db,'attorneyFirms',firmId)))},
+async saveAttorneyClient(firmId,clientId,payload={}){const u=user();cleanId(firmId,'firmId');cleanId(clientId,'clientId');await firestoreSdk.setDoc(firestoreSdk.doc(db,'attorneyFirms',firmId,'clients',clientId),{...payload,createdByUid:payload.createdByUid||u.uid,redacted:true,containsPhi:false,updatedAt:now()},{merge:true});return{firmId,clientId}},
+async saveAttorneyCase(caseId,payload={}){const u=user();cleanId(caseId,'caseId');const ref=firestoreSdk.doc(db,'attorneyCases',caseId),s=await firestoreSdk.getDoc(ref),old=s.exists()?s.data():null,attorneyUids=Array.from(new Set([...(Array.isArray(payload.attorneyUids)?payload.attorneyUids:[]),u.uid])),providerUids=Array.isArray(payload.providerUids)?payload.providerUids:[];const safe={...payload,firmId:old?.firmId||payload.firmId,createdByUid:old?.createdByUid||u.uid,attorneyUids,providerUids,redacted:true,containsPhi:false,updatedAt:now()};if(!s.exists())safe.createdAt=now();await firestoreSdk.setDoc(ref,safe,{merge:true});return{caseId}},
+async loadAttorneyCase(caseId){user();cleanId(caseId,'caseId');return docData(await firestoreSdk.getDoc(firestoreSdk.doc(db,'attorneyCases',caseId)))},
+async listAttorneyCases(){const u=user(),q=firestoreSdk.query(firestoreSdk.collection(db,'attorneyCases'),firestoreSdk.where('attorneyUids','array-contains',u.uid)),s=await firestoreSdk.getDocs(q);return s.docs.map(d=>({id:d.id,...d.data()}))},
+async saveCounselNote(caseId,noteId,payload={}){const u=user();cleanId(caseId,'caseId');cleanId(noteId,'noteId');const ref=firestoreSdk.doc(db,'attorneyCases',caseId,'notes',noteId),s=await firestoreSdk.getDoc(ref),old=s.exists()?s.data():null,safe={...payload,authorUid:old?.authorUid||u.uid,counselOnly:true,redacted:true,containsPhi:false,updatedAt:now()};if(!s.exists())safe.createdAt=now();await firestoreSdk.setDoc(ref,safe,{merge:true});return{caseId,noteId}},
+async listCounselNotes(caseId){user();cleanId(caseId,'caseId');const s=await firestoreSdk.getDocs(firestoreSdk.collection(db,'attorneyCases',caseId,'notes'));return s.docs.map(d=>({id:d.id,...d.data()}))},
+async createAttorneyInvite(inviteId,payload={}){const u=user();cleanId(inviteId,'inviteId');cleanId(payload.caseId,'caseId');const safe={...payload,creatorUid:u.uid,inviteeEmail:String(payload.email||payload.inviteeEmail||'').trim().toLowerCase(),status:'Pending',redacted:true,containsPhi:false,updatedAt:now(),createdAt:now()};delete safe.email;await firestoreSdk.setDoc(firestoreSdk.doc(db,'attorneyInvites',inviteId),safe);return{inviteId}},
+async listAttorneyInvites(){const u=user(),q=firestoreSdk.query(firestoreSdk.collection(db,'attorneyInvites'),firestoreSdk.where('creatorUid','==',u.uid)),s=await firestoreSdk.getDocs(q);return s.docs.map(d=>({id:d.id,...d.data()}))},
+async cancelAttorneyInvite(inviteId){user();cleanId(inviteId,'inviteId');await firestoreSdk.updateDoc(firestoreSdk.doc(db,'attorneyInvites',inviteId),{status:'Cancelled',updatedAt:now()});return{inviteId}},
+getState(){return{...state}}
+});
+}catch(error){state.status='initialization-error';state.auth='unavailable';state.firestore='unavailable';state.storage='disabled-free-plan';state.error=error instanceof Error?error.message:String(error);emit()}}
+boot();
 })();

@@ -1,74 +1,82 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    function signedIn() { return request.auth != null; }
-    function isOwner(uid) { return signedIn() && request.auth.uid == uid; }
-    function hasOrg(orgId) {
-      return signedIn() && request.auth.token.orgId != null && request.auth.token.orgId == orgId;
+    function signedIn(){return request.auth!=null;}
+    function isOwner(uid){return signedIn()&&request.auth.uid==uid;}
+    function hasOrg(orgId){return signedIn()&&request.auth.token.orgId!=null&&request.auth.token.orgId==orgId;}
+    function validRedactedCase(data){return signedIn()&&data.ownerUid==request.auth.uid&&data.caseType=='redacted-real-case-demo'&&data.redacted==true&&data.containsPhi==false&&data.claims is list&&data.claims.size()<=100;}
+    function firmExists(firmId){return exists(/databases/$(database)/documents/attorneyFirms/$(firmId));}
+    function firmData(firmId){return get(/databases/$(database)/documents/attorneyFirms/$(firmId)).data;}
+    function isFirmMember(firmId){return signedIn()&&firmExists(firmId)&&firmData(firmId).memberUids is list&&request.auth.uid in firmData(firmId).memberUids;}
+    function isFirmOwner(firmId){return signedIn()&&firmExists(firmId)&&firmData(firmId).ownerUid==request.auth.uid;}
+    function validAttorneyCase(data){return data.redacted==true&&data.containsPhi==false&&data.firmId is string&&data.createdByUid is string&&data.attorneyUids is list&&data.attorneyUids.size()>=1&&data.attorneyUids.size()<=20&&data.providerUids is list&&data.providerUids.size()<=20&&data.claims is int&&data.claims>=0&&data.claims<=5000;}
+    function caseExists(caseId){return exists(/databases/$(database)/documents/attorneyCases/$(caseId));}
+    function attorneyCaseData(caseId){return get(/databases/$(database)/documents/attorneyCases/$(caseId)).data;}
+    function isAttorneyOnCase(caseId){return signedIn()&&caseExists(caseId)&&attorneyCaseData(caseId).attorneyUids is list&&request.auth.uid in attorneyCaseData(caseId).attorneyUids;}
+    function isProviderOnCase(caseId){return signedIn()&&caseExists(caseId)&&attorneyCaseData(caseId).providerUids is list&&request.auth.uid in attorneyCaseData(caseId).providerUids;}
+    function isCaseParticipant(caseId){return isAttorneyOnCase(caseId)||isProviderOnCase(caseId);}
+
+    match /users/{uid}{allow read,create,update:if isOwner(uid);allow delete:if false;}
+    match /organizations/{orgId}{
+      allow read:if hasOrg(orgId);allow write:if false;
+      match /cases/{caseId}{allow read:if hasOrg(orgId);allow create,update,delete:if false;match /{document=**}{allow read:if hasOrg(orgId);allow write:if false;}}
     }
-    function validRedactedCase(data) {
-      return signedIn()
-        && data.ownerUid == request.auth.uid
-        && data.caseType == 'redacted-real-case-demo'
-        && data.redacted == true
-        && data.containsPhi == false
-        && data.claims is list
-        && data.claims.size() <= 100;
+    match /demoCases/{caseId}{
+      allow create:if signedIn()&&request.resource.data.ownerUid==request.auth.uid&&request.resource.data.synthetic==true;
+      allow read:if signedIn()&&resource.data.ownerUid==request.auth.uid&&resource.data.synthetic==true;
+      allow update:if signedIn()&&resource.data.ownerUid==request.auth.uid&&request.resource.data.ownerUid==request.auth.uid&&request.resource.data.synthetic==true;
+      allow delete:if signedIn()&&resource.data.ownerUid==request.auth.uid;
+    }
+    match /redactedCases/{caseId}{
+      allow create:if validRedactedCase(request.resource.data);
+      allow read:if signedIn()&&resource.data.ownerUid==request.auth.uid&&resource.data.redacted==true&&resource.data.containsPhi==false;
+      allow update:if signedIn()&&resource.data.ownerUid==request.auth.uid&&validRedactedCase(request.resource.data);
+      allow delete:if signedIn()&&resource.data.ownerUid==request.auth.uid;
     }
 
-    match /users/{uid} {
-      allow read, create, update: if isOwner(uid);
-      allow delete: if false;
+    // Attorney self-profile. Pilot permits redacted/non-PHI data only.
+    match /attorneyProfiles/{uid}{
+      allow read:if isOwner(uid);
+      allow create,update:if isOwner(uid)&&request.resource.data.ownerUid==uid&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow delete:if isOwner(uid);
     }
 
-    // Future production organization model. Read-only until server-side
-    // membership/custom-claim provisioning is implemented and verified.
-    match /organizations/{orgId} {
-      allow read: if hasOrg(orgId);
-      allow write: if false;
-
-      match /cases/{caseId} {
-        allow read: if hasOrg(orgId);
-        allow create, update, delete: if false;
-
-        match /{document=**} {
-          allow read: if hasOrg(orgId);
-          allow write: if false;
-        }
+    // Firm root controls membership; only owner can change membership.
+    match /attorneyFirms/{firmId}{
+      allow create:if signedIn()&&request.resource.data.ownerUid==request.auth.uid&&request.resource.data.memberUids is list&&request.auth.uid in request.resource.data.memberUids&&request.resource.data.memberUids.size()<=30&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow read:if isFirmMember(firmId);
+      allow update:if isFirmOwner(firmId)&&request.resource.data.ownerUid==resource.data.ownerUid&&request.resource.data.memberUids is list&&request.resource.data.memberUids.size()<=30&&resource.data.ownerUid in request.resource.data.memberUids&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow delete:if isFirmOwner(firmId);
+      match /clients/{clientId}{
+        allow read:if isFirmMember(firmId);
+        allow create,update:if isFirmMember(firmId)&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+        allow delete:if isFirmOwner(firmId);
       }
     }
 
-    // Fully synthetic demo records.
-    match /demoCases/{caseId} {
-      allow create: if signedIn()
-                    && request.resource.data.ownerUid == request.auth.uid
-                    && request.resource.data.synthetic == true;
-      allow read: if signedIn()
-                  && resource.data.ownerUid == request.auth.uid
-                  && resource.data.synthetic == true;
-      allow update: if signedIn()
-                    && resource.data.ownerUid == request.auth.uid
-                    && request.resource.data.ownerUid == request.auth.uid
-                    && request.resource.data.synthetic == true;
-      allow delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
+    // Provider participants may read the case root. Counsel-only notes are a
+    // separate subcollection readable only by explicitly assigned attorneys.
+    match /attorneyCases/{caseId}{
+      allow create:if signedIn()&&validAttorneyCase(request.resource.data)&&request.resource.data.createdByUid==request.auth.uid&&request.auth.uid in request.resource.data.attorneyUids&&isFirmMember(request.resource.data.firmId);
+      allow read:if isCaseParticipant(caseId);
+      allow update:if isAttorneyOnCase(caseId)&&validAttorneyCase(request.resource.data)&&request.resource.data.createdByUid==resource.data.createdByUid&&request.resource.data.firmId==resource.data.firmId&&request.auth.uid in request.resource.data.attorneyUids;
+      allow delete:if signedIn()&&resource.data.createdByUid==request.auth.uid;
+      match /notes/{noteId}{
+        allow create:if isAttorneyOnCase(caseId)&&request.resource.data.authorUid==request.auth.uid&&request.resource.data.counselOnly==true&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+        allow read:if isAttorneyOnCase(caseId);
+        allow update:if isAttorneyOnCase(caseId)&&resource.data.authorUid==request.resource.data.authorUid&&request.resource.data.counselOnly==true&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+        allow delete:if isAttorneyOnCase(caseId)&&resource.data.authorUid==request.auth.uid;
+      }
     }
 
-    // Redacted real-case structures may be persisted during the free pilot,
-    // but only when the client explicitly marks the payload as containing no PHI.
-    match /redactedCases/{caseId} {
-      allow create: if validRedactedCase(request.resource.data);
-      allow read: if signedIn()
-                  && resource.data.ownerUid == request.auth.uid
-                  && resource.data.redacted == true
-                  && resource.data.containsPhi == false;
-      allow update: if signedIn()
-                    && resource.data.ownerUid == request.auth.uid
-                    && validRedactedCase(request.resource.data);
-      allow delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
+    // Invite records never grant case access by themselves.
+    match /attorneyInvites/{inviteId}{
+      allow create:if signedIn()&&request.resource.data.creatorUid==request.auth.uid&&request.resource.data.caseId is string&&isAttorneyOnCase(request.resource.data.caseId)&&request.resource.data.inviteeEmail is string&&request.resource.data.status=='Pending'&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow read:if signedIn()&&(resource.data.creatorUid==request.auth.uid||(request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail));
+      allow update:if signedIn()&&request.resource.data.creatorUid==resource.data.creatorUid&&request.resource.data.caseId==resource.data.caseId&&request.resource.data.inviteeEmail==resource.data.inviteeEmail&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false&&((resource.data.creatorUid==request.auth.uid&&request.resource.data.status in ['Pending','Cancelled'])||(request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail&&request.resource.data.status in ['Accepted','Declined']));
+      allow delete:if signedIn()&&resource.data.creatorUid==request.auth.uid;
     }
 
-    match /{document=**} {
-      allow read, write: if false;
-    }
+    match /{document=**}{allow read,write:if false;}
   }
 }
