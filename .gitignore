@@ -1,0 +1,19 @@
+# Environment and credentials
+.env
+.env.*
+!.env.example
+service-account*.json
+firebase-debug.log
+firebase-debug.*.log
+
+# Dependencies / builds
+node_modules/
+.next/
+dist/
+build/
+
+# Local
+.DS_Store
+*.log
+.vscode/
+.idea/
