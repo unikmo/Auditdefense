@@ -29,8 +29,8 @@ jobs:
         run: |
           grep -q "PHI ingestion remains disabled" public/index.html
           grep -q "No PHI" public/attorney.html
-          grep -q "containsPhi == false" firestore.rules
-          grep -q "counselOnly == true" firestore.rules
+          grep -Eq "containsPhi[[:space:]]*==[[:space:]]*false" firestore.rules
+          grep -Eq "counselOnly[[:space:]]*==[[:space:]]*true" firestore.rules
           grep -q "attorneyUids" firestore.rules
       - name: Assert private keys are not committed
         run: |
