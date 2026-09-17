@@ -59,8 +59,8 @@ service cloud.firestore {
     match /attorneyCases/{caseId}{
       allow create:if signedIn()&&validAttorneyCase(request.resource.data)&&request.resource.data.createdByUid==request.auth.uid&&request.auth.uid in request.resource.data.attorneyUids&&isFirmMember(request.resource.data.firmId);
       allow read:if isCaseParticipant(caseId);
-      allow update:if isAttorneyOnCase(caseId)&&validAttorneyCase(request.resource.data)&&request.resource.data.createdByUid==resource.data.createdByUid&&request.resource.data.firmId==resource.data.firmId&&request.auth.uid in request.resource.data.attorneyUids;
-      allow delete:if signedIn()&&resource.data.createdByUid==request.auth.uid;
+      allow update:if isAttorneyOnCase(caseId)&&validAttorneyCase(request.resource.data)&&request.resource.data.createdByUid==resource.data.createdByUid&&request.resource.data.firmId==resource.data.firmId&&request.auth.uid in request.resource.data.attorneyUids&&((request.resource.data.attorneyUids==resource.data.attorneyUids&&request.resource.data.providerUids==resource.data.providerUids)||(resource.data.createdByUid==request.auth.uid||isFirmOwner(resource.data.firmId)));
+      allow delete:if signedIn()&&(resource.data.createdByUid==request.auth.uid||isFirmOwner(resource.data.firmId));
       match /notes/{noteId}{
         allow create:if isAttorneyOnCase(caseId)&&request.resource.data.authorUid==request.auth.uid&&request.resource.data.counselOnly==true&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
         allow read:if isAttorneyOnCase(caseId);
