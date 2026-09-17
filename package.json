@@ -1,0 +1,11 @@
+{
+  "name": "auditdefend-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Non-production interactive demo for AuditDefend — The Audit Defense Forensic Platform.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --directory public",
+    "check": "node --check public/app.js",
+    "build": "npm run check"
+  }
+}
