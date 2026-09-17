@@ -2,3 +2,5 @@
 @media(max-width:1250px){.review-shift-card{grid-column:1}.exposure-four{grid-template-columns:repeat(2,1fr)}.check-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:980px){.review-shift-card{grid-column:1/-1}.prevention-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){.review-shift{grid-template-columns:1fr}.review-arrow{transform:rotate(90deg)}.money-split,.exposure-four,.check-grid,.prevention-grid{grid-template-columns:1fr}.real-gap{grid-template-columns:30px 1fr}.real-gap .gap-amount{grid-column:2}.review-history{grid-template-columns:1fr}.review-history .arrow{transform:rotate(90deg)}}
+
+.counsel-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.counsel-actions a{text-decoration:none;display:inline-block}
