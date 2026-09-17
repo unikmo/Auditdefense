@@ -1,12 +1,24 @@
 (() => {
   const SDK_VERSION = '12.19.0';
   const PROJECT_ID = 'auditdefense-2cb01';
+
+  // Firebase Web App configuration is intentionally client-visible.
+  // Do not add Admin SDK credentials or service-account private keys here.
+  const WEB_CONFIG = Object.freeze({
+    projectId: 'auditdefense-2cb01',
+    appId: '1:146444139355:web:5d3f7c9b4fad32cad5f87e',
+    storageBucket: 'auditdefense-2cb01.firebasestorage.app',
+    apiKey: 'AIzaSyAmwvYon32T72zBVJiz_CmJin5W9DXZFoU',
+    authDomain: 'auditdefense-2cb01.firebaseapp.com',
+    messagingSenderId: '146444139355'
+  });
+
   const state = {
-    status: 'not-configured',
+    status: 'booting',
     projectId: PROJECT_ID,
-    auth: 'disabled',
-    firestore: 'disabled',
-    storage: 'disabled',
+    auth: 'initializing',
+    firestore: 'initializing',
+    storage: 'initializing',
     user: null,
     error: null
   };
@@ -16,24 +28,19 @@
     document.dispatchEvent(new CustomEvent('auditdefend:firebase-status', { detail: { ...state } }));
   };
 
-  async function getHostingConfig() {
-    const response = await fetch('/__/firebase/init.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error(`Firebase Hosting config unavailable (HTTP ${response.status})`);
-    const config = await response.json();
-    if (!config || config.projectId !== PROJECT_ID || !config.apiKey || !config.appId) {
-      throw new Error('Firebase Web App config is missing or does not match the AuditDefense project.');
+  function assertConfig(config) {
+    const required = ['projectId', 'appId', 'apiKey', 'authDomain', 'storageBucket', 'messagingSenderId'];
+    for (const key of required) {
+      if (!config[key]) throw new Error(`Firebase Web App config missing ${key}.`);
     }
+    if (config.projectId !== PROJECT_ID) throw new Error('Firebase Web App config points to the wrong project.');
     return config;
   }
 
   async function boot() {
     emit();
     try {
-      const config = await getHostingConfig();
-      state.status = 'web-config-available';
-      state.webConfig = config;
-      emit();
-
+      const config = assertConfig(WEB_CONFIG);
       const base = `https://www.gstatic.com/firebasejs/${SDK_VERSION}`;
       const [appSdk, authSdk, firestoreSdk, storageSdk] = await Promise.all([
         import(`${base}/firebase-app.js`),
@@ -51,17 +58,48 @@
       state.auth = 'available';
       state.firestore = 'available';
       state.storage = 'available';
+      state.error = null;
       emit();
 
       authSdk.onAuthStateChanged(auth, user => {
-        state.user = user ? { uid: user.uid, email: user.email, emailVerified: user.emailVerified } : null;
+        state.user = user ? {
+          uid: user.uid,
+          email: user.email,
+          emailVerified: user.emailVerified
+        } : null;
         emit();
       });
 
       window.AuditDefendFirebaseAPI = Object.freeze({
+        async signUp(email, password) {
+          const result = await authSdk.createUserWithEmailAndPassword(auth, email, password);
+          await authSdk.sendEmailVerification(result.user);
+          return {
+            uid: result.user.uid,
+            email: result.user.email,
+            emailVerified: result.user.emailVerified
+          };
+        },
         async signIn(email, password) {
           const result = await authSdk.signInWithEmailAndPassword(auth, email, password);
-          return { uid: result.user.uid, email: result.user.email, emailVerified: result.user.emailVerified };
+          return {
+            uid: result.user.uid,
+            email: result.user.email,
+            emailVerified: result.user.emailVerified
+          };
+        },
+        async sendPasswordReset(email) {
+          await authSdk.sendPasswordResetEmail(auth, email);
+          return { email };
+        },
+        async refreshUser() {
+          if (!auth.currentUser) return null;
+          await auth.currentUser.reload();
+          return {
+            uid: auth.currentUser.uid,
+            email: auth.currentUser.email,
+            emailVerified: auth.currentUser.emailVerified
+          };
         },
         async signOut() {
           await authSdk.signOut(auth);
@@ -100,11 +138,10 @@
         }
       });
     } catch (error) {
-      // Expected on local/Vercel previews or before a Firebase Web App is registered.
-      state.status = 'not-configured';
-      state.auth = 'disabled';
-      state.firestore = 'disabled';
-      state.storage = 'disabled';
+      state.status = 'initialization-error';
+      state.auth = 'unavailable';
+      state.firestore = 'unavailable';
+      state.storage = 'unavailable';
       state.error = error instanceof Error ? error.message : String(error);
       emit();
     }
