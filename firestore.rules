@@ -6,15 +6,23 @@ service cloud.firestore {
     function hasOrg(orgId) {
       return signedIn() && request.auth.token.orgId != null && request.auth.token.orgId == orgId;
     }
+    function validRedactedCase(data) {
+      return signedIn()
+        && data.ownerUid == request.auth.uid
+        && data.caseType == 'redacted-real-case-demo'
+        && data.redacted == true
+        && data.containsPhi == false
+        && data.claims is list
+        && data.claims.size() <= 100;
+    }
 
-    // Minimal profile surface. Users can only read/write their own profile.
     match /users/{uid} {
       allow read, create, update: if isOwner(uid);
       allow delete: if false;
     }
 
-    // Organization data requires an orgId custom claim. This is intentionally
-    // unusable until server-side membership provisioning is implemented.
+    // Future production organization model. Read-only until server-side
+    // membership/custom-claim provisioning is implemented and verified.
     match /organizations/{orgId} {
       allow read: if hasOrg(orgId);
       allow write: if false;
@@ -30,16 +38,35 @@ service cloud.firestore {
       }
     }
 
-    // Synthetic demo-only records. Still scoped to the authenticated owner.
+    // Fully synthetic demo records.
     match /demoCases/{caseId} {
-      allow create: if signedIn() && request.resource.data.ownerUid == request.auth.uid
+      allow create: if signedIn()
+                    && request.resource.data.ownerUid == request.auth.uid
                     && request.resource.data.synthetic == true;
-      allow read, update: if signedIn() && resource.data.ownerUid == request.auth.uid
-                          && resource.data.synthetic == true;
+      allow read: if signedIn()
+                  && resource.data.ownerUid == request.auth.uid
+                  && resource.data.synthetic == true;
+      allow update: if signedIn()
+                    && resource.data.ownerUid == request.auth.uid
+                    && request.resource.data.ownerUid == request.auth.uid
+                    && request.resource.data.synthetic == true;
       allow delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
     }
 
-    // Deny every other Firestore path.
+    // Redacted real-case structures may be persisted during the free pilot,
+    // but only when the client explicitly marks the payload as containing no PHI.
+    match /redactedCases/{caseId} {
+      allow create: if validRedactedCase(request.resource.data);
+      allow read: if signedIn()
+                  && resource.data.ownerUid == request.auth.uid
+                  && resource.data.redacted == true
+                  && resource.data.containsPhi == false;
+      allow update: if signedIn()
+                    && resource.data.ownerUid == request.auth.uid
+                    && validRedactedCase(request.resource.data);
+      allow delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }
