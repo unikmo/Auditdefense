@@ -15,8 +15,9 @@ Last updated: 2026-09-17
 - Firebase Admin server scaffold uses runtime/Application Default Credentials; no private key is committed.
 - PowerGM remains scoped to session notes only.
 - Preview-only Firebase Hosting GitHub workflow is committed; it contains no production deployment step.
-- Existing Netlify project verified: `gilded-brigadeiros-7afe69`, site ID `d4dc8197-8149-499e-869f-f58eed8c2bd4`.
-- `netlify.toml` now fixes the static publish directory to `public` and sets baseline response headers.
+- Existing Netlify site verified: `auditdefense`, site ID `d4dc8197-8149-499e-869f-f58eed8c2bd4`.
+- Netlify deploy `6aabe37a1f961b00088cb8bd` reached `ready` on 2026-09-17 and contains commit `adbf20276330a65a59f4ad20f3db27b440e13c1c`, which includes the Firebase Web config, auth test surface and `netlify.toml`.
+- Netlify reported all files uploaded and all three configured header rules processed without errors.
 
 ## External activation still required / not yet verified
 
@@ -26,12 +27,12 @@ Last updated: 2026-09-17
 - Firestore/Storage rules have actually been deployed.
 - Cloud Function has actually been deployed.
 - Live authenticated Firestore/Storage allow/deny behavior passes verification.
-- AuditDefend commit is successfully deployed to the Netlify project.
+- Independent browser rendering QA of the current Netlify deployment is complete.
 - PowerGM export/API schema supplied and validated.
 - PHI/production security, BAA/compliance and legal gates approved.
 
 ## Deployment boundary
 
-The Netlify project exists and is connected to the current workflow, but the AuditDefend source deployment is not classified as verified until Netlify reports a new successful deploy containing the current commit and the live page is inspected.
+Netlify now has a verified successful AuditDefend deployment at `https://auditdefense.netlify.app`. It remains a synthetic-data, non-production product demo. Firebase data services and production PHI use are not authorized merely because the static deployment is live.
 
-Production deployment remains prohibited until the separate production authorization gate is satisfied.
+Production/PHI deployment remains prohibited until the separate production authorization, security and legal gates are satisfied.
