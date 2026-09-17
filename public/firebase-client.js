@@ -2,8 +2,8 @@
   const SDK_VERSION = '12.19.0';
   const PROJECT_ID = 'auditdefense-2cb01';
 
-  // Firebase Web App configuration is intentionally client-visible.
-  // Do not add Admin SDK credentials or service-account private keys here.
+  // Firebase Web App config is public client configuration. Admin credentials
+  // and service-account private keys must never be placed in browser code.
   const WEB_CONFIG = Object.freeze({
     projectId: 'auditdefense-2cb01',
     appId: '1:146444139355:web:5d3f7c9b4fad32cad5f87e',
@@ -18,7 +18,7 @@
     projectId: PROJECT_ID,
     auth: 'initializing',
     firestore: 'initializing',
-    storage: 'initializing',
+    storage: 'disabled-free-plan',
     user: null,
     error: null
   };
@@ -29,7 +29,7 @@
   };
 
   function assertConfig(config) {
-    const required = ['projectId', 'appId', 'apiKey', 'authDomain', 'storageBucket', 'messagingSenderId'];
+    const required = ['projectId', 'appId', 'apiKey', 'authDomain', 'messagingSenderId'];
     for (const key of required) {
       if (!config[key]) throw new Error(`Firebase Web App config missing ${key}.`);
     }
@@ -42,22 +42,20 @@
     try {
       const config = assertConfig(WEB_CONFIG);
       const base = `https://www.gstatic.com/firebasejs/${SDK_VERSION}`;
-      const [appSdk, authSdk, firestoreSdk, storageSdk] = await Promise.all([
+      const [appSdk, authSdk, firestoreSdk] = await Promise.all([
         import(`${base}/firebase-app.js`),
         import(`${base}/firebase-auth.js`),
-        import(`${base}/firebase-firestore.js`),
-        import(`${base}/firebase-storage.js`)
+        import(`${base}/firebase-firestore.js`)
       ]);
 
       const app = appSdk.initializeApp(config);
       const auth = authSdk.getAuth(app);
       const db = firestoreSdk.getFirestore(app);
-      const storage = storageSdk.getStorage(app);
 
       state.status = 'sdk-initialized';
       state.auth = 'available';
       state.firestore = 'available';
-      state.storage = 'available';
+      state.storage = 'disabled-free-plan';
       state.error = null;
       emit();
 
@@ -70,23 +68,20 @@
         emit();
       });
 
+      const requireUser = () => {
+        if (!auth.currentUser) throw new Error('Authentication required.');
+        return auth.currentUser;
+      };
+
       window.AuditDefendFirebaseAPI = Object.freeze({
         async signUp(email, password) {
           const result = await authSdk.createUserWithEmailAndPassword(auth, email, password);
           await authSdk.sendEmailVerification(result.user);
-          return {
-            uid: result.user.uid,
-            email: result.user.email,
-            emailVerified: result.user.emailVerified
-          };
+          return { uid: result.user.uid, email: result.user.email, emailVerified: result.user.emailVerified };
         },
         async signIn(email, password) {
           const result = await authSdk.signInWithEmailAndPassword(auth, email, password);
-          return {
-            uid: result.user.uid,
-            email: result.user.email,
-            emailVerified: result.user.emailVerified
-          };
+          return { uid: result.user.uid, email: result.user.email, emailVerified: result.user.emailVerified };
         },
         async sendPasswordReset(email) {
           await authSdk.sendPasswordResetEmail(auth, email);
@@ -95,53 +90,58 @@
         async refreshUser() {
           if (!auth.currentUser) return null;
           await auth.currentUser.reload();
-          return {
-            uid: auth.currentUser.uid,
-            email: auth.currentUser.email,
-            emailVerified: auth.currentUser.emailVerified
-          };
+          return { uid: auth.currentUser.uid, email: auth.currentUser.email, emailVerified: auth.currentUser.emailVerified };
         },
         async signOut() {
           await authSdk.signOut(auth);
         },
         async saveSyntheticDemoCase(caseId, payload = {}) {
-          if (!auth.currentUser) throw new Error('Authentication required.');
+          const user = requireUser();
           if (!caseId || typeof caseId !== 'string') throw new Error('caseId is required.');
-          const safe = {
-            ...payload,
-            ownerUid: auth.currentUser.uid,
-            synthetic: true,
-            updatedAt: firestoreSdk.serverTimestamp()
-          };
+          const safe = { ...payload, ownerUid: user.uid, synthetic: true, updatedAt: firestoreSdk.serverTimestamp() };
           await firestoreSdk.setDoc(firestoreSdk.doc(db, 'demoCases', caseId), safe, { merge: true });
           return { caseId };
         },
         async loadSyntheticDemoCase(caseId) {
-          if (!auth.currentUser) throw new Error('Authentication required.');
+          requireUser();
           const snapshot = await firestoreSdk.getDoc(firestoreSdk.doc(db, 'demoCases', caseId));
           return snapshot.exists() ? { id: snapshot.id, ...snapshot.data() } : null;
         },
-        async uploadSyntheticEvidence(file, caseId = 'demo') {
-          if (!auth.currentUser) throw new Error('Authentication required.');
-          if (!file) throw new Error('File is required.');
-          const allowed = new Set(['application/pdf', 'text/csv', 'application/json']);
-          if (!allowed.has(file.type)) throw new Error('Demo upload allows PDF, CSV or JSON only.');
-          if (file.size >= 10 * 1024 * 1024) throw new Error('Demo upload must be smaller than 10 MB.');
-          const cleanName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
-          const path = `demo/${auth.currentUser.uid}/${caseId}/${Date.now()}-${cleanName}`;
-          const ref = storageSdk.ref(storage, path);
-          const result = await storageSdk.uploadBytes(ref, file, {
-            contentType: file.type,
-            customMetadata: { synthetic: 'true', caseId }
-          });
-          return { path: result.ref.fullPath };
+        async saveRedactedCase(caseId, payload = {}) {
+          const user = requireUser();
+          if (!caseId || typeof caseId !== 'string') throw new Error('caseId is required.');
+          if (!Array.isArray(payload.claims)) throw new Error('Redacted case requires a claims array.');
+          if (payload.claims.length > 100) throw new Error('Free-pilot redacted case is limited to 100 claim lines.');
+          const safe = {
+            ...payload,
+            ownerUid: user.uid,
+            caseType: 'redacted-real-case-demo',
+            redacted: true,
+            containsPhi: false,
+            updatedAt: firestoreSdk.serverTimestamp()
+          };
+          await firestoreSdk.setDoc(firestoreSdk.doc(db, 'redactedCases', caseId), safe, { merge: true });
+          return { caseId };
+        },
+        async loadRedactedCase(caseId) {
+          requireUser();
+          const snapshot = await firestoreSdk.getDoc(firestoreSdk.doc(db, 'redactedCases', caseId));
+          return snapshot.exists() ? { id: snapshot.id, ...snapshot.data() } : null;
+        },
+        async deleteRedactedCase(caseId) {
+          requireUser();
+          await firestoreSdk.deleteDoc(firestoreSdk.doc(db, 'redactedCases', caseId));
+          return { caseId };
+        },
+        getState() {
+          return { ...state };
         }
       });
     } catch (error) {
       state.status = 'initialization-error';
       state.auth = 'unavailable';
       state.firestore = 'unavailable';
-      state.storage = 'unavailable';
+      state.storage = 'disabled-free-plan';
       state.error = error instanceof Error ? error.message : String(error);
       emit();
     }
