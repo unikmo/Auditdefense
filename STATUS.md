@@ -6,7 +6,7 @@ Last updated: 2026-09-17
 
 - GitHub repository is populated on `main`.
 - Netlify site `auditdefense` is connected to `main` and automatically deploys repository updates.
-- Latest verified Netlify deploy `6aabf7a838718f0007a3dcfc` is `ready` and contains commit `2171703718c7031ff569016b9c78397304917fd2`.
+- Latest verified Netlify deployment is READY and contains provider-onboarding head `b42aedfe5a82226767a162a4f71c44b691f6bb6d`.
 - Live demo URL: `https://auditdefense.netlify.app`.
 - The dashboard is now based on the supplied 30-line Anthem payer-review worksheet rather than the older synthetic Aetna case.
 - Real worksheet outcomes are modeled: 8/30 initially supported, 22/30 initially unsupported (73% error rate by count), 3/30 supported after rebuttal, 27/30 unsupported after rebuttal, and 5 A→B reversals.
@@ -31,6 +31,18 @@ Last updated: 2026-09-17
 - Attorney/provider case root access and counsel-only note separation are modeled separately in Firestore rules.
 - Provider Counsel Workspace links directly to the Attorney Workspace.
 - Netlify deployment of the attorney portal is verified READY; Firebase rule deployment remains a separate gate.
+
+## Provider onboarding implemented
+
+- Separate provider onboarding is implemented at `/provider.html` (also `/provider`).
+- Flow covers account access, practice setup, audit metadata, automatic claim-volume pricing tier, optional counsel invitation record, no-PHI confirmation and workspace creation.
+- Pricing is automatically enforced by claim count: $995 up to 100 claims, $1,995 for 101–500, custom for 500+.
+- Free-text audit issue entry was removed after Red Team review; the pilot collects structured issue categories only.
+- Provider profile, organization, case and invitation Firestore client methods/rules are implemented.
+- Provider organization membership and provider-case participant changes are owner/creator controlled; invitations do not independently grant case access.
+- Provider onboarding is linked from the provider demo and auth surface.
+- Latest provider onboarding CI passed and Netlify deploy is READY at commit `b42aedfe5a82226767a162a4f71c44b691f6bb6d`.
+- Live provider route: `https://auditdefense.netlify.app/provider`.
 
 ## External activation still required / not yet verified
 
