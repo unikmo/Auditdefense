@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b2745">
+<meta name="description" content="AuditDefend provider onboarding for payer audit response.">
+<title>AuditDefend — Provider Onboarding</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="provider.css">
+</head>
+<body class="provider-body">
+<div class="demo-banner"><span class="demo-dot"></span><strong>Provider pilot onboarding</strong><span>Redacted/non-PHI only. No patient names, DOBs, member IDs, full claim IDs or other PHI.</span></div>
+<main class="provider-shell">
+  <aside class="provider-aside">
+    <a class="provider-brand" href="/provider"><span class="brand-mark">⚖</span><span><b>AuditDefend</b><small>Provider Onboarding</small></span></a>
+    <div class="provider-aside-copy">
+      <span class="eyebrow">START HERE</span>
+      <h1>Turn the audit letter into a case your team can act on.</h1>
+      <p>Set up the practice, capture the audit scope, choose the case plan and bring counsel into the same defense workflow.</p>
+    </div>
+    <ol class="provider-steps" id="providerSteps">
+      <li class="active"><b>1</b><span><strong>Account</strong><small>Secure access</small></span></li>
+      <li><b>2</b><span><strong>Practice</strong><small>Business context</small></span></li>
+      <li><b>3</b><span><strong>Audit</strong><small>Payer + deadline</small></span></li>
+      <li><b>4</b><span><strong>Case plan</strong><small>One case fee</small></span></li>
+      <li><b>5</b><span><strong>Counsel</strong><small>Optional invitation</small></span></li>
+      <li><b>6</b><span><strong>Review</strong><small>Create workspace</small></span></li>
+    </ol>
+    <div class="provider-boundary"><b>Pilot boundary</b><span>Cloud document upload and PHI ingestion remain disabled. This flow stores only redacted business/case metadata when Firebase is available.</span></div>
+  </aside>
+
+  <section class="provider-main">
+    <header class="provider-top">
+      <a href="/">← Back to demo</a>
+      <div id="providerAuthState" class="provider-auth-state">Checking Firebase…</div>
+    </header>
+
+    <div class="provider-panel" id="onboardingPanel">
+      <div class="provider-progress"><i class="active"></i><i></i><i></i><i></i><i></i><i></i></div>
+      <form id="providerOnboardingForm">
+        <section class="provider-step active" data-step="0">
+          <span class="eyebrow">STEP 1 OF 6</span>
+          <h2>Create or use your AuditDefend account</h2>
+          <p>Your account owns the provider workspace during this pilot.</p>
+          <div id="signedInBox" class="signed-in-box hidden"></div>
+          <div id="providerAuthForms">
+            <div class="mode" id="providerAuthMode"><button type="button" class="active" data-auth-mode="signup">Create account</button><button type="button" data-auth-mode="signin">Sign in</button></div>
+            <label>Email<input name="accountEmail" id="accountEmail" type="email" autocomplete="email" required></label>
+            <label>Password<input name="accountPassword" id="accountPassword" type="password" minlength="6" autocomplete="new-password" required></label>
+            <button class="primary-btn full provider-auth-btn" type="button" id="providerAuthBtn">Create account</button>
+            <div class="provider-inline-status" id="providerAuthMessage">Use a redacted pilot account only.</div>
+          </div>
+        </section>
+
+        <section class="provider-step" data-step="1">
+          <span class="eyebrow">STEP 2 OF 6</span>
+          <h2>Tell us about the practice</h2>
+          <p>Business-level details only. Do not enter patient information.</p>
+          <div class="provider-form-grid">
+            <label>Practice / organization name<input name="practiceName" required placeholder="Redacted Behavioral Health Practice"></label>
+            <label>State<input name="state" required placeholder="NY"></label>
+            <label>Your role<select name="role" required><option>Practice Owner</option><option>Executive / Administrator</option><option>Compliance</option><option>Billing / Revenue Cycle</option><option>Clinical Director</option><option>Other</option></select></label>
+            <label>Practice size<select name="practiceSize" required><option>1–10 clinicians</option><option>11–25 clinicians</option><option>26–50 clinicians</option><option>51–100 clinicians</option><option>100+ clinicians</option></select></label>
+            <label>Primary service line<select name="serviceLine"><option>Behavioral health / psychotherapy</option><option>ABA</option><option>Speech / OT / PT</option><option>Primary care</option><option>Specialty care</option><option>Other healthcare</option></select></label>
+            <label>Primary contact name<input name="contactName" required placeholder="Practice contact"></label>
+          </div>
+        </section>
+
+        <section class="provider-step" data-step="2">
+          <span class="eyebrow">STEP 3 OF 6</span>
+          <div class="provider-step-head"><div><h2>Capture the audit</h2><p>This becomes the case shell before evidence is organized.</p></div><button type="button" class="secondary-btn" id="loadAnthemDemo">Load redacted Anthem example</button></div>
+          <div class="provider-form-grid">
+            <label>Payer<input name="payer" required placeholder="Anthem"></label>
+            <label>Audit type<select name="auditType"><option>SIU / overpayment demand</option><option>Medical records review</option><option>Prepayment review</option><option>Medicaid audit</option><option>Credentialing / enrollment dispute</option><option>Other payer audit</option></select></label>
+            <label>Claim lines / claims in scope<input name="claimCount" id="claimCount" type="number" min="1" max="5000" required placeholder="30"></label>
+            <label>Asserted exposure ($)<input name="exposure" type="number" min="0" step="0.01" required placeholder="567656.77"></label>
+            <label>Response deadline<input name="deadline" type="date" required></label>
+            <label>Current stage<select name="stage"><option>Audit received</option><option>Evidence gathering</option><option>Initial review received</option><option>Rebuttal preparation</option><option>Rebuttal reviewed</option><option>Appeal / escalation</option></select></label>
+          </div>
+          <div class="provider-issue-block"><span class="provider-field-label">Primary issue families</span><div class="provider-issue-grid">
+<label><input type="checkbox" name="issueCategory" value="Documentation support"><span>Documentation support</span></label>
+<label><input type="checkbox" name="issueCategory" value="Signatures / authentication"><span>Signatures / authentication</span></label>
+<label><input type="checkbox" name="issueCategory" value="Assessment / treatment plan"><span>Assessment / treatment plan</span></label>
+<label><input type="checkbox" name="issueCategory" value="Provider / NPI enrollment"><span>Provider / NPI enrollment</span></label>
+<label><input type="checkbox" name="issueCategory" value="Authorization / units"><span>Authorization / units</span></label>
+<label><input type="checkbox" name="issueCategory" value="Credentialing / network"><span>Credentialing / network</span></label>
+</div><small>Select categories only. Free-text clinical/patient details are intentionally not collected in this pilot.</small></div>
+          <div class="provider-file-boundary"><strong>Documents</strong><span>File upload is intentionally disabled on the free/redacted pilot. Keep source files outside AuditDefend until secure evidence storage is approved.</span></div>
+        </section>
+
+        <section class="provider-step" data-step="3">
+          <span class="eyebrow">STEP 4 OF 6</span>
+          <h2>Your case plan</h2>
+          <p>Same case price whether the provider or attorney starts it. Counsel access is included. The tier is automatically determined by claim volume.</p>
+          <div class="provider-plan-grid">
+            <label class="provider-plan selected" data-plan-card="standard"><input type="radio" name="plan" value="standard" checked><span>Standard case</span><strong>$995</strong><small>Up to 100 claims · prepaid case license</small></label>
+            <label class="provider-plan" data-plan-card="expanded"><input type="radio" name="plan" value="expanded"><span>Expanded case</span><strong>$1,995</strong><small>101–500 claims</small></label>
+            <label class="provider-plan" data-plan-card="complex"><input type="radio" name="plan" value="complex"><span>Complex audit</span><strong>Custom</strong><small>500+ / multi-payer / unusual scope</small></label>
+          </div>
+          <div class="provider-price-summary"><div><span>Recommended plan</span><strong id="recommendedPlan">$995 Standard case</strong></div><div><span>Payment today</span><strong>Not collected in pilot</strong></div></div>
+        </section>
+
+        <section class="provider-step" data-step="4">
+          <span class="eyebrow">STEP 5 OF 6</span>
+          <h2>Bring counsel into the case</h2>
+          <p>Optional. The case fee includes counsel access. Invitation email delivery is not connected yet, but the invitation record can be prepared.</p>
+          <label class="provider-check"><input type="checkbox" id="inviteCounselToggle" name="inviteCounsel"><span><b>I want to invite counsel now</b><small>You can also do this later from the case workspace.</small></span></label>
+          <div id="counselFields" class="provider-form-grid hidden">
+            <label>Attorney / firm name<input name="counselName" placeholder="Healthcare counsel"></label>
+            <label>Counsel email<input name="counselEmail" type="email" placeholder="counsel@example.com"></label>
+          </div>
+          <div class="provider-counsel-note"><b>What counsel gets</b><span>Claim/rebuttal history, issue map, exposure, evidence requests, deadlines and counsel-only notes. Provider-facing summaries remain simpler.</span></div>
+        </section>
+
+        <section class="provider-step" data-step="5">
+          <span class="eyebrow">STEP 6 OF 6</span>
+          <h2>Review before creating the workspace</h2>
+          <p>Check the business/case metadata. Patient/member information must remain outside this pilot.</p>
+          <div id="providerReview" class="provider-review"></div>
+          <label class="provider-check provider-ack"><input type="checkbox" name="ack" required><span><b>I confirm this pilot data contains no PHI.</b><small>I have not entered patient names, DOBs, member IDs, full claim identifiers or other protected health information.</small></span></label>
+        </section>
+
+        <div class="provider-actions">
+          <button type="button" class="secondary-btn" id="providerBack">Back</button>
+          <button type="button" class="primary-btn" id="providerNext">Continue</button>
+          <button type="submit" class="primary-btn hidden" id="providerFinish">Create provider workspace</button>
+        </div>
+      </form>
+    </div>
+
+    <section class="provider-complete hidden" id="providerComplete">
+      <span class="eyebrow">WORKSPACE CREATED</span>
+      <h2>Your audit case is organized and ready for the next step.</h2>
+      <p id="providerCompleteMessage">The provider workspace has been created.</p>
+      <div class="provider-complete-kpis" id="providerCompleteKpis"></div>
+      <div class="provider-complete-grid">
+        <article><b>1. Verify deadline</b><span>Confirm the payer's response date against the source letter.</span></article>
+        <article><b>2. Build evidence map</b><span>Organize claims, documents, enrollment evidence and rebuttal history.</span></article>
+        <article><b>3. Add counsel</b><span>Give counsel the forensic layer without double-charging the case.</span></article>
+        <article><b>4. Track exposure</b><span>Keep sample error rates separate from dollar recovery calculations.</span></article>
+      </div>
+      <div class="provider-complete-actions">
+        <a class="primary-btn" href="/app#dashboard">Open provider case demo →</a>
+        <a class="secondary-btn" href="/attorney/demo">Open attorney workspace</a>
+        <button class="secondary-btn" type="button" id="restartProviderOnboarding">Start another pilot case</button>
+      </div>
+      <small class="provider-complete-foot">The main provider workspace currently demonstrates the supplied redacted Anthem case. Your new onboarding metadata is stored locally and, when available, in the configured Firestore pilot collections.</small>
+    </section>
+  </section>
+</main>
+<div class="toast" id="providerToast" role="status" aria-live="polite"></div>
+<script src="firebase-client.js"></script>
+<script src="provider.js"></script>
+</body>
+</html>

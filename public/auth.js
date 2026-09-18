@@ -11,6 +11,7 @@
   const subheading = document.getElementById('subheading');
 
   let mode = 'signin';
+  const nextPath = (() => { const value = new URLSearchParams(location.search).get('next'); return value && value.startsWith('/') && !value.startsWith('//') ? value : null; })();
 
   function setStatus(message, kind = '') {
     status.className = `status ${kind}`.trim();
@@ -77,9 +78,11 @@
       if (mode === 'signup') {
         const user = await window.AuditDefendFirebaseAPI.signUp(email.value.trim(), password.value);
         setStatus(`Test account created for ${user.email}. Verification email sent.`, 'warn');
+        if (nextPath) setTimeout(() => { location.href = nextPath; }, 350);
       } else {
         const user = await window.AuditDefendFirebaseAPI.signIn(email.value.trim(), password.value);
         setStatus(`Signed in as ${user.email}. Email verified: ${user.emailVerified ? 'yes' : 'no'}.`, user.emailVerified ? 'ok' : 'warn');
+        if (nextPath) setTimeout(() => { location.href = nextPath; }, 350);
       }
     } catch (error) {
       setStatus(friendly(error), 'error');

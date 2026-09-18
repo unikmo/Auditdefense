@@ -1,4 +1,11 @@
+/app /app.html 200
+/dashboard /app.html 200
+/provider /provider.html 200
+/provider/onboarding /provider-onboarding.html 200
+/provider-onboarding /provider-onboarding.html 200
 /attorney /attorney.html 200
 /law-firm /attorney.html 200
-/provider /provider.html 200
-/provider-onboarding /provider.html 200
+/attorney/demo /attorney-workspace.html 200
+/attorney/workspace /attorney-workspace.html 200
+/attorneys /attorneys.html 200
+/attorney-directory /attorneys.html 200

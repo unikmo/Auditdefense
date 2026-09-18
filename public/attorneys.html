@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f45a1f">
+<meta name="description" content="Public-source healthcare audit-defense attorney directory. Unclaimed profiles do not imply affiliation with AuditDefend.">
+<title>Healthcare Audit Defense Attorney Directory — AuditDefend</title>
+<link rel="stylesheet" href="/marketing.css">
+</head>
+<body class="marketing-body">
+<header class="m-nav">
+  <a class="m-brand" href="/"><span class="m-mark">⚖</span><span>AuditDefend<small>Attorney Directory</small></span></a>
+  <nav><a href="/">Home</a><a href="/provider">For Providers</a><a href="/attorney">For Attorneys</a></nav>
+  <div class="m-nav-actions"><a class="m-btn ghost" href="/auth.html?next=/attorneys">Sign in</a><a class="m-btn primary" href="/attorney/demo">See attorney workspace</a></div>
+</header>
+
+<section class="m-shell m-directory-head">
+  <span class="m-kicker">PUBLIC-SOURCE DIRECTORY</span>
+  <h1>Healthcare audit-defense attorneys.</h1>
+  <p>Basic profiles are created only from verifiable public professional sources. An unclaimed profile does not mean the attorney or firm uses, endorses, or is affiliated with AuditDefend. Attorneys can submit a claim request to expand and control their profile after verification.</p>
+  <div class="directory-toolbar"><input id="directorySearch" type="search" placeholder="Search attorney, firm, state or audit focus…"><select id="directoryState"><option value="">All locations</option></select></div>
+  <div id="directoryCount" style="font-size:10px;color:#806d62"></div>
+</section>
+
+<main class="m-shell directory-grid" id="directoryGrid"></main>
+
+<section class="m-directory-band">
+  <div class="m-shell m-directory-grid"><div><span class="m-kicker light">ARE YOU LISTED?</span><h2>Claim the profile. Then turn it into an intake channel.</h2><p>After identity and professional-source verification, a claimed profile can carry richer practice information and an AuditDefend provider-intake link. Claim approval is not automatic.</p></div><a class="m-btn light" href="/attorney">See the attorney product →</a></div>
+</section>
+
+<footer class="m-footer"><div class="m-shell m-footer-grid"><div><a class="m-brand" href="/"><span class="m-mark">⚖</span><span>AuditDefend<small>Healthcare audit-defense directory</small></span></a><small>Public-source profiles · No implied affiliation · Verification required before profile control.</small></div><nav><a href="/">Home</a><a href="/provider">Providers</a><a href="/attorney">Attorneys</a><a href="/auth.html?next=/attorneys">Sign in</a></nav></div></footer>
+
+<div class="claim-modal" id="claimModal" aria-hidden="true">
+  <div class="claim-panel">
+    <button class="claim-close" id="claimClose" aria-label="Close">×</button>
+    <span class="m-kicker">CLAIM PROFILE</span>
+    <h2 id="claimTitle">Claim attorney profile</h2>
+    <p>Claim requests are manually verified against public professional sources. Submitting a request does not immediately change the public profile.</p>
+    <form id="claimForm">
+      <input type="hidden" name="profileId" id="claimProfileId">
+      <label>Profile<input id="claimProfileName" disabled></label>
+      <label>Work email<input type="email" name="workEmail" id="claimWorkEmail" required></label>
+      <label>Firm website<input type="url" name="firmWebsite" required placeholder="https://firm.example"></label>
+      <label>Bar / primary jurisdiction<input name="jurisdiction" required placeholder="New York"></label>
+      <label style="display:flex;gap:8px;align-items:flex-start;margin-top:14px"><input type="checkbox" name="confirm" required style="width:auto;margin-top:2px"><span>I am this attorney or am authorized by the attorney/firm to request control of this profile.</span></label>
+      <button class="m-btn primary full" type="submit" id="claimSubmit">Submit claim request</button>
+      <div class="claim-status" id="claimStatus">Sign-in is required to submit a claim request.</div>
+    </form>
+  </div>
+</div>
+
+<script src="/firebase-client.js"></script>
+<script src="/attorneys.js"></script>
+</body>
+</html>

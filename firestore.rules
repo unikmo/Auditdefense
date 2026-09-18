@@ -116,6 +116,14 @@ service cloud.firestore {
       allow delete:if signedIn()&&resource.data.creatorUid==request.auth.uid;
     }
 
+    // Directory claim requests never grant profile control automatically.
+    match /attorneyDirectoryClaims/{claimId}{
+      allow create:if signedIn()&&request.resource.data.claimantUid==request.auth.uid&&request.resource.data.profileId is string&&request.resource.data.status=='Pending'&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow read:if signedIn()&&resource.data.claimantUid==request.auth.uid;
+      allow update:if signedIn()&&resource.data.claimantUid==request.auth.uid&&request.resource.data.claimantUid==resource.data.claimantUid&&request.resource.data.profileId==resource.data.profileId&&request.resource.data.status=='Pending'&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow delete:if signedIn()&&resource.data.claimantUid==request.auth.uid&&resource.data.status=='Pending';
+    }
+
     match /{document=**}{allow read,write:if false;}
   }
 }

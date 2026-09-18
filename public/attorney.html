@@ -1,76 +1,90 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#081f38">
-  <meta name="description" content="AuditDefend Attorney Workspace â€” multi-client payer audit defense operations.">
-  <title>AuditDefend Attorney Workspace</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="attorney.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f45a1f">
+<meta name="description" content="AuditDefend helps healthcare attorneys receive provider audit matters in a structured case instead of reconstructing them from emails, spreadsheets and attachments.">
+<title>AuditDefend for Attorneys â€” Send one intake link. Start with a structured case.</title>
+<link rel="stylesheet" href="/marketing.css">
 </head>
-<body class="attorney-body">
-<div class="demo-banner"><span class="demo-dot"></span><strong>Attorney pilot workspace</strong><span>Redacted/synthetic client records only. No PHI. Counsel controls legal interpretation and advice.</span></div>
-<div class="attorney-shell">
-  <aside class="attorney-sidebar" id="attorneySidebar">
-    <a class="attorney-brand" href="index.html"><span class="brand-mark">âš–</span><span><b>AuditDefend</b><small>Attorney Workspace</small></span></a>
-    <nav class="attorney-nav">
-      <button class="attorney-nav-item active" data-attorney-view="portfolio">âŒ‚ <span>Portfolio</span></button>
-      <button class="attorney-nav-item" data-attorney-view="clients">â–¦ <span>Clients</span></button>
-      <button class="attorney-nav-item" data-attorney-view="cases">â–¤ <span>Cases</span><b class="attorney-badge" id="activeCaseBadge">4</b></button>
-      <button class="attorney-nav-item" data-attorney-view="deadlines">â—· <span>Deadlines</span></button>
-      <button class="attorney-nav-item" data-attorney-view="notes">âœ <span>Counsel Notes</span></button>
-      <button class="attorney-nav-item" data-attorney-view="team">â™™ <span>Firm & Team</span></button>
-      <button class="attorney-nav-item" data-attorney-view="invitations">â†— <span>Invitations</span><b class="attorney-badge muted" id="inviteBadge">2</b></button>
-      <button class="attorney-nav-item" data-attorney-view="reports">â–¥ <span>Reports</span></button>
-      <button class="attorney-nav-item" data-attorney-view="billing">$ <span>Case Plans</span></button>
-      <button class="attorney-nav-item" data-attorney-view="settings">âš™ <span>Firm Settings</span></button>
-    </nav>
-    <div class="attorney-sidebar-spacer"></div>
-    <div class="attorney-plan-card"><small>Attorney Firm Workspace</small><strong>$499/mo</strong><span>Portfolio tools; case licenses separate.</span><button data-attorney-view-target="billing">View plan</button></div>
-    <a class="return-link" href="index.html#counsel">â† Provider case workspace</a>
-  </aside>
+<body class="marketing-body">
+<header class="m-nav">
+  <a class="m-brand" href="/"><span class="m-mark">âš–</span><span>AuditDefend<small>For Attorneys</small></span></a>
+  <nav><a href="/">Home</a><a href="/provider">For Providers</a><a href="/attorneys">Attorney Directory</a><a href="/#pricing">Pricing</a></nav>
+  <div class="m-nav-actions"><a class="m-btn ghost" href="/auth.html">Sign in</a><a class="m-btn primary" href="/attorney/demo">See sample workspace</a></div>
+</header>
 
-  <main class="attorney-main">
-    <header class="attorney-topbar">
-      <button class="attorney-menu" id="attorneyMenu" aria-label="Open navigation">â˜°</button>
-      <div class="firm-switcher"><small>Firm workspace</small><strong id="firmNameTop">Northstar Health Law â€” Demo</strong></div>
-      <label class="attorney-search">âŒ•<input id="attorneySearch" type="search" placeholder="Search client, payer, case, issueâ€¦"></label>
-      <button class="secondary-btn" id="newCaseTop">ï¼‹ New case</button>
-      <div class="attorney-user"><span>AM</span><div><b>Alex Morgan</b><small>Managing Attorney</small></div></div>
-    </header>
-
-    <section class="attorney-view active" id="attorney-view-portfolio">
-      <div class="attorney-page-head"><div><span class="eyebrow">ATTORNEY PORTFOLIO</span><h1>Every client. Every deadline. One defense workspace.</h1><p>See exposure, review stage and evidence priorities across all active payer audits.</p></div><button class="primary-btn" data-modal="caseModal">ï¼‹ Open client case</button></div>
-      <div class="attorney-kpis" id="portfolioKpis"></div>
-      <div class="attorney-grid portfolio-grid">
-        <section class="attorney-card span-2"><div class="card-head"><div><h2>Active cases</h2><p>Sorted by urgency and unresolved exposure.</p></div><button class="link-btn" data-attorney-view-target="cases">View all â†’</button></div><div class="table-wrap"><table class="attorney-table"><thead><tr><th>Client</th><th>Payer</th><th>Exposure</th><th>Stage</th><th>Deadline</th><th>Priority</th><th></th></tr></thead><tbody id="portfolioCases"></tbody></table></div></section>
-        <aside class="attorney-card priority-card"><div class="card-head"><div><h2>Priority queue</h2><p>What deserves attorney time next.</p></div></div><div id="priorityQueue"></div></aside>
-        <section class="attorney-card span-2"><div class="card-head"><div><h2>Exposure by issue family</h2><p>Operational grouping only; not a legal liability determination.</p></div></div><div id="issueExposure" class="issue-exposure"></div></section>
-        <aside class="attorney-card"><div class="card-head"><div><h2>Upcoming deadlines</h2><p>Next 30 days.</p></div></div><div id="deadlineMini"></div></aside>
+<section class="m-subhero">
+  <div class="m-shell m-subhero-grid">
+    <div>
+      <span class="m-kicker">FOR HEALTHCARE COUNSEL</span>
+      <h1>Stop spending legal hours reconstructing the audit.</h1>
+      <p>Create the matter, send your provider client one guided intake link, and start with claims, findings, rebuttal history, enrollment issues, evidence gaps, deadlines and exposure already organized into a case.</p>
+      <div class="m-actions"><a class="m-btn primary" href="/attorney/demo">Continue to sample attorney workspace â†’</a><a class="m-btn ghost" href="/attorneys">Claim your profile</a></div>
+    </div>
+    <div class="m-demo-window">
+      <div class="m-demo-bar"><b>Attorney case file</b><span>Redacted real-case sample</span></div>
+      <div class="m-demo-body">
+        <div class="m-demo-kpis"><div><small>ASSERTED EXPOSURE</small><strong>$567,656</strong></div><div><small>CLAIM LINES</small><strong>30</strong></div><div><small>A â†’ B REVERSALS</small><strong>5</strong></div><div><small>FINAL UNSUPPORTED</small><strong>27</strong></div></div>
+        <div class="m-demo-table"><div class="m-demo-row head"><span>Issue</span><span>Scope</span><span>Attorney action</span></div><div class="m-demo-row"><span>NPI enrollment</span><span>DOS-specific</span><span>Verify timeline</span></div><div class="m-demo-row"><span>Documentation</span><span>Claim-specific</span><span>Map evidence</span></div><div class="m-demo-row"><span>Recovery math</span><span>Case-wide</span><span>Test universe</span></div></div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="attorney-view" id="attorney-view-clients">
-      <div class="attorney-page-head"><div><span class="eyebrow">CLIENTS</span><h1>Provider client portfolio</h1><p>Keep practice context separate from case-level findings and counsel-only work product.</p></div><button class="primary-btn" data-modal="clientModal">ï¼‹ Add client</button></div>
-      <section class="attorney-card"><div class="client-grid" id="clientGrid"></div></section>
-    </section>
+<section class="m-section white">
+  <div class="m-shell">
+    <div class="m-section-head"><div><span class="m-kicker">THE ATTORNEY WORKFLOW</span><h2>Send one intake link. Get back a structured defense file.</h2></div><p>The attorney product is designed around the work that happens before substantive legal analysis: getting the providerâ€™s case facts, claim universe and evidence into a form counsel can actually use.</p></div>
+    <div class="m-steps">
+      <article><span class="m-step-no">1</span><h3>Open the matter</h3><p>Capture payer, claim volume, asserted exposure, deadline and case stage.</p></article>
+      <article><span class="m-step-no">2</span><h3>Send provider intake</h3><p>The provider supplies structured business and audit metadata once instead of answering the same questions across email threads.</p></article>
+      <article><span class="m-step-no">3</span><h3>Start with the forensic map</h3><p>See claim outcomes, changed findings, evidence needs, provider enrollment timing and financial exposure before drafting the response.</p></article>
+    </div>
+  </div>
+</section>
 
-    <section class="attorney-view" id="attorney-view-cases">
-      <div class="attorney-page-head"><div><span class="eyebrow">CASES</span><h1>Audit cases</h1><p>Provider-simple summary outside; attorney-depth inside.</p></div><button class="primary-btn" data-modal="caseModal">ï¼‹ New case</button></div>
-      <section class="attorney-card"><div class="case-filters"><button class="filter-chip active" data-case-filter="all">All</button><button class="filter-chip" data-case-filter="urgent">Urgent</button><button class="filter-chip" data-case-filter="rebuttal">Rebuttal</button><button class="filter-chip" data-case-filter="evidence">Evidence review</button><button class="filter-chip" data-case-filter="closed">Closed</button></div><div class="table-wrap"><table class="attorney-table"><thead><tr><th>Case</th><th>Client</th><th>Payer</th><th>Claims</th><th>Exposure</th><th>Stage</th><th>Deadline</th><th>Owner</th><th></th></tr></thead><tbody id="casesTable"></tbody></table></div></section>
-    </section>
+<section class="m-section">
+  <div class="m-shell m-split">
+    <div class="m-sample">
+      <span class="m-kicker">WHAT COUNSEL SEES</span>
+      <h3>The change history, not just the final denial.</h3>
+      <div class="m-sample-lines">
+        <div class="m-sample-line"><span>Initial finding</span><strong>Supported</strong></div>
+        <div class="m-sample-line"><span>Rebuttal outcome</span><strong>Not supported</strong></div>
+        <div class="m-sample-line"><span>New issue</span><strong>Enrollment on DOS</strong></div>
+        <div class="m-sample-line"><span>Evidence to test</span><strong>Effective-date record</strong></div>
+      </div>
+    </div>
+    <div class="m-callout"><span class="m-kicker">WHY THIS MATTERS</span><h3>Five sampled claims changed from supported to unsupported after rebuttal.</h3><p>That is exactly the kind of shift a final denial status can hide. The attorney workspace preserves the initial decision, rebuttal decision, issue category and evidence target separately.</p><div class="m-actions"><a class="m-btn primary" href="/attorney/demo">Open sample workspace â†’</a><a class="m-btn ghost" href="/app#counsel">See provider/counsel case view</a></div></div>
+  </div>
+</section>
 
-    <section class="attorney-view" id="attorney-view-deadlines">
-      <div class="attorney-page-head"><div><span class="eyebrow">DEADLINES</span><h1>Case calendar</h1><p>Deadlines are operational reminders; counsel remains responsible for validating legal due dates.</p></div></div>
-      <div class="attorney-grid"><section class="attorney-card span-2"><div id="deadlineTimeline" class="deadline-timeline"></div></section><aside class="attorney-card deadline-policy"><h2>Deadline control</h2><p>Every payer date should carry source, received date, calculated due date and attorney verification status.</p><ul><li>Source date preserved</li><li>Calendar calculation visible</li><li>Attorney verification required</li><li>Reminder cadence configurable</li></ul></aside></div>
-    </section>
+<section class="m-section white">
+  <div class="m-shell">
+    <div class="m-section-head"><div><span class="m-kicker">FIRM PRODUCT</span><h2>One workspace across provider clients and payer matters.</h2></div><p>The firm view adds the portfolio layer: client, payer, exposure, stage, deadline, priority issue and assigned attorney. Counsel-only notes stay separate from provider-facing summaries in the data model.</p></div>
+    <div class="m-role-grid">
+      <article class="m-role orange"><span class="m-kicker">CASE WORK</span><h3>$995 standard case</h3><p>Up to 100 claims. Provider and counsel access included.</p><ul><li>Claim defense matrix</li><li>Initial â†’ rebuttal change history</li><li>Evidence and enrollment map</li><li>Case binder structure</li></ul><a class="m-btn primary" href="/attorney/demo">See the case â†’</a></article>
+      <article class="m-role"><span class="m-kicker">FIRM WORKSPACE</span><h3>$499/month pilot</h3><p>Portfolio tools across clients; case licenses remain separate.</p><ul><li>Multi-client dashboard</li><li>Team roles</li><li>Counsel-only notes</li><li>Cross-client reporting</li></ul><a class="m-btn dark" href="/attorney/workspace">Open workspace â†’</a></article>
+    </div>
+  </div>
+</section>
 
-    <section class="attorney-view" id="attorney-view-notes">
-      <div class="attorney-page-head"><div><span class="eyebrow">COUNSEL-ONLY</span><h1>Counsel notes</h1><p>Separated from provider-facing summaries. Pilot content remains redacted and contains no PHI.</p></div><button class="primary-btn" data-modal="noteModal">ï¼‹ New note</button></div>
-      <div class="notes-layout"><aside class="attorney-card note-case-list"><h2>Filter by case</h2><div id="noteCaseFilters"></div></aside><section class="attorney-card"><div id="notesList" class="notes-list"></div></section></div>
-    </section>
+<section class="m-directory-band">
+  <div class="m-shell m-directory-grid"><div><span class="m-kicker light">ATTORNEY DIRECTORY</span><h2>Public profile first. Full profile when you claim it.</h2><p>AuditDefend can create an unclaimed basic profile from verified public professional information. No endorsement or affiliation is implied. After verification, the attorney can claim the profile, add practice details and use an AuditDefend provider-intake link.</p></div><a class="m-btn light" href="/attorneys">Find or claim your profile â†’</a></div>
+</section>
 
-    <section class="attorney-view" id="attorney-view-team">
-      <div class="attorney-page-head"><div><span class="eyebrow">FIRM €˜Q4ğ½ÍÁ…¸øñ Äù¥É´É½±•Ì…¹…Í”…•ÍÌğ½ ÄøñÀù5…¹…¥¹œ…ÑÑ½É¹•åÌ½¹ÑÉ½°™¥É´µ•µ‰•ÉÍ¡¥À¸…Í”Á…ÉÑ¥¥Á…Ñ¥½¸¥Ì•áÁ±¥¥Ğ¸ğ½Àøğ½‘¥Øøñ‰ÕÑÑ½¸±…ÍÌô‰ÁÉ¥µ…Éäµ‰Ñ¸ˆ‘…Ñ„µµ½‘…°ô‰Ñ•…µ5½‘…°ˆû¾ò,%¹Ù¥Ñ”Ñ•…´µ•µ‰•Èğ½‰ÕÑÑ½¸øğ½‘¥Øø(€€€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµ…Éˆøñ‘¥Ø±…ÍÌô‰Ñ…‰±”µİÉ…ÀˆøñÑ…‰±”±…ÍÌô‰…ÑÑ½É¹•äµÑ…‰±”ˆøñÑ¡•…øñÑÈøñÑ ù9…µ”ğ½Ñ øñÑ ùI½±”ğ½Ñ øñÑ ùµ…¥°ğ½Ñ øñÑ ù…Í•Ìğ½Ñ øñÑ ù•ÍÌğ½Ñ øñÑ ùMÑ…ÑÕÌğ½Ñ øğ½ÑÈøğ½Ñ¡•…øñÑ‰½‘ä¥ô‰Ñ•…µQ…‰±”ˆøğ½Ñ‰½‘äøğ½Ñ…‰±”øğ½‘¥Øøğ½Í•Ñ¥½¸ø(€€€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµ…ÉÉ½±”µÕ¥‘”ˆøñ ÈùI½±”µ½‘•°ğ½ Èøñ‘¥Ø±…ÍÌô‰É½±”µÉ¥ˆøñ‘¥Øøñˆù5…¹…¥¹œÑÑ½É¹•äğ½ˆøñÍÁ…¸ù¥É´Í•ÑÑ¥¹Ì°Ñ•…´°…±°…ÍÍ¥¹•…Í•Ì°…Í”É•…Ñ¥½¸¸ğ½ÍÁ…¸øğ½‘¥Øøñ‘¥ØøñˆùÑÑ½É¹•äğ½ˆøñÍÁ…¸ùÍÍ¥¹•…Í•Ì°½Õ¹Í•°¹½Ñ•Ì°É•Á½ÉÑÌ°±¥•¹Ğ½±±…‰½É…Ñ¥½¸¸ğ½ÍÁ…¸øğ½‘¥Øøñ‘¥ØøñˆùA…É…±•…°ğ½ˆøñÍÁ…¸ùÍÍ¥¹•…Í•Ì°•Ù¥‘•¹”½É…¹¥é…Ñ¥½¸°¹½Ñ•Ì…Ì½¹™¥ÕÉ•¸ğ½ÍÁ…¸øğ½‘¥Øøñ‘¥ØøñˆùI•…µ½¹±äğ½ˆøñÍÁ…¸ùÍÍ¥¹•…Í”É•Ù¥•Üİ¥Ñ¡½ÕĞµÕÑ…Ñ¥½¸É¥¡ÑÌ¸ğ½ÍÁ…¸øğ½‘¥Øøğ½‘¥Øøğ½Í•Ñ¥½¸ø(€€€€ğ½Í•Ñ¥½¸ø((€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµÙ¥•Üˆ¥ô‰…ÑÑ½É¹•äµÙ¥•Üµ¥¹Ù¥Ñ…Ñ¥½¹Ìˆø(€€€€€€ñ‘¥Ø±…ÍÌô‰…ÑÑ½É¹•äµÁ…”µ¡•…ˆøñ‘¥ØøñÍÁ…¸±…ÍÌô‰•å•‰É½Üˆù%9Y%QQ%=9Lğ½ÍÁ…¸øñ Äù±¥•¹Ğ…¹½Õ¹Í•°¥¹Ù¥Ñ…Ñ¥½¹Ìğ½ ÄøñÀùQÉ…¬İ¡¼¥¹Ù¥Ñ•İ¡½´°Ñ¼İ¡¥ …Í”°…¹İ¡•Ñ¡•È…•ÍÌİ…Ì…•ÁÑ•¸ğ½Àøğ½‘¥Øøñ‰ÕÑÑ½¸±…ÍÌô‰ÁÉ¥µ…Éäµ‰Ñ¸ˆ‘…Ñ„µµ½‘…°ô‰¥¹Ù¥Ñ•5½‘…°ˆû¾ò,9•Ü¥¹Ù¥Ñ…Ñ¥½¸ğ½‰ÕÑÑ½¸øğ½‘¥Øø(€€€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµ…Éˆøñ‘¥Ø¥ô‰¥¹Ù¥Ñ•Í1¥ÍĞˆ±…ÍÌô‰¥¹Ù¥Ñ”µ±¥ÍĞˆøğ½‘¥Øøğ½Í•Ñ¥½¸ø(€€€€ğ½Í•Ñ¥½¸ø((€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµÙ¥•Üˆ¥ô‰…ÑÑ½É¹•äµÙ¥•ÜµÉ•Á½ÉÑÌˆø(€€€€€€ñ‘¥Ø±…ÍÌô‰…ÑÑ½É¹•äµÁ…”µ¡•…ˆøñ‘¥ØøñÍÁ…¸±…ÍÌô‰•å•‰É½ÜˆùIA=IQLğ½ÍÁ…¸øñ ÄùÉ½ÍÌµ±¥•¹ĞÉ•Á½ÉÑ¥¹œğ½ ÄøñÀù=Á•É…Ñ¥½¹…°¥¹Ñ•±±¥•¹”…É½ÍÌÁ…å•È°¥ÍÍÕ”™…µ¥±ä°ÍÑ…”…¹•áÁ½ÍÕÉ”¸1•…°½¹±ÕÍ¥½¹ÌÉ•µ…¥¸…Í”µÍÁ•¥™¥Œ¸ğ½Àøğ½‘¥Øøñ‰ÕÑÑ½¸±…ÍÌô‰Í•½¹‘…Éäµ‰Ñ¸ˆ¥ô‰•áÁ½ÉÑA½ÉÑ™½±¥¼ˆûŠLáÁ½ÉĞÁ½ÉÑ™½±¥¼MXğ½‰ÕÑÑ½¸øğ½‘¥Øø(€€€€€€ñ‘¥Ø±…ÍÌô‰É•Á½ÉĞµÉ¥ˆ¥ô‰É•Á½ÉÑÉ¥ˆøğ½‘¥Øø(€€€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµ…Éˆøñ Èù…Í”ÍÕµµ…Éä•¹•É…Ñ½Èğ½ Èøñ‘¥Ø±…ÍÌô‰É•Á½ÉĞµ•¹•É…Ñ½ÈˆøñÍ•±•Ğ¥ô‰É•Á½ÉÑ…Í•M•±•Ğˆøğ½Í•±•ĞøñÍ•±•Ğ¥ô‰É•Á½ÉÑÕ‘¥•¹”ˆøñ½ÁÑ¥½¸Ù…±Õ”ô‰ÁÉ½Ù¥‘•ÈˆùAÉ½Ù¥‘•È•á•ÕÑ¥Ù”ÍÕµµ…Éäğ½½ÁÑ¥½¸øñ½ÁÑ¥½¸Ù…±Õ”ô‰½Õ¹Í•°ˆù½Õ¹Í•°™½É•¹Í¥ŒÍÕµµ…Éäğ½½ÁÑ¥½¸øğ½Í•±•Ğøñ‰ÕÑÑ½¸±…ÍÌô‰ÁÉ¥µ…Éäµ‰Ñ¸ˆ¥ô‰•¹•É…Ñ•I•Á½ÉĞˆù•¹•É…Ñ”ÁÉ•Ù¥•Üğ½‰ÕÑÑ½¸øğ½‘¥Øøñ‘¥Ø±…ÍÌô‰É•Á½ÉĞµ½ÕÑÁÕĞˆ¥ô‰É•Á½ÉÑ=ÕÑÁÕĞˆùM•±•Ğ„…Í”…¹…Õ‘¥•¹”Ñ¼•¹•É…Ñ”„É•‘…Ñ•ÍÕµµ…Éä¸ğ½‘¥Øøğ½Í•Ñ¥½¸ø(€€€€ğ½Í•Ñ¥½¸ø((€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµÙ¥•Üˆ¥ô‰…ÑÑ½É¹•äµÙ¥•Üµ‰¥±±¥¹œˆø(€€€€€€ñ‘¥Ø±…ÍÌô‰…ÑÑ½É¹•äµÁ…”µ¡•…ˆøñ‘¥ØøñÍÁ…¸±…ÍÌô‰•å•‰É½ÜˆùMA19Lğ½ÍÁ…¸øñ ÄùM¥µÁ±”…Í”ÁÉ¥¥¹œğ½ ÄøñÀù=¹”…Õ‘¥Ğ¸=¹”…Í”™•”¸AÉ½Ù¥‘•È…¹½Õ¹Í•°Í•…ÑÌ¥¹±Õ‘•¸ğ½Àøğ½‘¥Øøğ½‘¥Øø(€€€€€€ñ‘¥Ø±…ÍÌô‰ÁÉ¥¥¹œµÉ¥ˆøñ…ÉÑ¥±”±…ÍÌô‰…ÑÑ½É¹•äµ…ÉÁÉ¥”µ…É™•…ÑÕÉ•ˆøñÍÁ…¸ùMÑ…¹‘…É…Í”ğ½ÍÁ…¸øñÍÑÉ½¹œøääÔğ½ÍÑÉ½¹œøñÍµ…±°ùÁÉ•Á…¥ƒ
-ÔÕÀÑ¼€ÄÀÀ±…¥µÌğ½Íµ…±°øñÕ°øñ±¤ùAÉ½Ù¥‘•È€¬½Õ¹Í•°İ½É­ÍÁ…”ğ½±¤øñ±¤ù±…¥´‘•™•¹Í”µ…ÑÉ¥àğ½±¤øñ±¤ùI•‰ÕÑÑ…°¡¥ÍÑ½Éäğ½±¤øñ±¤ùÑÑ½É¹•ä¹½Ñ•Ìğ½±¤øñ±¤ù…Í”‰¥¹‘•ÈÍÑÉÕÑÕÉ”ğ½±¤øğ½Õ°øñ‰ÕÑÑ½¸±…ÍÌô‰ÁÉ¥µ…Éäµ‰Ñ¸ˆ‘…Ñ„µµ½‘…°ô‰…Í•5½‘…°ˆù=Á•¸ÍÑ…¹‘…É…Í”ğ½‰ÕÑÑ½¸øğ½…ÉÑ¥±”øñ…ÉÑ¥±”±…ÍÌô‰…ÑÑ½É¹•äµ…ÉÁÉ¥”µ…ÉˆøñÍÁ…¸ùáÁ…¹‘•…Í”ğ½ÍÁ…¸øñÍÑÉ½¹œøÄ°ääÔğ½ÍÑÉ½¹œøñÍµ…±°øÄÀÃŠLÔÀÀ±…¥µÌğ½Íµ…±°øñÕ°øñ±¤ùÙ•ÉåÑ¡¥¹œ¥¸MÑ…¹‘…Éğ½±¤øñ±¤ù1…É•È±…¥´Õ¹¥Ù•ÉÍ”ğ½±¤øñ±¤ùáÁ…¹‘•¥ÍÍÕ”µ…ÁÁ¥¹œğ½±¤øñ±¤ùÉ½ÍÌµÁÉ½Ù¥‘•È¡É½¹½±½äğ½±¤øğ½Õ°øñ‰ÕÑÑ½¸±…ÍÌô‰Í•½¹‘…Éäµ‰Ñ¸ˆ‘…Ñ„µµ½‘…°ô‰…Í•5½‘…°ˆù=Á•¸•áÁ…¹‘•…Í”ğ½‰ÕÑÑ½¸øğ½…ÉÑ¥±”øñ…ÉÑ¥±”±…ÍÌô‰…ÑÑ½É¹•äµ…ÉÁÉ¥”µ…ÉˆøñÍÁ…¸ù½µÁ±•à…Õ‘¥Ğğ½ÍÁ…¸øñÍÑÉ½¹œùÕÍÑ½´ğ½ÍÑÉ½¹œøñÍµ…±°øÔÀÀ¬€¼µÕ±Ñ¤µÁ…å•È€¼Õ¹ÕÍÕ…°Í½Á”ğ½Íµ…±°øñÕ°øñ±¤ùM½Á”É•Ù¥•Üğ½±¤øñ±¤ù½µÁ±•àÕ¹¥Ù•ÉÍ”µ…ÁÁ¥¹œğ½±¤øñ±¤ùÕÍÑ½´¥µÁ±•µ•¹Ñ…Ñ¥½¸ÍÕÁÁ½ÉĞğ½±¤øğ½Õ°øñ‰ÕÑÑ½¸±…ÍÌô‰Í•½¹‘…Éäµ‰Ñ¸ˆ‘…Ñ„µÑ½…ÍĞô‰ÕÍÑ½´ÅÕ½Ñ¥¹œ¥Ì¹½Ğ½¹¹•Ñ•¥¸Ñ¡¥ÌÁ¥±½Ğ¸ˆùI•ÅÕ•ÍĞÍ½Á”ğ½‰ÕÑÑ½¸øğ½…ÉÑ¥±”øğ½‘¥Øø(€€€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµ…É™¥É´µÁ±…¸ˆøñ‘¥ØøñÍÁ…¸ùÑÑ½É¹•ä¥É´]½É­ÍÁ…”ğ½ÍÁ…¸øñ ÈøĞää½µ½¹Ñ ğ½ ÈøñÀù5Õ±Ñ¤µ±¥•¹ĞÁ½ÉÑ™½±¥¼°Ñ•…´É½±•Ì°É½ÍÌµ±¥•¹ĞÉ•Á½ÉÑ¥¹œ…¹É•ÕÍ…‰±”™¥É´İ½É­™±½Ü¸…Í”±¥•¹Í•Ì…É”Í•Á…É…Ñ”¸ğ½Àøğ½‘¥ØøñÍÁ…¸±…ÍÌô‰Á¥±°¥¹™¼ˆùA¥±½ĞÁÉ¥¥¹œğ½ÍÁ…¸øğ½Í•Ñ¥½¸ø(€€€€ğ½Í•Ñ¥½¸ø((€€€€ñÍ•Ñ¥½¸±…ÍÌô‰…ÑÑ½É¹•äµÙ¥•Üˆ¥ô‰…ÑÑ½É¹•äµÙ¥•ÜµÍ•ÑÑ¥¹Ìˆø(€€€€€€ñ‘¥Ø±…ÍÌô‰…ÑÑ½É¹•äµÁ…”µ¡•…ˆøñ‘¥ØøñÍÁ…¸±…ÍÌô‰•å•‰É½Üˆù%I4‚4UED”äu3Â÷7ããÆƒäGF÷&æW’v÷&·76R6öæf–wW&F–öãÂöƒãÇäf—&Ò–FVçF—G’Âæ÷F–f–6F–öâ&VfW&Væ6W2æB–Æ÷BFF&÷VæF&–W2ãÂ÷ãÂöF—cãÂöF—cà¢Ç6V7F–öâ6Æ73Ò&GF÷&æW’Ö6&B6WGF–æw2Öf÷&Ò#ãÆF—b6Æ73Ò&f÷&ÒÖw&–B#ãÆÆ&VÃäf—&ÒæÖSÆ–çWB–CÒ&f—&ÔæÖU6WGF–ær"fÇVSÒ$æ÷'F‡7F"†VÇF‚Ær(	BFVÖò#ãÂöÆ&VÃãÆÆ&VÃå&–Ö'’§W&—6F–7F–öãÆ–çWBfÇVSÒ$æWr–÷&²#ãÂöÆ&VÃãÆÆ&VÃå&7F–6Rfö7W3Æ–çWBfÇVSÒ$†VÇF†6&R–W"VF—G2#ãÂöÆ&VÃãÆÆ&VÃäFVfVÇB66R÷væW#Æ–çWBfÇVSÒ$ÆW‚Ö÷&vâ#ãÂöÆ&VÃãÂöF—cãÆÆ&VÂ6Æ73Ò'FövvÆR×&÷r#ãÇ7ããÆ#äFVFÆ–æRÆW'G3Âö#ãÇ6ÖÆÃäVÖ–Â–çFVw&F–öâæ÷BVæ&ÆVC²T’&VfW&Væ6RöæÇ’ãÂ÷6ÖÆÃãÂ÷7ããÆ–çWBG—SÒ&6†V6¶&÷‚"6†V6¶VCãÂöÆ&VÃãÆÆ&VÂ6Æ73Ò'FövvÆR×&÷r#ãÇ7ããÆ#ä6÷Vç6VÂÖöæÇ’æ÷FR6W&F–öãÂö#ãÇ6ÖÆÃä¶VWGF÷&æW’æ÷FW2÷WG6–FR&÷f–FW"Öf6–ær7VÖÖ&–W2ãÂ÷6ÖÆÃãÂ÷7ããÆ–çWBG—SÒ&6†V6¶&÷‚"6†V6¶VBF—6&ÆVCãÂöÆ&VÃãÆÆ&VÂ6Æ73Ò'FövvÆR×&÷r#ãÇ7ããÆ#å„’–ævW7F–öãÂö#ãÇ6ÖÆÃäF—6&ÆVBGW&–ær7W'&VçB–Æ÷BãÂ÷6ÖÆÃãÂ÷7ããÆ–çWBG—SÒ&6†V6¶&÷‚"F—6&ÆVCãÂöÆ&VÃãÆ'WGFöâ6Æ73Ò'&–Ö'’Ö'Fâ"–CÒ'6fTf—&Õ6WGF–æw2#å6fR–Æ÷B6WGF–æw3Âö'WGFöããÂ÷6V7F–öãà¢Â÷6V7F–öãà¢ÂöÖ–ãà£ÂöF—cà £ÆF—b6Æ73Ò&GF÷&æW’ÖÖöFÂ"–CÒ&öæ&ö&F–ætÖöFÂ"&–Ö†–FFVãÒ'G'VR#ãÆF—b6Æ73Ò&ÖöFÂÖ&6¶G&÷#ãÂöF—cãÆF—b6Æ73Ò&ÖöFÂ×æVÂöæ&ö&F–ær×æVÂ#ãÇ7â6Æ73Ò&W–V'&÷r#äEDõ$äU’ôä$ô$D”äsÂ÷7ããÆƒ#å6WBW–÷W"f—&Òv÷&·76SÂöƒ#ãÆF—b6Æ73Ò&öæ&ö&F–ær×&öw&W72#ãÆ’6Æ73Ò&7F—fR#ãÂö“ãÆ“ãÂö“ãÆ“ãÂö“ãÆ“ãÂö“ãÂöF—cãÆf÷&Ò–CÒ&öæ&ö&F–ætf÷&Ò#ãÆF—b6Æ73Ò&öæ&ö&B×7FW7F—fR"FF×7FWÒ##ãÆƒ3äf—&ÓÂöƒ3ãÆÆ&VÃäf—&ÒæÖSÆ–çWBæÖSÒ&f—&ÔæÖR"fÇVSÒ$æ÷'F‡7F"†VÇF‚Ær(	BFVÖò"&WV—&VCãÂöÆ&VÃãÆÆ&VÃå&–Ö'’§W&—6F–7F–öãÆ–çWBæÖSÒ&§W&—6F–7F–öâ"fÇVSÒ$æWr–÷&²"&WV—&VCãÂöÆ&VÃãÆÆ&VÃå&7F–6Rfö7W3Ç6VÆV7BæÖSÒ&fö7W2#ãÆ÷F–öãä†VÇF†6&R–W"VF—G3Âö÷F–öããÆ÷F–öãä†VÇF†6&R&VwVÆF÷'“Âö÷F–öããÆ÷F–öãä†VÇF†6&RÆ—F–vF–öãÂö÷F–öããÆ÷F–öãävVæW&Â†VÇF†6&R6÷Vç6VÃÂö÷F–öããÂ÷6VÆV7CãÂöÆ&VÃãÂöF—cãÆF—b6Æ73Ò&öæ&ö&B×7FW"FF×7FWÒ##ãÆƒ3å–÷W"&öf–ÆSÂöƒ3ãÆÆ&VÃäGF÷&æW’æÖSÆ–çWBæÖSÒ&GF÷&æW”æÖR"fÇVSÒ$ÆW‚Ö÷&vâ"&WV—&VCãÂöÆ&VÃãÆÆ&VÃå&öÆSÇ6VÆV7BæÖSÒ'&öÆR#ãÆ÷F–öãäÖæv–ærGF÷&æW“Âö÷F–öããÆ÷F–öãäGF÷&æW“Âö÷F–öããÂ÷6VÆV7CãÂöÆ&VÃãÆÆ&VÃåv÷&²VÖ–ÃÆ–çWBæÖSÒ&VÖ–Â"G—SÒ&VÖ–Â"fÇVSÒ&ÆW„W†×ÆRæ6öÒ"&WV—&VCãÂöÆ&VÃãÂöF—cãÆF—b6Æ73Ò&öæ&ö&B×7FW"FF×7FWÒ#"#ãÆƒ3åv÷&¶fÆ÷sÂöƒ3ãÆÆ&VÃå&–Ö'’66RG—SÇ6VÆV7BæÖSÒ&66UG—R#ãÆ÷F–öãå–W"VF—Bò÷fW'–ÖVçCÂö÷F–öããÆ÷F–öãå4•R–çfW7F–vF–öãÂö÷F–öããÆ÷F–öãäÖVF–6–BVF—CÂö÷F–öããÆ÷F–öãä7&VFVçF–Æ–æròVç&öÆÆÖVçBF—7WFSÂö÷F–öããÂ÷6VÆV7CãÂöÆ&VÃãÆÆ&VÃåG—–6ÂVF—B6—¦SÇ6VÆV7BæÖSÒ'föÇVÖR#ãÆ÷F–öãåWFò6Æ–×3Âö÷F–öããÆ÷F–öãã(	3S6Æ–×3Âö÷F–öããÆ÷F–öããS²6Æ–×3Âö÷F–öããÂ÷6VÆV7CãÂöÆ&VÃãÆÆ&VÂ6Æ73Ò&6†V6²×&÷r#ãÆ–çWBG—SÒ&6†V6¶&÷‚"6†V6¶VCãÇ7ãä¶VW6÷Vç6VÂæ÷FW26W&FRg&öÒ&÷f–FW"Öf6–ær7VÖÖ&–W3Â÷7ããÂöÆ&VÃãÂöF—cãÆF—b6Æ73Ò&öæ&ö&B×7FW"FF×7FWÒ#2#ãÆƒ3å–Æ÷B&÷VæF'“Âöƒ3ãÆF—b6Æ73Ò&&÷VæF'’Ö&÷‚#ãÆ#ä7W'&VçB–Æ÷C¢&VF7FVBFFöæÇ“Âö#ãÇäFòæ÷BVçFW"F–VçBæÖW2ÂDô'2ÂÖVÖ&W"”G2ÂgVÆÂ6Æ–Ò–FVçF–f–W'2ÂgVÆÂå—2Â÷"÷F†W"„’âVF—DFVfVæB—2æ÷B–WBWF†÷&—¦VBf÷"„’&öGV7F–öâW6RãÂ÷ãÂöF—cãÆÆ&VÂ6Æ73Ò&6†V6²×&÷r#ãÆ–çWBæÖSÒ&6²"G—SÒ&6†V6¶&÷‚"&WV—&VCãÇ7ãä’v–ÆÂW6R&VF7FVB÷7–çF†WF–2FFöæÇ’–âF†—2–Æ÷BãÂ÷7ããÂöÆ&VÃãÂöF—cãÆF—b6Æ73Ò&ÖöFÂÖ7F–öç2#ãÆ'WGFöâG—SÒ&'WGFöâ"6Æ73Ò'6V6öæF'’Ö'Fâ"–CÒ&öæ&ö&D&6²#ä&6³Âö'WGFöããÆ'WGFöâG—SÒ&'WGFöâ"6Æ73Ò'&–Ö'’Ö'Fâ"–CÒ&öæ&ö&DæW‡B#ä6öçF–çVSÂö'WGFöããÆ'WGFöâG—SÒ'7V&Ö—B"6Æ73Ò'&–Ö'’Ö'Fâ"–CÒ&öæ&ö&Df–æ—6‚#äVçFW"v÷&·76SÂö'WGFöããÂöF—cãÂöf÷&ÓãÂöF—cãÂöF—cà £ÆF—b6Æ73Ò&GF÷&æW’ÖÖöFÂ"–CÒ&66TÖöFÂ"&–Ö†–FFVãÒ'G'VR#ãÆF—b6Æ73Ò&ÖöFÂÖ&6¶G&÷"FFÖ6Æ÷6RÖÖöFÃãÂöF—cãÆF—b6Æ73Ò&ÖöFÂ×æVÂ#ãÆ'WGFöâ6Æ73Ò&ÖöFÂÖ6Æ÷6R"FFÖ6Æ÷6RÖÖöFÃì9sÂö'WGFöããÇ7â6Æ73Ò&W–V'&÷r#ääUr44SÂ÷7ããÆƒ#ä÷Vâ6Æ–VçBVF—B66SÂöƒ#ãÆf÷&Ò–CÒ&66Tf÷&Ò#ãÆÆ&VÃä6Æ–VçCÇ6VÆV7BæÖSÒ&6Æ–VçD–B"–CÒ&66T6Æ–VçE6VÆV7B#ãÂ÷6VÆV7CãÂöÆ&VÃãÆÆ&VÃå–W#Æ–çWBæÖSÒ'–W""&WV—&VBÆ6V†öÆFW#Ò$çF†VÒ#ãÂöÆ&VÃãÆÆ&VÃä66RÆ&VÃÆ–çWBæÖSÒ&Æ&VÂ"&WV—&VBÆ6V†öÆFW#Ò%4•Rò÷fW'–ÖVçB&Wf–Wr#ãÂöÆ&VÃãÆF—b6Æ73Ò'GvòÖf–VÆG2#ãÆÆ&VÃä6Æ–Ò6÷VçCÆ–çWBæÖSÒ&6Æ–×2"G—SÒ&çVÖ&W""Ö–ãÒ#"ÖƒÒ#S"fÇVSÒ#3"&WV—&VCãÂöÆ&VÃãÆÆ&VÃä76W'FVBW‡÷7W&SÆ–çWBæÖSÒ&W‡÷7W&R"G—SÒ&çVÖ&W""Ö–ãÒ#"7FWÒ#ã"fÇVSÒ#ScscSbãsr"&WV—&VCãÂöÆ&VÃãÂöF—cãÆÆ&VÃå&W7öç6RFVFÆ–æSÆ–çWBæÖSÒ&FVFÆ–æR"G—SÒ&FFR"&WV—&VCãÂöÆ&VÃãÆÆ&VÃå&–Ö'’—77VSÇ6VÆV7BæÖSÒ&—77VR#ãÆ÷F–öãå&÷f–FW"ôå’Vç&öÆÆÖVçCÂö÷F–öããÆ÷F–öãäFö7VÖVçFF–öâ7W÷'CÂö÷F–öããÆ÷F–öãäWF†÷&—¦F–öãÂö÷F–öããÆ÷F–öãä7&VFVçF–Æ–æröæWGv÷&³Âö÷F–öããÆ÷F–öãäÖ—†VBf–æF–æw3Âö÷F–öããÂ÷6VÆV7CãÂöÆ&VÃãÆF—b6Æ73Ò&&÷VæF'’Ö&÷‚6ö×7B#ãÆ#å&VF7FVB–Æ÷BöæÇ’ãÂö#âFòæ÷BVçFW"F–VçBöÖVÖ&W"–FVçF–f–W'2÷"„’ãÂöF—cãÆ'WGFâ6Æ73Ò'&–Ö'’Ö'FâgVÆÂ#ä7&VFR66SÂö'WGFöããÂöf÷&ÓãÂöF—cãÂöF—cà £ÆF—b6Æ73Ò&GF÷&æW’ÖÖöFÂ"–CÒ&6Æ–VçDÖöFÂ"&–Ö†–FFVãÒ'G'VR#ãÆF—b6Æ73Ò&ÖöFÂÖ&6¶G&÷"FFÖ6Æ÷6RÖÖöFÃãÂöF—cãÆF—b6Æ73Ò&ÖöFÂ×æVÂ#ãÆ'WGFöâ6Æ73Ò&ÖöFÂÖ6Æ÷6R"FFÖ6Æ÷6RÖÖöFÃì9sÂö'WGFöããÇ7â6Æ73Ò&W–V'&÷r#ääUr4Ä”TåCÂ÷7ããÆƒ#äFB&÷f–FW"6Æ–VçCÂöƒ#ãÆf÷&Ò–CÒ&6Æ–VçDf÷&Ò#ãÆÆ&VÃä6Æ–VçB÷&7F–6RF—7Æ’æÖSÆ–çWBæÖSÒ&æÖR"&WV—&VBÆ6V†öÆFW#Ò%&VF7FVB&V†f–÷&Â†VÇF‚&7F–6R#ãÂöÆ&VÃãÆÆ&VÃå7FFSÆ–çWBæÖSÒ'7FFR"&WV—&VBÆ6V†öÆFW#Ò$å’#ãÂöÆ&VÃãÆÆ&VÃå&–Ö'’6öçF7B&öÆSÆ–çWBæÖSÒ&6öçF7E&öÆR"Æ6V†öÆFW#Ò%&7F–6R÷væW"#ãÂöÆ&VÃãÆÆ&VÃä6öçF7BVÖ–ÃÆ–çWBæÖSÒ&VÖ–Â"G—SÒ&VÖ–Â"Æ6V†öÆFW#Ò&÷væW$W†×ÆRæ6öÒ#ãÂöÆ&VÃãÆF—b6Æ73Ò&&÷VæF'’Ö&÷‚6ö×7B#åW6R÷&væ—¦F–öâÖÆWfVÂ&VF7FVB–æf÷&ÖF–öâöæÇ’âæòF–VçBöÖVÖ&W"FFãÂöF—cãÆ'WGFöâ6Æ73Ò'&–Ö'’Ö'FâgVÆÂ#äFB6Æ–VçCÂö'WGFöããÂöf÷&ÓãÂöF—cãÂöF—cà £ÆF—b6Æ73Ò&GF÷&æW’ÖÖöFÂ"–CÒ&æ÷FTÖöFÂ"&–Ö†–FFVãÒ'G'VR#ãÆF—b6Æ73Ò&ÖöFÂÖ&6¶G&÷"FFÖ6Æ÷6RÖÖöFÃãÂöF—cãÆF—b6Æ73Ò&ÖöFÂ×æVÂ#ãÆ'WGFöâ6Æ73Ò&ÖöFÂÖ6Æ÷6R"FFÖ6Æ÷6RÖÖöFÃì9sÂö'WGFöããÇ7â6Æ73Ò&W–V'&÷r#ä4õTå4TÂÔôäÅ’äõDSÂ÷7ããÆƒ#äFBGF÷&æW’v÷&²æ÷FSÂöƒ#ãÆf÷&Ò–CÒ&æ÷FTf÷&Ò#ãÆÆ&VÃä66SÇ6VÆV7BæÖSÒ&66T–B"–CÒ&æ÷FT66U6VÆV7B#ãÂ÷6VÆV7CãÂöÆ&VÃãÆÆ&VÃäæ÷FSÇFW‡F&VæÖSÒ&&öG’"&÷w3Ò#r"&WV—&VBÆ6V†öÆFW#Ò%&VF7FVBÆVvÂ×v÷&¶fÆ÷ræ÷FRâFòæ÷BVçFW"„’–âF†—2–Æ÷Bâ#ãÂ÷FW‡F&VãÂöÆ&VÃãÆÆ&VÃä6FVv÷'“Ç6VÆV7BæÖSÒ&6FVv÷'’#ãÆ÷F–öãä—77VRæÇ—6—3Âö÷F–öããÆ÷F–öãäWf–FVæ6R&WVW7CÂö÷F–öããÆ÷F–öãä6Æ–VçB7G&FVw“Âö÷F–öããÆ÷F–öãäFVFÆ–æSÂö÷F–öããÆ÷F–öãäG&gB&W7öç6SÂö÷F–öããÂ÷6VÆV7CãÂöÆ&VÃãÆ'WGFöâ6Æ73Ò'&–Ö'’Ö'FâgVÆÂ#å6fR6÷Vç6VÂÖöæÇ’æ÷FSÂö'WGFöããÂöf÷&ÓãÂöF—cãÂöF—cà £ÆF—b6Æ73Ò&GF÷&æW’ÖÖöFÂ"–CÒ'FVÔÖöFÂ"&–Ö†–FFVãÒ'G'VR#ãÆF—b6Æ73Ò&ÖöFÂÖ&6¶G&÷"FFÖ6Æ÷6RÖÖöFÃãÂöF—cãÆF—b6Æ73Ò&ÖöFÂ×æVÂ#ãÆ'WGFöâ6Æ73Ò&ÖöFÂÖ6Æ÷6R"FFÖ6Æ÷6RÖÖöFÃì9sÂö'WGFöããÇ7â6Æ73Ò&W–V'&÷r#åDTÒ”åd•DD”ôãÂ÷7ããÆƒ#äFBf—&ÒÖVÖ&W#Âöƒ#ãÆf÷&Ò–CÒ'FVÔf÷&Ò#ãÆÆ&VÃäæÖSÆ–çWBæÖSÒ&æÖR"&WV—&VCãÂöÆ&VÃãÆÆ&VÃäVÖ–ÃÆ–çWBæÖSÒ&VÖ–Â"G—SÒ&VÖ–Â"&WV—&VCãÂöÆ&VÃãÆÆ&VÃå&öÆSÇ6VÆV7BæÖSÒ'&öÆR#ãÆ÷F–öãäGF÷&æW“Âö÷F–öããÆ÷F–öãå&ÆVvÃÂö÷F–öããÆ÷F–öãå&VBÖöæÇ“Âö÷F–öããÂ÷6VÆV7CãÂöÆ&VÃãÆ'WGFöâ6Æ73Ò'&–Ö'’Ö'FâgVÆÂ#ä7&VFR–çf—FF–öãÂö'WGFöããÂöf÷&ÓãÂöF—cãÂöF—cà £ÆF—b6Æ73Ò&GF÷&æW’ÖÖöFÂ"–CÒ&–çf—FTÖöFÂ"&–Ö†–FFVãÒ'G'VR#ãÆF—b6Æ73Ò&ÖöFÂÖ&6¶G&÷"FFÖ6Æ÷6RÖÖöFÃãÂöF—cãÆF—b6Æ73Ò&ÖöFÂ×æVÂ#ãÆ'WGFöâ6Æ73Ò&ÖöFÂÖ6Æ÷6R"FFÖ6Æ÷6RÖÖöFÃì9sÂö'WGFöããÇ7â6Æ73Ò&W–V'&÷r#ä44R”åd•DD”ôãÂ÷7ããÆƒ#ä–çf—FR&÷f–FW"÷"6÷Vç6VÃÂöƒ#ãÆf÷&Ò–CÒ&–çf—FTf÷&Ò#ãÆÆ&VÃä66SÇ6VÆV7BæÖSÒ&66T–B"–CÒ&–çf—FT66U6VÆV7B#ãÂ÷6VÆV7CãÂöÆ&VÃãÆÆ&VÃäVÖ–ÃÆ–çWBæÖSÒ&VÖ–Â"G—SÒ&VÖ–Â"&WV—&VCãÂöÆ&VÃãÆÆ&VÃä–çf—FR3Ç6VÆV7BæÖSÒ'&öÆR#ãÆ÷F–öâfÇVSÒ'&÷f–FW"#å&÷f–FW"6Æ–VçCÂö÷F–öããÆ÷F–öâfÇVSÒ&6÷Vç6VÂ#ä6òÖ6÷Vç6VÃÂö÷F–öããÆ÷F–öâfÇVSÒ'&Wf–WvW"#å&VBÖöæÇ’&Wf–WvW#Âö÷F–öããÂ÷6VÆV7CãÂöÆ&VÃãÆ'WGFöâ6Æ73Ò'&–Ö'’Ö'FâgVÆÂ#ä7&VFR–çf—FF–öãÂö'WGFöããÂöf÷&ÓãÂöF—cãÂöF—cà £ÆF—b6Æ73Ò&GF÷&æW’ÖÖöFÂ"–CÒ&66TG&vW""&–Ö†–FFVãÒ'G'VR#ãÆF—b6Æ73Ò&G&vW"Ö&6¶G&÷"FFÖ6Æ÷6RÖG&vW#ãÂöF—cãÆ6–FR6Æ73Ò&GF÷&æW’ÖG&vW"#ãÆ'WGFöâ6Æ73Ò&G&vW"Ö6Æ÷6R"FFÖ6Æ÷6RÖG&vW#ì9sÂö'WGFöããÆF—b–CÒ&66TG&vW$6öçFVçB#ãÂöF—cãÂö6–FSãÂöF—cà£ÆF—b6Æ73Ò'Fö7B"–CÒ&GF÷&æW•Fö7B"&öÆSÒ'7FGW2"&–ÖÆ—fSÒ'öÆ—FR#ãÂöF—cà £Ç67&—B7&3Ò&f—&V&6RÖ6Æ–VçBæ§2"FVfW#ãÂ÷67&—Cà£Ç67&—B7&3Ò&66RÖFFæ§2"FVfW#ãÂ÷67&—Cà£Ç67&—B7&3Ò&GF÷&æW’æ§2"FVfW#ãÂ÷67&—Cà£Âö&öG“à£Âö‡FÖÃà 
+<section class="m-section">
+  <div class="m-shell">
+    <div class="m-section-head"><div><span class="m-kicker">FAQ</span><h2>Built to organize the case, not replace counsel.</h2></div><p>AuditDefend structures the factual and evidence workflow. Legal strategy, legal conclusions and advice remain with counsel.</p></div>
+    <div class="m-faq">
+      <details open><summary>Does the provider pay again if the attorney starts the case?</summary><p>No. The current product model is one case fee based on claim volume, regardless of whether the provider or attorney originates the matter.</p></details>
+      <details><summary>Can I send the provider an intake link?</summary><p>The provider-intake flow is implemented. Automated email delivery and live invitation acceptance remain external activation items in the pilot.</p></details>
+      <details><summary>Are counsel notes visible to the provider?</summary><p>The data model separates counsel-only notes from the provider-visible case root. Live Firestore rule deployment still requires verification before production reliance.</p></details>
+      <details><summary>Can I see the product before onboarding?</summary><p>Yes. The sample workspace uses the redacted Anthem claim-review structure supplied for this pilot.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="m-footer"><div class="m-shell m-footer-grid"><div><a class="m-brand" href="/"><span class="m-mark">âš–</span><span>AuditDefend<small>Attorney audit-defense workflow</small></span></a><small>Non-production redacted pilot Â· Not legal advice Â· PHI ingestion remains disabled.</small></div><nav><a href="/">Home</a><a href="/provider">Providers</a><a href="/attorneys">Directory</a><a href="/attorney/demo">Sample workspace</a><a href="/auth.html">Sign in</a></nav></div></footer>
+</body>
+</html>
