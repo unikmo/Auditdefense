@@ -78,14 +78,21 @@
             <label>Response deadline<input name="deadline" type="date" required></label>
             <label>Current stage<select name="stage"><option>Audit received</option><option>Evidence gathering</option><option>Initial review received</option><option>Rebuttal preparation</option><option>Rebuttal reviewed</option><option>Appeal / escalation</option></select></label>
           </div>
-          <label>Primary issue families<textarea name="issues" rows="4" placeholder="Documentation support; signatures; treatment plans; provider/NPI enrollment on DOS"></textarea></label>
+          <div class="provider-issue-block"><span class="provider-field-label">Primary issue families</span><div class="provider-issue-grid">
+<label><input type="checkbox" name="issueCategory" value="Documentation support"><span>Documentation support</span></label>
+<label><input type="checkbox" name="issueCategory" value="Signatures / authentication"><span>Signatures / authentication</span></label>
+<label><input type="checkbox" name="issueCategory" value="Assessment / treatment plan"><span>Assessment / treatment plan</span></label>
+<label><input type="checkbox" name="issueCategory" value="Provider / NPI enrollment"><span>Provider / NPI enrollment</span></label>
+<label><input type="checkbox" name="issueCategory" value="Authorization / units"><span>Authorization / units</span></label>
+<label><input type="checkbox" name="issueCategory" value="Credentialing / network"><span>Credentialing / network</span></label>
+</div><small>Select categories only. Free-text clinical/patient details are intentionally not collected in this pilot.</small></div>
           <div class="provider-file-boundary"><strong>Documents</strong><span>File upload is intentionally disabled on the free/redacted pilot. Keep source files outside AuditDefend until secure evidence storage is approved.</span></div>
         </section>
 
         <section class="provider-step" data-step="3">
           <span class="eyebrow">STEP 4 OF 6</span>
           <h2>Your case plan</h2>
-          <p>Same case price whether the provider or attorney starts it. Counsel access is included.</p>
+          <p>Same case price whether the provider or attorney starts it. Counsel access is included. The tier is automatically determined by claim volume.</p>
           <div class="provider-plan-grid">
             <label class="provider-plan selected" data-plan-card="standard"><input type="radio" name="plan" value="standard" checked><span>Standard case</span><strong>$995</strong><small>Up to 100 claims · prepaid case license</small></label>
             <label class="provider-plan" data-plan-card="expanded"><input type="radio" name="plan" value="expanded"><span>Expanded case</span><strong>$1,995</strong><small>101–500 claims</small></label>
