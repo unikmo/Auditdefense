@@ -2,7 +2,8 @@
 const KEY='auditdefend-provider-pilot-v1';
 const $=id=>document.getElementById(id);
 const form=$('providerOnboardingForm');
-let step=0,authMode='signup',authReady=false,currentUser=null;\nconst attorneyOriginCaseId=new URLSearchParams(location.search).get('case')||null;
+let step=0,authMode='signup',authReady=false,currentUser=null;
+const attorneyOriginCaseId=new URLSearchParams(location.search).get('case')||null;
 const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(Number(n)||0);
 const slug=s=>(String(s||'provider').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,48)||'provider');
