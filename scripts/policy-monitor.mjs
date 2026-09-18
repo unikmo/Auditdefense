@@ -14,15 +14,15 @@ const observedAt = new Date().toISOString();
 
 function normalizeHtml(input) {
   return input
-    .replace(/<!--[sS]*?-->/g, ' ')
-    .replace(/<script[sS]*?</script>/gi, ' ')
-    .replace(/<style[sS]*?</style>/gi, ' ')
-    .replace(/<noscript[sS]*?</noscript>/gi, ' ')
-    .replace(/s(?:nonce|integrity|crossorigin|data-react[^=]*)=(?:"[^"]*"|'[^']*')/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+    .replace(/<noscript\b[\s\S]*?<\/noscript>/gi, ' ')
+    .replace(/\s(?:nonce|integrity|crossorigin|data-react[^=]*)=(?:"[^"]*"|'[^']*')/gi, '')
     .replace(/<[^>]+>/g, ' ')
     .replace(/&nbsp;/g, ' ')
     .replace(/&amp;/g, '&')
-    .replace(/s+/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
@@ -31,7 +31,7 @@ function hashBytes(bytes) {
 }
 
 function titleFromHtml(html) {
-  const m = html.match(/<title[^>]*>([sS]*?)</title>/i);
+  const m = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   return m ? normalizeHtml(m[1]).slice(0, 240) : null;
 }
 
@@ -46,7 +46,8 @@ async function observe(source) {
       },
       signal: AbortSignal.timeout(30000)
     });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    if (!response.ok) throw new Error(\`HTTP \${response.status}\`);
+
     const contentType = response.headers.get('content-type') || '';
     const bytes = Buffer.from(await response.arrayBuffer());
     const isText = /html|json|text|xml/.test(contentType);
@@ -55,6 +56,7 @@ async function observe(source) {
     const hash = hashBytes(normalized);
     const changed = Boolean(old?.hash && old.hash !== hash);
     const firstFingerprint = !old?.hash;
+
     return {
       id: source.id,
       title: source.title,
