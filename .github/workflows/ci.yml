@@ -27,15 +27,19 @@ jobs:
           node -e "JSON.parse(require('fs').readFileSync('firestore.indexes.json','utf8'))"
       - name: Assert redacted no-PHI pilot boundary
         run: |
-          grep -q "PHI ingestion remains disabled" public/index.html\n          grep -q "When a payer says you owe money" public/index.html\n          grep -q "Stop spending legal hours reconstructing the audit" public/attorney.html
-          grep -q "No PHI" public/attorney-workspace.html\n          grep -q "Unclaimed public-source profile" public/attorneys.html
+          grep -q "PHI ingestion remains disabled" public/index.html
+          grep -q "When a payer says you owe money" public/index.html
+          grep -q "Stop spending legal hours reconstructing the audit" public/attorney.html
+          grep -q "No PHI" public/attorney-workspace.html
+          grep -q "Unclaimed public-source profile" public/attorneys.html
           grep -q "Redacted/non-PHI only" public/provider-onboarding.html
           grep -Eq "containsPhi[[:space:]]*==[[:space:]]*false" firestore.rules
           grep -Eq "counselOnly[[:space:]]*==[[:space:]]*true" firestore.rules
           grep -q "attorneyUids" firestore.rules
           grep -q "providerOrganizations" firestore.rules
           grep -q "providerCases" firestore.rules
-          grep -q "providerInvites" firestore.rules\n          grep -q "attorneyDirectoryClaims" firestore.rules
+          grep -q "providerInvites" firestore.rules
+          grep -q "attorneyDirectoryClaims" firestore.rules
       - name: Assert private keys are not committed
         run: |
           ! git grep -n "BEGIN PRIVATE KEY" -- ':!*.md'
