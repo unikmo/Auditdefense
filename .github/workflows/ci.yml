@@ -31,7 +31,7 @@ jobs:
           grep -q "When a payer says you owe money" public/index.html
           grep -q "Stop spending legal hours reconstructing the audit" public/attorney.html
           grep -q "No PHI" public/attorney-workspace.html
-          grep -q "Unclaimed public-source profile" public/attorneys.html
+          grep -q "Unclaimed public-source profile" public/attorneys.js
           grep -q "Redacted/non-PHI only" public/provider-onboarding.html
           grep -Eq "containsPhi[[:space:]]*==[[:space:]]*false" firestore.rules
           grep -Eq "counselOnly[[:space:]]*==[[:space:]]*true" firestore.rules
