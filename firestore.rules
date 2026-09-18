@@ -15,6 +15,15 @@ service cloud.firestore {
     function isAttorneyOnCase(caseId){return signedIn()&&caseExists(caseId)&&attorneyCaseData(caseId).attorneyUids is list&&request.auth.uid in attorneyCaseData(caseId).attorneyUids;}
     function isProviderOnCase(caseId){return signedIn()&&caseExists(caseId)&&attorneyCaseData(caseId).providerUids is list&&request.auth.uid in attorneyCaseData(caseId).providerUids;}
     function isCaseParticipant(caseId){return isAttorneyOnCase(caseId)||isProviderOnCase(caseId);}
+    function providerOrgExists(orgId){return exists(/databases/$(database)/documents/providerOrganizations/$(orgId));}
+    function providerOrgData(orgId){return get(/databases/$(database)/documents/providerOrganizations/$(orgId)).data;}
+    function isProviderOrgMember(orgId){return signedIn()&&providerOrgExists(orgId)&&providerOrgData(orgId).memberUids is list&&request.auth.uid in providerOrgData(orgId).memberUids;}
+    function isProviderOrgOwner(orgId){return signedIn()&&providerOrgExists(orgId)&&providerOrgData(orgId).ownerUid==request.auth.uid;}
+    function validProviderCase(data){return data.redacted==true&&data.containsPhi==false&&data.organizationId is string&&data.createdByUid is string&&data.providerUids is list&&data.providerUids.size()>=1&&data.providerUids.size()<=30&&data.attorneyUids is list&&data.attorneyUids.size()<=20&&data.claims is int&&data.claims>=1&&data.claims<=5000;}
+    function providerCaseExists(caseId){return exists(/databases/$(database)/documents/providerCases/$(caseId));}
+    function providerCaseData(caseId){return get(/databases/$(database)/documents/providerCases/$(caseId)).data;}
+    function isProviderParticipant(caseId){return signedIn()&&providerCaseExists(caseId)&&providerCaseData(caseId).providerUids is list&&request.auth.uid in providerCaseData(caseId).providerUids;}
+    function isAttorneyParticipant(caseId){return signedIn()&&providerCaseExists(caseId)&&providerCaseData(caseId).attorneyUids is list&&request.auth.uid in providerCaseData(caseId).attorneyUids;}
 
     match /users/{uid}{allow read,create,update:if isOwner(uid);allow delete:if false;}
     match /organizations/{orgId}{
@@ -72,6 +81,36 @@ service cloud.firestore {
     // Invite records never grant case access by themselves.
     match /attorneyInvites/{inviteId}{
       allow create:if signedIn()&&request.resource.data.creatorUid==request.auth.uid&&request.resource.data.caseId is string&&isAttorneyOnCase(request.resource.data.caseId)&&request.resource.data.inviteeEmail is string&&request.resource.data.status=='Pending'&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow read:if signedIn()&&(resource.data.creatorUid==request.auth.uid||(request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail));
+      allow update:if signedIn()&&request.resource.data.creatorUid==resource.data.creatorUid&&request.resource.data.caseId==resource.data.caseId&&request.resource.data.inviteeEmail==resource.data.inviteeEmail&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false&&((resource.data.creatorUid==request.auth.uid&&request.resource.data.status in ['Pending','Cancelled'])||(request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail&&request.resource.data.status in ['Accepted','Declined']));
+      allow delete:if signedIn()&&resource.data.creatorUid==request.auth.uid;
+    }
+
+    // Provider onboarding and provider-created redacted cases.
+    match /providerProfiles/{uid}{
+      allow read:if isOwner(uid);
+      allow create,update:if isOwner(uid)&&request.resource.data.ownerUid==uid&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow delete:if isOwner(uid);
+    }
+
+    match /providerOrganizations/{orgId}{
+      allow create:if signedIn()&&request.resource.data.ownerUid==request.auth.uid&&request.resource.data.memberUids is list&&request.auth.uid in request.resource.data.memberUids&&request.resource.data.memberUids.size()<=50&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow read:if isProviderOrgMember(orgId);
+      allow update:if isProviderOrgOwner(orgId)&&request.resource.data.ownerUid==resource.data.ownerUid&&request.resource.data.memberUids is list&&request.resource.data.memberUids.size()<=50&&resource.data.ownerUid in request.resource.data.memberUids&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow delete:if isProviderOrgOwner(orgId);
+    }
+
+    match /providerCases/{caseId}{
+      allow create:if signedIn()&&validProviderCase(request.resource.data)&&request.resource.data.createdByUid==request.auth.uid&&request.auth.uid in request.resource.data.providerUids&&isProviderOrgMember(request.resource.data.organizationId);
+      allow read:if isProviderParticipant(caseId)||isAttorneyParticipant(caseId);
+      allow update:if isProviderParticipant(caseId)&&validProviderCase(request.resource.data)&&request.resource.data.createdByUid==resource.data.createdByUid&&request.resource.data.organizationId==resource.data.organizationId&&request.auth.uid in request.resource.data.providerUids&&((request.resource.data.providerUids==resource.data.providerUids&&request.resource.data.attorneyUids==resource.data.attorneyUids)||(resource.data.createdByUid==request.auth.uid||isProviderOrgOwner(resource.data.organizationId)));
+      allow delete:if signedIn()&&(resource.data.createdByUid==request.auth.uid||isProviderOrgOwner(resource.data.organizationId));
+    }
+
+    // Provider-created invitation records prepare collaboration but do not
+    // grant case access until membership is separately authorized.
+    match /providerInvites/{inviteId}{
+      allow create:if signedIn()&&request.resource.data.creatorUid==request.auth.uid&&request.resource.data.caseId is string&&isProviderParticipant(request.resource.data.caseId)&&request.resource.data.inviteeEmail is string&&request.resource.data.status=='Pending'&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
       allow read:if signedIn()&&(resource.data.creatorUid==request.auth.uid||(request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail));
       allow update:if signedIn()&&request.resource.data.creatorUid==resource.data.creatorUid&&request.resource.data.caseId==resource.data.caseId&&request.resource.data.inviteeEmail==resource.data.inviteeEmail&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false&&((resource.data.creatorUid==request.auth.uid&&request.resource.data.status in ['Pending','Cancelled'])||(request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail&&request.resource.data.status in ['Accepted','Declined']));
       allow delete:if signedIn()&&resource.data.creatorUid==request.auth.uid;

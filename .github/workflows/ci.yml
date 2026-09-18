@@ -29,9 +29,13 @@ jobs:
         run: |
           grep -q "PHI ingestion remains disabled" public/index.html
           grep -q "No PHI" public/attorney.html
+          grep -q "Redacted/non-PHI only" public/provider.html
           grep -Eq "containsPhi[[:space:]]*==[[:space:]]*false" firestore.rules
           grep -Eq "counselOnly[[:space:]]*==[[:space:]]*true" firestore.rules
           grep -q "attorneyUids" firestore.rules
+          grep -q "providerOrganizations" firestore.rules
+          grep -q "providerCases" firestore.rules
+          grep -q "providerInvites" firestore.rules
       - name: Assert private keys are not committed
         run: |
           ! git grep -n "BEGIN PRIVATE KEY" -- ':!*.md'
