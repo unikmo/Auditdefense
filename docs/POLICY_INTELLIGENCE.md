@@ -48,3 +48,15 @@ Only a verified mismatch should become POLICY_CONFLICT_CANDIDATE. A payer denial
 - Policy interpretation requires human review.
 - Counsel controls legal conclusions and challenge language.
 - No PHI is required for policy-source monitoring.
+
+## Rule attribution layer
+Current-source rule attribution is stored in `data/policy-rules.json` and exposed to the redacted demo as `public/policy-rules.json`.
+
+The first verified current-source rules cover:
+- NY Medicaid managed-care provider enrollment
+- Anthem NY documentation support
+- Anthem reimbursement-policy precedence
+- CMS Medicaid NCCI 2026 / archive availability
+- Anthem provider claim-payment dispute path
+
+The public Anthem sample contains year-only redacted DOS data. Therefore the engine intentionally returns `POLICY_VERSION_UNCERTAIN` for historical findings rather than pretending the current policy proves what governed a 2020–2024 DOS.

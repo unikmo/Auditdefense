@@ -206,6 +206,44 @@
         "appealStage"
       ],
       "priority": 1
+    },
+    {
+      "id": "ny-medicaid-managed-care-providers",
+      "authority": "New York State Department of Health",
+      "program": "NY Medicaid Managed Care",
+      "state": "NY",
+      "payer": "NY Medicaid Managed Care",
+      "category": "provider-enrollment",
+      "title": "NYSDOH Managed Care — Information for Health Care Providers",
+      "url": "https://healthweb-back.health.ny.gov/health_care/managed_care/providers/index.htm",
+      "cadence": "continuous",
+      "effectiveContext": "Current NYSDOH managed-care provider guidance; historical applicability must be validated for the DOS.",
+      "claimFields": [
+        "billingNpi",
+        "renderingNpi",
+        "dos",
+        "providerType",
+        "plan"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "anthem-ny-claims-disputes",
+      "authority": "Anthem Blue Cross and Blue Shield of New York",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "Anthem",
+      "category": "challenge-process",
+      "title": "Anthem NY Claims Submissions and Disputes",
+      "url": "https://providers.anthem.com/new-york-provider/claims/claims-submissions-and-disputes",
+      "cadence": "continuous",
+      "effectiveContext": "Current Anthem provider claim-payment dispute process; historical process timing must be validated separately.",
+      "claimFields": [
+        "claimStatus",
+        "appealStage",
+        "deadline"
+      ],
+      "priority": 2
     }
   ]
 }

@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "scope": "Initial current-source rule map for NY Medicaid + Anthem NY",
+  "generatedAt": "2026-09-19",
+  "notice": "These are source-attribution rules, not automated legal conclusions. Historical DOS applicability must be established from the version effective on the DOS.",
+  "rules": [
+    {
+      "id": "NY-MMC-PROVIDER-ENROLLMENT-CURRENT",
+      "title": "NY Medicaid managed-care provider enrollment requirement",
+      "authority": "New York State Department of Health",
+      "sourceId": "ny-medicaid-managed-care-providers",
+      "sourceUrl": "https://healthweb-back.health.ny.gov/health_care/managed_care/providers/index.htm",
+      "category": "provider-enrollment",
+      "issueFamilies": [
+        "NPI enrollment on DOS"
+      ],
+      "appliesTo": {
+        "state": "NY",
+        "program": "NY Medicaid Managed Care"
+      },
+      "currentSourceStatement": "NYSDOH states that providers joining a managed care network also have to enroll with the New York State Medicaid program.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_ARCHIVED_OR_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN"
+    },
+    {
+      "id": "ANTHEM-NY-DOCUMENTATION-SUPPORT-CURRENT",
+      "title": "Anthem NY billed-code documentation support",
+      "authority": "Anthem Blue Cross and Blue Shield of New York",
+      "sourceId": "anthem-ny-medicaid-reimbursement",
+      "sourceUrl": "https://providers.anthem.com/new-york-provider/claims/reimbursement-policies",
+      "category": "documentation",
+      "issueFamilies": [
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "state": "NY",
+        "payer": "Anthem"
+      },
+      "currentSourceStatement": "Anthem states that billed CPT, HCPCS and/or revenue codes should be fully supported in the medical record or office notes.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN"
+    },
+    {
+      "id": "ANTHEM-NY-POLICY-PRECEDENCE-CURRENT",
+      "title": "Anthem NY reimbursement-policy precedence",
+      "authority": "Anthem Blue Cross and Blue Shield of New York",
+      "sourceId": "anthem-ny-medicaid-reimbursement",
+      "sourceUrl": "https://providers.anthem.com/new-york-provider/claims/reimbursement-policies",
+      "category": "policy-precedence",
+      "issueFamilies": [
+        "Documentation support",
+        "NPI enrollment on DOS"
+      ],
+      "appliesTo": {
+        "state": "NY",
+        "payer": "Anthem"
+      },
+      "currentSourceStatement": "Anthem states that its reimbursement policies may be superseded by state, federal or CMS requirements.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_AND_CONTROLLING_AUTHORITY",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "HUMAN_REVIEW_REQUIRED"
+    },
+    {
+      "id": "CMS-MEDICAID-NCCI-2026",
+      "title": "CMS Medicaid NCCI Policy Manual — 2026",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "cms-medicaid-ncci-policy-manual",
+      "sourceUrl": "https://www.cms.gov/medicare/coding-billing/ncci-medicaid/medicaid-ncci-policy-manual",
+      "category": "coding",
+      "issueFamilies": [
+        "Coding / NCCI"
+      ],
+      "appliesTo": {
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "CMS states that the 2026 Medicaid NCCI Policy Manual is effective January 1, 2026 and that prior annual versions are archived.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "ARCHIVE_AVAILABLE_FOR_2020_THROUGH_2025",
+      "effectiveFrom": "2026-01-01",
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN"
+    },
+    {
+      "id": "ANTHEM-NY-CLAIM-DISPUTE-CURRENT",
+      "title": "Anthem NY provider claim-payment dispute path",
+      "authority": "Anthem Blue Cross and Blue Shield of New York",
+      "sourceId": "anthem-ny-claims-disputes",
+      "sourceUrl": "https://providers.anthem.com/new-york-provider/claims/claims-submissions-and-disputes",
+      "category": "challenge-process",
+      "issueFamilies": [
+        "Documentation support",
+        "NPI enrollment on DOS"
+      ],
+      "appliesTo": {
+        "state": "NY",
+        "payer": "Anthem"
+      },
+      "currentSourceStatement": "Anthem provides a provider payment dispute process for finalized claims when a provider disagrees with the outcome.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "CURRENT_PROCESS_ONLY_UNLESS_ARCHIVED_VERSION_CONFIRMED",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "CHALLENGE_PATH_AVAILABLE_CURRENTLY"
+    }
+  ]
+}
