@@ -70,14 +70,17 @@
       "title": "New York State Medicaid — Information for Providers",
       "url": "https://www.health.ny.gov/health_care/medicaid/providers/index.htm",
       "cadence": "continuous",
-      "effectiveContext": "State-level provider and enrollment policy entry point.",
+      "effectiveContext": "Official NYSDOH Medicaid program/provider policy entry point; monitor may use the NYSDOH healthweb-back mirror when the canonical host blocks automated retrieval.",
       "claimFields": [
         "billingNpi",
         "renderingNpi",
         "dos",
         "providerType"
       ],
-      "priority": 1
+      "priority": 1,
+      "fallbackUrls": [
+        "https://healthweb-back.health.ny.gov/health_care/medicaid/program/index.htm"
+      ]
     },
     {
       "id": "ny-medicaid-update-index",
@@ -89,7 +92,7 @@
       "title": "New York State Medicaid Update",
       "url": "https://www.health.ny.gov/health_care/medicaid/program/update/provider_directory.htm",
       "cadence": "monthly / as published",
-      "effectiveContext": "Official Medicaid Update index for policy and billing changes.",
+      "effectiveContext": "Official NYSDOH Medicaid Update publication; monitor may use the NYSDOH healthweb-back mirror when the canonical host blocks automated retrieval.",
       "claimFields": [
         "dos",
         "cpt",
@@ -97,7 +100,10 @@
         "providerType",
         "program"
       ],
-      "priority": 1
+      "priority": 1,
+      "fallbackUrls": [
+        "https://healthweb-back.health.ny.gov/health_care/medicaid/program/update/main.htm"
+      ]
     },
     {
       "id": "emedny-all-provider-manuals",

@@ -35,18 +35,36 @@ function titleFromHtml(html) {
   return m ? normalizeHtml(m[1]).slice(0, 240) : null;
 }
 
+async function fetchCandidate(url) {
+  const response = await fetch(url, {
+    redirect: 'follow',
+    headers: {
+      'user-agent': 'AuditDefend-PolicyMonitor/0.1 (+https://auditdefense.netlify.app)',
+      'accept': 'text/html,application/pdf,application/json,text/plain;q=0.8,*/*;q=0.5'
+    },
+    signal: AbortSignal.timeout(30000)
+  });
+  if (!response.ok) throw new Error('HTTP ' + response.status);
+  return response;
+}
+
 async function observe(source) {
   const old = previousById.get(source.id) || null;
+  const candidates = [source.url, ...(source.fallbackUrls || [])];
+  let response = null;
+  let observedUrl = null;
+  let lastError = null;
+  for (const candidate of candidates) {
+    try {
+      response = await fetchCandidate(candidate);
+      observedUrl = candidate;
+      break;
+    } catch (error) {
+      lastError = error;
+    }
+  }
   try {
-    const response = await fetch(source.url, {
-      redirect: 'follow',
-      headers: {
-        'user-agent': 'AuditDefend-PolicyMonitor/0.1 (+https://auditdefense.netlify.app)',
-        'accept': 'text/html,application/pdf,application/json,text/plain;q=0.8,*/*;q=0.5'
-      },
-      signal: AbortSignal.timeout(30000)
-    });
-    if (!response.ok) throw new Error('HTTP ' + response.status);
+    if (!response) throw lastError || new Error('No source URL could be retrieved');
 
     const contentType = response.headers.get('content-type') || '';
     const bytes = Buffer.from(await response.arrayBuffer());
@@ -62,6 +80,8 @@ async function observe(source) {
       title: source.title,
       authority: source.authority,
       url: source.url,
+      observedUrl,
+      usedFallback: observedUrl !== source.url,
       state: changed ? 'CHANGED_REVIEW_REQUIRED' : 'OBSERVED',
       httpStatus: response.status,
       contentType,
@@ -84,6 +104,8 @@ async function observe(source) {
       title: source.title,
       authority: source.authority,
       url: source.url,
+      observedUrl: null,
+      usedFallback: false,
       state: 'FETCH_ERROR',
       httpStatus: null,
       contentType: null,
@@ -98,7 +120,8 @@ async function observe(source) {
       firstFingerprint: false,
       lastChangedAt: old?.lastChangedAt || null,
       lastObservedAt: observedAt,
-      error: error instanceof Error ? error.message : String(error)
+      error: error instanceof Error ? error.message : String(error),
+      attemptedUrls: candidates
     };
   }
 }
