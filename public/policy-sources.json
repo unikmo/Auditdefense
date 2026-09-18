@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "scope": "NY Medicaid + CMS Medicaid + Anthem NY Medicaid initial policy-intelligence seed",
+  "generatedAt": "2026-09-19T00:00:00Z",
+  "sources": [
+    {
+      "id": "cms-medicaid-ncci-policy-manual",
+      "authority": "CMS",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "CMS / State Medicaid",
+      "category": "coding",
+      "title": "Medicaid NCCI Policy Manual",
+      "url": "https://www.cms.gov/medicare/coding-billing/ncci-medicaid/medicaid-ncci-policy-manual",
+      "cadence": "annual + archive",
+      "effectiveContext": "Current manual effective Jan. 1, 2026; prior versions archived by CMS.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cms-medicaid-ncci-edit-files",
+      "authority": "CMS",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "CMS / State Medicaid",
+      "category": "coding-edits",
+      "title": "Medicaid NCCI Edit Files",
+      "url": "https://www.cms.gov/medicare/coding-billing/ncci-medicaid/medicaid-ncci-edit-files",
+      "cadence": "quarterly",
+      "effectiveContext": "CMS publishes public NCCI edit files and change reports by quarter.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cms-medicaid-ncci-technical-guidance",
+      "authority": "CMS",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "CMS / State Medicaid",
+      "category": "technical-guidance",
+      "title": "Medicaid NCCI Technical Guidance Manual",
+      "url": "https://www.cms.gov/medicare/coding-billing/ncci-medicaid/medicaid-ncci-technical-guidance-manual",
+      "cadence": "annual",
+      "effectiveContext": "CMS technical guidance for state implementation of Medicaid NCCI.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ny-medicaid-provider-information",
+      "authority": "New York State Department of Health",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "NY Medicaid",
+      "category": "program-policy",
+      "title": "New York State Medicaid — Information for Providers",
+      "url": "https://www.health.ny.gov/health_care/medicaid/providers/index.htm",
+      "cadence": "continuous",
+      "effectiveContext": "State-level provider and enrollment policy entry point.",
+      "claimFields": [
+        "billingNpi",
+        "renderingNpi",
+        "dos",
+        "providerType"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ny-medicaid-update-index",
+      "authority": "New York State Department of Health",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "NY Medicaid",
+      "category": "policy-updates",
+      "title": "New York State Medicaid Update",
+      "url": "https://www.health.ny.gov/health_care/medicaid/program/update/provider_directory.htm",
+      "cadence": "monthly / as published",
+      "effectiveContext": "Official Medicaid Update index for policy and billing changes.",
+      "claimFields": [
+        "dos",
+        "cpt",
+        "hcpcs",
+        "providerType",
+        "program"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "emedny-all-provider-manuals",
+      "authority": "eMedNY / New York State",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "NY Medicaid",
+      "category": "provider-manuals",
+      "title": "eMedNY Information for All Providers",
+      "url": "https://www.emedny.org/providermanuals/allproviders/",
+      "cadence": "continuous + archive",
+      "effectiveContext": "General billing, documentation and policy manuals with archive links.",
+      "claimFields": [
+        "dos",
+        "providerType",
+        "billingNpi",
+        "renderingNpi",
+        "cpt",
+        "hcpcs"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "emedny-lmhp-manual",
+      "authority": "eMedNY / New York State",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "NY Medicaid",
+      "category": "behavioral-health-provider-manual",
+      "title": "eMedNY Licensed Mental Health Counselor / LMFT Manual",
+      "url": "https://www.emedny.org/ProviderManuals/LMHP/",
+      "cadence": "continuous + archive",
+      "effectiveContext": "Behavioral-health provider manual entry point for LMHC/LMFT.",
+      "claimFields": [
+        "dos",
+        "providerType",
+        "cpt",
+        "hcpcs"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "anthem-ny-medicaid-reimbursement",
+      "authority": "Anthem Blue Cross and Blue Shield of New York",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "Anthem",
+      "category": "reimbursement-policy",
+      "title": "Anthem NY Reimbursement Policies",
+      "url": "https://providers.anthem.com/new-york-provider/claims/reimbursement-policies",
+      "cadence": "continuous",
+      "effectiveContext": "Anthem states reimbursement policies may be revised and may be superseded by provider, state, federal or CMS requirements.",
+      "claimFields": [
+        "dos",
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "placeOfService",
+        "providerType"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "anthem-ny-medicaid-manuals",
+      "authority": "Anthem Blue Cross and Blue Shield of New York",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "Anthem",
+      "category": "provider-manual",
+      "title": "Anthem NY Provider Manuals, Policies & Guidelines",
+      "url": "https://providers.anthem.com/new-york-provider/resources/manuals-policies-guidelines",
+      "cadence": "continuous",
+      "effectiveContext": "Provider manuals and administrative policy entry point.",
+      "claimFields": [
+        "dos",
+        "providerType",
+        "billingNpi",
+        "renderingNpi",
+        "appealStage"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "anthem-ny-2026-medicaid-provider-manual",
+      "authority": "Anthem Blue Cross and Blue Shield of New York",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "Anthem",
+      "category": "provider-manual-pdf",
+      "title": "2026 Anthem NY Medicaid Provider Manual",
+      "url": "https://providers.anthem.com/docs/gpp/NY_ABC_CAID_ProviderManual.pdf?v=202411141955",
+      "cadence": "versioned PDF",
+      "effectiveContext": "Current provider manual located through Anthem's official provider site.",
+      "claimFields": [
+        "dos",
+        "providerType",
+        "billingNpi",
+        "renderingNpi",
+        "cpt",
+        "appealStage"
+      ],
+      "priority": 1
+    }
+  ]
+}

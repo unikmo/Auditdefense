@@ -1,0 +1,43 @@
+name: Policy intelligence monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: policy-intelligence-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Monitor authoritative policy sources
+        run: node scripts/policy-monitor.mjs
+      - name: Upload monitor run evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: policy-monitor-run
+          path: policy-monitor-run.json
+          retention-days: 30
+      - name: Commit new fingerprints or detected policy changes
+        run: |
+          if git diff --quiet -- public/policy-status.json; then
+            echo "No material source fingerprint change."
+            exit 0
+          fi
+          git config user.name "auditdefend-policy-monitor"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/policy-status.json
+          git commit -m "Update policy source fingerprints"
+          git push

@@ -154,6 +154,7 @@ function openClaim(data){
     <div class="drawer-section"><h3>Why it matters</h3><p class="drawer-copy">${primaryReason(data)}.</p>
       <div class="source-box">Real worksheet structure, redacted for the public demo. The source images are not published because they contain patient/member identifiers.</div>
     </div>
+    <div class="drawer-section"><h3>Policy intelligence</h3><div class="policy-drawer-status"><span class="policy-chip warning">POLICY BASIS UNVERIFIED</span><p class="drawer-copy">${data.issues.includes('NPI enrollment on DOS')?'Enrollment finding requires exact NY Medicaid / Anthem authority and policy version effective on this DOS.':'Documentation finding requires the exact payer/program rule and effective version.'}</p></div><button class="secondary-btn" data-view-target="policy">Open Policy Intelligence →</button></div>
     <div class="drawer-section"><h3>Next evidence to verify</h3><p class="drawer-copy">${data.rebuttal==='A'?'Preserve the supporting documentation and payer decision in the final case binder.':'Confirm the exact payer/program rule, documentation cited by the reviewer, and the provider enrollment effective date applicable to this date of service.'}</p><button class="primary-btn" data-toast="Review-state changes will be persisted after Firestore verification.">Mark for attorney review</button></div>`;
   const drawer=document.getElementById('claimDrawer');drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');
 }

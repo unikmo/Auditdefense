@@ -17,3 +17,6 @@ build/
 *.log
 .vscode/
 .idea/
+
+# Ephemeral policy monitor evidence (workflow artifact only)
+policy-monitor-run.json

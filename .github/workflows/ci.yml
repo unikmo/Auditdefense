@@ -25,6 +25,8 @@ jobs:
           node -e "JSON.parse(require('fs').readFileSync('firebase.json','utf8'))"
           node -e "JSON.parse(require('fs').readFileSync('firebase-project.json','utf8'))"
           node -e "JSON.parse(require('fs').readFileSync('firestore.indexes.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('data/policy-sources.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('public/policy-status.json','utf8'))"
       - name: Assert redacted no-PHI pilot boundary
         run: |
           grep -q "PHI ingestion remains disabled" public/index.html
@@ -40,6 +42,10 @@ jobs:
           grep -q "providerCases" firestore.rules
           grep -q "providerInvites" firestore.rules
           grep -q "attorneyDirectoryClaims" firestore.rules
+          grep -q "POLICY INTELLIGENCE" public/app.html
+          grep -q "CMS Medicaid" data/policy-sources.json
+          grep -q "17 \*/6 \* \* \*" .github/workflows/policy-monitor.yml
+          grep -q "POLICY BASIS UNVERIFIED" public/policy-intelligence.js
       - name: Assert private keys are not committed
         run: |
           ! git grep -n "BEGIN PRIVATE KEY" -- ':!*.md'
