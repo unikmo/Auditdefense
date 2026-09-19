@@ -34,9 +34,9 @@ This repository contains the approved **non-production interactive demo** and se
 - `firestore.rules` — deny-by-default; org data requires a server-provisioned `orgId` claim; demo records must be synthetic and owner-scoped.
 - `storage.rules` — deny-by-default; only owner-scoped synthetic demo PDF/CSV/JSON uploads are allowed, max 10 MB.
 - `functions/` — server-side Firebase Admin scaffold using application-default/runtime credentials. **No private key is stored in this repo.**
-- `public/firebase-client.js` — initialized with the verified Firebase Web App client configuration so the static Netlify preview can use Firebase. The Firebase browser API key is client-visible by design; the Firebase Admin service-account key is not included.
+- `public/firebase-client.js` — initialized with the verified Firebase Web App client configuration so the static Vercel preview can use Firebase. The Firebase browser API key is client-visible by design; the Firebase Admin service-account key is not included.
 - `public/auth.html` / `public/auth.js` — test-only email/password sign-up, sign-in, email-verification and password-reset verification surface.
-- `netlify.toml` — static preview publish directory and baseline response headers.
+- `vercel.json` — static preview routing and baseline response headers.
 
 ## Still requires external Firebase activation / verification
 
