@@ -1,13 +1,14 @@
 # AuditDefend build status
 
-Last updated: 2026-09-17
+Last updated: 2026-09-19
 
 ## Verified
 
 - GitHub repository is populated on `main`.
-- Netlify site `auditdefense` is connected to `main` and automatically deploys repository updates.
-- Latest verified Netlify deployment is READY and contains provider-onboarding head `b42aedfe5a82226767a162a4f71c44b691f6bb6d`.
-- Live demo URL: `https://auditdefense.netlify.app`.
+- Vercel project `auditdefense` is connected to `unikmo/Auditdefense` on `main` and automatically deploys repository updates.
+- Vercel production is READY; clean routes and nested provider/attorney aliases were verified at route-config commit `fe3cf16a09601604f3b9f4b3e0a114fb22719c37`.
+- Live demo URL: `https://auditdefense.vercel.app`.
+- The previous Netlify project is disabled (not deleted) and no longer serves the public deployment.
 - The dashboard is now based on the supplied 30-line Anthem payer-review worksheet rather than the older synthetic Aetna case.
 - Real worksheet outcomes are modeled: 8/30 initially supported, 22/30 initially unsupported (73% error rate by count), 3/30 supported after rebuttal, 27/30 unsupported after rebuttal, and 5 A→B reversals.
 - Sample financial calculation is separated from the case-wide demand: $3,469.64 sampled paid amount, $520.00 finally supported, $2,949.64 associated with finally unsupported lines, and $567,656.77 case-wide asserted overpayment.
@@ -30,7 +31,7 @@ Last updated: 2026-09-17
 - Firm/attorney onboarding, provider-client portfolio, multi-case dashboard, deadlines, counsel-only notes, team roles, invitations, cross-client reporting and case-plan pricing are implemented for the redacted pilot.
 - Attorney/provider case root access and counsel-only note separation are modeled separately in Firestore rules.
 - Provider Counsel Workspace links directly to the Attorney Workspace.
-- Netlify deployment of the attorney portal is verified READY; Firebase rule deployment remains a separate gate.
+- Vercel deployment of the attorney portal and nested workspace routes is verified READY; Firebase rule deployment remains a separate gate.
 
 ## Provider onboarding implemented
 
@@ -41,8 +42,8 @@ Last updated: 2026-09-17
 - Provider profile, organization, case and invitation Firestore client methods/rules are implemented.
 - Provider organization membership and provider-case participant changes are owner/creator controlled; invitations do not independently grant case access.
 - Provider onboarding is linked from the provider demo and auth surface.
-- Latest provider onboarding CI passed and Netlify deploy is READY at commit `b42aedfe5a82226767a162a4f71c44b691f6bb6d`.
-- Live provider route: `https://auditdefense.netlify.app/provider`.
+- Provider onboarding and its nested alias are verified on the Vercel production deployment.
+- Live provider route: `https://auditdefense.vercel.app/provider`.
 
 ## External activation still required / not yet verified
 
@@ -62,6 +63,6 @@ Last updated: 2026-09-17
 
 ## Deployment boundary
 
-The Netlify deployment is a public, non-production product demonstration using a redacted representation of a real audit worksheet. Source images containing member/patient identifiers are intentionally not published. Live Firestore persistence is not considered complete until the database, deployed rules and access-control smoke tests are verified.
+The Vercel deployment is a public, non-production product demonstration using a redacted representation of a real audit worksheet. Source images containing member/patient identifiers are intentionally not published. Live Firestore persistence is not considered complete until the database, deployed rules and access-control smoke tests are verified.
 
 Production/PHI deployment remains prohibited until the separate production authorization, security and legal gates are satisfied.
