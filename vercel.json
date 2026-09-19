@@ -2,17 +2,17 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/app", "destination": "/app.html" },
-    { "source": "/dashboard", "destination": "/app.html" },
-    { "source": "/provider", "destination": "/provider.html" },
-    { "source": "/provider/onboarding", "destination": "/provider-onboarding.html" },
-    { "source": "/provider-onboarding", "destination": "/provider-onboarding.html" },
-    { "source": "/attorney", "destination": "/attorney.html" },
-    { "source": "/law-firm", "destination": "/attorney.html" },
-    { "source": "/attorney/demo", "destination": "/attorney-workspace.html" },
-    { "source": "/attorney/workspace", "destination": "/attorney-workspace.html" },
-    { "source": "/attorneys", "destination": "/attorneys.html" },
-    { "source": "/attorney-directory", "destination": "/attorneys.html" }
+    { "source": "/app", "destination": "/app" },
+    { "source": "/dashboard", "destination": "/app" },
+    { "source": "/provider", "destination": "/provider" },
+    { "source": "/provider/onboarding", "destination": "/provider-onboarding" },
+    { "source": "/provider-onboarding", "destination": "/provider-onboarding" },
+    { "source": "/attorney", "destination": "/attorney" },
+    { "source": "/law-firm", "destination": "/attorney" },
+    { "source": "/attorney/demo", "destination": "/attorney-workspace" },
+    { "source": "/attorney/workspace", "destination": "/attorney-workspace" },
+    { "source": "/attorneys", "destination": "/attorneys" },
+    { "source": "/attorney-directory", "destination": "/attorneys" }
   ],
   "headers": [
     {
