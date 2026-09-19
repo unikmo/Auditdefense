@@ -1,11 +1,11 @@
 {
   "version": 1,
   "fingerprintVersion": 2,
-  "monitoringState": "ACTIVE_WITH_SOURCE_ERRORS",
+  "monitoringState": "ACTIVE",
   "schedule": "Daily via GitHub Actions",
-  "lastMonitorRun": "2026-09-19T05:51:25.597Z",
+  "lastMonitorRun": "2026-09-19T05:53:00.676Z",
   "sourceCount": 21,
-  "reviewRequiredCount": 1,
+  "reviewRequiredCount": 0,
   "sources": [
     {
       "id": "cms-medicaid-ncci-policy-manual",
@@ -29,7 +29,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -54,7 +54,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -79,7 +79,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -104,7 +104,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -129,7 +129,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-18T23:06:31.857Z",
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -145,7 +145,7 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Wed, 16 Sep 2026 10:47:39 GMT",
+      "lastModified": "Wed, 16 Sep 2026 11:24:19 GMT",
       "contentLength": 33613,
       "pageTitle": "Reimbursement policies | Anthem Blue Cross and Blue Shield of New York",
       "hash": "41af29e88b1ba6be09c78c3ae8bf020ac7a4aca4969c3489e5bd51bde5b65b31",
@@ -154,7 +154,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -170,7 +170,7 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Wed, 16 Sep 2026 08:43:04 GMT",
+      "lastModified": "Wed, 16 Sep 2026 14:51:51 GMT",
       "contentLength": 41229,
       "pageTitle": "Manuals, policies & guidelines | Anthem Blue Cross and Blue Shield of New York",
       "hash": "cc878ad40d68d17c88831d3ad1e133a4ef1b8c613f40d122e846efc539046bec",
@@ -179,7 +179,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -204,7 +204,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -229,7 +229,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -252,9 +252,9 @@
       "previousHash": null,
       "changed": false,
       "reviewRequired": false,
-      "firstFingerprint": true,
+      "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -271,15 +271,15 @@
       "contentType": "text/html;charset=utf-8",
       "etag": "\"24b0a-65bcb528a0495-gzip\"",
       "lastModified": "Sat, 19 Sep 2026 00:44:41 GMT",
-      "contentLength": 155606,
+      "contentLength": 155604,
       "pageTitle": "OfficeLink Updates Newsletter Archive | Aetna",
       "hash": "eb5023b3eb9d4d5372d6c20a7f280d7493071bd0de8bd544e70ab65227d8d164",
       "previousHash": null,
       "changed": false,
       "reviewRequired": false,
-      "firstFingerprint": true,
+      "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -296,15 +296,15 @@
       "contentType": "text/html; charset=utf-8",
       "etag": null,
       "lastModified": null,
-      "contentLength": 102430,
+      "contentLength": 102433,
       "pageTitle": "Provider Policies | Fidelis Care",
       "hash": "776b17ebb7fbb61bd118786872281fda2f264262a1be1fbf5a87c600735e3f12",
       "previousHash": null,
       "changed": false,
       "reviewRequired": false,
-      "firstFingerprint": true,
+      "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -321,15 +321,15 @@
       "contentType": "text/html; charset=utf-8",
       "etag": null,
       "lastModified": null,
-      "contentLength": 76989,
+      "contentLength": 76988,
       "pageTitle": "Molina Healthcare Billing and Reimbursement Policies",
       "hash": "3cd412f6ae12e597fc6ad6cd92ff23fdc3ebc8eebb95d3d1dcf80013de9465e6",
       "previousHash": null,
       "changed": false,
       "reviewRequired": false,
-      "firstFingerprint": true,
+      "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -352,9 +352,9 @@
       "previousHash": null,
       "changed": false,
       "reviewRequired": false,
-      "firstFingerprint": true,
+      "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -362,28 +362,25 @@
       "title": "New York Insurance Law § 3224-b",
       "authority": "New York State Senate / New York Insurance Law",
       "url": "https://www.nysenate.gov/legislation/laws/ISC/3224-B",
-      "observedUrl": null,
-      "usedFallback": false,
+      "observedUrl": "https://www.dfs.ny.gov/consumers/health_insurance/rights_responsibilities",
+      "usedFallback": true,
       "fingerprintVersion": 2,
-      "fingerprintMode": null,
-      "state": "FETCH_ERROR",
-      "httpStatus": null,
-      "contentType": null,
+      "fingerprintMode": "semantic-html-title-headings-links",
+      "state": "OBSERVED",
+      "httpStatus": 200,
+      "contentType": "text/html; charset=utf-8",
       "etag": null,
-      "lastModified": null,
-      "contentLength": null,
-      "pageTitle": null,
-      "hash": null,
+      "lastModified": "Sat, 19 Sep 2026 05:09:34 GMT",
+      "contentLength": 114481,
+      "pageTitle": "Health Insurance Consumer and Provider Rights and Responsibilities | Department of Financial Services",
+      "hash": "6b5c22befcf72e6c7ff72137a3d5bcc6f09e6835cf937a07896a9f4be35450ec",
       "previousHash": null,
       "changed": false,
-      "reviewRequired": true,
-      "firstFingerprint": false,
+      "reviewRequired": false,
+      "firstFingerprint": true,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
-      "error": "HTTP 403",
-      "attemptedUrls": [
-        "https://www.nysenate.gov/legislation/laws/ISC/3224-B"
-      ]
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
+      "error": null
     },
     {
       "id": "ny-mmc-standard-clauses",
@@ -405,9 +402,9 @@
       "previousHash": null,
       "changed": false,
       "reviewRequired": false,
-      "firstFingerprint": true,
+      "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -432,7 +429,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -457,7 +454,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-18T23:06:31.857Z",
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -473,7 +470,7 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Wed, 16 Sep 2026 03:24:14 GMT",
+      "lastModified": "Wed, 16 Sep 2026 06:43:36 GMT",
       "contentLength": 34619,
       "pageTitle": "Claims submissions and disputes | Anthem Blue Cross and Blue Shield of New York",
       "hash": "d1227ae951481be87a9bb952a1acda94e6a4f6ba2404ba590fc8737c9387161e",
@@ -482,7 +479,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -505,9 +502,9 @@
       "previousHash": null,
       "changed": false,
       "reviewRequired": false,
-      "firstFingerprint": true,
+      "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     },
     {
@@ -530,9 +527,9 @@
       "previousHash": null,
       "changed": false,
       "reviewRequired": false,
-      "firstFingerprint": true,
+      "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-19T05:51:25.597Z",
+      "lastObservedAt": "2026-09-19T05:53:00.676Z",
       "error": null
     }
   ]
