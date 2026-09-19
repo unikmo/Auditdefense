@@ -396,14 +396,17 @@
       "title": "New York Insurance Law § 3224-b",
       "url": "https://www.nysenate.gov/legislation/laws/ISC/3224-B",
       "cadence": "legislative change",
-      "effectiveContext": "Statutory overpayment notice, challenge and ordinary 24-month recovery rules with exceptions.",
+      "effectiveContext": "Statutory overpayment notice, challenge and ordinary 24-month recovery rules with exceptions. Monitor may use NYS DFS official provider-rights guidance when NYSenate blocks automated retrieval.",
       "claimFields": [
         "paymentReceivedDate",
         "recoveryInitiatedDate",
         "noticeDate",
         "program"
       ],
-      "priority": 1
+      "priority": 1,
+      "fallbackUrls": [
+        "https://www.dfs.ny.gov/consumers/health_insurance/rights_responsibilities"
+      ]
     },
     {
       "id": "ny-mmc-standard-clauses",
