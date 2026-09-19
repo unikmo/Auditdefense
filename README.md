@@ -12,6 +12,8 @@ This repository contains the approved **non-production interactive demo** and se
 - Gap / issue queue
 - Provider & network chronology
 - Financial exposure view
+- Seven-family audit issue taxonomy
+- Verified historical court-reference library with official opinion links and non-prediction guardrails
 - Counsel workspace
 - Case binder preview
 - Quality & prevention view

@@ -63,6 +63,7 @@
     <span class="pill warning" id="policyMonitorState">Daily policy monitor</span>
   </div>
   <div class="policy-kpis">
+    <div class="stat-card blue"><strong id="issueFamilyCount">7</strong><span>Approved issue families</span><small>Separate, source-linked review tracks</small></div>
     <div class="stat-card blue"><strong id="policySourceCount">21</strong><span>Authoritative sources</span><small>Government + major payer libraries</small></div>
     <div class="stat-card amber"><strong id="policyChangeCount">0</strong><span>Source alerts</span><small>Changed or unreachable sources</small></div>
     <div class="stat-card blue"><strong id="upcomingPolicyCount">3</strong><span>Upcoming changes</span><small>Verified future effective dates</small></div>
@@ -71,6 +72,10 @@
   </div>
 
   <section class="card policy-chain-card"><h3>Claim-to-policy chain</h3><div class="policy-chain"><span>Claim</span><b>→</b><span>DOS</span><b>→</b><span>Payer / program</span><b>→</b><span>Policy version</span><b>→</b><span>Payer finding</span><b>→</b><span>Evidence</span><b>→</b><span>Challenge status</span></div><p class="card-copy">A payer finding does not become a policy challenge until the applicable rule and effective version are established. A policy-level challenge cannot be promoted without an authoritative citation.</p></section>
+
+  <section class="card"><div class="section-heading"><div><h3>Seven approved review issues</h3><p>Each issue stays in its own evidence and rule track so one gap does not silently become a conclusion about the entire claim.</p></div><span class="pill info">Structured review taxonomy</span></div><div id="issueFamilyGrid" class="issue-family-grid"></div></section>
+
+  <section class="card reference-system-card"><div class="section-heading"><div><h3>Verified court reference system</h3><p>Official decisions show how courts addressed similar legal and procedural questions in the past. They do not predict how a court will decide this case.</p></div><span id="referenceSystemState" class="policy-monitor-state">Loading verified references…</span></div><div class="reference-boundary"><b>Research boundary</b><span>No win rates, probability scores, “likely outcome” labels, or automated legal conclusions. Counsel must evaluate jurisdiction, posture, facts, later history, and current law.</span></div><div class="reference-filters"><label>Issue<select id="referenceIssueFilter"><option>Loading…</option></select></label><label>Jurisdiction<select id="referenceJurisdictionFilter"><option>Loading…</option></select></label><label>Search<input id="referenceSearch" type="search" placeholder="Case, court, holding or issue"></label><span id="referenceResultCount">Loading references…</span></div><div id="referenceCaseList" class="reference-case-list"></div></section>
 
   <section class="card"><div class="section-heading"><div><h3>Upcoming policy changes</h3><p>Future-dated changes are surfaced before they take effect so clients can adapt billing and documentation workflows in advance.</p></div><span class="pill info">Verified announcements only</span></div><div id="upcomingPolicyChanges" class="change-list"></div></section>
 
@@ -98,5 +103,5 @@
 <footer class="footer"><span>© 2026 AuditDefend. Non-production redacted real-case simulation.</span><span>Human review required · Not legal advice · PHI ingestion remains disabled</span></footer>
 </main></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div><div class="drawer" id="claimDrawer" aria-hidden="true"><div class="drawer-overlay" data-close-drawer></div><aside><button class="drawer-close" data-close-drawer>×</button><span class="eyebrow">CLAIM DEFENSE FILE</span><h2 id="drawerTitle">Claim</h2><div id="drawerContent"></div></aside></div>
-<script src="firebase-client.js" defer></script><script src="case-data.js" defer></script><script src="policy-engine.js" defer></script><script src="recovery-engine.js" defer></script><script src="app.js" defer></script><script src="policy-intelligence.js" defer></script>
+<script src="firebase-client.js" defer></script><script src="case-data.js" defer></script><script src="policy-engine.js" defer></script><script src="recovery-engine.js" defer></script><script src="reference-engine.js" defer></script><script src="app.js" defer></script><script src="policy-intelligence.js" defer></script><script src="reference-system.js" defer></script>
 </body></html>

@@ -22,6 +22,32 @@ A challenge packet must include:
 
 Counsel must still read the authoritative source before using challenge language.
 
+## Seven-issue review taxonomy
+The approved review taxonomy is versioned in `data/issue-families.json` and keeps these findings separate:
+
+1. Documentation support
+2. Signatures / authentication
+3. Assessment / treatment plan
+4. Provider / NPI enrollment
+5. Authorization / units
+6. Credentialing / network
+7. Coding / NCCI
+
+Each family defines a review question, evidence examples, and a boundary statement. A flag in one family is not treated as proof that the entire claim is unsupported.
+
+## Verified court reference system
+Historical decisions are stored in `data/reference-cases.json` as a separate research layer from payer-policy rules. Every record requires:
+
+- case name and citation
+- court, jurisdiction, decision date, and precedential status
+- procedural posture and disposition
+- a concise holding summary and material facts
+- issue-family mapping
+- relevance and limitations
+- an official source URL, locator, publisher, and verification date
+
+Reference results are labeled `HISTORICAL_REFERENCE`. The engine does not calculate win rates, scores, confidence, likely outcomes, or predictions. A case is shown because its recorded issues match the user's research filter—not because the system predicts the same result. Counsel must check later history and current law before relying on any reference.
+
 ## Monitoring
 The policy monitor runs daily through GitHub Actions. It fingerprints authoritative source pages/PDFs, detects material source changes, preserves prior/current hashes and creates run evidence.
 
@@ -84,4 +110,5 @@ The monitored universe now includes government and major payer policy libraries,
 - Historical applicability must be based on the version effective on the DOS.
 - Policy interpretation and challenge language require human review.
 - Counsel controls legal conclusions.
+- Court decisions are historical research references, not outcome predictions.
 - No PHI is required for public-source policy monitoring.

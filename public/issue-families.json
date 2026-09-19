@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-19",
+  "issueFamilies": [
+    {
+      "id": "documentation-support",
+      "label": "Documentation support",
+      "reviewQuestion": "Does the contemporaneous record support the billed service, duration, units, and payer-specific requirements?",
+      "evidenceExamples": ["Service note", "Progress report", "Billing-to-record crosswalk"],
+      "boundary": "A missing item is a review flag, not an automatic repayment conclusion."
+    },
+    {
+      "id": "signatures-authentication",
+      "label": "Signatures / authentication",
+      "reviewQuestion": "Were required signatures, credentials, attestations, and dates present under the applicable rule version?",
+      "evidenceExamples": ["Signed note", "Electronic signature audit trail", "Late-entry policy"],
+      "boundary": "The system identifies authentication evidence and rule gaps; it does not decide legal sufficiency."
+    },
+    {
+      "id": "assessment-treatment-plan",
+      "label": "Assessment / treatment plan",
+      "reviewQuestion": "Did the assessment and active treatment plan cover the relevant service period and billed care?",
+      "evidenceExamples": ["Initial assessment", "Treatment plan", "Plan update chronology"],
+      "boundary": "Clinical and legal judgment remain with qualified reviewers."
+    },
+    {
+      "id": "provider-npi-enrollment",
+      "label": "Provider / NPI enrollment",
+      "reviewQuestion": "Was each billing and rendering provider enrolled for the payer, program, location, and exact date of service?",
+      "evidenceExamples": ["Enrollment effective-date record", "Roster", "Billing/rendering NPI crosswalk"],
+      "boundary": "Practice-level enrollment is not substituted for provider-and-date-specific evidence."
+    },
+    {
+      "id": "authorization-units",
+      "label": "Authorization / units",
+      "reviewQuestion": "Did the authorization cover the service, provider, dates, and units actually billed?",
+      "evidenceExamples": ["Authorization notice", "Unit ledger", "Extension or modification record"],
+      "boundary": "Authorization mismatches are surfaced for review, not treated as final liability."
+    },
+    {
+      "id": "credentialing-network",
+      "label": "Credentialing / network",
+      "reviewQuestion": "What credentialing and network status applied to the provider and service location on the date of service?",
+      "evidenceExamples": ["Executed agreement", "Credentialing approval", "Network roster and effective date"],
+      "boundary": "Enrollment, credentialing, contracting, and network participation remain separate findings."
+    },
+    {
+      "id": "coding-ncci",
+      "label": "Coding / NCCI",
+      "reviewQuestion": "Do the codes, modifiers, units, and code combinations conform to the applicable coding authority and policy version?",
+      "evidenceExamples": ["Claim detail", "Code-set version", "NCCI edit or payer coding policy"],
+      "boundary": "Coding flags require source-linked human review and are not automated fraud findings."
+    }
+  ]
+}

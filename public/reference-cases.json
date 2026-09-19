@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-19",
+  "purpose": "Verified historical research references; not legal advice and not a court-outcome prediction.",
+  "cases": [
+    {
+      "id": "spinedex-v-united-2014",
+      "caseName": "Spinedex Physical Therapy USA Inc. v. United Healthcare of Arizona, Inc.",
+      "citation": "770 F.3d 1282 (9th Cir. 2014)",
+      "court": "U.S. Court of Appeals for the Ninth Circuit",
+      "jurisdiction": "Federal — Ninth Circuit",
+      "decisionDate": "2014-11-05",
+      "precedentialStatus": "Published — binding within the Ninth Circuit on the issues decided",
+      "proceduralPosture": "Appeal from summary judgment in an ERISA benefits action brought by a healthcare provider as assignee and would-be assignee.",
+      "disposition": "Reversed in part, affirmed in part, vacated in part, and remanded.",
+      "holdingSummary": "The court held that the provider had Article III standing as assignee to pursue assigned benefit-payment claims, while also holding that the assignment did not transfer fiduciary-duty claims and that one plan's anti-assignment clause barred assignment.",
+      "materialFacts": "A physical therapy provider sought payment of denied ERISA benefit claims assigned by patients. The plans and assignment language varied.",
+      "relatedIssueIds": ["credentialing-network"],
+      "relevance": "Useful when reviewing provider standing, assignment language, plan-specific anti-assignment provisions, and exhaustion in reimbursement disputes.",
+      "limitations": "This was an ERISA denied-benefits case, not a ruling on Medicaid clawbacks, documentation sufficiency, or the merits of a particular overpayment demand. Outcomes depended on plan and assignment language.",
+      "source": {
+        "publisher": "U.S. Court of Appeals for the Ninth Circuit",
+        "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2014/11/05/12-17604.pdf",
+        "locator": "Court-staff summary at pp. 4–5; opinion discussion begins at p. 6",
+        "verifiedOn": "2026-09-19"
+      }
+    },
+    {
+      "id": "wit-v-ubh-2023",
+      "caseName": "Wit v. United Behavioral Health",
+      "citation": "79 F.4th 1068 (9th Cir. 2023)",
+      "court": "U.S. Court of Appeals for the Ninth Circuit",
+      "jurisdiction": "Federal — Ninth Circuit",
+      "decisionDate": "2023-08-22",
+      "precedentialStatus": "Published — binding within the Ninth Circuit on the issues decided",
+      "proceduralPosture": "Appeal after a bench-trial judgment and class certification in ERISA fiduciary-duty and denial-of-benefits litigation.",
+      "disposition": "Affirmed in part, reversed in part, and remanded.",
+      "holdingSummary": "The court upheld standing and fiduciary-duty class certification, but reversed denial-of-benefits class certification and the denial-of-benefits judgment; it also remanded an exhaustion issue affecting the fiduciary-duty claim.",
+      "materialFacts": "Plan beneficiaries challenged behavioral-health coverage guidelines used across multiple ERISA plans, alleging inconsistency with plan terms and certain state-mandated criteria.",
+      "relatedIssueIds": ["documentation-support", "assessment-treatment-plan"],
+      "relevance": "Useful for understanding how plan terms, internal clinical guidelines, class scope, and exhaustion can shape challenges to behavioral-health coverage decisions.",
+      "limitations": "This was a benefits-denial class action, not a provider reimbursement clawback decision. The appellate result was mixed and does not establish that any current payer guideline or audit finding is invalid.",
+      "source": {
+        "publisher": "U.S. Court of Appeals for the Ninth Circuit",
+        "url": "https://cdn.ca9.uscourts.gov/datastore/opinions/2023/08/22/20-17363.pdf",
+        "locator": "Court-staff summary at pp. 3–5",
+        "verifiedOn": "2026-09-19"
+      }
+    }
+  ]
+}
