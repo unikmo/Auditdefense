@@ -1,62 +1,87 @@
 # AuditDefend Policy Intelligence Engine
 
 ## Purpose
-Policy Intelligence ties each payer finding to the authority that actually applied on the date of service (DOS). It is designed to detect a potential policy-level challenge before a payer finding is treated as final.
+Policy Intelligence ties every payer finding to the authority that actually applied on the date of service (DOS). It is designed to detect a potential policy-level challenge before a payer finding is treated as final.
 
-## Initial source universe
-The first implementation monitors:
-- CMS Medicaid NCCI Policy Manual
-- CMS Medicaid NCCI Edit Files
-- CMS Medicaid NCCI Technical Guidance Manual
-- New York State Medicaid provider information
-- New York State Medicaid Update
-- eMedNY information for all providers
-- eMedNY behavioral-health provider manual entry point
-- Anthem New York reimbursement policies
-- Anthem New York manuals/policies/guidelines
-- 2026 Anthem New York Medicaid Provider Manual
+## Challenge citation contract
+Every policy-level challenge must be source-linked.
+
+A challenge packet must include:
+- authoritative source title
+- direct source URL
+- effective-version status
+- exact section/page locator
+- a short orientation excerpt
+- a deep link to the highlighted HTML passage where supported
+- a PDF page link where the policy is published as a PDF
+
+`POLICY_CONFLICT_CANDIDATE` is blocked unless:
+1. the policy mismatch has been verified,
+2. the applicable policy version has been established, and
+3. at least one authoritative citation is attached.
+
+Counsel must still read the authoritative source before using challenge language.
 
 ## Monitoring
-A GitHub Actions workflow runs every six hours. It fetches each authoritative public source, normalizes HTML where applicable, creates a SHA-256 fingerprint and compares it to the prior observed version.
+The policy monitor runs daily through GitHub Actions. It fingerprints authoritative source pages/PDFs, detects material source changes, preserves prior/current hashes and creates run evidence.
 
-A source change produces:
-- CHANGED_REVIEW_REQUIRED
-- previous and current source hashes
-- last changed timestamp
-- source URL and authority
-- a 30-day workflow artifact with run evidence
+Source changes do **not** automatically change claim conclusions. They enter human policy review first.
 
-The monitor does **not** automatically make a legal conclusion from a change.
+## Policy-change intelligence
+Verified future-dated announcements are stored separately from raw source-change alerts.
 
-## Claim-to-policy chain
-Each policy analysis should resolve:
-claim → DOS → payer/program → policy source → effective version → payer finding → evidence → policy-match status
+The client-facing change record includes:
+- payer
+- publication/announcement context
+- effective date
+- change summary
+- likely operational impact
+- authoritative announcement link
+- short source excerpt
+
+The initial verified upcoming-change examples include:
+- Fidelis Care 30-Day Readmission Payment Policy — effective October 1, 2026
+- Aetna Claim and Code Review Program edits — beginning December 1, 2026
+- Aetna maternity coding/reimbursement restructuring — effective January 1, 2027
+
+## Recovery-rights engine
+Recovery timing is evaluated separately from the underlying reimbursement policy.
+
+The first NY rules include:
+- ordinary NY health-plan recovery: 24 months from original payment received, subject to statutory exceptions
+- NY Medicaid Managed Care recovery: six years from payment received, with 30-day written notice requirements
+
+Required dates:
+- payment received date
+- recovery initiated date
+- notice date where available
 
 Required statuses:
-- POLICY_MATCHED
-- POLICY_BASIS_UNVERIFIED
-- POLICY_VERSION_UNCERTAIN
-- POLICY_CONFLICT_CANDIDATE
-- SUPERSEDED_POLICY_CANDIDATE
+- WITHIN_CONFIGURED_WINDOW
+- POTENTIALLY_OUTSIDE_WINDOW
+- EXCEPTION_MAY_APPLY
+- NOTICE_PERIOD_SHORT
+- INSUFFICIENT_DATES
 - HUMAN_REVIEW_REQUIRED
 
-Only a verified mismatch should become POLICY_CONFLICT_CANDIDATE. A payer denial by itself is not evidence that the payer violated its own policy.
+## Source universe
+The monitored universe now includes government and major payer policy libraries, including:
+- CMS Medicaid NCCI
+- NY Medicaid / NYSDOH / eMedNY
+- Anthem New York
+- UnitedHealthcare Community Plan and Commercial
+- Aetna provider policy-change announcements
+- Fidelis Care / Centene
+- Humana
+- Molina New York Medicaid
+- EmblemHealth
+- New York Insurance Law § 3224-b
+- NYSDOH managed-care standard clauses
 
 ## Safety / provenance
-- The engine stores source metadata and fingerprints, not copied policy libraries.
+- The system stores source metadata, fingerprints, locators and short excerpts, not wholesale copies of payer policy libraries.
 - Public pilot claim identifiers remain redacted.
-- Policy interpretation requires human review.
-- Counsel controls legal conclusions and challenge language.
-- No PHI is required for policy-source monitoring.
-
-## Rule attribution layer
-Current-source rule attribution is stored in `data/policy-rules.json` and exposed to the redacted demo as `public/policy-rules.json`.
-
-The first verified current-source rules cover:
-- NY Medicaid managed-care provider enrollment
-- Anthem NY documentation support
-- Anthem reimbursement-policy precedence
-- CMS Medicaid NCCI 2026 / archive availability
-- Anthem provider claim-payment dispute path
-
-The public Anthem sample contains year-only redacted DOS data. Therefore the engine intentionally returns `POLICY_VERSION_UNCERTAIN` for historical findings rather than pretending the current policy proves what governed a 2020–2024 DOS.
+- Historical applicability must be based on the version effective on the DOS.
+- Policy interpretation and challenge language require human review.
+- Counsel controls legal conclusions.
+- No PHI is required for public-source policy monitoring.

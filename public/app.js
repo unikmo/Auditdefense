@@ -132,6 +132,19 @@ function showView(view){
 
 function toast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.remove('show'),3200)}
 
+function policyEvidenceForClaim(data){
+  const result=window.AuditDefendPolicyState?.evaluations?.find(x=>x.claimId===data.id);
+  if(!result){
+    return '<span class="policy-chip warning">POLICY BASIS LOADING / UNVERIFIED</span><p class="drawer-copy">Open Policy Intelligence to review the exact payer/program authority and effective version.</p>';
+  }
+  const citations=result.citations||[];
+  const citationHtml=citations.slice(0,3).map(c=>{
+    const href=c.deepLink||c.sourceUrl;
+    return '<div class="policy-citation-mini"><div><b>'+String(c.sourceTitle||'Policy source')+'</b><small>'+String(c.locator||'Source')+'</small><q>'+String(c.excerpt||'')+'</q></div><a class="action-link" href="'+href+'" target="_blank" rel="noopener noreferrer">'+(c.kind==='pdf-page'?'Open PDF page':'Open policy')+' ↗</a></div>';
+  }).join('');
+  return '<span class="policy-chip '+(result.status==='POLICY_CONFLICT_CANDIDATE'?'danger':'warning')+'">'+result.status.replaceAll('_',' ')+'</span><p class="drawer-copy">'+result.reason+'</p>'+citationHtml;
+}
+
 function openClaim(data){
   if(!data) return;
   document.getElementById('drawerTitle').textContent=`${data.id} · ${data.year}`;
@@ -154,7 +167,7 @@ function openClaim(data){
     <div class="drawer-section"><h3>Why it matters</h3><p class="drawer-copy">${primaryReason(data)}.</p>
       <div class="source-box">Real worksheet structure, redacted for the public demo. The source images are not published because they contain patient/member identifiers.</div>
     </div>
-    <div class="drawer-section"><h3>Policy intelligence</h3><div class="policy-drawer-status"><span class="policy-chip warning">POLICY BASIS UNVERIFIED</span><p class="drawer-copy">${data.issues.includes('NPI enrollment on DOS')?'Enrollment finding requires exact NY Medicaid / Anthem authority and policy version effective on this DOS.':'Documentation finding requires the exact payer/program rule and effective version.'}</p></div><button class="secondary-btn" data-view-target="policy">Open Policy Intelligence →</button></div>
+    <div class="drawer-section"><h3>Policy intelligence</h3><div class="policy-drawer-status">${policyEvidenceForClaim(data)}</div><button class="secondary-btn" data-view-target="policy">Open Policy Intelligence →</button></div>
     <div class="drawer-section"><h3>Next evidence to verify</h3><p class="drawer-copy">${data.rebuttal==='A'?'Preserve the supporting documentation and payer decision in the final case binder.':'Confirm the exact payer/program rule, documentation cited by the reviewer, and the provider enrollment effective date applicable to this date of service.'}</p><button class="primary-btn" data-toast="Review-state changes will be persisted after Firestore verification.">Mark for attorney review</button></div>`;
   const drawer=document.getElementById('claimDrawer');drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');
 }

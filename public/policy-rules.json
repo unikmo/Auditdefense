@@ -23,7 +23,15 @@
       "historicalApplicability": "REQUIRES_ARCHIVED_OR_DOS_EFFECTIVE_VERSION",
       "effectiveFrom": null,
       "effectiveTo": null,
-      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN"
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "NYSDOH — Information for Health Care Providers",
+        "sourceUrl": "https://www.health.ny.gov/health_care/managed_care/providers/index.htm",
+        "deepLink": "https://www.health.ny.gov/health_care/managed_care/providers/index.htm#:~:text=Providers%20will%20also%20have%20to%20enroll%20with%20the%20New%20York%20State%20Medicaid%20program",
+        "locator": "Joining an MCO Network",
+        "excerpt": "Providers will also have to enroll with the New York State Medicaid program."
+      }
     },
     {
       "id": "ANTHEM-NY-DOCUMENTATION-SUPPORT-CURRENT",
@@ -44,7 +52,23 @@
       "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
       "effectiveFrom": null,
       "effectiveTo": null,
-      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN"
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Anthem NY — Reimbursement policies",
+        "sourceUrl": "https://providers.anthem.com/new-york-provider/claims/reimbursement-policies",
+        "deepLink": "https://providers.anthem.com/new-york-provider/claims/reimbursement-policies#:~:text=The%20billed%20code(s)%20should%20be%20fully%20supported%20in%20the%20medical%20record",
+        "locator": "Reimbursement policies",
+        "excerpt": "The billed code(s) should be fully supported in the medical record and/or office notes."
+      },
+      "pdfCitation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Anthem NY Medicaid Provider Manual",
+        "sourceUrl": "https://providers.anthem.com/docs/gpp/NY_ABC_CAID_ProviderManual.pdf?v=202602251601",
+        "deepLink": "https://providers.anthem.com/docs/gpp/NY_ABC_CAID_ProviderManual.pdf?v=202602251601#page=171",
+        "locator": "PDF viewer p. 171; manual printed p. 170 — Reimbursement Policies",
+        "excerpt": "The billed code(s) are required to be fully supported in the medical record and/or office notes."
+      }
     },
     {
       "id": "ANTHEM-NY-POLICY-PRECEDENCE-CURRENT",
@@ -66,7 +90,23 @@
       "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_AND_CONTROLLING_AUTHORITY",
       "effectiveFrom": null,
       "effectiveTo": null,
-      "defaultClaimStatus": "HUMAN_REVIEW_REQUIRED"
+      "defaultClaimStatus": "HUMAN_REVIEW_REQUIRED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Anthem NY — Reimbursement policies",
+        "sourceUrl": "https://providers.anthem.com/new-york-provider/claims/reimbursement-policies",
+        "deepLink": "https://providers.anthem.com/new-york-provider/claims/reimbursement-policies#:~:text=These%20policies%20may%20be%20superseded%20by%20state%2C%20federal%20or%20Centers%20for%20Medicare",
+        "locator": "Reimbursement policies",
+        "excerpt": "These policies may be superseded by state, federal or CMS requirements."
+      },
+      "pdfCitation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Anthem NY Medicaid Provider Manual",
+        "sourceUrl": "https://providers.anthem.com/docs/gpp/NY_ABC_CAID_ProviderManual.pdf?v=202602251601",
+        "deepLink": "https://providers.anthem.com/docs/gpp/NY_ABC_CAID_ProviderManual.pdf?v=202602251601#page=171",
+        "locator": "PDF viewer p. 171; manual printed p. 170 — Reimbursement Hierarchy",
+        "excerpt": "These policies may be superseded by mandates in provider, state, federal or CMS contracts."
+      }
     },
     {
       "id": "CMS-MEDICAID-NCCI-2026",
@@ -86,7 +126,15 @@
       "historicalApplicability": "ARCHIVE_AVAILABLE_FOR_2020_THROUGH_2025",
       "effectiveFrom": "2026-01-01",
       "effectiveTo": null,
-      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN"
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "citation": {
+        "kind": "html-section",
+        "sourceTitle": "CMS — Medicaid NCCI Policy Manual",
+        "sourceUrl": "https://www.cms.gov/medicare/coding-billing/ncci-medicaid/medicaid-ncci-policy-manual",
+        "deepLink": "https://www.cms.gov/medicare/coding-billing/ncci-medicaid/medicaid-ncci-policy-manual",
+        "locator": "Current manual + archive",
+        "excerpt": "CMS updates the NCCI Policy Manual for Medicaid Services once a year."
+      }
     },
     {
       "id": "ANTHEM-NY-CLAIM-DISPUTE-CURRENT",
@@ -108,7 +156,21 @@
       "historicalApplicability": "CURRENT_PROCESS_ONLY_UNLESS_ARCHIVED_VERSION_CONFIRMED",
       "effectiveFrom": null,
       "effectiveTo": null,
-      "defaultClaimStatus": "CHALLENGE_PATH_AVAILABLE_CURRENTLY"
+      "defaultClaimStatus": "CHALLENGE_PATH_AVAILABLE_CURRENTLY",
+      "citation": {
+        "kind": "html-section",
+        "sourceTitle": "Anthem NY — Claims submissions and disputes",
+        "sourceUrl": "https://providers.anthem.com/new-york-provider/claims/claims-submissions-and-disputes",
+        "deepLink": "https://providers.anthem.com/new-york-provider/claims/claims-submissions-and-disputes",
+        "locator": "Provider payment disputes",
+        "excerpt": "Provider payment disputes apply when a provider disagrees with a finalized claim outcome."
+      }
     }
-  ]
+  ],
+  "citationContract": {
+    "requirement": "Every policy-level challenge must include at least one authoritative citation with source URL and locator.",
+    "pdfRule": "Where an authoritative PDF is available, deep-link to the relevant PDF page and show a short excerpt.",
+    "htmlRule": "Where supported, use a text-fragment deep link to highlight the relevant sentence.",
+    "challengeGuard": "POLICY_CONFLICT_CANDIDATE cannot be emitted unless a verified mismatch and at least one citation are present."
+  }
 }

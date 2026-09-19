@@ -7,7 +7,7 @@ const statusPath = new URL('../public/policy-status.json', import.meta.url);
 const runPath = new URL('../policy-monitor-run.json', import.meta.url);
 
 const registry = JSON.parse(await fs.readFile(registryPath, 'utf8'));
-let previous = {version:1, monitoringState:'SCHEDULED', schedule:'Every 6 hours via GitHub Actions', lastMonitorRun:null, sources:[]};
+let previous = {version:1, monitoringState:'SCHEDULED', schedule:'Daily via GitHub Actions', lastMonitorRun:null, sources:[]};
 try { previous = JSON.parse(await fs.readFile(statusPath, 'utf8')); } catch {}
 
 const previousById = new Map((previous.sources || []).map(x => [x.id, x]));
@@ -180,7 +180,7 @@ const status = {
   version: 1,
   fingerprintVersion: FINGERPRINT_VERSION,
   monitoringState: observed.some(x => x.state === 'FETCH_ERROR') ? 'ACTIVE_WITH_SOURCE_ERRORS' : 'ACTIVE',
-  schedule: 'Every 6 hours via GitHub Actions',
+  schedule: 'Daily via GitHub Actions',
   lastMonitorRun: observedAt,
   sourceCount: observed.length,
   reviewRequiredCount: observed.filter(x => x.reviewRequired).length,

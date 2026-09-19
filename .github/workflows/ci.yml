@@ -28,6 +28,8 @@ jobs:
           node -e "JSON.parse(require('fs').readFileSync('data/policy-sources.json','utf8'))"
           node -e "JSON.parse(require('fs').readFileSync('public/policy-status.json','utf8'))"
           node -e "JSON.parse(require('fs').readFileSync('data/policy-rules.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('data/recovery-rules.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('data/policy-changes.json','utf8'))"
       - name: Assert redacted no-PHI pilot boundary
         run: |
           grep -q "PHI ingestion remains disabled" public/index.html
@@ -44,11 +46,15 @@ jobs:
           grep -q "providerInvites" firestore.rules
           grep -q "attorneyDirectoryClaims" firestore.rules
           grep -q "POLICY INTELLIGENCE" public/app.html
-          grep -q "CMS Medicaid" data/policy-sources.json
-          grep -q "17 \*/6 \* \* \*" .github/workflows/policy-monitor.yml
-          grep -q "POLICY BASIS UNVERIFIED" public/policy-intelligence.js
-          grep -q "POLICY_VERSION_UNCERTAIN" public/policy-engine.js
-          grep -q "NY-MMC-PROVIDER-ENROLLMENT-CURRENT" data/policy-rules.json
+          grep -q "Open exact PDF page" public/policy-intelligence.js
+          grep -q "POLICY_CONFLICT_CANDIDATE" public/policy-engine.js
+          grep -q "POTENTIALLY_OUTSIDE_WINDOW" public/recovery-engine.js
+          grep -q "NY-COMMERCIAL-OVERPAYMENT-24M" data/recovery-rules.json
+          grep -q "FIDELIS-READMISSION-30D-2026-10-01" data/policy-changes.json
+          grep -q "17 7 \* \* \*" .github/workflows/policy-monitor.yml
+          grep -q "uhc-community-reimbursement" data/policy-sources.json
+          grep -q "aetna-officelink-updates" data/policy-sources.json
+          grep -q "fidelis-provider-policies" data/policy-sources.json
       - name: Assert private keys are not committed
         run: |
           ! git grep -n "BEGIN PRIVATE KEY" -- ':!*.md'

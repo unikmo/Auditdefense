@@ -10,3 +10,33 @@
 .policy-nav-badge{background:#ff9644;color:#3b251d}.policy-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}.policy-chain-card{margin-bottom:14px}.policy-chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:16px 0}.policy-chain span{background:#fff4ec;border:1px solid #eadbd1;color:#6b3a27;border-radius:999px;padding:8px 11px;font-size:10px;font-weight:800}.policy-chain b{color:#c94412}.policy-candidates{display:grid;gap:10px}.policy-candidate{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;border:1px solid #eadbd1;border-left:4px solid #ff9644;border-radius:10px;padding:14px;background:#fffaf6}.policy-candidate.danger{border-left-color:#bd3f4b}.policy-candidate.info{border-left-color:#f45a1f}.policy-candidate h3{font-size:13px;margin:5px 0}.policy-candidate p,.policy-candidate small{font-size:10px;line-height:1.55;color:#74645c}.policy-candidate>strong{font-size:18px;white-space:nowrap}.policy-status{font-size:8px;letter-spacing:.08em;font-weight:850;color:#9b4b24}.policy-chip{display:inline-flex;border-radius:999px;padding:5px 8px;font-size:8px;font-weight:850;white-space:nowrap}.policy-chip.warning{background:#fff0dc;color:#8b5900}.policy-chip.danger{background:#ffebed;color:#9f3040}.policy-chip.good{background:#eaf7ef;color:#176c4a}.policy-monitor-state{font-size:9px;font-weight:800}.policy-monitor-state.ok{color:#176c4a}.policy-monitor-state.warn{color:#8b5900}.policy-drawer-status p{margin-top:9px}.policy-sources-note{font-size:9px;color:#74645c}
 @media(max-width:1000px){.policy-kpis{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.policy-kpis{grid-template-columns:1fr}.policy-candidate{grid-template-columns:1fr}.policy-candidate>strong{justify-self:start}.policy-chain b{display:none}}
+
+/* Policy citation, change-intelligence and recovery-rights surfaces */
+.policy-kpis{grid-template-columns:repeat(5,1fr)}
+.policy-source-cell{white-space:normal;min-width:360px}
+.policy-citation-mini{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start;border:1px solid #eadbd1;background:#fffaf6;border-radius:9px;padding:9px;margin:5px 0;min-width:320px}
+.policy-citation-mini b,.policy-citation-mini small,.policy-citation-mini q{display:block}
+.policy-citation-mini b{font-size:9px;color:#3b251d}
+.policy-citation-mini small{font-size:8px;color:#8b7468;margin:2px 0 5px}
+.policy-citation-mini q{font-size:9px;line-height:1.45;color:#6f5a50;white-space:normal}
+.policy-source-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.policy-source-card{border:1px solid #eadbd1;border-radius:11px;padding:14px;background:#fffaf6}
+.policy-source-card h3{font-size:13px;margin:6px 0 3px}
+.policy-locator{font-size:9px!important;color:#8a7468!important}
+.policy-source-card blockquote{margin:10px 0;padding:10px 12px;border-left:3px solid #f45a1f;background:#fff;color:#5d4b43;font-size:10px;line-height:1.55}
+.policy-source-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.change-list{display:grid;gap:10px}
+.change-card{display:grid;grid-template-columns:70px 1fr;gap:16px;border:1px solid #eadbd1;border-radius:12px;padding:14px;background:#fffaf6}
+.change-date{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;align-content:center;background:#f45a1f;color:#fff}
+.change-date strong,.change-date span{display:block;text-align:center}.change-date strong{font-size:20px}.change-date span{font-size:8px;text-transform:uppercase;letter-spacing:.08em}
+.change-card h3{font-size:14px;margin:4px 0}.change-card p,.change-card small{font-size:10px;line-height:1.55;color:#74645c}
+.change-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}.change-actions q{font-size:9px;color:#765f54}
+.recovery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.recovery-card{border:1px solid #eadbd1;border-radius:11px;padding:14px;background:#fffaf6}
+.recovery-card.risk{border-left:4px solid #bd3f4b}
+.recovery-card h3{font-size:13px;margin:6px 0}.recovery-card p,.recovery-card small{font-size:10px;line-height:1.5;color:#74645c}
+.recovery-result{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:9px 0}.recovery-result b{font-size:15px}
+.empty-state.compact{padding:28px}
+@media(max-width:1200px){.policy-kpis{grid-template-columns:repeat(3,1fr)}.recovery-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){.policy-source-grid,.recovery-grid{grid-template-columns:1fr}.policy-kpis{grid-template-columns:1fr 1fr}.change-card{grid-template-columns:1fr}.change-date{width:54px;height:54px}.policy-citation-mini{grid-template-columns:1fr;min-width:260px}}
+@media(max-width:620px){.policy-kpis{grid-template-columns:1fr}.policy-source-cell{min-width:280px}}

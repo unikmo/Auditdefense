@@ -1,11 +1,11 @@
 {
   "name": "auditdefend-demo",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "description": "Non-production redacted pilot for AuditDefend — The Audit Defense Forensic Platform.",
   "scripts": {
     "dev": "python3 -m http.server 4173 --directory public",
-    "check": "node --check public/app.js && node --check public/firebase-client.js && node --check public/auth.js && node --check public/verify.js && node --check public/attorney.js && node --check public/provider.js && node --check public/attorneys.js && node --check public/policy-engine.js && node --check public/policy-intelligence.js && node --check scripts/policy-monitor.mjs",
+    "check": "node --check public/app.js && node --check public/firebase-client.js && node --check public/auth.js && node --check public/verify.js && node --check public/attorney.js && node --check public/provider.js && node --check public/attorneys.js && node --check public/policy-engine.js && node --check public/recovery-engine.js && node --check public/policy-intelligence.js && node --check scripts/policy-monitor.mjs",
     "build": "npm run check"
   }
 }

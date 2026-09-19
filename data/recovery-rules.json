@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19",
+  "notice": "Recovery-window results are issue-spotting only. Contract terms, fraud/abuse allegations, self-funded arrangements and government-program authority can change the applicable window.",
+  "rules": [
+    {
+      "id": "NY-COMMERCIAL-OVERPAYMENT-24M",
+      "title": "New York ordinary health-plan overpayment recovery window",
+      "jurisdiction": "NY",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 24,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": 30,
+      "exceptions": [
+        "reasonable belief of fraud",
+        "intentional misconduct",
+        "abusive billing",
+        "self-insured plan request",
+        "state or federal government program",
+        "government employee/retiree/member coverage",
+        "underpayment setoff"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "New York Insurance Law § 3224-b",
+        "sourceUrl": "https://www.nysenate.gov/legislation/laws/ISC/3224-B",
+        "deepLink": "https://www.nysenate.gov/legislation/laws/ISC/3224-B#:~:text=A%20health%20plan%20shall%20not%20initiate%20overpayment%20recovery%20efforts%20more%20than%20twenty-four%20months",
+        "locator": "Insurance Law § 3224-b(b)(3)",
+        "excerpt": "A health plan shall not initiate overpayment recovery efforts more than twenty-four months after the original payment was received."
+      },
+      "noticeCitation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "New York Insurance Law § 3224-b",
+        "sourceUrl": "https://www.nysenate.gov/legislation/laws/ISC/3224-B",
+        "deepLink": "https://www.nysenate.gov/legislation/laws/ISC/3224-B#:~:text=thirty%20days%20written%20notice%20to%20health%20care%20providers",
+        "locator": "Insurance Law § 3224-b(b)(1)",
+        "excerpt": "Other than duplicate payments, a health plan shall provide thirty days written notice before additional overpayment recovery efforts."
+      }
+    },
+    {
+      "id": "NY-MEDICAID-MCO-OVERPAYMENT-72M",
+      "title": "New York Medicaid Managed Care overpayment recovery period",
+      "jurisdiction": "NY",
+      "programClass": "ny-medicaid-managed-care",
+      "windowMonths": 72,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": 30,
+      "exceptions": [
+        "fraud",
+        "intentional misconduct",
+        "abusive billing",
+        "other controlling government-program authority"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "NYSDOH Standard Clauses for Managed Care Provider/IPA/ACO Contracts",
+        "sourceUrl": "https://www.health.ny.gov/health_care/managed_care/hmoipa/standard_clauses_revisions.htm",
+        "deepLink": "https://www.health.ny.gov/health_care/managed_care/hmoipa/standard_clauses_revisions.htm#:~:text=overpayment%20recovery%20period%20for%20such%20programs%20is%20six%20years",
+        "locator": "Payment and Risk Arrangements — overpayment recovery",
+        "excerpt": "For Medicaid Managed Care, the overpayment recovery period is six years from the date payment was received."
+      },
+      "noticeCitation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "NYSDOH Standard Clauses for Managed Care Provider/IPA/ACO Contracts",
+        "sourceUrl": "https://www.health.ny.gov/health_care/managed_care/hmoipa/standard_clauses_revisions.htm",
+        "deepLink": "https://www.health.ny.gov/health_care/managed_care/hmoipa/standard_clauses_revisions.htm#:~:text=written%20notice%2030%20days%20prior%20to%20engaging%20in%20overpayment%20recovery%20efforts",
+        "locator": "Payment and Risk Arrangements — notice",
+        "excerpt": "Written notice is required 30 days before engaging in overpayment recovery efforts."
+      }
+    }
+  ]
+}

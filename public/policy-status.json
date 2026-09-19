@@ -2,7 +2,7 @@
   "version": 1,
   "fingerprintVersion": 2,
   "monitoringState": "ACTIVE",
-  "schedule": "Every 6 hours via GitHub Actions",
+  "schedule": "Daily via GitHub Actions",
   "lastMonitorRun": "2026-09-18T23:11:20.970Z",
   "sourceCount": 12,
   "reviewRequiredCount": 0,

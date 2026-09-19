@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "scope": "NY Medicaid + CMS Medicaid + Anthem NY Medicaid initial policy-intelligence seed",
+  "scope": "NY Medicaid + major national payer policy intelligence",
   "generatedAt": "2026-09-19T00:00:00Z",
   "sources": [
     {
@@ -244,6 +244,188 @@
         "deadline"
       ],
       "priority": 2
+    },
+    {
+      "id": "uhc-community-reimbursement",
+      "authority": "UnitedHealthcare",
+      "program": "Medicaid / Community Plan",
+      "state": "US",
+      "payer": "UnitedHealthcare Community Plan",
+      "category": "reimbursement-policy-library",
+      "title": "UnitedHealthcare Community Plan Reimbursement Policies",
+      "url": "https://www.uhcprovider.com/en/policies-protocols/comm-plan-medicaid-policies/reimbursement-community-state-policies.html",
+      "cadence": "continuous + monthly bulletins",
+      "effectiveContext": "Community Plan reimbursement-policy library with policy publication dates and monthly update bulletins.",
+      "claimFields": [
+        "dos",
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "placeOfService",
+        "state"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "uhc-commercial-reimbursement",
+      "authority": "UnitedHealthcare",
+      "program": "Commercial / Individual Exchange",
+      "state": "US",
+      "payer": "UnitedHealthcare",
+      "category": "reimbursement-policy-library",
+      "title": "UnitedHealthcare Commercial Reimbursement Policies",
+      "url": "https://www.uhcprovider.com/en/policies-protocols/commercial-policies/commercial-reimbursement-policies.html",
+      "cadence": "continuous",
+      "effectiveContext": "Commercial and Individual Exchange reimbursement-policy library.",
+      "claimFields": [
+        "dos",
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "placeOfService"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "aetna-officelink-updates",
+      "authority": "Aetna",
+      "program": "Commercial / Medicare / plan-specific",
+      "state": "US",
+      "payer": "Aetna",
+      "category": "policy-change-announcements",
+      "title": "Aetna OfficeLink Updates",
+      "url": "https://www.aetna.com/health-care-professionals/newsletters-news/provider-newsletters-archive.html",
+      "cadence": "monthly / quarterly",
+      "effectiveContext": "Provider-news archive used for advance payment, coding and administrative policy-change notices.",
+      "claimFields": [
+        "effectiveDate",
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "plan"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "fidelis-provider-policies",
+      "authority": "Fidelis Care / Centene",
+      "program": "NY Medicaid / Medicare / plan-specific",
+      "state": "NY",
+      "payer": "Fidelis Care",
+      "category": "payment-policy-library",
+      "title": "Fidelis Care Provider Policies",
+      "url": "https://www.fideliscare.org/Provider/Provider-Policies",
+      "cadence": "continuous",
+      "effectiveContext": "Payment-policy library with publish and effective dates.",
+      "claimFields": [
+        "dos",
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "plan"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "humana-claims-payment-policies",
+      "authority": "Humana",
+      "program": "Medicare Advantage / Medicaid / plan-specific",
+      "state": "US",
+      "payer": "Humana",
+      "category": "claims-payment-policy-library",
+      "title": "Humana Claims Payment Policies",
+      "url": "https://provider.humana.com/coverage-claims/claims-payment-policies",
+      "cadence": "continuous",
+      "effectiveContext": "Humana medical claims payment-policy library with published dates.",
+      "claimFields": [
+        "dos",
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "plan"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "molina-ny-medicaid-payment-policies",
+      "authority": "Molina Healthcare",
+      "program": "NY Medicaid",
+      "state": "NY",
+      "payer": "Molina",
+      "category": "reimbursement-policy-library",
+      "title": "Molina NY Medicaid Billing and Reimbursement Policies",
+      "url": "https://www.molinahealthcare.com/providers/ny/medicaid/policies/payment.aspx",
+      "cadence": "continuous",
+      "effectiveContext": "New York Medicaid billing and reimbursement policy entry point.",
+      "claimFields": [
+        "dos",
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "plan"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "emblem-reimbursement-policies",
+      "authority": "EmblemHealth",
+      "program": "Commercial / Medicare / Medicaid",
+      "state": "NY",
+      "payer": "EmblemHealth",
+      "category": "reimbursement-policy-library",
+      "title": "EmblemHealth Reimbursement Policies",
+      "url": "https://www.emblemhealth.com/providers/claims-corner/reimbursement-policies",
+      "cadence": "continuous + provider updates",
+      "effectiveContext": "Reimbursement-policy library with PDF revision histories and effective dates.",
+      "claimFields": [
+        "dos",
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "plan"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ny-insurance-law-3224b",
+      "authority": "New York State Senate / New York Insurance Law",
+      "program": "NY health plans",
+      "state": "NY",
+      "payer": "All applicable NY health plans",
+      "category": "recovery-rights",
+      "title": "New York Insurance Law § 3224-b",
+      "url": "https://www.nysenate.gov/legislation/laws/ISC/3224-B",
+      "cadence": "legislative change",
+      "effectiveContext": "Statutory overpayment notice, challenge and ordinary 24-month recovery rules with exceptions.",
+      "claimFields": [
+        "paymentReceivedDate",
+        "recoveryInitiatedDate",
+        "noticeDate",
+        "program"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ny-mmc-standard-clauses",
+      "authority": "New York State Department of Health",
+      "program": "NY Medicaid Managed Care",
+      "state": "NY",
+      "payer": "NY Medicaid MCOs",
+      "category": "recovery-rights",
+      "title": "NYSDOH Standard Clauses for Managed Care Provider/IPA/ACO Contracts",
+      "url": "https://www.health.ny.gov/health_care/managed_care/hmoipa/standard_clauses_revisions.htm",
+      "fallbackUrls": [
+        "https://healthweb-back.health.ny.gov/health_care/managed_care/hmoipa/standard_clauses_revisions.htm"
+      ],
+      "cadence": "regulatory / contract update",
+      "effectiveContext": "Standard clauses include Medicaid Managed Care overpayment recovery period and notice requirements.",
+      "claimFields": [
+        "paymentReceivedDate",
+        "recoveryInitiatedDate",
+        "noticeDate",
+        "program"
+      ],
+      "priority": 1
     }
   ]
 }

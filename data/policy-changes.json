@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-19",
+  "notice": "Only future-dated changes verified from authoritative payer/provider sources are shown. A source change detected by the monitor enters review before client notification.",
+  "announcements": [
+    {
+      "id": "FIDELIS-READMISSION-30D-2026-10-01",
+      "payer": "Fidelis Care",
+      "jurisdiction": "NY",
+      "program": "Provider payment policy",
+      "title": "30-Day Readmission Payment Policy",
+      "announcementLabel": "Posted August 31, 2026",
+      "effectiveFrom": "2026-10-01",
+      "status": "UPCOMING_VERIFIED",
+      "changeSummary": "Replaces the prior 14-day readmission policy and expands the readmission review period to 30 days after discharge.",
+      "clientImpact": "Hospital readmission claims may face a broader review window for separate reimbursement.",
+      "sourceUrl": "https://www.fideliscare.org/Provider/passcodecontent?id=1397",
+      "deepLink": "https://www.fideliscare.org/Provider/passcodecontent?id=1397#:~:text=effective%20October%201%2C%202026",
+      "excerpt": "The updated policy, effective October 1, 2026, expands the readmission review period to thirty days."
+    },
+    {
+      "id": "AETNA-CCRP-2026-12-01",
+      "payer": "Aetna",
+      "jurisdiction": "US / plan-specific",
+      "program": "Commercial, Medicare and Student Health",
+      "title": "Claim and Code Review Program — new claim edits",
+      "announcementLabel": "September 2026 OfficeLink Updates",
+      "effectiveFrom": "2026-12-01",
+      "status": "UPCOMING_VERIFIED",
+      "changeSummary": "Aetna says providers may see new claim edits beginning December 1, 2026.",
+      "clientImpact": "Affected coding patterns should be reviewed before the effective date; specific edit detail may require the provider portal.",
+      "sourceUrl": "https://www.aetna.com/health-care-professionals/newsletters-news/office-link-updates-september-2026.html",
+      "deepLink": "https://www.aetna.com/health-care-professionals/newsletters-news/office-link-updates-september-2026.html#:~:text=Beginning%20December%201%2C%202026%2C%20you%20may%20see%20new%20claim%20edits",
+      "excerpt": "Beginning December 1, 2026, you may see new claim edits."
+    },
+    {
+      "id": "AETNA-MATERNITY-2027-01-01",
+      "payer": "Aetna",
+      "jurisdiction": "US / plan-specific",
+      "program": "Commercial and Medicare unless otherwise stated",
+      "title": "Maternity coding and reimbursement restructuring",
+      "announcementLabel": "September 2026 OfficeLink Updates",
+      "effectiveFrom": "2027-01-01",
+      "status": "UPCOMING_VERIFIED",
+      "changeSummary": "Maternity care coding moves away from the global maternity billing model toward more detailed service-based coding.",
+      "clientImpact": "OB/GYN billing workflows and coding education may need updates before January 1, 2027.",
+      "sourceUrl": "https://www.aetna.com/health-care-professionals/newsletters-news/office-link-updates-september-2026.html",
+      "deepLink": "https://www.aetna.com/health-care-professionals/newsletters-news/office-link-updates-september-2026.html#:~:text=Effective%20January%201%2C%202027",
+      "excerpt": "Effective January 1, 2027, maternity care coding will shift toward a more detailed service-based framework."
+    }
+  ]
+}
