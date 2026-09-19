@@ -12,7 +12,7 @@
 @media(max-width:620px){.policy-kpis{grid-template-columns:1fr}.policy-candidate{grid-template-columns:1fr}.policy-candidate>strong{justify-self:start}.policy-chain b{display:none}}
 
 /* Policy citation, change-intelligence and recovery-rights surfaces */
-.policy-kpis{grid-template-columns:repeat(5,1fr)}
+.policy-kpis{grid-template-columns:repeat(3,1fr)}
 .policy-source-cell{white-space:normal;min-width:360px}
 .policy-citation-mini{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start;border:1px solid #eadbd1;background:#fffaf6;border-radius:9px;padding:9px;margin:5px 0;min-width:320px}
 .policy-citation-mini b,.policy-citation-mini small,.policy-citation-mini q{display:block}
