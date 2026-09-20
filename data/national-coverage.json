@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "asOf": "2026-09-20",
+  "targetPercent": 95,
+  "measuredClaimReadyPercent": null,
+  "measurementStatus": "BASELINE_REQUIRED",
+  "denominator": "U.S. medical claims in the selected service line, weighted by payer enrollment or provider claim volume and resolved by payer legal entity, state, line of business, network, date of service and policy family.",
+  "boundary": "Inclusion in this target ledger does not mean that every policy is claim-ready. AuditDefend may show a policy as applicable only after the exact source, jurisdiction, product and date-effective version have been verified.",
+  "statusDefinitions": {
+    "CLAIM_READY": "A date-effective rule and authoritative citation can be matched to a claim.",
+    "MONITORED_LIBRARY": "An official policy library is indexed and monitored; individual policy applicability still requires verification.",
+    "SOURCE_IDENTIFIED": "The payer or program is in scope, but its complete policy/version map is not yet operational.",
+    "GAP": "No sufficient authoritative source has been indexed for this coverage unit."
+  },
+  "marketEvidence": [
+    {
+      "title": "2024 Accident and Health Policy Experience Report",
+      "publisher": "National Association of Insurance Commissioners",
+      "url": "https://content.naic.org/sites/default/files/publication-msr-pb-24.pdf",
+      "use": "Commercial insurer group and state market baseline; final weighted coverage calculation requires the underlying report data."
+    },
+    {
+      "title": "Competition in Health Insurance: A Comprehensive Study of U.S. Markets",
+      "publisher": "American Medical Association",
+      "url": "https://www.ama-assn.org/delivering-care/patient-support-advocacy/competition-health-insurance-research",
+      "use": "Commercial insurer concentration and market validation."
+    },
+    {
+      "title": "Medicaid Managed Care enrollment and program characteristics",
+      "publisher": "Centers for Medicare & Medicaid Services",
+      "url": "https://www.medicaid.gov/medicaid/managed-care/enrollment-report/index.html",
+      "use": "State Medicaid and managed-care denominator."
+    },
+    {
+      "title": "Medicare Advantage enrollment data",
+      "publisher": "Centers for Medicare & Medicaid Services",
+      "url": "https://www.cms.gov/data-research/statistics-trends-and-reports/mcradvpartdenroldata",
+      "use": "Medicare Advantage organization and contract denominator."
+    }
+  ],
+  "payerFamilies": [
+    {"id":"unitedhealth","name":"UnitedHealth Group / UnitedHealthcare","segments":["Commercial","Medicare Advantage","Medicaid","Exchange"],"status":"MONITORED_LIBRARY"},
+    {"id":"elevance","name":"Elevance Health / Anthem / affiliated Blue plans","segments":["Commercial","Medicare Advantage","Medicaid","Exchange"],"status":"MONITORED_LIBRARY","note":"Configured Anthem New York rules are claim-ready, but the payer family as a whole is not."},
+    {"id":"cvs-aetna","name":"CVS Health / Aetna","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"cigna","name":"The Cigna Group / Cigna Healthcare","segments":["Commercial","Medicare Advantage","ASO"],"status":"MONITORED_LIBRARY"},
+    {"id":"kaiser","name":"Kaiser Permanente","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"hcsc","name":"Health Care Service Corporation Blue plans","segments":["Commercial","Medicare Advantage","Medicaid","Exchange"],"status":"MONITORED_LIBRARY"},
+    {"id":"centene","name":"Centene / Ambetter / Wellcare / Health Net","segments":["Medicaid","Exchange","Medicare Advantage"],"status":"MONITORED_LIBRARY"},
+    {"id":"humana","name":"Humana","segments":["Medicare Advantage","Medicaid","Commercial"],"status":"MONITORED_LIBRARY"},
+    {"id":"molina","name":"Molina Healthcare","segments":["Medicaid","Medicare Advantage","Exchange"],"status":"MONITORED_LIBRARY"},
+    {"id":"guidewell","name":"GuideWell / Florida Blue","segments":["Commercial","Medicare Advantage","Exchange"],"status":"MONITORED_LIBRARY"},
+    {"id":"highmark","name":"Highmark","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"bcbsmi","name":"Blue Cross Blue Shield of Michigan","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"blueshieldca","name":"Blue Shield of California","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"independence","name":"Independence Blue Cross","segments":["Commercial","Medicare Advantage"],"status":"MONITORED_LIBRARY"},
+    {"id":"carefirst","name":"CareFirst BlueCross BlueShield","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"bcbsma","name":"Blue Cross Blue Shield of Massachusetts","segments":["Commercial","Medicare Advantage"],"status":"MONITORED_LIBRARY"},
+    {"id":"cambia","name":"Cambia / Regence Blue plans","segments":["Commercial","Medicare Advantage"],"status":"MONITORED_LIBRARY"},
+    {"id":"premera","name":"Premera Blue Cross","segments":["Commercial","Medicare Advantage"],"status":"MONITORED_LIBRARY"},
+    {"id":"point32","name":"Point32Health / Harvard Pilgrim / Tufts Health Plan","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"emblem","name":"EmblemHealth / ConnectiCare","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"oscar","name":"Oscar Health","segments":["Exchange","Commercial"],"status":"MONITORED_LIBRARY"},
+    {"id":"caresource","name":"CareSource","segments":["Medicaid","Exchange","Medicare Advantage"],"status":"MONITORED_LIBRARY"},
+    {"id":"amerihealth-caritas","name":"AmeriHealth Caritas","segments":["Medicaid","Medicare Advantage"],"status":"MONITORED_LIBRARY"},
+    {"id":"upmc","name":"UPMC Health Plan","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"geisinger","name":"Geisinger Health Plan","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"healthpartners","name":"HealthPartners","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"medica","name":"Medica","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"priority","name":"Priority Health","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"mvp","name":"MVP Health Care","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"excellus","name":"Excellus BlueCross BlueShield / Univera","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"MONITORED_LIBRARY"},
+    {"id":"lacare","name":"L.A. Care Health Plan","segments":["Medicaid","Exchange","Medicare Advantage"],"status":"MONITORED_LIBRARY"},
+    {"id":"scan","name":"SCAN Health Plan","segments":["Medicare Advantage"],"status":"SOURCE_IDENTIFIED"},
+    {"id":"alignment","name":"Alignment Health","segments":["Medicare Advantage"],"status":"SOURCE_IDENTIFIED"},
+    {"id":"devoted","name":"Devoted Health","segments":["Medicare Advantage"],"status":"SOURCE_IDENTIFIED"},
+    {"id":"sentara","name":"Sentara Health Plans / Optima Health","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"SOURCE_IDENTIFIED"},
+    {"id":"selecthealth","name":"Select Health","segments":["Commercial","Medicare Advantage","Medicaid"],"status":"SOURCE_IDENTIFIED"}
+  ],
+  "governmentPrograms": [
+    {"id":"cms-medicare","name":"Original Medicare national authorities","status":"MONITORED_LIBRARY"},
+    {"id":"medicare-macs","name":"Medicare Administrative Contractors and jurisdictions","status":"SOURCE_IDENTIFIED"},
+    {"id":"cms-medicaid","name":"Federal Medicaid and NCCI authorities","status":"MONITORED_LIBRARY","note":"Configured federal NCCI issue families may be claim-ready; Medicaid applicability still depends on state and program."},
+    {"id":"state-medicaid","name":"All 50 state Medicaid programs and District of Columbia","status":"SOURCE_IDENTIFIED","jurisdictions":["AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"],"claimReadyJurisdictions":["NY"]},
+    {"id":"tricare","name":"TRICARE manuals and contractor policies","status":"MONITORED_LIBRARY"},
+    {"id":"va-community-care","name":"VA Community Care authorities","status":"MONITORED_LIBRARY"}
+  ],
+  "requiredDimensions": ["payerLegalEntity","state","lineOfBusiness","planOrContract","networkStatus","serviceOrCode","issueFamily","effectiveFrom","effectiveTo","sourceUrl","versionEvidence"]
+}

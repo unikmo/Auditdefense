@@ -69,4 +69,21 @@ const researchResult=referenceWindow.AuditDefendReferenceEngine.buildReferenceRe
 if(researchResult.resultType!=='HISTORICAL_REFERENCE')throw new Error('Reference output must be explicitly historical.');
 for(const field of forbiddenFields){if(Object.hasOwn(researchResult,field))throw new Error('Reference engine emitted prohibited predictive field: '+field);}
 
+const coverage=JSON.parse(fs.readFileSync('data/national-coverage.json','utf8'));
+if(fs.readFileSync('data/national-coverage.json','utf8')!==fs.readFileSync('public/national-coverage.json','utf8'))throw new Error('Public national coverage ledger must match the canonical data file.');
+if(coverage.targetPercent<95)throw new Error('Nationwide coverage target must remain at least 95%.');
+if(coverage.measuredClaimReadyPercent!==null&&coverage.measuredClaimReadyPercent<0)throw new Error('Measured claim-ready coverage must be null until baselined or a non-negative percentage.');
+if(coverage.payerFamilies.length<30)throw new Error('National payer universe must include national and regional payer families.');
+const validCoverageStatuses=new Set(['CLAIM_READY','MONITORED_LIBRARY','SOURCE_IDENTIFIED','GAP']);
+for(const item of [...coverage.payerFamilies,...coverage.governmentPrograms]){
+  if(!item.id||!item.name||!validCoverageStatuses.has(item.status))throw new Error('Invalid national coverage record: '+(item.id||'missing id'));
+}
+const stateMedicaid=coverage.governmentPrograms.find(item=>item.id==='state-medicaid');
+if(!stateMedicaid||stateMedicaid.jurisdictions.length!==51)throw new Error('National ledger must include all 50 state Medicaid programs and the District of Columbia.');
+if(!coverage.requiredDimensions.includes('effectiveFrom')||!coverage.requiredDimensions.includes('payerLegalEntity'))throw new Error('Coverage cannot be counted without entity and effective-date dimensions.');
+const sourceRegistry=JSON.parse(fs.readFileSync('data/policy-sources.json','utf8'));
+if(fs.readFileSync('data/policy-sources.json','utf8')!==fs.readFileSync('public/policy-sources.json','utf8'))throw new Error('Public policy source registry must match the canonical data file.');
+if(sourceRegistry.sources.length<50)throw new Error('Nationwide source registry must include at least 50 official source endpoints.');
+if(new Set(sourceRegistry.sources.map(item=>item.id)).size!==sourceRegistry.sources.length)throw new Error('Policy source identifiers must be unique.');
+
 console.log('Policy, recovery, issue taxonomy, and verified-reference tests passed.');

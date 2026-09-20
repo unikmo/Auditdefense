@@ -90,19 +90,27 @@ Required statuses:
 - INSUFFICIENT_DATES
 - HUMAN_REVIEW_REQUIRED
 
-## Source universe
-The monitored universe now includes government and major payer policy libraries, including:
-- CMS Medicaid NCCI
-- NY Medicaid / NYSDOH / eMedNY
-- Anthem New York
-- UnitedHealthcare Community Plan and Commercial
-- Aetna provider policy-change announcements
-- Fidelis Care / Centene
-- Humana
-- Molina New York Medicaid
-- EmblemHealth
-- New York Insurance Law § 3224-b
-- NYSDOH managed-care standard clauses
+## Nationwide coverage ledger
+`data/national-coverage.json` defines the national target universe separately from the rules that are already usable on claims.
+
+The coverage target is at least 95% of the selected service line's U.S. claims, weighted by payer enrollment or actual provider claim volume. It is not calculated by counting payer logos. A coverage unit requires:
+
+- payer legal entity
+- state
+- line of business and plan/contract
+- network arrangement
+- service/code and issue family
+- effective-from/effective-to dates
+- authoritative source and version evidence
+
+The ledger uses four non-interchangeable states:
+
+- `CLAIM_READY`: a date-effective rule and citation can be matched to a claim
+- `MONITORED_LIBRARY`: an official library is watched, but policy applicability still requires verification
+- `SOURCE_IDENTIFIED`: the payer/program is in scope but its complete version map is not operational
+- `GAP`: no sufficient authoritative source is indexed
+
+The initial nationwide universe contains 36 national/regional payer families, all 50 state Medicaid programs plus the District of Columbia, Original Medicare, Medicare Administrative Contractors, TRICARE and VA Community Care. The source registry contains 53 official entry points. These counts do not establish 95% claim-ready coverage; a weighted baseline is required before any percentage is published.
 
 ## Safety / provenance
 - The system stores source metadata, fingerprints, locators and short excerpts, not wholesale copies of payer policy libraries.

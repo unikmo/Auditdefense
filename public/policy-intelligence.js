@@ -5,7 +5,7 @@ const caseContext=window.AuditDefendCaseData?.caseContext||{payer:'Anthem',progr
 const enrollmentClaims=claims.filter(c=>c.issues.includes('NPI enrollment on DOS'));
 const reversals=claims.filter(c=>c.initial==='A'&&c.rebuttal==='B');
 const initialDoc=claims.filter(c=>c.initial==='B');
-let policyRules=[],evaluations=[],recoveryRules=[],policyChanges=[];
+let policyRules=[],evaluations=[],recoveryRules=[],policyChanges=[],nationalCoverage=null;
 
 const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const fmtDate=v=>v?new Date(v).toLocaleString():'Not yet observed';
@@ -74,26 +74,67 @@ function renderUpcomingChanges(){
   }).join(''):'<div class="empty-state compact"><b>No verified future-dated changes in the current watch list.</b><p>Detected source changes enter human review before a client alert is issued.</p></div>';
 }
 
+function coverageTone(status){
+  return status==='CLAIM_READY'?'good':status==='MONITORED_LIBRARY'?'info':status==='SOURCE_IDENTIFIED'?'warning':'danger';
+}
+
+function renderNationalCoverage(){
+  if(!nationalCoverage)return;
+  const families=nationalCoverage.payerFamilies||[];
+  const programs=nationalCoverage.governmentPrograms||[];
+  const stateProgram=programs.find(item=>item.id==='state-medicaid');
+  const target=$('coverageTarget'),boundary=$('coverageBoundary'),measured=$('claimReadyCoverage'),familyCount=$('payerFamilyCount'),stateCount=$('medicaidJurisdictionCount');
+  if(target)target.textContent=nationalCoverage.targetPercent+'% target';
+  if(boundary)boundary.textContent=nationalCoverage.boundary;
+  if(measured)measured.textContent=Number.isFinite(nationalCoverage.measuredClaimReadyPercent)?nationalCoverage.measuredClaimReadyPercent+'%':'Not measured';
+  if(familyCount)familyCount.textContent=families.length;
+  if(stateCount)stateCount.textContent=stateProgram?.jurisdictions?.length||0;
+
+  const definitions=nationalCoverage.statusDefinitions||{};
+  const key=$('coverageStatusKey');
+  if(key)key.innerHTML=Object.entries(definitions).map(([status,description])=>'<div><span class="policy-chip '+coverageTone(status)+'">'+esc(status.replaceAll('_',' '))+'</span><small>'+esc(description)+'</small></div>').join('');
+
+  const renderFamilies=()=>{
+    const root=$('payerCoverageGrid'),filter=$('coverageStatusFilter')?.value||'ALL',query=($('coverageSearch')?.value||'').trim().toLowerCase();
+    if(!root)return;
+    const visible=families.filter(item=>(filter==='ALL'||item.status===filter)&&(!query||(item.name+' '+item.segments.join(' ')).toLowerCase().includes(query)));
+    const resultCount=$('coverageResultCount');if(resultCount)resultCount.textContent=visible.length+' of '+families.length+' payer families';
+    root.innerHTML=visible.map(item=>'<article class="payer-coverage-item"><div><span class="policy-chip '+coverageTone(item.status)+'">'+esc(item.status.replaceAll('_',' '))+'</span><h4>'+esc(item.name)+'</h4><p>'+esc(item.segments.join(' · '))+'</p>'+(item.note?'<small>'+esc(item.note)+'</small>':'')+'</div></article>').join('')||'<div class="empty-state compact"><b>No payer families match this filter.</b></div>';
+  };
+
+  const government=$('governmentCoverageGrid');
+  if(government)government.innerHTML=programs.map(item=>'<article class="payer-coverage-item"><div><span class="policy-chip '+coverageTone(item.status)+'">'+esc(item.status.replaceAll('_',' '))+'</span><h4>'+esc(item.name)+'</h4>'+(item.id==='state-medicaid'?'<p>'+esc((item.claimReadyJurisdictions||[]).length)+' claim-ready of '+esc((item.jurisdictions||[]).length)+' jurisdictions</p>':'')+(item.note?'<small>'+esc(item.note)+'</small>':'')+'</div></article>').join('');
+
+  const evidence=$('coverageEvidenceLinks');
+  if(evidence)evidence.innerHTML=(nationalCoverage.marketEvidence||[]).map(item=>'<a href="'+item.url+'" target="_blank" rel="noopener noreferrer"><b>'+esc(item.title)+'</b><span>'+esc(item.publisher)+' · '+esc(item.use)+'</span></a>').join('');
+  renderFamilies();
+  $('coverageStatusFilter')?.addEventListener('change',renderFamilies);
+  $('coverageSearch')?.addEventListener('input',renderFamilies);
+}
+
 async function renderSources(){
   const table=$('policySourcesBody'),state=$('policyMonitorState'),count=$('policySourceCount'),alerts=$('policyChangeCount');
   if(!table)return;
   try{
-    const [registry,status,rulesPayload,recoveryPayload,changesPayload]=await Promise.all([
+    const [registry,status,rulesPayload,recoveryPayload,changesPayload,coveragePayload]=await Promise.all([
       fetch('/policy-sources.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('policy-sources.json unavailable'))),
       fetch('/policy-status.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('policy-status.json unavailable'))),
       fetch('/policy-rules.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('policy-rules.json unavailable'))),
       fetch('/recovery-rules.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('recovery-rules.json unavailable'))),
-      fetch('/policy-changes.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('policy-changes.json unavailable')))
+      fetch('/policy-changes.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('policy-changes.json unavailable'))),
+      fetch('/national-coverage.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('national-coverage.json unavailable')))
     ]);
     policyRules=rulesPayload.rules||[];
     recoveryRules=recoveryPayload.rules||[];
     policyChanges=changesPayload.announcements||[];
+    nationalCoverage=coveragePayload;
     evaluations=window.AuditDefendPolicyEngine?.evaluateCase(claims,policyRules,caseContext)||[];
     window.AuditDefendPolicyState={rules:policyRules,evaluations,recoveryRules,policyChanges};
-    renderClaimPolicyLinks();renderSourcePacket();renderRecovery();renderUpcomingChanges();
+    renderClaimPolicyLinks();renderSourcePacket();renderRecovery();renderUpcomingChanges();renderNationalCoverage();
 
     const sourceMap=new Map(status.sources.map(s=>[s.id,s]));
     if(count)count.textContent=registry.sources.length;
+    const coverageSourceCount=$('coverageSourceCount');if(coverageSourceCount)coverageSourceCount.textContent=registry.sources.length;
     if(alerts)alerts.textContent=status.sources.filter(s=>s.reviewRequired).length;
     const navBadge=$('policyNavBadge');
     if(navBadge)navBadge.textContent=String(status.sources.filter(s=>s.reviewRequired).length+policyChanges.filter(x=>x.status==='UPCOMING_VERIFIED').length);
