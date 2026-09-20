@@ -78,6 +78,10 @@
             <label>Response deadline<input name="deadline" type="date" required></label>
             <label>Current stage<select name="stage"><option>Audit received</option><option>Evidence gathering</option><option>Initial review received</option><option>Rebuttal preparation</option><option>Rebuttal reviewed</option><option>Appeal / escalation</option></select></label>
           </div>
+          <div class="provider-complexity-grid">
+            <label class="provider-check"><input type="checkbox" name="multiplePayers" id="multiplePayers"><span><b>Multiple payers are involved</b><small>One case ordinarily covers one payer audit or demand. We will review the scope.</small></span></label>
+            <label class="provider-check"><input type="checkbox" name="unstructuredData" id="unstructuredData"><span><b>Claim data is not in a usable table</b><small>Scans, mixed files or unstructured data may require a scope review.</small></span></label>
+          </div>
           <div class="provider-issue-block"><span class="provider-field-label">Primary issue families</span><div class="provider-issue-grid">
 <label><input type="checkbox" name="issueCategory" value="Documentation support"><span>Documentation support</span></label>
 <label><input type="checkbox" name="issueCategory" value="Signatures / authentication"><span>Signatures / authentication</span></label>
@@ -93,13 +97,15 @@
         <section class="provider-step" data-step="3">
           <span class="eyebrow">STEP 4 OF 6</span>
           <h2>Your case plan</h2>
-          <p>Same case price whether the provider or attorney starts it. Counsel access is included. The tier is automatically determined by claim volume.</p>
+          <p>Same case price whether the provider or attorney starts it. Counsel access and attorney invitations are included. The tier is determined by the payer's asserted exposure.</p>
           <div class="provider-plan-grid">
-            <label class="provider-plan selected" data-plan-card="standard"><input type="radio" name="plan" value="standard" checked><span>Standard case</span><strong>$995</strong><small>Up to 100 claims · prepaid case license</small></label>
-            <label class="provider-plan" data-plan-card="expanded"><input type="radio" name="plan" value="expanded"><span>Expanded case</span><strong>$1,995</strong><small>101–500 claims</small></label>
-            <label class="provider-plan" data-plan-card="complex"><input type="radio" name="plan" value="complex"><span>Complex audit</span><strong>Custom</strong><small>500+ / multi-payer / unusual scope</small></label>
+            <label class="provider-plan selected" data-plan-card="essential"><input type="radio" name="plan" value="essential" checked><span>Up to $100,000</span><strong>$999</strong><small>$299 for an eligible AuditReady member</small></label>
+            <label class="provider-plan" data-plan-card="priority"><input type="radio" name="plan" value="priority"><span>$100,000.01–$250,000</span><strong>$1,499</strong><small>$449 for an eligible AuditReady member</small></label>
+            <label class="provider-plan" data-plan-card="major"><input type="radio" name="plan" value="major"><span>Above $250,000</span><strong>$1,999</strong><small>$599 for an eligible AuditReady member</small></label>
           </div>
-          <div class="provider-price-summary"><div><span>Recommended plan</span><strong id="recommendedPlan">$995 Standard case</strong></div><div><span>Payment today</span><strong>Not collected in pilot</strong></div></div>
+          <label class="provider-membership">AuditReady status<select name="memberStatus" id="memberStatus"><option value="standard">Standard case rate / not enrolled</option><option value="memberNew">Monthly member under 90 days or audit already known — standard case rate</option><option value="member90">Monthly member with 90+ continuous days — member rate</option><option value="annualEligible">Annual member; audit was not known at enrollment — member rate</option></select><small>Eligibility is confirmed before billing. Pre-existing or known audits are not eligible for the member case rate.</small></label>
+          <div class="provider-price-summary"><div><span>Case fee</span><strong id="recommendedPlan">$999 standard case fee</strong></div><div><span>Payment today</span><strong>Not collected in pilot</strong></div></div>
+          <div class="provider-scope-note" id="scopeNote"><b>One case means one payer audit or demand</b><span>Associated claim lines, rebuttal submissions and later payer decisions stay in that case. More than 500 claim lines, multiple payers or unstructured data requires a scope review and may require a separate quote.</span></div>
         </section>
 
         <section class="provider-step" data-step="4">
@@ -152,6 +158,7 @@
 </main>
 <div class="toast" id="providerToast" role="status" aria-live="polite"></div>
 <script src="firebase-client.js"></script>
+<script src="pricing.js"></script>
 <script src="provider.js"></script>
 </body>
 </html>
