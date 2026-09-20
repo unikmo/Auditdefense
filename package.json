@@ -5,10 +5,12 @@
   "description": "Non-production redacted pilot for AuditDefend — The Audit Defense Forensic Platform.",
   "scripts": {
     "dev": "python3 -m http.server 4173 --directory public",
-    "check": "node --check public/app.js && node --check public/evidence-workspace.js && node --check public/firebase-client.js && node --check public/auth.js && node --check public/verify.js && node --check public/attorney-case-brief.js && node --check public/attorney.js && node --check public/provider.js && node --check public/pricing.js && node --check public/attorneys.js && node --check public/policy-engine.js && node --check public/recovery-engine.js && node --check public/reference-engine.js && node --check public/policy-intelligence.js && node --check public/reference-system.js && node --check scripts/policy-monitor.mjs && npm run test:policy && npm run test:evidence && npm run test:pricing",
+    "check": "node --check public/app.js && node --check public/evidence-workspace.js && node --check public/firebase-client.js && node --check public/auth.js && node --check public/verify.js && node --check public/attorney-case-brief.js && node --check public/attorney.js && node --check public/provider.js && node --check public/pricing.js && node --check public/engagement-workflow.js && node --check public/attorneys.js && node --check public/policy-engine.js && node --check public/recovery-engine.js && node --check public/reference-engine.js && node --check public/policy-intelligence.js && node --check public/reference-system.js && node --check scripts/policy-monitor.mjs && npm run test:policy && npm run test:evidence && npm run test:pricing && npm run test:engagement && npm run test:engagement-ui",
     "build": "npm run check",
     "test:policy": "node tests/policy-engine.test.mjs",
     "test:evidence": "node tests/evidence-workspace.test.mjs",
-    "test:pricing": "node tests/pricing.test.mjs"
+    "test:pricing": "node tests/pricing.test.mjs",
+    "test:engagement": "node tests/engagement-workflow.test.mjs",
+    "test:engagement-ui": "node tests/engagement-ui.test.mjs"
   }
 }

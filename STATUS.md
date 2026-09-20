@@ -1,6 +1,6 @@
 # AuditDefend build status
 
-Last updated: 2026-09-19
+Last updated: 2026-09-20
 
 ## Verified
 
@@ -28,30 +28,35 @@ Last updated: 2026-09-19
 ## Attorney workspace implemented
 
 - Separate attorney portal implemented at `/attorney.html` (also `/attorney`).
-- Firm/attorney onboarding, provider-client portfolio, multi-case dashboard, deadlines, counsel-only notes, team roles, invitations, cross-client reporting and case-plan pricing are implemented for the redacted pilot.
+- Firm/attorney onboarding, provider-client portfolio, multi-case dashboard, deadlines, counsel-only notes, team roles, structured provider-intake links, engagement controls, cross-client reporting and case-plan pricing are implemented for the redacted pilot.
 - Attorney/provider case root access and counsel-only note separation are modeled separately in Firestore rules.
+- Provider-started matters use the enforced sequence `Invitation sent → Conflict check pending → Engagement confirmed → Provider grants access`; no case-document access exists before the final provider action.
+- Attorney-started provider intake responses remain linked to the originating attorney matter and contain redacted business/case metadata only.
 - Provider Counsel Workspace links directly to the Attorney Workspace.
 - Vercel deployment of the attorney portal and nested workspace routes is verified READY; Firebase rule deployment remains a separate gate.
 
 ## Provider onboarding implemented
 
 - Separate provider onboarding is implemented at `/provider.html` (also `/provider`).
-- Flow covers account access, practice setup, audit metadata, automatic exposure-based pricing, AuditReady eligibility, complexity scope review, optional counsel invitation record, no-PHI confirmation and workspace creation.
-- Pricing is automatically enforced by claim count: $995 up to 100 claims, $1,995 for 101–500, custom for 500+.
+- Flow covers account access, practice setup, audit metadata, automatic exposure-based pricing, AuditReady eligibility, complexity scope review, four counsel-acquisition paths, no-PHI confirmation and workspace creation.
+- Pricing is automatically enforced by payer-asserted exposure: $999 through $100,000; $1,499 from $100,000.01 through $250,000; and $1,999 above $250,000. More than 500 claim lines, multiple payers or unstructured data triggers scope review.
 - Free-text audit issue entry was removed after Red Team review; the pilot collects structured issue categories only.
 - Provider profile, organization, case and invitation Firestore client methods/rules are implemented.
 - Provider organization membership and provider-case participant changes are owner/creator controlled; invitations do not independently grant case access.
+- Directory/self-selection and outside-attorney invitation are included; up to three initial participating-attorney introductions are modeled as included. No public-source profile is represented as participating until verified.
+- Attorney legal fees are separate and direct; the product does not rank counsel by predicted success, guarantee acceptance or take a percentage of legal fees.
 - Provider onboarding is linked from the provider demo and auth surface.
 - Provider onboarding and its nested alias are verified on the Vercel production deployment.
 - Live provider route: `https://auditdefense.vercel.app/provider`.
 
-## External activation still required / not yet verified
+## External activation status
 
 - Email/Password Authentication provider has been deployed/enabled and passes live sign-up/sign-in smoke testing.
 - Firestore database has been created in the selected free-tier location.
 - Firestore rules have been deployed to the live Firebase project.
 - Authenticated redacted-case write/read/delete passes `/verify.html`.
 - Unauthenticated and cross-user Firestore access is verified denied in the live project.
+- The new engagement/intake rule changes in this branch still require deployment and live multi-account verification.
 - PowerGM export/API schema is supplied and validated.
 - PHI production architecture, BAA/compliance controls, qualified legal review and production authorization are complete.
 
