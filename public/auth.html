@@ -12,22 +12,22 @@
 <body>
   <main class="shell">
     <section class="brand">
-      <div><div class="mark">⚖</div><h1>AuditDefend</h1><div class="copy"><p>The Audit Defense Forensic Platform.</p><p>Authentication verification surface for the synthetic non-production environment.</p></div></div>
-      <small>No PHI. No production data. Human review required.</small>
+      <div><div class="mark">⚖</div><h1>AuditDefend</h1><div class="copy"><p>The Audit Defense Forensic Platform.</p><p>Secure access for provider and attorney workspaces.</p></div></div>
+      <small>Human review required. Do not enter or upload PHI until secure document storage is available.</small>
     </section>
     <section class="panel">
-      <span class="eyebrow">SECURE ACCESS TEST</span>
+      <span class="eyebrow">SECURE ACCESS</span>
       <h2 id="heading">Sign in</h2>
-      <p id="subheading">Use a test account only. Email/password authentication must be enabled in Firebase before this will work.</p>
-      <div class="mode"><button id="signInMode" class="active" type="button">Sign in</button><button id="signUpMode" type="button">Create test account</button></div>
+      <p id="subheading">Sign in to continue to your AuditDefend workspace.</p>
+      <div class="mode"><button id="signInMode" class="active" type="button">Sign in</button><button id="signUpMode" type="button">Create account</button></div>
       <form id="authForm">
         <label for="email">Email</label><input id="email" type="email" autocomplete="email" required>
         <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" minlength="6" required>
         <button class="primary" id="submitBtn" type="submit">Sign in</button>
       </form>
-      <div class="links"><button id="resetBtn" type="button">Send password reset</button><a href="/provider/onboarding">Provider onboarding</a><a href="/attorney/workspace">Attorney workspace</a><a href="/">Back to demo</a></div>
-      <div id="status" class="status">Loading Firebase Web SDK…</div>
-      <div class="technical">Project: <strong>auditdefense-2cb01</strong><br>Web App: <strong>AuditDefend Web</strong><br>This page never uses the Firebase Admin service-account key.</div>
+      <div class="links"><button id="resetBtn" type="button">Send password reset</button><a href="/provider/onboarding">Provider onboarding</a><a href="/attorney/workspace">Attorney workspace</a><a href="/">Back to AuditDefend</a></div>
+      <div id="status" class="status">Connecting to the account service…</div>
+      <div class="technical">Account access is separate from any attorney engagement. Do not enter or upload patient information until secure document storage is available.</div>
     </section>
   </main>
   <script src="firebase-client.js"></script>

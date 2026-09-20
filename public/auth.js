@@ -23,22 +23,22 @@
     const creating = next === 'signup';
     signInMode.classList.toggle('active', !creating);
     signUpMode.classList.toggle('active', creating);
-    heading.textContent = creating ? 'Create test account' : 'Sign in';
+    heading.textContent = creating ? 'Create account' : 'Sign in';
     subheading.textContent = creating
-      ? 'Create a test-only Firebase user. A verification email will be sent automatically.'
-      : 'Use a test account only. Email/password authentication must be enabled in Firebase before this will work.';
+      ? 'Create your AuditDefend account. A verification email will be sent automatically.'
+      : 'Sign in to continue to your AuditDefend workspace.';
     submitBtn.textContent = creating ? 'Create account' : 'Sign in';
     password.autocomplete = creating ? 'new-password' : 'current-password';
   }
 
   function friendly(error) {
     const raw = error?.message || String(error);
-    if (raw.includes('auth/operation-not-allowed')) return 'Email/password authentication is not enabled in Firebase yet.';
+    if (raw.includes('auth/operation-not-allowed')) return 'Account creation is temporarily unavailable.';
     if (raw.includes('auth/invalid-credential')) return 'The email or password is incorrect.';
     if (raw.includes('auth/email-already-in-use')) return 'That test email already has an account.';
     if (raw.includes('auth/weak-password')) return 'Use a stronger password of at least 6 characters.';
     if (raw.includes('auth/invalid-email')) return 'Enter a valid email address.';
-    if (raw.includes('auth/network-request-failed')) return 'Firebase could not be reached from this browser.';
+    if (raw.includes('auth/network-request-failed')) return 'The account service could not be reached from this browser.';
     return raw;
   }
 
@@ -52,12 +52,12 @@
       if (detail.user) {
         setStatus(`Signed in as ${detail.user.email || detail.user.uid}. Email verified: ${detail.user.emailVerified ? 'yes' : 'no'}.`, detail.user.emailVerified ? 'ok' : 'warn');
       } else {
-        setStatus('Firebase Web SDK initialized. Waiting for a test sign-in.', 'ok');
+        setStatus('Account service ready.', 'ok');
       }
     } else if (detail.status === 'initialization-error') {
-      setStatus(`Firebase initialization failed: ${detail.error}`, 'error');
+      setStatus('The account service is temporarily unavailable. Please try again later.', 'error');
     } else {
-      setStatus('Loading Firebase Web SDK…');
+      setStatus('Connecting to the account service…');
     }
   }
 
@@ -70,14 +70,14 @@
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if (!apiReady()) {
-      setStatus('Firebase is not ready yet.', 'error');
+      setStatus('The account service is not ready yet.', 'error');
       return;
     }
     submitBtn.disabled = true;
     try {
       if (mode === 'signup') {
         const user = await window.AuditDefendFirebaseAPI.signUp(email.value.trim(), password.value);
-        setStatus(`Test account created for ${user.email}. Verification email sent.`, 'warn');
+        setStatus(`Account created for ${user.email}. Verification email sent.`, 'warn');
         if (nextPath) setTimeout(() => { location.href = nextPath; }, 350);
       } else {
         const user = await window.AuditDefendFirebaseAPI.signIn(email.value.trim(), password.value);
@@ -94,11 +94,11 @@
   resetBtn.addEventListener('click', async () => {
     const address = email.value.trim();
     if (!address) {
-      setStatus('Enter the test account email first.', 'warn');
+      setStatus('Enter your account email first.', 'warn');
       return;
     }
     if (!apiReady()) {
-      setStatus('Firebase is not ready yet.', 'error');
+      setStatus('The account service is not ready yet.', 'error');
       return;
     }
     try {
