@@ -36,7 +36,7 @@ Last updated: 2026-09-19
 ## Provider onboarding implemented
 
 - Separate provider onboarding is implemented at `/provider.html` (also `/provider`).
-- Flow covers account access, practice setup, audit metadata, automatic claim-volume pricing tier, optional counsel invitation record, no-PHI confirmation and workspace creation.
+- Flow covers account access, practice setup, audit metadata, automatic exposure-based pricing, AuditReady eligibility, complexity scope review, optional counsel invitation record, no-PHI confirmation and workspace creation.
 - Pricing is automatically enforced by claim count: $995 up to 100 claims, $1,995 for 101–500, custom for 500+.
 - Free-text audit issue entry was removed after Red Team review; the pilot collects structured issue categories only.
 - Provider profile, organization, case and invitation Firestore client methods/rules are implemented.
