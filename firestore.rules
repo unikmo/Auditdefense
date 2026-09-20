@@ -110,10 +110,24 @@ service cloud.firestore {
     // Provider-created invitation records prepare collaboration but do not
     // grant case access until membership is separately authorized.
     match /providerInvites/{inviteId}{
-      allow create:if signedIn()&&request.resource.data.creatorUid==request.auth.uid&&request.resource.data.caseId is string&&isProviderParticipant(request.resource.data.caseId)&&request.resource.data.inviteeEmail is string&&request.resource.data.status=='Pending'&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow create:if signedIn()&&request.resource.data.creatorUid==request.auth.uid&&request.resource.data.caseId is string&&isProviderParticipant(request.resource.data.caseId)&&request.resource.data.inviteeEmail is string&&request.resource.data.status=='Invitation sent'&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
       allow read:if signedIn()&&(resource.data.creatorUid==request.auth.uid||(request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail));
-      allow update:if signedIn()&&request.resource.data.creatorUid==resource.data.creatorUid&&request.resource.data.caseId==resource.data.caseId&&request.resource.data.inviteeEmail==resource.data.inviteeEmail&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false&&((resource.data.creatorUid==request.auth.uid&&request.resource.data.status in ['Pending','Cancelled'])||(request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail&&request.resource.data.status in ['Accepted','Declined']));
+      allow update:if signedIn()&&request.resource.data.creatorUid==resource.data.creatorUid&&request.resource.data.caseId==resource.data.caseId&&request.resource.data.inviteeEmail==resource.data.inviteeEmail&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false&&(
+        (resource.data.creatorUid==request.auth.uid&&resource.data.status=='Invitation sent'&&request.resource.data.status=='Cancelled')||
+        (request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail&&resource.data.status=='Invitation sent'&&request.resource.data.status in ['Conflict check pending','Declined']&&request.resource.data.attorneyUid==request.auth.uid)||
+        (request.auth.token.email!=null&&request.auth.token.email==resource.data.inviteeEmail&&resource.data.status=='Conflict check pending'&&request.resource.data.status in ['Engagement confirmed','Declined']&&request.resource.data.attorneyUid==request.auth.uid)||
+        (resource.data.creatorUid==request.auth.uid&&resource.data.status=='Engagement confirmed'&&request.resource.data.status=='Provider grants access'&&resource.data.attorneyUid is string&&resource.data.attorneyUid in getAfter(/databases/$(database)/documents/providerCases/$(resource.data.caseId)).data.attorneyUids)
+      );
       allow delete:if signedIn()&&resource.data.creatorUid==request.auth.uid;
+    }
+
+    // Redacted provider responses to attorney-started intake links. This pilot
+    // collection contains business/case metadata only; no source documents.
+    match /attorneyIntakeResponses/{responseId}{
+      allow create:if signedIn()&&request.resource.data.submittedByUid==request.auth.uid&&request.resource.data.caseId is string&&caseExists(request.resource.data.caseId)&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow read:if signedIn()&&(resource.data.submittedByUid==request.auth.uid||isAttorneyOnCase(resource.data.caseId));
+      allow update:if signedIn()&&resource.data.submittedByUid==request.auth.uid&&request.resource.data.submittedByUid==resource.data.submittedByUid&&request.resource.data.caseId==resource.data.caseId&&request.resource.data.redacted==true&&request.resource.data.containsPhi==false;
+      allow delete:if false;
     }
 
     // Directory claim requests never grant profile control automatically.

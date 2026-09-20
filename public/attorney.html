@@ -36,9 +36,11 @@
   <div class="m-shell">
     <div class="m-section-head"><div><span class="m-kicker">THE ATTORNEY WORKFLOW</span><h2>Send one intake link. Get back a structured defense file.</h2></div><p>The attorney product is designed around the work that happens before substantive legal analysis: getting the provider’s case facts, claim universe and evidence into a form counsel can actually use.</p></div>
     <div class="m-steps">
-      <article><span class="m-step-no">1</span><h3>Open the matter</h3><p>Capture payer, claim volume, asserted exposure, deadline and case stage.</p></article>
-      <article><span class="m-step-no">2</span><h3>Send provider intake</h3><p>The provider supplies structured business and audit metadata once instead of answering the same questions across email threads.</p></article>
-      <article><span class="m-step-no">3</span><h3>Start with the forensic map</h3><p>See claim outcomes, changed findings, evidence needs, provider enrollment timing and financial exposure before drafting the response.</p></article>
+      <article><span class="m-step-no">1</span><h3>Create the matter</h3><p>Capture payer, claim volume, asserted exposure, deadline and case stage.</p></article>
+      <article><span class="m-step-no">2</span><h3>Send structured intake</h3><p>The provider identifies every document source and supplies permitted records through one linked intake.</p></article>
+      <article><span class="m-step-no">3</span><h3>Map evidence</h3><p>AuditDefend connects evidence to affected claims and payer findings while preserving provenance and gaps.</p></article>
+      <article><span class="m-step-no">4</span><h3>Review the comparison</h3><p>Counsel sees claim outcomes, changed findings, evidence needs, enrollment timing and exposure.</p></article>
+      <article><span class="m-step-no">5</span><h3>Attorney decides strategy</h3><p>Legal interpretation, advice and strategy remain exclusively subject to attorney review and decision.</p></article>
     </div>
   </div>
 </section>
@@ -78,7 +80,8 @@
     <div class="m-section-head"><div><span class="m-kicker">FAQ</span><h2>Built to organize the case, not replace counsel.</h2></div><p>AuditDefend structures the factual and evidence workflow. Legal strategy, legal conclusions and advice remain with counsel.</p></div>
     <div class="m-faq">
       <details open><summary>Does the provider pay again if the attorney starts the case?</summary><p>No. The product model is one fixed case fee based on the payer's asserted exposure, regardless of whether the provider or attorney originates the matter.</p></details>
-      <details><summary>Is there an extra fee to find an attorney?</summary><p>No. Directory access and invitations are included. Attorneys listed or participating through AuditDefend are independent professionals; a listing does not imply endorsement, affiliation or representation.</p></details>
+      <details><summary>Is there an extra fee to find an attorney?</summary><p>No for directory/self-selection, invitations and up to three initial participating-attorney introductions. Attorneys are independent professionals. A future optional human Match Concierge may carry a disclosed $195–$295 flat fee. Legal fees are contracted and paid directly between provider and attorney.</p></details>
+      <details><summary>Does an invitation create representation or expose documents?</summary><p>No. The sequence is Invitation sent → Conflict check pending → Engagement confirmed → Provider grants access. AuditDefend does not itself create an attorney-client relationship; engagement remains subject to the parties’ agreement and applicable professional rules.</p></details>
       <details><summary>Can I send the provider an intake link?</summary><p>The provider-intake flow is implemented. Automated email delivery and live invitation acceptance remain external activation items in the pilot.</p></details>
       <details><summary>Are counsel notes visible to the provider?</summary><p>The data model separates counsel-only notes from the provider-visible case root. Live Firestore rule deployment still requires verification before production reliance.</p></details>
       <details><summary>Can I see the product before onboarding?</summary><p>Yes. The sample workspace uses the redacted Anthem claim-review structure supplied for this pilot.</p></details>
