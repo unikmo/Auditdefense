@@ -61,10 +61,10 @@
 
 <section class="m-section white">
   <div class="m-shell">
-    <div class="m-section-head"><div><span class="m-kicker">FIRM PRODUCT</span><h2>One workspace across provider clients and payer matters.</h2></div><p>The firm view adds the portfolio layer: client, payer, exposure, stage, deadline, priority issue and assigned attorney. Counsel-only notes stay separate from provider-facing summaries in the data model.</p></div>
+    <div class="m-section-head"><div><span class="m-kicker">ATTORNEY-STARTED OR PROVIDER-STARTED</span><h2>One workspace across provider clients and payer matters.</h2></div><p>The case fee is the same whichever party starts it. Attorneys can use the workspace directly, invite a provider to complete intake, or accept a provider invitation.</p></div>
     <div class="m-role-grid">
-      <article class="m-role orange"><span class="m-kicker">CASE WORK</span><h3>$995 standard case</h3><p>Up to 100 claims. Provider and counsel access included.</p><ul><li>Claim defense matrix</li><li>Initial → rebuttal change history</li><li>Evidence and enrollment map</li><li>Case binder structure</li></ul><a class="m-btn primary" href="/attorney/demo">See the case →</a></article>
-      <article class="m-role"><span class="m-kicker">FIRM WORKSPACE</span><h3>$499/month pilot</h3><p>Portfolio tools across clients; case licenses remain separate.</p><ul><li>Multi-client dashboard</li><li>Team roles</li><li>Counsel-only notes</li><li>Cross-client reporting</li></ul><a class="m-btn dark" href="/attorney/workspace">Open workspace →</a></article>
+      <article class="m-role orange"><span class="m-kicker">CASE WORK</span><h3>$999 / $1,499 / $1,999</h3><p>Fixed per-case tiers based on asserted exposure. Provider and counsel access included.</p><ul><li>Claim defense matrix</li><li>Initial → rebuttal change history</li><li>Evidence and enrollment map</li><li>Case binder structure</li></ul><a class="m-btn primary" href="/attorney/demo">See the case →</a></article>
+      <article class="m-role"><span class="m-kicker">COUNSEL ACCESS</span><h3>Included with the case</h3><p>No second case fee when counsel originates the matter or joins a provider-started case.</p><ul><li>Multi-client dashboard</li><li>Team roles</li><li>Counsel-only notes</li><li>Provider intake links</li></ul><a class="m-btn dark" href="/attorney/workspace">Open workspace →</a></article>
     </div>
   </div>
 </section>
@@ -77,7 +77,8 @@
   <div class="m-shell">
     <div class="m-section-head"><div><span class="m-kicker">FAQ</span><h2>Built to organize the case, not replace counsel.</h2></div><p>AuditDefend structures the factual and evidence workflow. Legal strategy, legal conclusions and advice remain with counsel.</p></div>
     <div class="m-faq">
-      <details open><summary>Does the provider pay again if the attorney starts the case?</summary><p>No. The current product model is one case fee based on claim volume, regardless of whether the provider or attorney originates the matter.</p></details>
+      <details open><summary>Does the provider pay again if the attorney starts the case?</summary><p>No. The product model is one fixed case fee based on the payer's asserted exposure, regardless of whether the provider or attorney originates the matter.</p></details>
+      <details><summary>Is there an extra fee to find an attorney?</summary><p>No. Directory access and invitations are included. Attorneys listed or participating through AuditDefend are independent professionals; a listing does not imply endorsement, affiliation or representation.</p></details>
       <details><summary>Can I send the provider an intake link?</summary><p>The provider-intake flow is implemented. Automated email delivery and live invitation acceptance remain external activation items in the pilot.</p></details>
       <details><summary>Are counsel notes visible to the provider?</summary><p>The data model separates counsel-only notes from the provider-visible case root. Live Firestore rule deployment still requires verification before production reliance.</p></details>
       <details><summary>Can I see the product before onboarding?</summary><p>Yes. The sample workspace uses the redacted Anthem claim-review structure supplied for this pilot.</p></details>
