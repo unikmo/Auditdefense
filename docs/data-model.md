@@ -62,6 +62,33 @@ Links an artifact to one or more claims/DOS and records **why** it was linked.
 - effective-date coverage
 - human-confirmed match
 
+### Evidence verification thread
+Preserves the comparison without turning it into a legal conclusion.
+- `threadId`
+- payer allegation text + source locator
+- affected claim(s) / DOS
+- provider evidence references
+- document location pointer or immutable artifact reference
+- version context: current copy / original payer submission / rebuttal submission / unknown
+- factual comparison status
+- attorney disposition + reviewer + timestamp
+
+Allowed factual comparison statuses:
+- potential contradiction — attorney review required
+- evidence appears to address payer finding
+- unresolved — additional evidence required
+- payer finding supported by current record
+
+### Collaboration item
+- author role
+- claim-specific or case-wide scope
+- type: counsel analysis / document / provider message / evidence request
+- visibility: `counsel-only` or `shared-with-provider`
+- optional artifact reference
+- created / shared timestamps
+
+Counsel-created material defaults to `counsel-only`. Provider access requires an explicit share action. Sharing creates an in-workspace notification; external notification copy contains no claim or patient detail.
+
 ### Finding
 A finding is a **review signal, not a legal conclusion**.
 - category: documentation / authorization / signature / provider / network / billing / quality
