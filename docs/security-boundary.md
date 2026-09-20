@@ -4,6 +4,8 @@
 
 The repository and preview are **synthetic-data only**. PHI is not approved for ingestion.
 
+The Evidence Verification preview therefore stores only redacted evidence references, local filenames and document-location descriptions in browser `localStorage`. Selecting a file does not upload or persist its contents. This behavior is a product-flow demonstration, not secure evidence storage.
+
 ## Required before any PHI
 
 1. Execute an appropriate HIPAA/BAA review for every vendor handling ePHI.
