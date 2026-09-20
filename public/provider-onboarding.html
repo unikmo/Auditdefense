@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="/provider.css">
 </head>
 <body class="provider-body">
-<div class="demo-banner"><span class="demo-dot"></span><strong>Provider pilot onboarding</strong><span>Redacted/non-PHI only. No patient names, DOBs, member IDs, full claim IDs or other PHI.</span></div>
+<div class="demo-banner"><span class="demo-dot"></span><strong>Secure case setup</strong><span>Do not enter patient names, DOBs, member IDs, full claim IDs or other PHI in this version.</span></div>
 <main class="provider-shell">
   <aside class="provider-aside">
     <a class="provider-brand" href="/provider"><span class="brand-mark">⚖</span><span><b>AuditDefend</b><small>Provider Onboarding</small></span></a>
@@ -27,13 +27,13 @@
       <li><b>5</b><span><strong>Counsel</strong><small>Choose or invite</small></span></li>
       <li><b>6</b><span><strong>Review</strong><small>Create workspace</small></span></li>
     </ol>
-    <div class="provider-boundary"><b>Pilot boundary</b><span>Cloud document upload and PHI ingestion remain disabled. This flow stores only redacted business/case metadata when Firebase is available.</span></div>
+    <div class="provider-boundary"><b>Privacy boundary</b><span>Secure document upload is not yet available. Enter business-level case information and source-location references only.</span></div>
   </aside>
 
   <section class="provider-main">
     <header class="provider-top">
-      <a href="/">← Back to demo</a>
-      <div id="providerAuthState" class="provider-auth-state">Checking Firebase…</div>
+      <a href="/">← Back to AuditDefend</a>
+      <div id="providerAuthState" class="provider-auth-state">Checking account access…</div>
     </header>
 
     <div class="provider-panel" id="onboardingPanel">
@@ -42,14 +42,14 @@
         <section class="provider-step active" data-step="0">
           <span class="eyebrow">STEP 1 OF 6</span>
           <h2>Create or use your AuditDefend account</h2>
-          <p>Your account owns the provider workspace during this pilot.</p>
+          <p>Your account controls the provider workspace and its access permissions.</p>
           <div id="signedInBox" class="signed-in-box hidden"></div>
           <div id="providerAuthForms">
             <div class="mode" id="providerAuthMode"><button type="button" class="active" data-auth-mode="signup">Create account</button><button type="button" data-auth-mode="signin">Sign in</button></div>
             <label>Email<input name="accountEmail" id="accountEmail" type="email" autocomplete="email" required></label>
             <label>Password<input name="accountPassword" id="accountPassword" type="password" minlength="6" autocomplete="new-password" required></label>
             <button class="primary-btn full provider-auth-btn" type="button" id="providerAuthBtn">Create account</button>
-            <div class="provider-inline-status" id="providerAuthMessage">Use a redacted pilot account only.</div>
+            <div class="provider-inline-status" id="providerAuthMessage">Do not enter patient information in this version.</div>
           </div>
         </section>
 
@@ -58,7 +58,7 @@
           <h2>Tell us about the practice</h2>
           <p>Business-level details only. Do not enter patient information.</p>
           <div class="provider-form-grid">
-            <label>Practice / organization name<input name="practiceName" required placeholder="Redacted Behavioral Health Practice"></label>
+            <label>Practice / organization name<input name="practiceName" required placeholder="Behavioral Health Practice"></label>
             <label>State<input name="state" required placeholder="NY"></label>
             <label>Your role<select name="role" required><option>Practice Owner</option><option>Executive / Administrator</option><option>Compliance</option><option>Billing / Revenue Cycle</option><option>Clinical Director</option><option>Other</option></select></label>
             <label>Practice size<select name="practiceSize" required><option>1–10 clinicians</option><option>11–25 clinicians</option><option>26–50 clinicians</option><option>51–100 clinicians</option><option>100+ clinicians</option></select></label>
@@ -69,7 +69,7 @@
 
         <section class="provider-step" data-step="2">
           <span class="eyebrow">STEP 3 OF 6</span>
-          <div class="provider-step-head"><div><h2>Capture the audit</h2><p>This becomes the case shell before evidence is organized.</p></div><button type="button" class="secondary-btn" id="loadAnthemDemo">Load redacted Anthem example</button></div>
+          <div class="provider-step-head"><div><h2>Capture the audit</h2><p>This becomes the case shell before evidence is organized.</p></div><button type="button" class="secondary-btn" id="loadAnthemDemo">Load sample audit</button></div>
           <div class="provider-form-grid">
             <label>Payer<input name="payer" required placeholder="Anthem"></label>
             <label>Audit type<select name="auditType"><option>SIU / overpayment demand</option><option>Medical records review</option><option>Prepayment review</option><option>Medicaid audit</option><option>Credentialing / enrollment dispute</option><option>Other payer audit</option></select></label>
@@ -90,8 +90,8 @@
 <label><input type="checkbox" name="issueCategory" value="Authorization / units"><span>Authorization / units</span></label>
 <label><input type="checkbox" name="issueCategory" value="Credentialing / network"><span>Credentialing / network</span></label>
 <label><input type="checkbox" name="issueCategory" value="Coding / NCCI"><span>Coding / NCCI</span></label>
-</div><small>Select categories only. Free-text clinical/patient details are intentionally not collected in this pilot.</small></div>
-          <div class="provider-file-boundary"><strong>Documents</strong><span>File upload is intentionally disabled on the free/redacted pilot. Keep source files outside AuditDefend until secure evidence storage is approved.</span></div>
+</div><small>Select categories only. Free-text clinical or patient details are not collected here.</small></div>
+          <div class="provider-file-boundary"><strong>Documents</strong><span>Secure file upload is not available yet. Identify where supporting records are maintained; keep source files outside AuditDefend for now.</span></div>
         </section>
 
         <section class="provider-step" data-step="3">
@@ -104,7 +104,7 @@
             <label class="provider-plan" data-plan-card="major"><input type="radio" name="plan" value="major"><span>Above $250,000</span><strong>$1,999</strong><small>$599 for an eligible AuditReady member</small></label>
           </div>
           <label class="provider-membership">AuditReady status<select name="memberStatus" id="memberStatus"><option value="standard">Standard case rate / not enrolled</option><option value="memberNew">Monthly member under 90 days or audit already known — standard case rate</option><option value="member90">Monthly member with 90+ continuous days — member rate</option><option value="annualEligible">Annual member; audit was not known at enrollment — member rate</option></select><small>Eligibility is confirmed before billing. Pre-existing or known audits are not eligible for the member case rate.</small></label>
-          <div class="provider-price-summary"><div><span>Case fee</span><strong id="recommendedPlan">$999 standard case fee</strong></div><div><span>Payment today</span><strong>Not collected in pilot</strong></div></div>
+          <div class="provider-price-summary"><div><span>Case fee</span><strong id="recommendedPlan">$999 standard case fee</strong></div><div><span>Payment on this screen</span><strong>Not collected</strong></div></div>
           <div class="provider-scope-note" id="scopeNote"><b>One case means one payer audit or demand</b><span>Associated claim lines, rebuttal submissions and later payer decisions stay in that case. More than 500 claim lines, multiple payers or unstructured data requires a scope review and may require a separate quote.</span></div>
         </section>
 
@@ -124,7 +124,7 @@
             <label>Counsel email<input name="counselEmail" type="email" placeholder="counsel@example.com"></label>
           </div>
           <div id="directoryChoice" class="provider-counsel-note hidden"><b>Independent directory</b><span>Profiles are informational. AuditDefend does not rank attorneys by predicted success or identify a “best” lawyer.</span><a class="secondary-btn" href="/attorneys" target="_blank" rel="noopener">Open directory</a></div>
-          <div id="matchChoice" class="provider-counsel-note hidden"><b>Included introduction request</b><span>Up to three introductions are included. Attorney availability, conflict clearance and acceptance are never guaranteed. Human Match Concierge is planned at a separately disclosed $195–$295 flat fee and is not active in this pilot.</span></div>
+          <div id="matchChoice" class="provider-counsel-note hidden"><b>Included introduction request</b><span>Up to three introductions are included. Attorney availability, conflict clearance and acceptance are never guaranteed. An optional human Match Concierge may later be offered for a separately disclosed $195–$295 flat fee.</span></div>
           <div class="provider-counsel-note boundary"><b>No automatic relationship or access</b><span>An invitation does not create an attorney-client relationship and does not expose documents. AuditDefend records the parties’ steps; representation remains subject to the attorney’s conflict review, engagement terms and professional judgment.</span></div>
           <label class="provider-check provider-ack"><input type="checkbox" name="counselBoundaryAck" required><span><b>I understand counsel remains independent.</b><small>Legal fees are contracted and paid directly between the provider and attorney. AuditDefend receives no percentage of legal fees.</small></span></label>
         </section>
@@ -132,9 +132,9 @@
         <section class="provider-step" data-step="5">
           <span class="eyebrow">STEP 6 OF 6</span>
           <h2>Review before creating the workspace</h2>
-          <p>Check the business/case metadata. Patient/member information must remain outside this pilot.</p>
+          <p>Check the business-level case information. Do not enter patient or member information in this version.</p>
           <div id="providerReview" class="provider-review"></div>
-          <label class="provider-check provider-ack"><input type="checkbox" name="ack" required><span><b>I confirm this pilot data contains no PHI.</b><small>I have not entered patient names, DOBs, member IDs, full claim identifiers or other protected health information.</small></span></label>
+          <label class="provider-check provider-ack"><input type="checkbox" name="ack" required><span><b>I confirm the information entered here contains no PHI.</b><small>I have not entered patient names, DOBs, member IDs, full claim identifiers or other protected health information.</small></span></label>
         </section>
 
         <div class="provider-actions">
@@ -163,11 +163,11 @@
         <article><b>4. Track exposure</b><span>Keep sample error rates separate from dollar recovery calculations.</span></article>
       </div>
       <div class="provider-complete-actions">
-        <a class="primary-btn" href="/app#dashboard">Open provider case demo →</a>
+        <a class="primary-btn" href="/app#dashboard">Open case workspace →</a>
         <a class="secondary-btn" href="/attorney/demo">Open attorney workspace</a>
-        <button class="secondary-btn" type="button" id="restartProviderOnboarding">Start another pilot case</button>
+        <button class="secondary-btn" type="button" id="restartProviderOnboarding">Start another case</button>
       </div>
-      <small class="provider-complete-foot">The main provider workspace currently demonstrates the supplied redacted Anthem case. Your new onboarding metadata is stored locally and, when available, in the configured Firestore pilot collections.</small>
+      <small class="provider-complete-foot">The case workspace currently opens a redacted sample. Your case setup remains available on this device; secure document upload is not available in this version.</small>
     </section>
   </section>
 </main>

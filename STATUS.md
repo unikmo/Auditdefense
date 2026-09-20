@@ -18,7 +18,7 @@ Last updated: 2026-09-20
 - Firebase project identity is verified: `auditdefense-2cb01`.
 - Firebase Web App is registered and wired: `AuditDefend Web` (`1:146444139355:web:5d3f7c9b4fad32cad5f87e`).
 - Auth test surface exists at `/auth.html`.
-- Free-tier backend verification surface exists at `/verify.html`.
+- Public backend verification surface removed; diagnostics are not customer-facing.
 - Firebase browser code now initializes Auth + Firestore only. Cloud Storage is disabled in the pilot.
 - Active `firebase.json` is constrained to Hosting/Auth/Firestore; Storage and Functions are not in the active deploy configuration.
 - Firestore rules are deny-by-default and include owner-scoped `redactedCases` that require `redacted=true`, `containsPhi=false`, a max 100 claim lines, and the authenticated owner UID.
@@ -54,7 +54,7 @@ Last updated: 2026-09-20
 - Email/Password Authentication provider has been deployed/enabled and passes live sign-up/sign-in smoke testing.
 - Firestore database has been created in the selected free-tier location.
 - Firestore rules have been deployed to the live Firebase project.
-- Authenticated redacted-case write/read/delete passes `/verify.html`.
+- Authenticated redacted-case write/read/delete requires a private diagnostic check before production reliance.
 - Unauthenticated and cross-user Firestore access is verified denied in the live project.
 - The new engagement/intake rule changes in this branch still require deployment and live multi-account verification.
 - PowerGM export/API schema is supplied and validated.

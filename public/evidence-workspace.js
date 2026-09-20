@@ -11,14 +11,14 @@
     role: 'provider',
     threads: [
       {
-        id: 'EV-001', claimId: 'CL-001', allegation: 'Demonstration finding: provider signature reported missing from assessment documentation.',
+        id: 'EV-001', claimId: 'CL-001', allegation: 'Sample payer finding: provider signature reported missing from assessment documentation.',
         payerSource: 'Supplied audit issue · exact claim-to-allegation mapping requires source verification', status: 'potential-conflict',
         evidence: [{id:'DOC-001',type:'Assessment report',location:'Provider document index › Assessment A-17',locator:'Page 4 · signature block',versionContext:'Current provider copy; original payer-submission version not yet established',fileName:'assessment-redacted.pdf',addedBy:'Provider',addedAt:'Sep 20, 2026 · 10:10 UTC',note:'A signature appears in the identified location. Signature timing, signer credentials and submission history remain to be verified.'}],
         counselNote: 'Compare the original payer submission and rebuttal copy before deciding whether the evidence contradicts the finding.',
         reviewedBy: 'Awaiting attorney disposition'
       },
       {
-        id: 'EV-002', claimId: 'CL-005', allegation: 'Demonstration finding: technician session / SOAP note reported missing.',
+        id: 'EV-002', claimId: 'CL-005', allegation: 'Sample payer finding: technician session / SOAP note reported missing.',
         payerSource: 'Supplied audit issue · exact claim-to-allegation mapping requires source verification', status: 'unresolved',
         evidence: [{id:'DOC-002',type:'Session / SOAP note',location:'PowerGM export › 2021 › redacted member folder',locator:'Exact service-date record to be retrieved',versionContext:'Record location supplied; file not yet reviewed',fileName:'',addedBy:'Provider',addedAt:'Sep 20, 2026 · 10:18 UTC',note:'Provider identified the likely source location. Exact patient, DOS, CPT and claim match remains outstanding.'}],
         counselNote: '', reviewedBy: 'Not reviewed'
@@ -31,7 +31,7 @@
       }
     ],
     attorneyItems: [
-      {id:'AT-001',claimId:'CL-001',type:'analysis',visibility:'counsel-only',title:'Signature comparison questions',body:'Verify the original submitted version, signature date, signer credentials and whether the payer reviewed the same copy.',fileName:'',author:'Demo Counsel',addedAt:'Sep 20, 2026 · 10:35 UTC'}
+      {id:'AT-001',claimId:'CL-001',type:'analysis',visibility:'counsel-only',title:'Signature comparison questions',body:'Verify the original submitted version, signature date, signer credentials and whether the payer reviewed the same copy.',fileName:'',author:'Sample Counsel',addedAt:'Sep 20, 2026 · 10:35 UTC'}
     ],
     notifications: [
       {id:'NT-001',audience:'provider',title:'Counsel requested source-version confirmation',body:'Open EV-001 in the secure workspace and identify which version was originally sent to the payer.',createdAt:'Sep 20, 2026 · 10:36 UTC',read:false,emailCopy:'New counsel item in your AuditDefend workspace.'}
@@ -128,7 +128,7 @@
   }
 
   function handleAttorneySubmit(event){
-    event.preventDefault(); const data=new FormData(event.currentTarget),visibility=String(data.get('visibility')),type=String(data.get('itemType')),item={id:uid('AT'),claimId:String(data.get('claimId')),type,visibility,title:String(data.get('title')),body:String(data.get('body')),fileName:fileName(data),author:'Demo Counsel',addedAt:now()};
+    event.preventDefault(); const data=new FormData(event.currentTarget),visibility=String(data.get('visibility')),type=String(data.get('itemType')),item={id:uid('AT'),claimId:String(data.get('claimId')),type,visibility,title:String(data.get('title')),body:String(data.get('body')),fileName:fileName(data),author:'Sample Counsel',addedAt:now()};
     state.attorneyItems.unshift(item);
     addActivity('Counsel',visibility==='shared'?'Shared attorney item with provider':'Added counsel-only item',`${item.id} · ${item.claimId} · ${item.title}`);
     if(visibility==='shared') state.notifications.unshift({id:uid('NT'),audience:'provider',title:type==='request'?'Counsel requested additional evidence':'Counsel shared a new workspace item',body:`Open ${item.claimId==='case-wide'?'the case workspace':item.claimId} to review the new item.`,createdAt:now(),read:false,emailCopy:'New counsel item in your AuditDefend workspace.'});
@@ -137,7 +137,7 @@
 
   document.addEventListener('click',event=>{
     const role=event.target.closest('[data-evidence-role]'); if(role){ state.role=role.dataset.evidenceRole; save(); renderRole(); return; }
-    const saveButton=event.target.closest('[data-save-thread]'); if(saveButton){ const thread=state.threads.find(item=>item.id===saveButton.dataset.saveThread),select=document.querySelector(`[data-thread-status="${CSS.escape(saveButton.dataset.saveThread)}"]`); if(thread&&select){ thread.status=select.value; thread.reviewedBy='Disposition set by Demo Counsel · '+now(); addActivity('Counsel','Updated factual comparison status',`${thread.id} · ${statusLabels[thread.status]}`); save(); render(); toast('Attorney disposition saved without making a legal conclusion.'); } return; }
+    const saveButton=event.target.closest('[data-save-thread]'); if(saveButton){ const thread=state.threads.find(item=>item.id===saveButton.dataset.saveThread),select=document.querySelector(`[data-thread-status="${CSS.escape(saveButton.dataset.saveThread)}"]`); if(thread&&select){ thread.status=select.value; thread.reviewedBy='Disposition set by Sample Counsel · '+now(); addActivity('Counsel','Updated factual comparison status',`${thread.id} · ${statusLabels[thread.status]}`); save(); render(); toast('Attorney disposition saved without making a legal conclusion.'); } return; }
     const read=event.target.closest('[data-read-notification]'); if(read){ const item=state.notifications.find(note=>note.id===read.dataset.readNotification); if(item){ item.read=true; save(); renderNotifications(); } }
   });
 
@@ -147,7 +147,7 @@
   el('providerEvidenceForm')?.elements.file.addEventListener('change',event=>{ const file=event.target.files[0]; el('providerEvidenceFileState').textContent=file?`${file.name} selected locally · contents not stored`:'No file selected · local only'; });
   el('attorneyEvidenceForm')?.elements.file.addEventListener('change',event=>{ const file=event.target.files[0]; el('attorneyEvidenceFileState').textContent=file?`${file.name} selected locally · contents not stored`:'No file selected · local only'; });
   el('attorneyItemType')?.addEventListener('change',event=>{ if(event.target.value==='message'||event.target.value==='request') el('attorneyVisibility').value='shared'; });
-  el('resetEvidenceDemo')?.addEventListener('click',()=>{ state=clone(seed); filter='all'; el('evidenceStatusFilter').value='all'; save(); render(); toast('Redacted evidence demonstration reset.'); });
+  el('resetEvidenceDemo')?.addEventListener('click',()=>{ state=clone(seed); filter='all'; el('evidenceStatusFilter').value='all'; save(); render(); toast('Redacted evidence sample reset.'); });
 
   populateClaims(); render();
 })();

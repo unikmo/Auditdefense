@@ -82,13 +82,13 @@
       <details open><summary>Does the provider pay again if the attorney starts the case?</summary><p>No. The product model is one fixed case fee based on the payer's asserted exposure, regardless of whether the provider or attorney originates the matter.</p></details>
       <details><summary>Is there an extra fee to find an attorney?</summary><p>No for directory/self-selection, invitations and up to three initial participating-attorney introductions. Attorneys are independent professionals. A future optional human Match Concierge may carry a disclosed $195–$295 flat fee. Legal fees are contracted and paid directly between provider and attorney.</p></details>
       <details><summary>Does an invitation create representation or expose documents?</summary><p>No. The sequence is Invitation sent → Conflict check pending → Engagement confirmed → Provider grants access. AuditDefend does not itself create an attorney-client relationship; engagement remains subject to the parties’ agreement and applicable professional rules.</p></details>
-      <details><summary>Can I send the provider an intake link?</summary><p>The provider-intake flow is implemented. Automated email delivery and live invitation acceptance remain external activation items in the pilot.</p></details>
-      <details><summary>Are counsel notes visible to the provider?</summary><p>The data model separates counsel-only notes from the provider-visible case root. Live Firestore rule deployment still requires verification before production reliance.</p></details>
-      <details><summary>Can I see the product before onboarding?</summary><p>Yes. The sample workspace uses the redacted Anthem claim-review structure supplied for this pilot.</p></details>
+      <details><summary>Can I send the provider an intake link?</summary><p>Yes. Create the matter, copy its structured intake link and send it through your usual client communication channel. Automated email delivery is not yet available.</p></details>
+      <details><summary>Are counsel notes visible to the provider?</summary><p>Counsel-only notes are separated from provider-facing summaries. Counsel chooses what is communicated to the provider.</p></details>
+      <details><summary>Can I see the product before onboarding?</summary><p>Yes. The sample workspace uses a redacted Anthem claim-review structure with no patient or member identifiers.</p></details>
     </div>
   </div>
 </section>
 
-<footer class="m-footer"><div class="m-shell m-footer-grid"><div><a class="m-brand" href="/"><span class="m-mark">⚖</span><span>AuditDefend<small>Attorney audit-defense workflow</small></span></a><small>Non-production redacted pilot · Not legal advice · PHI ingestion remains disabled.</small></div><nav><a href="/">Home</a><a href="/provider">Providers</a><a href="/attorneys">Directory</a><a href="/attorney/demo">Sample workspace</a><a href="/auth.html">Sign in</a></nav></div></footer>
+<footer class="m-footer"><div class="m-shell m-footer-grid"><div><a class="m-brand" href="/"><span class="m-mark">⚖</span><span>AuditDefend<small>Attorney audit-defense workflow</small></span></a><small>Human review required · Not legal advice · Do not upload PHI until secure document storage is available.</small></div><nav><a href="/">Home</a><a href="/provider">Providers</a><a href="/attorneys">Directory</a><a href="/attorney/demo">Sample workspace</a><a href="/auth.html">Sign in</a></nav></div></footer>
 </body>
 </html>

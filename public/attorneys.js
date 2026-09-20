@@ -25,7 +25,7 @@ function render(){
    <span class="unclaimed">Unclaimed public-source profile · no AuditDefend affiliation implied</span>
    <footer><a href="${p.source}" target="_blank" rel="noopener noreferrer">Public source ↗</a><button class="m-btn ghost claim-btn" data-claim="${p.id}">Claim profile</button></footer>
  </article>`).join(''):'<div class="directory-empty">No matching profiles. No attorney is labeled “participating” until participation and profile control are verified.</div>';
- $('directoryCount').textContent=`${rows.length} of ${profiles.length} verified profiles shown. All current seed profiles are public-source and unclaimed; none are represented as participating.`;
+ $('directoryCount').textContent=`${rows.length} of ${profiles.length} verified public-source profiles shown. All current profiles are unclaimed; none are represented as participating.`;
 }
 function populateLocations(){[...new Set(profiles.map(p=>p.location))].sort().forEach(loc=>{const o=document.createElement('option');o.value=loc;o.textContent=loc;$('directoryState').appendChild(o)})}
 function openClaim(id){const p=profiles.find(x=>x.id===id);if(!p)return;$('claimProfileId').value=p.id;$('claimProfileName').value=p.name+' — '+p.firm;$('claimTitle').textContent='Claim '+p.name;$('claimWorkEmail').value=currentUser?.email||'';$('claimModal').classList.add('open');$('claimModal').setAttribute('aria-hidden','false');$('claimStatus').className='claim-status';$('claimStatus').textContent=currentUser?'Signed in. Claim requests are reviewed before profile control is granted.':'Sign-in is required to submit a claim request.'}
@@ -43,7 +43,7 @@ $('claimForm').addEventListener('submit',async e=>{
  try{
    await window.AuditDefendFirebaseAPI.submitAttorneyDirectoryClaim(data.profileId,{workEmail:data.workEmail,firmWebsite:data.firmWebsite,jurisdiction:data.jurisdiction,sourceProfile:profiles.find(p=>p.id===data.profileId)?.source||null,redacted:true,containsPhi:false});
    $('claimStatus').className='claim-status ok';$('claimStatus').textContent='Claim request submitted. Profile control is not granted until verification is completed.';localStorage.removeItem('auditdefend-directory-claim-draft');
- }catch(err){console.warn(err);$('claimStatus').className='claim-status error';$('claimStatus').textContent='The claim request could not be synced. Firestore rules may not be deployed yet; no approval is being claimed.'}
+ }catch(err){console.warn(err);$('claimStatus').className='claim-status error';$('claimStatus').textContent='The claim request could not be submitted right now. Please try again later; no profile control has been granted.'}
  finally{btn.disabled=false}
 });
 populateLocations();render();
