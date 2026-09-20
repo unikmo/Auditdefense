@@ -11,7 +11,7 @@ Last updated: 2026-09-19
 - The previous Netlify project is disabled (not deleted) and no longer serves the public deployment.
 - The dashboard is now based on the supplied 30-line Anthem payer-review worksheet rather than the older synthetic Aetna case.
 - Real worksheet outcomes are modeled: 8/30 initially supported, 22/30 initially unsupported (73% error rate by count), 3/30 supported after rebuttal, 27/30 unsupported after rebuttal, and 5 A→B reversals.
-- Sample financial calculation is separated from the case-wide demand: $3,469.64 sampled paid amount, $520.00 finally supported, $2,949.64 associated with finally unsupported lines, and $567,656.77 case-wide asserted overpayment.
+- Sample financial calculation is separated from the reported case-wide demand: $3,469.64 sampled paid amount, $520.00 finally supported, $2,949.64 associated with finally unsupported lines, and a $567,096.77 reported component total pending source reconciliation.
 - Patient/member names, DOBs, member IDs, source claim numbers and full NPIs from the supplied worksheet are NOT published. The public fixture uses redacted IDs and masked provider references.
 - Provider-facing UX now presents status → reason → money at risk → next action.
 - Counsel workspace now highlights initial-to-rebuttal changes, NPI/DOS enrollment evidence, payer authority, claim-universe overlap and recovery-math review.

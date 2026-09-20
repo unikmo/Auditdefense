@@ -2,7 +2,7 @@ window.AuditDefendCaseData = Object.freeze({
   caseLabel: 'Anthem SIU Audit — Redacted Real-Case Structure',
   source: '6-page claim review worksheet supplied for product validation',
   caseContext: Object.freeze({payer:'Anthem',program:'NY Medicaid Managed Care',state:'NY',dosPrecision:'YEAR_ONLY_REDACTED'}),
-  assertedOverpayment: 567656.77,
+  assertedOverpayment: 567096.77,
   privacyNote: 'Member names, DOBs, member IDs, claim numbers and full NPIs are intentionally not published.',
   claims: [
     {id:'CL-001',year:2020,cpt:'97155',units:6,charged:412.50,paid:120.00,initial:'B',rebuttal:'B',provider:'Provider A · NPI ••••0215',issues:['Documentation support','NPI enrollment on DOS']},
