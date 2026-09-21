@@ -22,7 +22,7 @@ for(const [file,route] of indexable){
   const canonical=match(html,/<link\s+rel="canonical"\s+href="([^"]+)"/i,'canonical',file);
   const h1=(html.match(/<h1(?:\s[^>]*)?>/gi)||[]).length;
   if(h1!==1)throw new Error(`${file}: expected exactly one H1, found ${h1}`);
-  if(canonical!==canonicalBase+route)throw new Error(`${file}: canonical mismatch (${canonical})`);
+  if(canonical!==route)throw new Error(`${file}: canonical mismatch (${canonical})`);
   if(/noindex/i.test(html))throw new Error(`${file}: indexable page contains noindex`);
   if(!/property="og:title"/i.test(html)||!/property="og:description"/i.test(html)||!/property="og:url"/i.test(html))throw new Error(`${file}: incomplete Open Graph metadata`);
   if(!/name="twitter:card"/i.test(html))throw new Error(`${file}: missing Twitter card metadata`);
