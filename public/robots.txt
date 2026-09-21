@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /app
+Disallow: /dashboard
+Disallow: /auth
+Disallow: /provider/onboarding
+Disallow: /provider-onboarding
+Disallow: /attorney/demo
+Disallow: /attorney/workspace
+
+Sitemap: https://auditdefense-unikmos-projects.vercel.app/sitemap.xml

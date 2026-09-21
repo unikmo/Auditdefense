@@ -12,7 +12,14 @@
     { "source": "/attorney/demo", "destination": "/attorney-workspace" },
     { "source": "/attorney/workspace", "destination": "/attorney-workspace" },
     { "source": "/attorneys", "destination": "/attorneys" },
-    { "source": "/attorney-directory", "destination": "/attorneys" }
+    { "source": "/attorney-directory", "destination": "/attorneys" },
+    { "source": "/resources", "destination": "/resources" },
+    { "source": "/healthcare-payer-audit-response", "destination": "/healthcare-payer-audit-response" },
+    { "source": "/healthcare-overpayment-demand", "destination": "/healthcare-overpayment-demand" },
+    { "source": "/medicaid-provider-audit", "destination": "/medicaid-provider-audit" },
+    { "source": "/behavioral-health-audit-response", "destination": "/behavioral-health-audit-response" },
+    { "source": "/aba-provider-audit", "destination": "/aba-provider-audit" },
+    { "source": "/npi-provider-enrollment-audit", "destination": "/npi-provider-enrollment-audit" }
   ],
   "headers": [
     {
