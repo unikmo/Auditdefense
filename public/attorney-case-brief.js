@@ -2,7 +2,7 @@ window.AuditDefendAttorneyBriefs = Object.freeze({
   'case-anthem': Object.freeze({
     title: 'Counsel issue brief — source validation in progress',
     notice: 'This workspace organizes facts, open questions and potentially relevant authorities. It does not determine liability, predict an outcome or recommend a legal position. Every assessment remains subject to attorney review and decision.',
-    provenance: 'The source packet now establishes an earlier records-request and demand stage for Case C2024-8723: a December 12, 2024 records request with a 60-entry patient-record schedule; a March 13, 2026 SIU demand; a March 20, 2026 provider rebuttal; and a provider-prepared claim/support map. The later 30-line rebuttal-review and enrollment figures remain a separate stage. The two demand calculations must be reconciled rather than combined.',
+    provenance: 'The source packet now establishes an earlier records-request and demand stage for Case C2024-8723: a December 12, 2024 records request with a 60-entry patient-record schedule; a March 13, 2026 SIU demand; a March 20, 2026 provider rebuttal; and a provider-prepared claim/support map. A private provider repository has also been inventoried for code-and-date-labeled source records. The later 30-line rebuttal-review and enrollment figures remain a separate stage. The two demand calculations must be reconciled rather than combined.',
     financials: Object.freeze([
       {label:'March 13, 2026 demand',value:'$64,733.00',status:'Source-supported',detail:'The SIU letter states this total and separates direct and extrapolated components.'},
       {label:'Direct 97153 component',value:'$160.00',status:'Source-supported',detail:'Stated in the March 13 demand as direct overpayment for CPT 97153.'},
@@ -18,6 +18,9 @@ window.AuditDefendAttorneyBriefs = Object.freeze({
       {fact:'The provider rebuttal is dated March 20, 2026 and disputes the claim count, document receipt, claim scope, claim-specific rationale and extrapolation.',status:'Provider position',source:'March 20, 2026 provider rebuttal'},
       {fact:'The rebuttal states that the 97153 worksheet showed 31 of 32 lines graded A and that the 97155 worksheet showed 8 of 30 graded A, but it then describes the combined result as 39 of 60. The denominator cannot be reconciled from that statement alone.',status:'Arithmetic conflict',source:'March 20, 2026 provider rebuttal'},
       {fact:'The provider-prepared audit list links reviewed 97155 lines to alleged supporting 97153 records and provider explanations. It is not itself a payer determination.',status:'Source classification',source:'Provider feedback audit list'},
+      {fact:'A private provider Dropbox repository search returned 47 filename matches for CPT 97153 and 32 filename matches for CPT 97155 under the SCANNED source folder.',status:'Repository inventory',source:'Private provider repository reviewed September 26, 2026'},
+      {fact:'A representative 2020 CPT 97155 PDF preview displayed a SOAP-note format and a visible handwritten signature area. A representative 2021 CPT 97153 PDF preview displayed a session-record format with populated technician/signature fields.',status:'Representative visual inspection',source:'Private provider repository; member details and exact dates redacted'},
+      {fact:'The repository inventory includes duplicate or variant filenames and at least one malformed date-like filename. File presence and naming alone do not establish claim identity, completeness, payer receipt, the version reviewed or legal sufficiency.',status:'Verification limitation',source:'Private provider repository inventory'},
       {fact:'Thirty claim lines are represented in the redacted structured sample.',status:'Sample-supported',source:'Structured claim worksheet data'},
       {fact:'The sample records 22 of 30 lines as initially unsupported (73% by count).',status:'Calculated',source:'Structured claim worksheet data'},
       {fact:'The sample records 27 of 30 lines as unsupported after rebuttal, including five A-to-B changes.',status:'Calculated',source:'Structured claim worksheet data'},
@@ -32,6 +35,7 @@ window.AuditDefendAttorneyBriefs = Object.freeze({
       {title:'March 13, 2026 SIU overpayment demand',status:'Received',scope:'59/60 stated result, $64,733 demand, component breakdown, CAP request and April 14 deadline.'},
       {title:'March 20, 2026 provider rebuttal',status:'Received',scope:'Provider assertions concerning worksheet counts, missing records, claim scope, 97155 criteria, CAP and extrapolation.'},
       {title:'Provider-prepared audit list with feedback',status:'Received',scope:'Claim/support mapping and provider explanations; not a payer-authored final determination.'},
+      {title:'Private provider source repository',status:'Located — mapping in progress',scope:'47 CPT 97153 and 32 CPT 97155 filename matches located. Representative previews show note and signature fields; exact claim mapping, completeness, version history and payer receipt remain unverified.'},
       {title:'Complete 97153 and 97155 payer worksheets',status:'Incomplete',scope:'Needed to reconcile 59/60, 31/32, 8/30 and the provider rebuttal denominator.'},
       {title:'Operative later NPI/enrollment demand and CAP',status:'Needed',scope:'Needed to connect the later $567,096.77 reported components to the earlier $64,733 demand.'}
     ]),
@@ -80,9 +84,15 @@ window.AuditDefendAttorneyBriefs = Object.freeze({
       },
       {
         question:'Were all reviewed claims requested, submitted and actually considered?',
-        currentAnswer:'The provider rebuttal alleges that one submitted record was marked not received, that only part of a worksheet was supplied, and that at least two reviewed claims were outside the original request. These assertions have not yet been matched row by row.',
-        needed:'Original request schedule, shipping proof, USB or production manifest, Bates/index record, full review worksheets and payer intake logs.',
+        currentAnswer:'The provider rebuttal alleges that one submitted record was marked not received, that only part of a worksheet was supplied, and that at least two reviewed claims were outside the original request. The private provider repository now shows 47 CPT 97153 and 32 CPT 97155 filename matches, but repository presence does not prove that the same version was produced to or reviewed by Anthem.',
+        needed:'Original request schedule, claim-to-file crosswalk, exported file manifest and hashes, shipping or portal-upload proof, Bates/index record, full review worksheets and payer intake logs.',
         significance:'The evidence chain may determine whether a finding reflects a missing record, a transmission gap, a scope discrepancy or an actual documentation deficiency.'
+      },
+      {
+        question:'Do the current provider copies factually contradict any missing-note or missing-signature finding?',
+        currentAnswer:'Potentially, but no claim-level contradiction is established yet. Representative 97153 and 97155 previews contain note content and populated signature fields, while the repository contains many code-and-date-labeled records. The exact payer row, member, claim, service date and version reviewed have not been linked.',
+        needed:'A redacted claim-to-document crosswalk, full-file inspection, signature and credential review, file metadata, version history and proof identifying what Anthem actually received and reviewed.',
+        significance:'This comparison can distinguish a current-source record from the specific record set underlying the payer finding. Any conclusion remains subject to attorney review and decision.'
       },
       {
         question:'What exact 97155 documentation rule did the reviewer apply?',
