@@ -1,0 +1,42 @@
+(() => {
+  const KEY='auditdefend-provider-evidence-demo-v2';
+  const claims=window.AuditDefendCaseData?.claims||[];
+  const $=id=>document.getElementById(id);
+  const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  const seedDocs=[
+    {claimId:'CL-001',type:'signature',source:'Private source repository',version:'current',name:'97155-[DOS-REDACTED].pdf',note:'Visible signature area; payer-submission version not yet matched.'},
+    {claimId:'CL-005',type:'session-note',source:'Private source repository',version:'current',name:'97153-[DOS-REDACTED].pdf',note:'Session record located; payer receipt not yet shown.'}
+  ];
+  let state=(()=>{try{return JSON.parse(localStorage.getItem(KEY))||{documents:seedDocs,lastRun:null}}catch{return{documents:seedDocs,lastRun:null}}})();
+  let filter='all',search='';
+  const typeLabel={"session-note":'Session / SOAP note',signature:'Signed record',"treatment-plan":'Treatment plan / assessment',enrollment:'Enrollment record',authorization:'Authorization',"submission-proof":'Proof sent to payer',other:'Other record'};
+  const save=()=>localStorage.setItem(KEY,JSON.stringify(state));
+  function toast(message){const node=$('providerWorkspaceToast');node.textContent=message;node.classList.add('show');clearTimeout(window.__pwToast);window.__pwToast=setTimeout(()=>node.classList.remove('show'),3000)}
+  function documentsFor(id){return state.documents.filter(item=>item.claimId===id)}
+  function resultFor(claim){
+    if(claim.rebuttal==='A')return{status:'reconciled',label:'Reconciled',found:'Payer result currently shows support',next:'Keep the supporting record and payer decision together.'};
+    const docs=documentsFor(claim.id),hasSupport=docs.some(d=>d.type!=='submission-proof'),hasSubmission=docs.some(d=>d.type==='submission-proof'||d.version==='submitted'||d.version==='rebuttal');
+    if(hasSupport&&hasSubmission)return{status:'reconciled',label:'Reconciled',found:'Supporting record and sending history are linked',next:'Keep both items together for attorney review.'};
+    if(hasSupport)return{status:'review',label:'Check needed',found:'A possible supporting record is linked',next:'Add the copy sent to the payer or proof of delivery.'};
+    const issue=claim.issues?.[0]||'supporting documentation';
+    return{status:'missing',label:'Proof missing',found:'No matching record linked yet',next:`Find the ${issue.toLowerCase()} record for this claim.`};
+  }
+  function results(){return claims.map(claim=>({claim,...resultFor(claim)}))}
+  function money(value){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value||0)}
+  function renderKpis(){const rows=results(),counts={reconciled:0,review:0,missing:0};rows.forEach(r=>counts[r.status]++);$('providerKpis').innerHTML=[['reconciled',counts.reconciled,'Reconciled','The needed proof is linked'],['review',counts.review,'Check needed','One more item may be needed'],['missing',counts.missing,'Proof missing','No matching record is linked']].map(([kind,n,label,copy])=>`<div><strong>${n}</strong><span>${label}</span><small>${copy}</small></div>`).join('');$('missingBadge').textContent=counts.missing;$('resultBadge').textContent=rows.length;$('nextStepCount').textContent=`${counts.missing} claims still need proof`;$('providerSummary').innerHTML=[{kind:'reconciled',n:counts.reconciled,title:'Claims reconciled',copy:'The needed proof is linked or the payer marked the claim supported.'},{kind:'review',n:counts.review,title:'Claims to check',copy:'A possible match exists, but one more item is needed.'},{kind:'missing',n:counts.missing,title:'Claims missing proof',copy:'Find and link the exact record requested by the payer.'}].map(x=>`<article class="${x.kind}"><div><b>${x.title}</b><span>${x.copy}</span></div><strong>${x.n}</strong></article>`).join('');$('lastRun').textContent=state.lastRun?`Last checked ${new Date(state.lastRun).toLocaleString()}`:'Checked from current documents'}
+  function payerFinding(claim){return claim.issues?.length?claim.issues.join(' + '):'Supported'}
+  function renderResults(){let rows=results();if(filter!=='all')rows=rows.filter(r=>r.status===filter);if(search){const q=search.toLowerCase();rows=rows.filter(r=>`${r.claim.id} ${r.claim.year} ${r.claim.cpt}`.toLowerCase().includes(q))}$('providerResultsBody').innerHTML=rows.map(r=>`<tr><td><b>${esc(r.claim.id)}</b><span>${r.claim.year} · ${money(r.claim.paid)} paid</span></td><td><b>CPT ${esc(r.claim.cpt)}</b><span>${r.claim.units} units</span></td><td><b>${esc(payerFinding(r.claim))}</b><span>Later payer result: ${r.claim.rebuttal==='A'?'supported':'not supported'}</span></td><td><b>${esc(r.found)}</b><span>${documentsFor(r.claim.id).length} linked record${documentsFor(r.claim.id).length===1?'':'s'}</span></td><td><span class="pw-status status-${r.status}">${r.label}</span></td><td><b>${esc(r.next)}</b><span>No legal conclusion generated.</span></td></tr>`).join('');$('providerResultCount').textContent=`Showing ${rows.length} of ${claims.length} claims`}
+  function renderMissing(){const rows=results().filter(r=>r.status==='missing');$('providerMissingList').innerHTML=rows.map(r=>`<article><div><h3>${esc(r.claim.id)}</h3><p>${r.claim.year} · CPT ${esc(r.claim.cpt)} · ${money(r.claim.paid)} paid</p></div><div><h3>${esc(payerFinding(r.claim))}</h3><p>${esc(r.next)}</p></div><button data-add-for="${esc(r.claim.id)}">Add record</button></article>`).join('')||'<section class="pw-card"><h2>No unmatched claims</h2><p>Every claim currently has linked proof. Attorney review may still be required.</p></section>'}
+  function renderRecent(){const rows=state.documents.slice(-5).reverse();$('recentDocuments').innerHTML='<h3>Recently linked records</h3>'+rows.map(d=>`<article><b>${esc(d.claimId)} · ${esc(typeLabel[d.type]||d.type)}</b><span> — ${esc(d.source)} · ${esc(d.version)}</span></article>`).join('')}
+  function render(){renderKpis();renderResults();renderMissing();renderRecent()}
+  function showView(view){document.querySelectorAll('.pw-view').forEach(node=>node.classList.toggle('active',node.id===`provider-view-${view}`));document.querySelectorAll('[data-provider-view]').forEach(node=>node.classList.toggle('active',node.dataset.providerView===view));$('providerSidebar').classList.remove('open');history.replaceState(null,'',`#${view}`);scrollTo({top:0,behavior:'smooth'})}
+  function runCheck(){state.lastRun=new Date().toISOString();save();render();toast('Document check complete. Provider results updated.')}
+  $('providerClaimSelect').innerHTML=claims.map(c=>`<option value="${esc(c.id)}">${esc(c.id)} · ${c.year} · CPT ${esc(c.cpt)}</option>`).join('');
+  document.addEventListener('click',event=>{const nav=event.target.closest('[data-provider-view]');if(nav)return showView(nav.dataset.providerView);const target=event.target.closest('[data-provider-target]');if(target)return showView(target.dataset.providerTarget);const add=event.target.closest('[data-add-for]');if(add){$('providerClaimSelect').value=add.dataset.addFor;showView('documents');return}const message=event.target.closest('[data-message]');if(message)return toast(message.dataset.message)});
+  $('providerMenu').addEventListener('click',()=>$('providerSidebar').classList.toggle('open'));
+  $('providerDocumentForm').elements.file.addEventListener('change',event=>{$('providerFileState').textContent=event.target.files[0]?.name||'No file selected'});
+  $('providerDocumentForm').addEventListener('submit',event=>{event.preventDefault();const data=new FormData(event.currentTarget),file=data.get('file');state.documents.push({claimId:String(data.get('claimId')),type:String(data.get('documentType')),source:String(data.get('source')),version:String(data.get('version')),name:file instanceof File&&file.size?file.name:'Location reference only',note:String(data.get('note')||'')});event.currentTarget.reset();$('providerFileState').textContent='No file selected';runCheck();showView('results')});
+  $('providerStatusFilter').addEventListener('change',event=>{filter=event.target.value;renderResults()});$('providerClaimSearch').addEventListener('input',event=>{search=event.target.value.trim();renderResults()});$('runProviderCheck').addEventListener('click',runCheck);
+  $('resetProviderDemo')?.addEventListener('click',()=>{state={documents:seedDocs,lastRun:null};save();render();toast('Provider demonstration reset.')});
+  render();showView((location.hash||'#home').slice(1));
+})();
