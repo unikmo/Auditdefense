@@ -167,7 +167,6 @@ function openClaim(data){
     <div class="drawer-section"><h3>Why it matters</h3><p class="drawer-copy">${primaryReason(data)}.</p>
       <div class="source-box">Payer worksheet structure, redacted for this public sample. Original source documents are excluded because they contain patient or member identifiers.</div>
     </div>
-    <div class="drawer-section"><h3>Policy intelligence</h3><div class="policy-drawer-status">${policyEvidenceForClaim(data)}</div><button class="secondary-btn" data-view-target="policy">Open Policy Intelligence →</button></div>
     <div class="drawer-section"><h3>Next evidence to verify</h3><p class="drawer-copy">${data.rebuttal==='A'?'Preserve the supporting documentation and payer decision in the final case binder.':'Confirm the exact payer/program rule, documentation cited by the reviewer, and the provider enrollment effective date applicable to this date of service.'}</p><button class="primary-btn" data-toast="This public sample does not save review-state changes.">Mark for attorney review</button></div>`;
   const drawer=document.getElementById('claimDrawer');drawer.classList.add('open');drawer.setAttribute('aria-hidden','false');
 }
