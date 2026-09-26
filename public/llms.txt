@@ -10,20 +10,20 @@ AuditDefend is a healthcare payer-audit response workspace for providers and ind
 
 ## Core pages
 
-- Home: https://auditdefense-unikmos-projects.vercel.app/
-- Provider workflow: https://auditdefense-unikmos-projects.vercel.app/provider
-- Attorney workflow: https://auditdefense-unikmos-projects.vercel.app/attorney
-- Attorney directory: https://auditdefense-unikmos-projects.vercel.app/attorneys
-- Resource library: https://auditdefense-unikmos-projects.vercel.app/resources
+- Home: https://auditdefense.vercel.app/
+- Provider workflow: https://auditdefense.vercel.app/provider
+- Attorney workflow: https://auditdefense.vercel.app/attorney
+- Attorney directory: https://auditdefense.vercel.app/attorneys
+- Resource library: https://auditdefense.vercel.app/resources
 
 ## Educational resources
 
-- Healthcare payer audit response: https://auditdefense-unikmos-projects.vercel.app/healthcare-payer-audit-response
-- Healthcare overpayment demand: https://auditdefense-unikmos-projects.vercel.app/healthcare-overpayment-demand
-- Medicaid provider audit: https://auditdefense-unikmos-projects.vercel.app/medicaid-provider-audit
-- Behavioral-health audit response: https://auditdefense-unikmos-projects.vercel.app/behavioral-health-audit-response
-- ABA provider audit: https://auditdefense-unikmos-projects.vercel.app/aba-provider-audit
-- NPI and provider-enrollment audit findings: https://auditdefense-unikmos-projects.vercel.app/npi-provider-enrollment-audit
+- Healthcare payer audit response: https://auditdefense.vercel.app/healthcare-payer-audit-response
+- Healthcare overpayment demand: https://auditdefense.vercel.app/healthcare-overpayment-demand
+- Medicaid provider audit: https://auditdefense.vercel.app/medicaid-provider-audit
+- Behavioral-health audit response: https://auditdefense.vercel.app/behavioral-health-audit-response
+- ABA provider audit: https://auditdefense.vercel.app/aba-provider-audit
+- NPI and provider-enrollment audit findings: https://auditdefense.vercel.app/npi-provider-enrollment-audit
 
 ## Important boundaries
 
@@ -32,4 +32,4 @@ AuditDefend is a healthcare payer-audit response workspace for providers and ind
 - Legal interpretation, advice, strategy and conclusions remain subject to attorney review and decision.
 - Public demos are redacted and must not contain protected health information.
 
-Last updated: 2026-09-21
+Last updated: 2026-09-26

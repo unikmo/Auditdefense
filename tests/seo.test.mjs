@@ -3,7 +3,7 @@ import path from 'node:path';
 
 const root=process.cwd();
 const publicDir=path.join(root,'public');
-const canonicalBase='https://auditdefense-unikmos-projects.vercel.app';
+const canonicalBase='https://auditdefense.vercel.app';
 const indexable=[
   ['index.html','/'],['provider.html','/provider'],['attorney.html','/attorney'],['attorneys.html','/attorneys'],
   ['resources.html','/resources'],['healthcare-payer-audit-response.html','/healthcare-payer-audit-response'],

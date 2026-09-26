@@ -6,3 +6,5 @@
 .counsel-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.counsel-actions a{text-decoration:none;display:inline-block}
 
 .onboarding-link{display:block;text-align:center;text-decoration:none;margin-top:8px}
+
+@media(min-width:1251px){.case-chronology-card{grid-column:3/5}.dashboard-grid>.ai-card{grid-column:1/5;grid-row:auto}.dashboard-grid>.ai-card ol{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:12px 0 14px}}
