@@ -17,5 +17,8 @@ assert.match(brief,/subject to attorney review and decision/i,'Attorney decision
 assert.doesNotMatch(brief,/destroys Anthem|upper hand|pay \$0|textbook example|legally acknowledged/i,'Brief contains an unsupported legal conclusion.');
 assert.match(app,/distinct demand stages that must not be collapsed/i,'Provider workspace must separate demand stages.');
 assert.match(data,/initialDemand:64733[\s\S]*direct97153:160[\s\S]*extrapolated97155:64573/,'Structured source amounts missing.');
+assert.match(data,/located97153Matches:47[\s\S]*located97155Matches:32/,'Private source-repository inventory counts missing.');
+assert.match(brief,/repository presence does not prove that the same version was produced to or reviewed by Anthem/i,'Source-version limitation missing.');
+assert.match(brief,/Any conclusion remains subject to attorney review and decision/i,'Attorney-review limitation missing from repository comparison.');
 
 console.log('Case chronology, provenance and legal-boundary tests passed.');
