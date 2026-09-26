@@ -1,0 +1,35 @@
+# AuditDefend
+
+AuditDefend is a healthcare payer-audit response workspace for providers and independent counsel. It organizes payer allegations, affected claims, evidence locations, policy sources, review history and financial calculations. It does not provide legal advice, predict outcomes or automatically determine whether a payer finding is valid.
+
+## Primary audiences
+
+- Healthcare providers responding to payer audits or overpayment demands
+- Healthcare attorneys reviewing provider reimbursement disputes
+- Compliance teams preparing for documentation and enrollment reviews
+
+## Core pages
+
+- Home: https://auditdefense-unikmos-projects.vercel.app/
+- Provider workflow: https://auditdefense-unikmos-projects.vercel.app/provider
+- Attorney workflow: https://auditdefense-unikmos-projects.vercel.app/attorney
+- Attorney directory: https://auditdefense-unikmos-projects.vercel.app/attorneys
+- Resource library: https://auditdefense-unikmos-projects.vercel.app/resources
+
+## Educational resources
+
+- Healthcare payer audit response: https://auditdefense-unikmos-projects.vercel.app/healthcare-payer-audit-response
+- Healthcare overpayment demand: https://auditdefense-unikmos-projects.vercel.app/healthcare-overpayment-demand
+- Medicaid provider audit: https://auditdefense-unikmos-projects.vercel.app/medicaid-provider-audit
+- Behavioral-health audit response: https://auditdefense-unikmos-projects.vercel.app/behavioral-health-audit-response
+- ABA provider audit: https://auditdefense-unikmos-projects.vercel.app/aba-provider-audit
+- NPI and provider-enrollment audit findings: https://auditdefense-unikmos-projects.vercel.app/npi-provider-enrollment-audit
+
+## Important boundaries
+
+- Provider records and payer documents remain fact sources; counsel analysis remains separate.
+- An attorney invitation does not create an attorney-client relationship or expose case documents.
+- Legal interpretation, advice, strategy and conclusions remain subject to attorney review and decision.
+- Public demos are redacted and must not contain protected health information.
+
+Last updated: 2026-09-21
