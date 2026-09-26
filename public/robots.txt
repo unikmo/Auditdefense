@@ -5,6 +5,8 @@ Disallow: /dashboard
 Disallow: /auth
 Disallow: /provider/onboarding
 Disallow: /provider-onboarding
+Disallow: /provider/workspace
+Disallow: /provider/demo
 Disallow: /attorney/demo
 Disallow: /attorney/workspace
 
