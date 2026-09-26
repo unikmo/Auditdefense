@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f45a1f"><meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="AuditDefend provider workspace for matching payer findings to supporting documents.">
+<title>AuditDefend — Provider Workspace</title>
+<link rel="stylesheet" href="/provider-workspace.css">
+</head>
+<body>
+<div class="pw-demo"><span></span><strong>Redacted provider demonstration</strong><small>No patient names, member IDs or full claim identifiers are displayed.</small></div>
+<div class="pw-shell">
+  <aside class="pw-sidebar" id="providerSidebar">
+    <a class="pw-brand" href="/provider"><b>⚖</b><span><strong>AuditDefend</strong><small>Provider workspace</small></span></a>
+    <nav aria-label="Provider workspace menu">
+      <button class="active" data-provider-view="home"><i>⌂</i><span>Case home</span></button>
+      <button data-provider-view="documents"><i>＋</i><span>Add documents</span></button>
+      <button data-provider-view="results"><i>✓</i><span>Claim results</span><em id="resultBadge">30</em></button>
+      <button data-provider-view="missing"><i>!</i><span>Missing proof</span><em id="missingBadge">25</em></button>
+      <button data-provider-view="attorney"><i>♙</i><span>Attorney access</span></button>
+    </nav>
+    <div class="pw-sidebar-note"><b>What happens here?</b><p>You add the audit documents and tell us where your records are kept. AuditDefend checks which claims have matching proof and shows what is still missing.</p></div>
+    <a class="pw-exit" href="/provider">← Provider information</a>
+  </aside>
+
+  <main class="pw-main">
+    <header class="pw-topbar"><button id="providerMenu" aria-label="Open provider menu">☰</button><div><b>Anthem SIU case · redacted</b><small>Provider view</small></div><div class="pw-user"><span>RP</span><small>Redacted Practice</small></div></header>
+
+    <section class="pw-view active" id="provider-view-home">
+      <div class="pw-welcome"><div><span class="pw-kicker">YOUR AUDIT, IN PLAIN ENGLISH</span><h1>Here is what your documents show.</h1><p>We compared the payer’s claim list with the records currently identified by the practice. This is a factual document check—not a legal decision.</p><div class="pw-actions"><button class="pw-primary" data-provider-target="documents">Add more documents</button><button class="pw-secondary" data-provider-target="results">See every claim</button></div></div><aside><b>Next best step</b><strong id="nextStepCount">25 claims still need proof</strong><p>Start with claims carrying the highest paid amount, then add the exact record and the version previously sent to the payer.</p><button data-provider-target="missing">Open missing-proof list →</button></aside></div>
+      <div class="pw-kpis" id="providerKpis"></div>
+      <section class="pw-card pw-results-overview"><div class="pw-card-head"><div><span class="pw-kicker">DOCUMENT CHECK</span><h2>What the system found</h2></div><span class="pw-updated" id="lastRun">Checked from current documents</span></div><div class="pw-summary-list" id="providerSummary"></div></section>
+    </section>
+
+    <section class="pw-view" id="provider-view-documents">
+      <div class="pw-page-head"><div><span class="pw-kicker">ADD DOCUMENTS</span><h1>Tell us what record you found.</h1><p>Link each document to one claim. AuditDefend then reruns the document check and updates the provider results.</p></div><span class="pw-safe">Selected files stay on this device in this demonstration.</span></div>
+      <div class="pw-grid pw-doc-grid">
+        <form class="pw-card" id="providerDocumentForm">
+          <h2>1. Identify the record</h2>
+          <label>Claim<select name="claimId" id="providerClaimSelect"></select></label>
+          <label>What did you find?<select name="documentType" required><option value="session-note">Session or SOAP note</option><option value="signature">Signed record</option><option value="treatment-plan">Treatment plan or assessment</option><option value="enrollment">Enrollment or credentialing record</option><option value="authorization">Authorization</option><option value="submission-proof">Proof it was sent to the payer</option><option value="other">Other supporting record</option></select></label>
+          <label>Where is it kept?<input name="source" required placeholder="EHR, Dropbox, billing system or archive"></label>
+          <label>Which copy is this?<select name="version"><option value="current">Current practice copy</option><option value="submitted">Copy previously sent to payer</option><option value="rebuttal">Copy sent with rebuttal</option><option value="unknown">Not sure</option></select></label>
+          <label class="pw-file">Choose a redacted file<input name="file" type="file" accept=".pdf,.csv,.xlsx,.doc,.docx,.png,.jpg,.jpeg"><small id="providerFileState">No file selected</small></label>
+          <label>Helpful note<textarea name="note" placeholder="Example: signature appears on page 2"></textarea></label>
+          <button class="pw-primary" type="submit">Add record and run check</button>
+        </form>
+        <section class="pw-card"><h2>2. What AuditDefend checks</h2><ol class="pw-check-list"><li><b>Claim match</b><span>Does the record identify the same service and claim?</span></li><li><b>Missing item</b><span>Does it contain the note, signature, plan, authorization or enrollment proof the payer says is missing?</span></li><li><b>Correct version</b><span>Is this the current copy, the copy sent originally, or the rebuttal copy?</span></li><li><b>Sending history</b><span>Can the practice show that the payer received the record?</span></li></ol><div class="pw-boundary"><b>A match is not a legal conclusion.</b><span>The provider receives the document result first. An attorney decides what the result means for the response.</span></div><div class="pw-recent" id="recentDocuments"></div></section>
+      </div>
+    </section>
+
+    <section class="pw-view" id="provider-view-results">
+      <div class="pw-page-head"><div><span class="pw-kicker">CLAIM RESULTS</span><h1>Which claims can be reconciled?</h1><p>Green means the current record set contains the needed proof. Yellow means a possible match exists but needs another check. Red means proof is still missing.</p></div><button class="pw-primary" id="runProviderCheck">Run document check again</button></div>
+      <div class="pw-result-key"><span class="reconciled">Reconciled</span><span class="review">Possible match—check needed</span><span class="missing">Proof still missing</span></div>
+      <div class="pw-filters"><label>Status<select id="providerStatusFilter"><option value="all">All claims</option><option value="reconciled">Reconciled</option><option value="review">Check needed</option><option value="missing">Proof missing</option></select></label><label>Find claim<input id="providerClaimSearch" type="search" placeholder="CL-004 or 2021"></label><span id="providerResultCount"></span></div>
+      <section class="pw-card pw-table-card"><div class="pw-table-wrap"><table><thead><tr><th>Claim</th><th>Service</th><th>Payer says</th><th>What we found</th><th>Provider result</th><th>Next step</th></tr></thead><tbody id="providerResultsBody"></tbody></table></div></section>
+    </section>
+
+    <section class="pw-view" id="provider-view-missing">
+      <div class="pw-page-head"><div><span class="pw-kicker">MISSING PROOF</span><h1>These claims still need something.</h1><p>This list tells the practice exactly what to find next. It does not decide whether the payer is right.</p></div><button class="pw-primary" data-provider-target="documents">Add supporting record</button></div>
+      <div class="pw-missing-list" id="providerMissingList"></div>
+    </section>
+
+    <section class="pw-view" id="provider-view-attorney">
+      <div class="pw-page-head"><div><span class="pw-kicker">ATTORNEY ACCESS</span><h1>You decide when an attorney sees the case.</h1><p>An invitation alone does not create an attorney-client relationship or reveal documents.</p></div></div>
+      <section class="pw-card"><div class="pw-access-flow"><div class="done"><b>1</b><span>Invitation sent</span></div><div><b>2</b><span>Conflict check pending</span></div><div><b>3</b><span>Engagement confirmed</span></div><div><b>4</b><span>Provider grants access</span></div></div><div class="pw-access-actions"><a class="pw-primary" href="/attorneys">Find an attorney</a><button class="pw-secondary" data-message="Outside-attorney invitation prepared. No documents were shared.">Invite my attorney</button></div></section>
+    </section>
+
+    <footer class="pw-footer"><span>© 2026 AuditDefend · Provider workspace</span><nav><a href="/policies">Policies</a><a href="/resources">Resources</a><a href="/attorneys">Find an attorney</a><a href="/provider">Provider help</a></nav><small>Document comparison only · Not legal advice</small></footer>
+  </main>
+</div>
+<div class="pw-toast" id="providerWorkspaceToast" role="status" aria-live="polite"></div>
+<script src="/case-data.js?v=20260926-provider-workspace"></script>
+<script src="/provider-workspace.js?v=20260926-provider-workspace"></script>
+</body></html>
