@@ -9,9 +9,9 @@ const indexable=[
   ['resources.html','/resources'],['healthcare-payer-audit-response.html','/healthcare-payer-audit-response'],
   ['healthcare-overpayment-demand.html','/healthcare-overpayment-demand'],['medicaid-provider-audit.html','/medicaid-provider-audit'],
   ['behavioral-health-audit-response.html','/behavioral-health-audit-response'],['aba-provider-audit.html','/aba-provider-audit'],
-  ['npi-provider-enrollment-audit.html','/npi-provider-enrollment-audit']
+  ['npi-provider-enrollment-audit.html','/npi-provider-enrollment-audit'],['policies.html','/policies']
 ];
-const noindex=['app.html','attorney-workspace.html','provider-onboarding.html','auth.html'];
+const noindex=['app.html','attorney-workspace.html','provider-onboarding.html','provider-workspace.html','auth.html'];
 const titles=new Set(),descriptions=new Set();
 const match=(html,re,label,file)=>{const value=html.match(re)?.[1]?.trim();if(!value)throw new Error(`${file}: missing ${label}`);return value};
 
@@ -43,7 +43,7 @@ if(!robots.includes(`Sitemap: ${canonicalBase}/sitemap.xml`))throw new Error('ro
 if(!fs.readFileSync(path.join(publicDir,'llms.txt'),'utf8').includes('## Important boundaries'))throw new Error('llms.txt missing product boundaries');
 
 const files=fs.readdirSync(publicDir).filter(file=>file.endsWith('.html'));
-const allowedRoutes=new Set(indexable.map(([,route])=>route).concat(['/app','/dashboard','/provider/onboarding','/provider-onboarding','/attorney/demo','/attorney/workspace','/attorney-directory','/law-firm']));
+const allowedRoutes=new Set(indexable.map(([,route])=>route).concat(['/app','/dashboard','/provider/onboarding','/provider-onboarding','/provider/workspace','/provider/demo','/attorney/demo','/attorney/workspace','/attorney-directory','/law-firm']));
 for(const file of files){
   const html=fs.readFileSync(path.join(publicDir,file),'utf8');
   for(const found of html.matchAll(/href="([^"]+)"/gi)){
