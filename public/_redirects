@@ -3,6 +3,9 @@
 /provider /provider.html 200
 /provider/onboarding /provider-onboarding.html 200
 /provider-onboarding /provider-onboarding.html 200
+/provider/workspace /provider-workspace.html 200
+/provider/demo /provider-workspace.html 200
+/policies /policies.html 200
 /attorney /attorney.html 200
 /law-firm /attorney.html 200
 /attorney/demo /attorney-workspace.html 200
