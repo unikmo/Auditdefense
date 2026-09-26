@@ -3,7 +3,7 @@
   "fingerprintVersion": 2,
   "monitoringState": "ACTIVE",
   "schedule": "Daily via GitHub Actions",
-  "lastMonitorRun": "2026-09-24T12:43:10.124Z",
+  "lastMonitorRun": "2026-09-26T12:13:31.774Z",
   "sourceCount": 21,
   "reviewRequiredCount": 10,
   "sources": [
@@ -19,17 +19,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
-      "etag": "\"1790252387-gzip\"",
-      "lastModified": "Thu, 24 Sep 2026 12:19:47 GMT",
+      "etag": "\"1790420203-gzip\"",
+      "lastModified": "Sat, 26 Sep 2026 10:56:43 GMT",
       "contentLength": 201191,
       "pageTitle": "Medicaid NCCI Policy Manual | CMS",
       "hash": "0f2c0c107695e4fc4286abea3458f7713fe5f564510430fa74f8b54a56fd9064",
       "previousHash": "cd6f0413a805fb2ddbc2c21f4678ec2a51ddcd305f57811040d4965d2069a454",
-      "changed": true,
+      "changed": false,
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-24T12:43:10.124Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -44,17 +44,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
-      "etag": "\"1790252292-gzip\"",
-      "lastModified": "Thu, 24 Sep 2026 12:18:12 GMT",
+      "etag": "\"1790419217-gzip\"",
+      "lastModified": "Sat, 26 Sep 2026 10:40:17 GMT",
       "contentLength": 199497,
       "pageTitle": "Medicaid NCCI Edit Files | CMS",
       "hash": "23bd64525fb4a922e565fd3341987643c78b182e4c396c0c5bffbdc905ea7898",
       "previousHash": "318f0ed609cd0364b3de2d74078ea5e001a2ebbdbeb0dced9ea547fb9e042ce7",
-      "changed": true,
+      "changed": false,
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-24T12:43:10.124Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -79,7 +79,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -104,7 +104,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -129,7 +129,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-22T12:36:06.024Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -145,7 +145,7 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Thu, 24 Sep 2026 03:01:45 GMT",
+      "lastModified": "Sat, 26 Sep 2026 12:13:32 GMT",
       "contentLength": 33480,
       "pageTitle": "Reimbursement policies | Anthem Blue Cross and Blue Shield of New York",
       "hash": "41af29e88b1ba6be09c78c3ae8bf020ac7a4aca4969c3489e5bd51bde5b65b31",
@@ -154,7 +154,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -170,7 +170,7 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Thu, 24 Sep 2026 02:12:33 GMT",
+      "lastModified": "Thu, 24 Sep 2026 23:39:07 GMT",
       "contentLength": 41229,
       "pageTitle": "Manuals, policies & guidelines | Anthem Blue Cross and Blue Shield of New York",
       "hash": "cc878ad40d68d17c88831d3ad1e133a4ef1b8c613f40d122e846efc539046bec",
@@ -179,7 +179,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -204,7 +204,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -229,7 +229,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -244,17 +244,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html;charset=utf-8",
-      "etag": "\"30e6a-65c398ba06a5d-gzip\"",
-      "lastModified": "Thu, 24 Sep 2026 12:14:45 GMT",
-      "contentLength": 200298,
+      "etag": "W/\"30b35-65c61c330f50d-gzip\"",
+      "lastModified": "Sat, 26 Sep 2026 12:13:36 GMT",
+      "contentLength": 199477,
       "pageTitle": "Reimbursement Policies for Community Plan | UHCprovider.com",
-      "hash": "0e6d97898744ff55a02f1110f5172c8a152020f36d1adc330d2ae3638133d7f2",
-      "previousHash": "7e083e64a32765b2c178d720f2d50968c4a8b3c16e28874cfc3f3cdc223802aa",
-      "changed": false,
+      "hash": "c349b932728e71a1493e295604b80205bd9d69fad74342e8357e97164e383764",
+      "previousHash": "0e6d97898744ff55a02f1110f5172c8a152020f36d1adc330d2ae3638133d7f2",
+      "changed": true,
       "reviewRequired": true,
       "firstFingerprint": false,
-      "lastChangedAt": "2026-09-22T12:36:06.024Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastChangedAt": "2026-09-26T12:13:31.774Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -269,17 +269,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html;charset=utf-8",
-      "etag": "\"24e85-65c3452ca3fe2-gzip\"",
-      "lastModified": "Thu, 24 Sep 2026 06:00:57 GMT",
+      "etag": "\"24e85-65c5bd30a53c0-gzip\"",
+      "lastModified": "Sat, 26 Sep 2026 05:08:32 GMT",
       "contentLength": 156496,
       "pageTitle": "OfficeLink Updates Newsletter Archive | Aetna",
       "hash": "95b4c2f2e0f0e117bef30feef0dfe73b9f297289749122ebd7ae869502ef9c31",
       "previousHash": "eb5023b3eb9d4d5372d6c20a7f280d7493071bd0de8bd544e70ab65227d8d164",
-      "changed": true,
+      "changed": false,
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-24T12:43:10.124Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -296,7 +296,7 @@
       "contentType": "text/html; charset=utf-8",
       "etag": null,
       "lastModified": null,
-      "contentLength": 102432,
+      "contentLength": 102431,
       "pageTitle": "Provider Policies | Fidelis Care",
       "hash": "776b17ebb7fbb61bd118786872281fda2f264262a1be1fbf5a87c600735e3f12",
       "previousHash": null,
@@ -304,7 +304,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -329,7 +329,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-23T12:44:42.276Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -354,7 +354,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -370,16 +370,16 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
       "etag": null,
-      "lastModified": "Thu, 24 Sep 2026 12:33:59 GMT",
+      "lastModified": "Fri, 25 Sep 2026 21:21:37 GMT",
       "contentLength": 114551,
       "pageTitle": "Health Insurance Consumer and Provider Rights and Responsibilities | Department of Financial Services",
       "hash": "72364cadf5a031c7193439731f76c0ed6d0e2899a80b55761669c8a77e3a16ae",
       "previousHash": "6b5c22befcf72e6c7ff72137a3d5bcc6f09e6835cf937a07896a9f4be35450ec",
-      "changed": true,
+      "changed": false,
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-24T12:43:10.124Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -404,7 +404,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -419,17 +419,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
-      "etag": "\"1790252436-gzip\"",
-      "lastModified": "Thu, 24 Sep 2026 12:20:36 GMT",
+      "etag": "\"1790419075-gzip\"",
+      "lastModified": "Sat, 26 Sep 2026 10:37:55 GMT",
       "contentLength": 194556,
       "pageTitle": "Medicaid NCCI Technical Guidance Manual | CMS",
       "hash": "0b14d5a8e74ee61a0a8b2c917e75d190c260c9a514b1e9fde8143d78b6fff35c",
       "previousHash": "3ab10ba627683b6ddc2a2733d7601cf64ad3ee04af29ba5a4a519baea25ad61a",
-      "changed": true,
+      "changed": false,
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-24T12:43:10.124Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -454,7 +454,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-22T12:36:06.024Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -470,8 +470,8 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Thu, 24 Sep 2026 12:43:14 GMT",
-      "contentLength": 34619,
+      "lastModified": "Fri, 25 Sep 2026 01:27:44 GMT",
+      "contentLength": 34486,
       "pageTitle": "Claims submissions and disputes | Anthem Blue Cross and Blue Shield of New York",
       "hash": "d1227ae951481be87a9bb952a1acda94e6a4f6ba2404ba590fc8737c9387161e",
       "previousHash": null,
@@ -479,7 +479,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -494,17 +494,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html;charset=utf-8",
-      "etag": "\"2d892-65c395f291f82-gzip\"",
-      "lastModified": "Thu, 24 Sep 2026 12:02:19 GMT",
+      "etag": "W/\"2d892-65c61a5c1ca90-gzip\"",
+      "lastModified": "Sat, 26 Sep 2026 12:05:22 GMT",
       "contentLength": 186514,
       "pageTitle": "Reimbursement Policies for UnitedHealthcare Commercial Plans | UHCprovider.com",
       "hash": "2884613bc9e7e149cdd092e97ec59e0df36aa2ae27a23f6b7ed60a137d0f52bf",
       "previousHash": "701e9aaf17a4cda3dba55903f31156d283d814e44eead552fe0138e7d6459245",
-      "changed": true,
+      "changed": false,
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-24T12:43:10.124Z",
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     },
     {
@@ -521,7 +521,7 @@
       "contentType": "text/html; charset=utf-8",
       "etag": "\"vs1gwqz7qhh9x:dtagent10345260810170330EXyr\"",
       "lastModified": null,
-      "contentLength": 22909,
+      "contentLength": 22907,
       "pageTitle": "Humana Claims Payment Policies",
       "hash": "8843adad8ff4a86c5269bf23ab955ce7e49cd7d2495eb60eb0eb2d534050c208",
       "previousHash": null,
@@ -529,7 +529,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-09-24T12:43:10.124Z",
+      "lastObservedAt": "2026-09-26T12:13:31.774Z",
       "error": null
     }
   ]
