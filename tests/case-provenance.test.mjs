@@ -31,5 +31,16 @@ assert.match(brief,/rendering provider separately from the group billing NPI/i,'
 assert.match(attorneyJs,/Compare the 22 matched records with the payer/i,'Attorney next step does not direct claim-level rebuttal review.');
 assert.match(attorney,/attorney-elite-blue\.css/,'Attorney workspace is not using the elite-blue theme.');
 assert.match(attorneyTheme,/--att-brown:#0b2341/,'Attorney elite-blue theme tokens are missing.');
+for(const value of ['Everything requiring counsel attention','Current matter focus','Active matters','Counsel review queue']){
+  assert.ok(attorney.includes(value),`Attorney dashboard missing ${value}`);
+}
+for(const value of ['Casework','Access','Firm tools']){
+  assert.ok(attorney.includes(`attorney-nav-label">${value}`),`Attorney navigation missing ${value} group`);
+}
+for(const value of ['Evidence ready for review','Enrollment / other issues','22 matched records','97153 worksheet needed']){
+  assert.ok(attorneyJs.includes(value),`Attorney dashboard summary missing ${value}`);
+}
+assert.doesNotMatch(attorney,/Exposure by issue family|Upcoming deadlines<\/h2>/,'Dense secondary panels remain on the attorney dashboard.');
+assert.match(attorneyTheme,/grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/,'Attorney summary cards are not four equal columns.');
 
 console.log('Case chronology, provenance and legal-boundary tests passed.');
