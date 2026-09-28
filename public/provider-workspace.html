@@ -27,9 +27,9 @@
     <header class="pw-topbar"><button id="providerMenu" aria-label="Open provider menu">☰</button><div><b>Anthem SIU case · redacted</b><small>Provider view</small></div><div class="pw-user"><span>RP</span><small>Redacted Practice</small></div></header>
 
     <section class="pw-view active" id="provider-view-home">
-      <div class="pw-welcome"><div><span class="pw-kicker">PROVIDER EVIDENCE DASHBOARD</span><h1>Your audit evidence status</h1><p>See what the payer accepted, which claims still need evidence, what was found in your sources, and which claims involve another issue.</p><div class="pw-actions"><button class="pw-primary" data-provider-filter="needs-evidence">Review claims needing evidence</button><button class="pw-secondary" data-provider-target="documents">Add a document</button></div></div><aside><small>RECOMMENDED NEXT STEP</small><strong id="nextStepCount">Match evidence for 22 claims</strong><p>Start with claims that still have a documentation finding.</p><button data-provider-filter="needs-evidence">Start evidence review →</button></aside></div>
+      <div class="pw-welcome"><div><span class="pw-kicker">PROVIDER EVIDENCE DASHBOARD</span><h1>Your audit evidence status</h1><p>See what the payer accepted, which claims still need evidence, what was found in your sources, and which claims involve another issue.</p><div class="pw-actions"><button class="pw-primary" data-provider-filter="needs-evidence">Review claims needing evidence</button><button class="pw-secondary" data-provider-target="documents">Add a document</button></div></div><aside><small>RECOMMENDED NEXT STEP</small><strong id="nextStepCount">Checking claim evidence…</strong><p>Open the matched claims to review each record against the payer's finding.</p><button data-provider-filter="source-found">Review matched claims →</button></aside></div>
       <div class="pw-kpis" id="providerKpis"></div>
-      <div class="pw-payer-note"><span>Source inventory</span><b><span id="providerSourceCount">79</span> potential records located.</b><p>They count as evidence found only after a record is matched to an affected claim.</p></div>
+      <div class="pw-payer-note"><span>Source inventory</span><b><span id="providerSourceCount">79</span> potential records located.</b><p>All 30 payer-review rows now have a verified source match. This does not show whether the payer received the record or whether every payer finding is answered.</p></div>
     </section>
 
     <section class="pw-view" id="provider-view-documents">
@@ -70,6 +70,6 @@
   </main>
 </div>
 <div class="pw-toast" id="providerWorkspaceToast" role="status" aria-live="polite"></div>
-<script src="/case-data.js?v=20260928-provider-status-v1"></script>
-<script src="/provider-workspace.js?v=20260927-provider-status-v1"></script>
+<script src="/case-data.js?v=20260928-evidence-reconciled-v1"></script>
+<script src="/provider-workspace.js?v=20260928-evidence-reconciled-v1"></script>
 </body></html>
