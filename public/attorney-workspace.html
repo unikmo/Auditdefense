@@ -8,8 +8,8 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>AuditDefend Attorney Workspace</title>
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/attorney.css?v=20260928-attorney-evidence-v2">
-  <link rel="stylesheet" href="/attorney-elite-blue.css?v=20260928-attorney-evidence-v2">
+  <link rel="stylesheet" href="/attorney.css?v=20260928-attorney-dashboard-v3">
+  <link rel="stylesheet" href="/attorney-elite-blue.css?v=20260928-attorney-dashboard-v3">
 </head>
 <body class="attorney-body">
 <div class="demo-banner"><span class="demo-dot"></span><strong>Sample attorney workspace</strong><span>Sample and redacted records only. Do not enter PHI. Counsel controls every legal interpretation and decision.</span></div>
@@ -17,14 +17,17 @@
   <aside class="attorney-sidebar" id="attorneySidebar">
     <a class="attorney-brand" href="/attorney"><span class="brand-mark">§</span><span><b>AuditDefend</b><small>Attorney Workspace</small></span></a>
     <nav class="attorney-nav" aria-label="Attorney workspace">
-      <button class="attorney-nav-item active" data-attorney-view="portfolio">Portfolio</button>
-      <button class="attorney-nav-item" data-attorney-view="clients">Clients</button>
-      <button class="attorney-nav-item" data-attorney-view="cases">Cases <b class="attorney-badge" id="activeCaseBadge">4</b></button>
+      <span class="attorney-nav-label">Casework</span>
+      <button class="attorney-nav-item active" data-attorney-view="portfolio">Dashboard</button>
+      <button class="attorney-nav-item" data-attorney-view="cases">Matters <b class="attorney-badge" id="activeCaseBadge">4</b></button>
+      <button class="attorney-nav-item" data-attorney-view="clients">Provider clients</button>
       <button class="attorney-nav-item" data-attorney-view="deadlines">Deadlines</button>
       <button class="attorney-nav-item" data-attorney-view="notes">Counsel Notes</button>
-      <button class="attorney-nav-item" data-attorney-view="team">Firm &amp; Team</button>
+      <span class="attorney-nav-label">Access</span>
       <button class="attorney-nav-item" data-attorney-view="invitations">Invitations <b class="attorney-badge muted" id="inviteBadge">2</b></button>
+      <span class="attorney-nav-label">Firm tools</span>
       <button class="attorney-nav-item" data-attorney-view="reports">Reports</button>
+      <button class="attorney-nav-item" data-attorney-view="team">Firm &amp; Team</button>
       <button class="attorney-nav-item" data-attorney-view="billing">Case Plans</button>
       <button class="attorney-nav-item" data-attorney-view="settings">Firm Settings</button>
     </nav>
@@ -43,13 +46,19 @@
     </header>
 
     <section class="attorney-view active" id="attorney-view-portfolio">
-      <div class="attorney-page-head"><div><span class="eyebrow">ATTORNEY PORTFOLIO</span><h1>Case facts before legal judgment.</h1><p>Track exposure, deadlines, evidence gaps and questions reserved for counsel.</p></div><button class="primary-btn" data-modal="caseModal">+ Open client case</button></div>
+      <div class="attorney-page-head"><div><span class="eyebrow">ATTORNEY DASHBOARD</span><h1>Everything requiring counsel attention.</h1><p>See active matters, evidence ready for review and unresolved issues without drawing a legal conclusion.</p></div><button class="primary-btn" data-modal="caseModal">+ Open client matter</button></div>
       <div class="attorney-kpis" id="portfolioKpis"></div>
+      <section class="attorney-focus" aria-labelledby="focusTitle">
+        <div>
+          <span class="attorney-focus-label">Current matter focus</span>
+          <h2 id="focusTitle">Anthem SIU · claim/evidence reconciliation completed</h2>
+          <p>All 30 later CPT 97155 review rows have a source match. Counsel can move directly to the factual comparison while keeping enrollment and demand-stage questions separate.</p>
+        </div>
+        <button class="primary-btn" data-open-case="case-anthem">Open complete case file →</button>
+      </section>
       <div class="attorney-grid portfolio-grid">
-        <section class="attorney-card span-2"><div class="card-head"><div><h2>Active cases</h2><p>Reported exposure and source-validation status.</p></div><button class="link-btn" data-attorney-view-target="cases">View all →</button></div><div class="table-wrap"><table class="attorney-table"><thead><tr><th>Client</th><th>Payer</th><th>Exposure</th><th>Stage</th><th>Deadline</th><th>Priority</th><th></th></tr></thead><tbody id="portfolioCases"></tbody></table></div></section>
-        <aside class="attorney-card priority-card"><div class="card-head"><div><h2>Priority queue</h2><p>Items requiring counsel attention.</p></div></div><div id="priorityQueue"></div></aside>
-        <section class="attorney-card span-2"><div class="card-head"><div><h2>Exposure by issue family</h2><p>Operational grouping only; not a liability determination.</p></div></div><div id="issueExposure"></div></section>
-        <aside class="attorney-card"><div class="card-head"><div><h2>Upcoming deadlines</h2><p>Unverified dates remain visibly unverified.</p></div></div><div id="deadlineMini"></div></aside>
+        <section class="attorney-card span-2"><div class="card-head"><div><h2>Active matters</h2><p>Core status, asserted exposure and controlling-date status in one view.</p></div><button class="link-btn" data-attorney-view-target="cases">View all matters →</button></div><div class="table-wrap"><table class="attorney-table"><thead><tr><th>Client / matter</th><th>Payer</th><th>Asserted exposure</th><th>Stage</th><th>Response date</th><th>Priority</th><th></th></tr></thead><tbody id="portfolioCases"></tbody></table></div></section>
+        <aside class="attorney-card priority-card counsel-review-card"><div class="card-head"><div><h2>Counsel review queue</h2><p>Four concrete questions in the current matter.</p></div></div><div id="priorityQueue"></div><button class="secondary-btn review-queue-button" data-open-case="case-anthem">Review all facts and sources</button></aside>
       </div>
     </section>
 
@@ -80,6 +89,6 @@
 <script src="/attorney-case-brief.js?v=20260928-attorney-evidence-v2"></script>
 <script src="/firebase-client.js"></script>
 <script src="/engagement-workflow.js"></script>
-<script src="/attorney.js?v=20260928-attorney-evidence-v2"></script>
+<script src="/attorney.js?v=20260928-attorney-dashboard-v3"></script>
 </body>
 </html>
