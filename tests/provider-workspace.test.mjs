@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import vm from 'node:vm';
 
 const read=file=>fs.readFileSync(new URL(`../public/${file}`,import.meta.url),'utf8');
 const html=read('provider-workspace.html');
@@ -7,6 +8,10 @@ const app=read('app.html');
 const onboarding=read('provider-onboarding.html');
 const redirects=read('_redirects');
 const vercel=fs.readFileSync(new URL('../vercel.json',import.meta.url),'utf8');
+const caseDataSource=read('case-data.js');
+const sandbox={window:{}};
+vm.runInNewContext(caseDataSource,sandbox);
+const caseData=sandbox.window.AuditDefendCaseData;
 
 for(const label of ['Case home','Add documents','Evidence results','Proof unavailable','Attorney access']){
   if(!html.includes(label))throw new Error(`provider menu missing ${label}`);
@@ -21,7 +26,23 @@ for(const status of ["status:'accepted'","status:'needs-evidence'","status:'sour
 }
 if(!js.includes("if(isPayerAccepted(claim))return{status:'accepted'"))throw new Error('payer-accepted claims are not separated');
 if(!js.includes("!requiresDocumentationEvidence(claim))return{status:'other'"))throw new Error('other claim issues are not separated');
+if(!js.includes("hasVerifiedSource)return{status:'source-found'"))throw new Error('verified repository evidence is not used in provider results');
 if(!js.includes("counts.accepted")||!js.includes("counts['needs-evidence']"))throw new Error('provider dashboard counts are incomplete');
+const evidenceRecords=caseData.evidenceReconciliation.records;
+if(Object.keys(evidenceRecords).length!==30)throw new Error('all 30 payer-review rows must have a source reconciliation record');
+if(Object.values(evidenceRecords).some(record=>record.status!=='verified'))throw new Error('the reconciled source records are not verified');
+const expectedCounts=caseData.claims.reduce((counts,claim)=>{
+  if(claim.rebuttal==='A')counts.accepted++;
+  else if(!claim.issues.includes('Documentation support'))counts.other++;
+  else if(evidenceRecords[claim.id]?.status==='verified')counts.sourceFound++;
+  else counts.needsEvidence++;
+  return counts;
+},{accepted:0,other:0,sourceFound:0,needsEvidence:0});
+if(JSON.stringify(expectedCounts)!==JSON.stringify({accepted:3,other:5,sourceFound:22,needsEvidence:0}))throw new Error(`unexpected reconciled dashboard counts ${JSON.stringify(expectedCounts)}`);
+for(const id of ['CL-009','CL-016']){
+  const claim=caseData.claims.find(item=>item.id===id);
+  if(claim.billingNpi!=='••••1029')throw new Error(`${id} must distinguish the billing NPI from the rendering provider`);
+}
 if(/equitable estoppel|unjust enrichment|procedural posture|likely outcome/i.test(html))throw new Error('provider workspace contains attorney-level language');
 if(app.includes('data-view="policy"')||app.includes('data-view-target="policy"'))throw new Error('policy access remains in the app navigation');
 if(!app.includes('href="/policies"'))throw new Error('app footer is missing public policy access');
