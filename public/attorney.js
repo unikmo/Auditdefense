@@ -36,9 +36,34 @@ async function syncFirm(){if(!fb())return false;try{await window.AuditDefendFire
 async function syncClient(c){if(!fb())return false;try{await window.AuditDefendFirebaseAPI.saveAttorneyClient(state.firm.id,c.id,{...c,redacted:true,containsPhi:false});return true}catch(e){console.warn(e);return false}}
 async function syncCase(c){if(!fb())return false;try{await window.AuditDefendFirebaseAPI.saveAttorneyCase(c.id,{...c,attorneyUids:[uid()],providerUids:[],firmId:state.firm.id,redacted:true,containsPhi:false});return true}catch(e){console.warn(e);return false}}
 async function syncNote(n){if(!fb())return false;try{await window.AuditDefendFirebaseAPI.saveCounselNote(n.caseId,n.id,{body:n.body,category:n.category,counselOnly:true,redacted:true,containsPhi:false});return true}catch(e){console.warn(e);return false}}
-function kpis(){const a=state.cases.filter(c=>c.stageKey!=='closed'),ex=a.reduce((s,c)=>s+c.exposure,0),due=a.filter(c=>days(c.deadline)>=0&&days(c.deadline)<=14).length,hi=a.filter(c=>c.priority==='High').length,pending=engagementRows().filter(i=>!engagement.documentsVisible(i.status)&&![engagement.STATUS.DECLINED,engagement.STATUS.CANCELLED].includes(i.status)).length;const vals=[['Active cases',a.length,'Across '+state.clients.length+' provider clients'],['Asserted exposure',money(ex),'Operational total across active cases'],['Due in 14 days',due,'Attorney verification required'],['High priority',hi,'Near-term action'],['Engagement steps',pending,'No documents before provider grant']];$('portfolioKpis').innerHTML=vals.map(v=>'<div class="attorney-kpi"><span>'+v[0]+'</span><strong>'+v[1]+'</strong><small>'+v[2]+'</small></div>').join('')}
-function caseRow(c){return '<tr><td><span class="client-name">'+esc(client(c.clientId)?.name||'Client')+'</span><small>'+esc(c.label)+'</small></td><td>'+esc(c.payer)+'</td><td>'+money(c.exposure)+'</td><td><span class="'+stage(c)+'">'+esc(c.stage)+'</span></td><td>'+date(c.deadline)+'</td><td><span class="'+pri(c)+'">'+c.priority+'</span></td><td><button class="action-link" data-open-case="'+c.id+'">Open</button></td></tr>'}
-function portfolio(){const active=state.cases.filter(c=>c.stageKey!=='closed').sort((a,b)=>days(a.deadline)-days(b.deadline));$('portfolioCases').innerHTML=active.map(caseRow).join('');$('priorityQueue').innerHTML=active.filter(c=>c.priority==='High').slice(0,4).map(c=>'<div class="priority-item"><b>'+esc(client(c.clientId)?.name)+'</b><p>'+esc(c.issue)+' · '+money(c.exposure)+'</p><div class="priority-meta"><span>'+date(c.deadline)+'</span><button class="action-link" data-open-case="'+c.id+'">Open</button></div></div>').join('')||'<p class="attorney-empty">No high-priority cases.</p>';const groups={};active.forEach(c=>groups[c.issue]=(groups[c.issue]||0)+c.exposure);const max=Math.max(...Object.values(groups),1);$('issueExposure').innerHTML=Object.entries(groups).map(([k,v])=>'<div class="issue-row"><span>'+esc(k)+'</span><i><b style="width:'+Math.round(v/max*100)+'%"></b></i><strong>'+money(v)+'</strong></div>').join('');$('deadlineMini').innerHTML=active.slice(0,4).map(c=>'<div class="deadline-mini-item"><b>'+date(c.deadline)+'</b><span>'+esc(client(c.clientId)?.name)+'</span><small>'+deadlineMeta(c.deadline)+'</small></div>').join('')}
+function kpis(){
+  const active=state.cases.filter(c=>c.stageKey!=='closed');
+  const exposure=active.reduce((sum,c)=>sum+c.exposure,0);
+  const summary=window.AuditDefendAttorneyBriefs?.['case-anthem']?.evidenceSummary||[];
+  const summaryValue=label=>summary.find(item=>item.label===label)?.value??'—';
+  const values=[
+    ['Active matters',active.length,'Across '+state.clients.length+' provider clients','matters'],
+    ['Asserted exposure',money(exposure),'Operational total; not a liability finding','exposure'],
+    ['Evidence ready for review',summaryValue('Evidence available for rebuttal review'),'Matched records requiring counsel comparison','evidence'],
+    ['Enrollment / other issues',summaryValue('Enrollment or other issue'),'Kept separate from documentation findings','other']
+  ];
+  $('portfolioKpis').innerHTML=values.map(value=>'<article class="attorney-kpi attorney-kpi-'+value[3]+'"><span>'+value[0]+'</span><strong>'+value[1]+'</strong><small>'+value[2]+'</small></article>').join('');
+}
+function caseRow(c){
+  const deadline=c.deadline?date(c.deadline):'<span class="deadline-unverified">Unverified</span><small>Operative letter required</small>';
+  return '<tr><td><span class="client-name">'+esc(client(c.clientId)?.name||'Client')+'</span><small>'+esc(c.label)+'</small></td><td>'+esc(c.payer)+'</td><td><b>'+money(c.exposure)+'</b></td><td><span class="'+stage(c)+'">'+esc(c.stage)+'</span></td><td>'+deadline+'</td><td><span class="'+pri(c)+'">'+c.priority+'</span></td><td><button class="action-link" data-open-case="'+c.id+'">Open file</button></td></tr>';
+}
+function portfolio(){
+  const active=state.cases.filter(c=>c.stageKey!=='closed').sort((a,b)=>a.id==='case-anthem'?-1:b.id==='case-anthem'?1:days(a.deadline)-days(b.deadline));
+  $('portfolioCases').innerHTML=active.map(caseRow).join('');
+  const queue=[
+    ['Evidence comparison','22 matched records','Compare each record with the payer’s stated documentation finding.'],
+    ['Enrollment review','5 claim lines','Verify NPI role, enrollment history and the DOS-effective rule.'],
+    ['Demand reconciliation','Later stage unresolved','Obtain the operative letter tying $567,096.77 to the earlier demand.'],
+    ['Count reconciliation','97153 worksheet needed','Resolve the 59/60, 31/32 and 8/30 denominator conflict.']
+  ];
+  $('priorityQueue').innerHTML=queue.map((item,index)=>'<div class="review-item"><span class="review-number">'+(index+1)+'</span><div><b>'+item[0]+'</b><strong>'+item[1]+'</strong><p>'+item[2]+'</p></div></div>').join('');
+}
 function clients(){const count=id=>state.cases.filter(c=>c.clientId===id).length;$('clientGrid').innerHTML=state.clients.map(c=>'<article class="client-card"><h3>'+esc(c.name)+'</h3><p>'+esc(c.state)+' · '+esc(c.contactRole||'Provider contact')+'</p><div class="client-meta"><div><small>Cases</small><b>'+count(c.id)+'</b></div><div><small>Exposure</small><b>'+money(state.cases.filter(x=>x.clientId===c.id).reduce((s,x)=>s+x.exposure,0))+'</b></div></div><button class="secondary-btn" data-client-cases="'+c.id+'">View cases</button></article>').join('')}
 function cases(){let rows=state.cases;if(caseFilter==='urgent')rows=rows.filter(c=>c.priority==='High');else if(caseFilter!=='all')rows=rows.filter(c=>c.stageKey===caseFilter);$('casesTable').innerHTML=rows.map(c=>'<tr><td><b>'+esc(c.label)+'</b><small>'+esc(c.id)+'</small></td><td>'+esc(client(c.clientId)?.name)+'</td><td>'+esc(c.payer)+'</td><td>'+c.claims+'</td><td>'+money(c.exposure)+'</td><td><span class="'+stage(c)+'">'+esc(c.stage)+'</span></td><td>'+date(c.deadline)+'</td><td>'+esc(c.owner)+'</td><td><button class="action-link" data-open-case="'+c.id+'">Open</button></td></tr>').join('')}
 function deadlines(){const rows=[...state.cases].sort((a,b)=>days(a.deadline)-days(b.deadline));$('deadlineTimeline').innerHTML=rows.map(c=>'<div class="deadline-row"><time>'+date(c.deadline)+'</time><div><b>'+esc(client(c.clientId)?.name)+' · '+esc(c.payer)+'</b><span>'+esc(c.label)+' · '+deadlineMeta(c.deadline)+'</span></div><span class="'+pri(c)+'">'+c.priority+'</span></div>').join('')}
