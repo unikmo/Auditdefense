@@ -24,7 +24,9 @@ window.AuditDefendCaseData = Object.freeze({
         source:'Private provider repository',
         locator:`Verified private source match ${String(index+1).padStart(2,'0')}`,
         matchBasis:id==='CL-005'?'Member, claim reference, CPT and internal service date':'Member, date of service and CPT',
-        reviewedOn:'2026-09-28'
+        reviewedOn:'2026-09-28',
+        reviewStage:'available-for-rebuttal-review',
+        submissionStatus:'not verified'
       })];
     })))
   }),
