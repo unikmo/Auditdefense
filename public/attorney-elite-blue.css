@@ -13,6 +13,9 @@
 .attorney-body{background:var(--att-bg);color:var(--att-ink)}
 .attorney-sidebar{background:linear-gradient(180deg,#123e69 0%,#0b2341 100%)}
 .attorney-brand small,.return-link,.attorney-nav-item{color:#dbe9f6}
+.attorney-nav{gap:3px}
+.attorney-nav-label{display:block;margin:14px 10px 4px;color:#8fb4d3;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.attorney-nav-label:first-child{margin-top:0}
 .attorney-nav-item:hover,.attorney-nav-item.active{background:#286fae;color:#fff}
 .attorney-badge{color:#174e7d}.attorney-badge.muted{background:#426f98}
 .attorney-plan-card{background:#113454;border-color:#315d84}
@@ -47,6 +50,40 @@
 .onboarding-progress i.active{background:#2b7dbb}
 .toast{background:#0b2341}
 
+.attorney-page-head{align-items:center;margin-bottom:20px}
+.attorney-page-head h1{max-width:720px;font-size:32px}
+.attorney-page-head p{max-width:760px;line-height:1.55}
+.attorney-kpis{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:16px}
+.attorney-kpi{min-height:132px;padding:17px;border-top:4px solid #2b7dbb;display:flex;flex-direction:column}
+.attorney-kpi span{min-height:30px;color:#526b82;font-weight:800}
+.attorney-kpi strong{font-size:27px;color:#102f4d;margin:7px 0}
+.attorney-kpi small{line-height:1.45;margin-top:auto}
+.attorney-kpi-evidence{border-top-color:#168063}
+.attorney-kpi-other{border-top-color:#b77716}
+.attorney-kpi-exposure{border-top-color:#6357ad}
+
+.attorney-focus{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-bottom:14px;padding:19px 20px;border:1px solid #abcce5;border-radius:12px;background:linear-gradient(105deg,#e7f3fc,#f7fbfe);box-shadow:0 8px 24px rgba(31,76,118,.06)}
+.attorney-focus>div{max-width:850px}
+.attorney-focus-label{color:#246b9f;font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.attorney-focus h2{margin:5px 0 6px;color:#0f3150;font-size:20px}
+.attorney-focus p{margin:0;color:#526b82;font-size:13px;line-height:1.55}
+.attorney-focus .primary-btn{flex:none;white-space:nowrap}
+
+.portfolio-grid{grid-template-columns:minmax(0,2fr) minmax(280px,.8fr);gap:14px}
+.portfolio-grid .span-2{grid-column:auto}
+.portfolio-grid .attorney-card{border-radius:12px;padding:18px}
+.portfolio-grid .attorney-table th{padding:10px 9px;font-size:11px;text-transform:uppercase;letter-spacing:.035em}
+.portfolio-grid .attorney-table td{padding:13px 9px}
+.deadline-unverified{display:block;color:#9a5b08;font-weight:800}
+.counsel-review-card{min-width:0}
+.review-item{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid #e5edf5}
+.review-number{width:27px;height:27px;border-radius:50%;background:#e4f0fa;color:#17639e;display:grid;place-items:center;font-size:12px;font-weight:900}
+.review-item b,.review-item strong{display:block}
+.review-item b{font-size:14px;color:#173d5d}
+.review-item strong{margin-top:3px;color:#22699f;font-size:12px}
+.review-item p{margin:4px 0 0;color:#617386;font-size:12px;line-height:1.45}
+.review-queue-button{width:100%;margin-top:14px}
+
 .attorney-evidence-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 .attorney-evidence-card{min-height:168px;border:1px solid var(--att-border);border-top:4px solid #2b7dbb;border-radius:11px;background:#fff;padding:14px;display:flex;flex-direction:column}
 .attorney-evidence-card small{min-height:32px;color:#526b82;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
@@ -56,5 +93,6 @@
 .attorney-evidence-next{display:grid;grid-template-columns:190px 1fr;gap:14px;align-items:start;margin-top:10px;border:1px solid #bcd5e9;border-radius:10px;background:#edf6fc;padding:13px 15px;font-size:13px;line-height:1.5;color:#385873}
 .attorney-evidence-next b{color:#153f64}
 
-@media(max-width:900px){.attorney-evidence-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.attorney-evidence-grid,.attorney-evidence-next{grid-template-columns:1fr}.attorney-evidence-card{min-height:0}}
+@media(max-width:1180px){.attorney-kpis{grid-template-columns:1fr 1fr}.portfolio-grid{grid-template-columns:1fr}.portfolio-grid .priority-card{grid-column:auto}}
+@media(max-width:900px){.attorney-evidence-grid{grid-template-columns:1fr 1fr}.attorney-focus{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.attorney-kpis,.attorney-evidence-grid,.attorney-evidence-next{grid-template-columns:1fr}.attorney-kpi{min-height:0}.attorney-evidence-card{min-height:0}.attorney-page-head h1{font-size:27px}}
