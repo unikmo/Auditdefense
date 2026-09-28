@@ -16,7 +16,7 @@ const caseData=sandbox.window.AuditDefendCaseData;
 for(const label of ['Case home','Add documents','Evidence results','Proof unavailable','Attorney access']){
   if(!html.includes(label))throw new Error(`provider menu missing ${label}`);
 }
-for(const label of ['Accepted by payer','Still needs evidence','Found in provider source','Evidence not found','Other claim issue']){
+for(const label of ['Accepted by payer','Still needs evidence','Available for rebuttal review','Evidence not found','Enrollment or other issue']){
   if(!html.includes(label))throw new Error(`provider result key missing ${label}`);
 }
 if((html.match(/data-provider-view=/g)||[]).length!==5)throw new Error('provider menu should stay focused at five items');
@@ -27,6 +27,8 @@ for(const status of ["status:'accepted'","status:'needs-evidence'","status:'sour
 if(!js.includes("if(isPayerAccepted(claim))return{status:'accepted'"))throw new Error('payer-accepted claims are not separated');
 if(!js.includes("!requiresDocumentationEvidence(claim))return{status:'other'"))throw new Error('other claim issues are not separated');
 if(!js.includes("hasVerifiedSource)return{status:'source-found'"))throw new Error('verified repository evidence is not used in provider results');
+if(!js.includes("label:'Evidence available for rebuttal review'"))throw new Error('matched evidence is not presented as available for rebuttal review');
+if(!js.includes("Payer identifies an NPI enrollment issue"))throw new Error('enrollment findings are not explained in the other-issues category');
 if(!js.includes("counts.accepted")||!js.includes("counts['needs-evidence']"))throw new Error('provider dashboard counts are incomplete');
 const evidenceRecords=caseData.evidenceReconciliation.records;
 if(Object.keys(evidenceRecords).length!==30)throw new Error('all 30 payer-review rows must have a source reconciliation record');
