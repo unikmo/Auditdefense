@@ -93,6 +93,56 @@
 .attorney-evidence-next{display:grid;grid-template-columns:190px 1fr;gap:14px;align-items:start;margin-top:10px;border:1px solid #bcd5e9;border-radius:10px;background:#edf6fc;padding:13px 15px;font-size:13px;line-height:1.5;color:#385873}
 .attorney-evidence-next b{color:#153f64}
 
+.shared-provider-record{margin:24px 0;border-top:1px solid var(--att-border);padding-top:22px}
+.shared-record-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.shared-record-head h3{margin:0 0 5px!important;font-size:20px!important;color:#102f4d}
+.shared-record-head p{max-width:700px;margin:0;color:#617386;font-size:13px;line-height:1.55}
+.shared-record-head>span{flex:none;border-radius:999px;background:#e6f2fb;color:#1d659b;padding:7px 10px;font-size:11px;font-weight:850}
+.shared-evidence-filters{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0 8px}
+.shared-evidence-filters button{border:1px solid var(--att-border);border-radius:999px;background:#fff;color:#45627c;padding:7px 10px;font:inherit;font-size:11px;font-weight:750;cursor:pointer}
+.shared-evidence-filters button b{margin-left:4px}
+.shared-evidence-filters button.active{background:#1f6fb2;border-color:#1f6fb2;color:#fff}
+.shared-updates{margin-top:13px;border:1px solid #c9ddeb;border-radius:9px;background:#f4f9fd;padding:0 12px}
+.shared-updates summary{padding:11px 0;cursor:pointer;color:#244e70;font-size:11px;font-weight:850}
+.shared-updates summary b{margin-left:4px;border-radius:999px;background:#1f6fb2;color:#fff;padding:2px 6px}
+.shared-updates article{display:grid;gap:3px;border-top:1px solid #dbe8f2;padding:10px 0}
+.shared-updates article small,.shared-updates article span{font-size:9px;color:#6a7e90}.shared-updates article b{font-size:11px;color:#173d5d}
+.shared-result-count{margin:0 0 10px;color:#617386;font-size:11px}
+.attorney-claim-list{display:grid;gap:8px}
+.attorney-claim-record{border:1px solid var(--att-border);border-radius:10px;background:#fff;overflow:hidden}
+.attorney-claim-record[hidden]{display:none}
+.attorney-claim-record>summary{display:grid;grid-template-columns:150px minmax(250px,1fr) auto;gap:12px;align-items:center;padding:12px 14px;cursor:pointer;list-style:none}
+.attorney-claim-record>summary::-webkit-details-marker{display:none}
+.attorney-claim-record>summary span:not(.shared-status){display:grid;gap:3px}
+.attorney-claim-record>summary b{font-size:12px;color:#173d5d}
+.attorney-claim-record>summary small{font-size:10px;color:#6a7e90}
+.shared-status{border-radius:999px;padding:6px 9px;font-size:10px;font-weight:850;white-space:nowrap}
+.shared-status.status-accepted{background:#e6f6ef;color:#17694e}
+.shared-status.status-evidence-ready{background:#e4f2ff;color:#17639e}
+.shared-status.status-other{background:#fff2d7;color:#835b0d}
+.shared-status.status-evidence-missing,.shared-status.status-unavailable{background:#ffe9ec;color:#9f3040}
+.attorney-claim-body{border-top:1px solid var(--att-border);padding:14px;background:#f8fbfe}
+.shared-fact-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.shared-fact-grid>div{border:1px solid #dce7f0;border-radius:8px;background:#fff;padding:9px}
+.shared-fact-grid small,.shared-fact-grid b{display:block}
+.shared-fact-grid small{font-size:9px;color:#6a7e90}
+.shared-fact-grid b{margin-top:4px;font-size:11px;color:#294b68;overflow-wrap:anywhere}
+.shared-allegation,.shared-counsel-next{display:grid;gap:4px;margin-top:10px;border-left:4px solid #2b7dbb;border-radius:8px;background:#eaf4fc;padding:11px 12px}
+.shared-allegation small,.shared-counsel-next small{font-size:9px;font-weight:850;text-transform:uppercase;color:#35709d}
+.shared-allegation b,.shared-counsel-next b{font-size:12px;color:#153f64;line-height:1.45}
+.shared-allegation span,.shared-counsel-next span{font-size:10px;color:#617386}
+.attorney-claim-body h4{margin:14px 0 7px;font-size:12px;color:#173d5d}
+.shared-evidence-item{border:1px solid #dce7f0;border-radius:8px;background:#fff;padding:11px;margin-top:7px}
+.shared-evidence-item>div{display:flex;justify-content:space-between;gap:10px}
+.shared-evidence-item b,.shared-evidence-item span{display:block}
+.shared-evidence-item b{font-size:11px;color:#173d5d}.shared-evidence-item span{font-size:9px;color:#6a7e90}
+.shared-evidence-item dl{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:10px 0 0}
+.shared-evidence-item dl>div{border-radius:7px;background:#f4f8fb;padding:8px}
+.shared-evidence-item dt{font-size:9px;color:#6a7e90}.shared-evidence-item dd{margin:3px 0 0;font-size:10px;line-height:1.45;color:#35536d;overflow-wrap:anywhere}
+.shared-counsel-item{border:1px solid #d8d2ed;border-left:4px solid #6357ad;border-radius:8px;background:#faf9fe;padding:10px;margin-top:7px}
+.shared-counsel-item b,.shared-counsel-item span{display:block}.shared-counsel-item b{font-size:11px;color:#39326d}.shared-counsel-item span{margin-top:3px;font-size:9px;color:#716b92}.shared-counsel-item p{margin:7px 0 0;font-size:10px;line-height:1.5;color:#504b72}
+.shared-empty{margin:0;color:#6a7e90;font-size:11px}
+
 @media(max-width:1180px){.attorney-kpis{grid-template-columns:1fr 1fr}.portfolio-grid{grid-template-columns:1fr}.portfolio-grid .priority-card{grid-column:auto}}
-@media(max-width:900px){.attorney-evidence-grid{grid-template-columns:1fr 1fr}.attorney-focus{align-items:flex-start;flex-direction:column}}
-@media(max-width:560px){.attorney-kpis,.attorney-evidence-grid,.attorney-evidence-next{grid-template-columns:1fr}.attorney-kpi{min-height:0}.attorney-evidence-card{min-height:0}.attorney-page-head h1{font-size:27px}}
+@media(max-width:900px){.attorney-evidence-grid{grid-template-columns:1fr 1fr}.attorney-focus,.shared-record-head{align-items:flex-start;flex-direction:column}.shared-fact-grid{grid-template-columns:1fr 1fr}.attorney-claim-record>summary{grid-template-columns:130px 1fr}.shared-status{grid-column:span 2;width:max-content}}
+@media(max-width:560px){.attorney-kpis,.attorney-evidence-grid,.attorney-evidence-next,.shared-fact-grid,.shared-evidence-item dl{grid-template-columns:1fr}.attorney-kpi{min-height:0}.attorney-evidence-card{min-height:0}.attorney-page-head h1{font-size:27px}.attorney-claim-record>summary{grid-template-columns:1fr}.shared-status{grid-column:auto}.shared-evidence-item>div{flex-direction:column}}
