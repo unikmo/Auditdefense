@@ -7,6 +7,8 @@ const data=readFileSync(new URL('../public/case-data.js',import.meta.url),'utf8'
 const attorney=readFileSync(new URL('../public/attorney-workspace.html',import.meta.url),'utf8');
 const attorneyJs=readFileSync(new URL('../public/attorney.js',import.meta.url),'utf8');
 const attorneyTheme=readFileSync(new URL('../public/attorney-elite-blue.css',import.meta.url),'utf8');
+const sharedEvidence=readFileSync(new URL('../public/case-evidence-data.js',import.meta.url),'utf8');
+const evidenceWorkspace=readFileSync(new URL('../public/evidence-workspace.js',import.meta.url),'utf8');
 
 for(const value of ['$64,733.00','$160.00','$64,573.00','$567,096.77']){
   assert.ok(brief.includes(value),`Attorney brief missing amount ${value}`);
@@ -42,5 +44,15 @@ for(const value of ['Evidence ready for review','Enrollment / other issues','22 
 }
 assert.doesNotMatch(attorney,/Exposure by issue family|Upcoming deadlines<\/h2>/,'Dense secondary panels remain on the attorney dashboard.');
 assert.match(attorneyTheme,/grid-template-columns:repeat\(4,minmax\(0,1fr\)\)/,'Attorney summary cards are not four equal columns.');
+assert.match(attorney,/case-evidence-data\.js/,'Attorney workspace does not load the shared provider evidence source.');
+assert.match(app,/case-evidence-data\.js[\s\S]*evidence-workspace\.js/,'Provider/counsel evidence workspace does not load shared evidence before its UI.');
+assert.match(evidenceWorkspace,/window\.AuditDefendEvidenceCaseSeed/,'Evidence workspace does not use the shared case-evidence source.');
+for(const value of ['Shared provider and attorney claim record','Everything supplied by the provider','Provider-supplied records and source locations','Payer submission','Question for counsel']){
+  assert.ok(attorneyJs.includes(value),`Attorney shared case record missing ${value}`);
+}
+for(const value of ['provider signature reported missing','technician session / SOAP note reported missing','Billing NPI reported not enrolled']){
+  assert.ok(sharedEvidence.includes(value),`Shared provider evidence seed missing ${value}`);
+}
+assert.match(attorneyJs,/auditdefend-provider-evidence-demo-v3[\s\S]*auditdefend-evidence-verification-v1/,'Attorney case file does not read both provider evidence stores.');
 
 console.log('Case chronology, provenance and legal-boundary tests passed.');
