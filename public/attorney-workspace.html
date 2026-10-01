@@ -8,8 +8,8 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>AuditDefend Attorney Workspace</title>
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/attorney.css?v=20261001-counsel-focus-v7">
-  <link rel="stylesheet" href="/attorney-elite-blue.css?v=20261001-counsel-focus-v7">
+  <link rel="stylesheet" href="/attorney.css?v=20261001-provider-mirror-v8">
+  <link rel="stylesheet" href="/attorney-elite-blue.css?v=20261001-provider-mirror-v8">
 </head>
 <body class="attorney-body">
 <div class="demo-banner"><span class="demo-dot"></span><strong>Sample attorney workspace</strong><span>Sample and redacted records only. Do not enter PHI. Counsel controls every legal interpretation and decision.</span></div>
@@ -17,46 +17,32 @@
   <aside class="attorney-sidebar" id="attorneySidebar">
     <a class="attorney-brand" href="/attorney"><span class="brand-mark">§</span><span><b>AuditDefend</b><small>Attorney Workspace</small></span></a>
     <nav class="attorney-nav" aria-label="Attorney workspace">
-      <span class="attorney-nav-label">Casework</span>
-      <button class="attorney-nav-item active" data-attorney-view="portfolio">Dashboard</button>
-      <button class="attorney-nav-item" data-attorney-view="cases">Matters <b class="attorney-badge" id="activeCaseBadge">4</b></button>
-      <button class="attorney-nav-item" data-attorney-view="clients">Provider clients</button>
-      <button class="attorney-nav-item" data-attorney-view="deadlines">Deadlines</button>
-      <button class="attorney-nav-item" data-attorney-view="notes">Counsel Notes</button>
-      <span class="attorney-nav-label">Access</span>
-      <button class="attorney-nav-item" data-attorney-view="invitations">Invitations <b class="attorney-badge muted" id="inviteBadge">2</b></button>
-      <span class="attorney-nav-label">Firm tools</span>
-      <button class="attorney-nav-item" data-attorney-view="reports">Reports</button>
-      <button class="attorney-nav-item" data-attorney-view="team">Firm &amp; Team</button>
-      <button class="attorney-nav-item" data-attorney-view="billing">Case Plans</button>
-      <button class="attorney-nav-item" data-attorney-view="settings">Firm Settings</button>
+      <button class="attorney-nav-item active" data-attorney-view="portfolio"><i>⌂</i><span>Case home</span></button>
+      <button class="attorney-nav-item" data-open-case="case-anthem" data-case-open-tab="claims"><i>✓</i><span>Claims &amp; evidence</span><b class="attorney-badge">30</b></button>
+      <button class="attorney-nav-item" data-open-case="case-anthem" data-case-open-tab="documents"><i>▤</i><span>Documents</span></button>
+      <button class="attorney-nav-item" data-open-case="case-anthem" data-case-open-tab="facts"><i>!</i><span>Facts &amp; issues</span></button>
+      <button class="attorney-nav-item" data-open-case="case-anthem" data-case-open-tab="legal"><i>§</i><span>Counsel review</span><b class="attorney-badge muted">17</b></button>
+      <button class="attorney-nav-item" data-attorney-view="notes"><i>✎</i><span>Counsel notes</span></button>
+      <button class="attorney-nav-item" data-attorney-view="invitations"><i>♙</i><span>Provider access</span><b class="attorney-badge muted" id="inviteBadge">2</b></button>
     </nav>
     <div class="attorney-sidebar-spacer"></div>
-    <div class="attorney-plan-card"><small>Attorney Firm Workspace</small><strong>$499/mo</strong><span>Portfolio tools; case licenses separate.</span><button data-attorney-view-target="billing">View plan</button></div>
-    <a class="return-link" href="/app#counsel">← Provider case workspace</a>
+    <div class="attorney-plan-card"><small>Current case</small><strong>Anthem SIU</strong><span>30 payer-review rows · 22 ready for counsel review</span><button data-attorney-view-target="cases">Firm portfolio</button></div>
+    <a class="return-link" href="/app#counsel">← Shared provider workspace</a>
   </aside>
 
   <main class="attorney-main">
     <header class="attorney-topbar">
       <button class="attorney-menu" id="attorneyMenu" aria-label="Open navigation">☰</button>
-      <div class="firm-switcher"><small>Firm workspace</small><strong id="firmNameTop">Northstar Health Law — Sample</strong></div>
+      <div class="firm-switcher"><strong>Anthem SIU case · redacted</strong><small>Attorney view</small><span id="firmNameTop" hidden>Northstar Health Law — Sample</span></div>
       <label class="attorney-search"><span class="sr-only">Search cases</span><input id="attorneySearch" type="search" placeholder="Search client, payer, case, issue…"></label>
       <button class="secondary-btn" id="newCaseTop">+ New case</button>
       <div class="attorney-user"><span>AM</span><div><b>Alex Morgan</b><small>Managing Attorney</small></div></div>
     </header>
 
     <section class="attorney-view active" id="attorney-view-portfolio">
-      <div class="attorney-page-head focused-head"><div><span class="eyebrow">COUNSEL WORKSPACE</span><h1>Start with the matter needing review.</h1><p>One next task first. Portfolio detail remains available without competing for attention.</p></div></div>
-      <section class="attorney-focus attorney-next-matter" aria-labelledby="focusTitle">
-        <div>
-          <span class="attorney-focus-label">NEXT COUNSEL TASK · ANTHEM SIU</span>
-          <h2 id="focusTitle">Compare 22 matched records with the payer findings</h2>
-          <p>Redacted Behavioral Health Practice · 22 evidence-ready claims · 5 enrollment or other issues</p>
-        </div>
-        <button class="primary-btn" data-open-case="case-anthem">Begin review →</button>
-      </section>
-      <div class="attorney-kpis compact-portfolio-strip" id="portfolioKpis"></div>
-      <section class="attorney-card other-matters-card"><div class="card-head"><div><h2>Other active matters</h2><p>Open only when you are ready to change matters.</p></div><button class="link-btn" data-attorney-view-target="cases">View all matters →</button></div><div class="table-wrap"><table class="attorney-table"><thead><tr><th>Client / matter</th><th>Payer</th><th>Asserted exposure</th><th>Stage</th><th>Response date</th><th>Priority</th><th></th></tr></thead><tbody id="portfolioCases"></tbody></table></div></section>
+      <div class="attorney-case-welcome"><div><span class="attorney-case-kicker">ATTORNEY CASE DASHBOARD</span><h1>Review the case record</h1><p>See what the payer accepted, which claims have provider evidence ready for comparison, what remains unresolved and which issues require separate legal analysis.</p><div class="attorney-case-actions"><button class="attorney-case-primary" data-open-case="case-anthem" data-case-open-tab="claims">Review claim evidence</button><button class="attorney-case-secondary" data-drawer-action="note" data-case-id="case-anthem">Add counsel note</button></div></div><aside><small>RECOMMENDED NEXT STEP</small><strong>Review 22 matched records</strong><p>Compare each provider record with the payer's stated finding. Confirm content, version and delivery before deciding how it should be used.</p><button data-open-case="case-anthem" data-case-open-tab="claims">Review claim evidence →</button></aside></div>
+      <div class="attorney-case-kpis" id="portfolioKpis"></div>
+      <div class="attorney-case-note"><span>COUNSEL REVIEW STATUS</span><b>22 documentation findings have provider evidence ready for comparison.</b><p>All 30 later payer-review rows have a source match. Five non-accepted rows concern enrollment or another non-document issue. Source matching does not establish payer receipt, sufficiency or a legal defense.</p></div>
     </section>
 
     <section class="attorney-view" id="attorney-view-clients"><div class="attorney-page-head"><div><span class="eyebrow">CLIENTS</span><h1>Provider client portfolio</h1><p>Practice context stays separate from findings and counsel work product.</p></div><button class="primary-btn" data-modal="clientModal">+ Add client</button></div><section class="attorney-card"><div class="client-grid" id="clientGrid"></div></section></section>
@@ -87,6 +73,6 @@
 <script src="/attorney-case-brief.js?v=20260928-attorney-evidence-v2"></script>
 <script src="/firebase-client.js"></script>
 <script src="/engagement-workflow.js"></script>
-<script src="/attorney.js?v=20261001-counsel-focus-v7"></script>
+<script src="/attorney.js?v=20261001-provider-mirror-v8"></script>
 </body>
 </html>
