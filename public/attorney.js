@@ -39,13 +39,11 @@ async function syncNote(n){if(!fb())return false;try{await window.AuditDefendFir
 function kpis(){
   const active=state.cases.filter(c=>c.stageKey!=='closed');
   const exposure=active.reduce((sum,c)=>sum+c.exposure,0);
-  const summary=window.AuditDefendAttorneyBriefs?.['case-anthem']?.evidenceSummary||[];
-  const summaryValue=label=>summary.find(item=>item.label===label)?.value??'—';
   const values=[
-    ['Active matters',active.length,'Across '+state.clients.length+' provider clients','matters'],
-    ['Asserted exposure',money(exposure),'Operational total; not a liability finding','exposure'],
-    ['Evidence ready for review',summaryValue('Evidence available for rebuttal review'),'Matched records requiring counsel comparison','evidence'],
-    ['Enrollment / other issues',summaryValue('Enrollment or other issue'),'Kept separate from documentation findings','other']
+    ['Active matters',active.length,'Open portfolio','matters'],
+    ['Provider clients',state.clients.length,'Current workspace','clients'],
+    ['Reported exposure',money(exposure),'Not a liability finding','exposure'],
+    ['Dates needing source',active.filter(c=>!c.deadline).length,'Operative letter required','dates']
   ];
   $('portfolioKpis').innerHTML=values.map(value=>'<article class="attorney-kpi attorney-kpi-'+value[3]+'"><span>'+value[0]+'</span><strong>'+value[1]+'</strong><small>'+value[2]+'</small></article>').join('');
 }
@@ -54,15 +52,8 @@ function caseRow(c){
   return '<tr><td><span class="client-name">'+esc(client(c.clientId)?.name||'Client')+'</span><small>'+esc(c.label)+'</small></td><td>'+esc(c.payer)+'</td><td><b>'+money(c.exposure)+'</b></td><td><span class="'+stage(c)+'">'+esc(c.stage)+'</span></td><td>'+deadline+'</td><td><span class="'+pri(c)+'">'+c.priority+'</span></td><td><button class="action-link" data-open-case="'+c.id+'">Open file</button></td></tr>';
 }
 function portfolio(){
-  const active=state.cases.filter(c=>c.stageKey!=='closed').sort((a,b)=>a.id==='case-anthem'?-1:b.id==='case-anthem'?1:days(a.deadline)-days(b.deadline));
+  const active=state.cases.filter(c=>c.stageKey!=='closed'&&c.id!=='case-anthem').sort((a,b)=>days(a.deadline)-days(b.deadline));
   $('portfolioCases').innerHTML=active.map(caseRow).join('');
-  const queue=[
-    ['Evidence comparison','22 matched records','Compare each record with the payer’s stated documentation finding.'],
-    ['Enrollment review','5 claim lines','Verify NPI role, enrollment history and the DOS-effective rule.'],
-    ['Demand reconciliation','Later stage unresolved','Obtain the operative letter tying $567,096.77 to the earlier demand.'],
-    ['Count reconciliation','97153 worksheet needed','Resolve the 59/60, 31/32 and 8/30 denominator conflict.']
-  ];
-  $('priorityQueue').innerHTML=queue.map((item,index)=>'<div class="review-item"><span class="review-number">'+(index+1)+'</span><div><b>'+item[0]+'</b><strong>'+item[1]+'</strong><p>'+item[2]+'</p></div></div>').join('');
 }
 function clients(){const count=id=>state.cases.filter(c=>c.clientId===id).length;$('clientGrid').innerHTML=state.clients.map(c=>'<article class="client-card"><h3>'+esc(c.name)+'</h3><p>'+esc(c.state)+' · '+esc(c.contactRole||'Provider contact')+'</p><div class="client-meta"><div><small>Cases</small><b>'+count(c.id)+'</b></div><div><small>Exposure</small><b>'+money(state.cases.filter(x=>x.clientId===c.id).reduce((s,x)=>s+x.exposure,0))+'</b></div></div><button class="secondary-btn" data-client-cases="'+c.id+'">View cases</button></article>').join('')}
 function cases(){let rows=state.cases;if(caseFilter==='urgent')rows=rows.filter(c=>c.priority==='High');else if(caseFilter!=='all')rows=rows.filter(c=>c.stageKey===caseFilter);$('casesTable').innerHTML=rows.map(c=>'<tr><td><b>'+esc(c.label)+'</b><small>'+esc(c.id)+'</small></td><td>'+esc(client(c.clientId)?.name)+'</td><td>'+esc(c.payer)+'</td><td>'+c.claims+'</td><td>'+money(c.exposure)+'</td><td><span class="'+stage(c)+'">'+esc(c.stage)+'</span></td><td>'+date(c.deadline)+'</td><td>'+esc(c.owner)+'</td><td><button class="action-link" data-open-case="'+c.id+'">Open</button></td></tr>').join('')}
