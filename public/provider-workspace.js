@@ -40,7 +40,7 @@
     const providerFound=rows.filter(r=>requiresDocumentationEvidence(r.claim)&&!isPayerAccepted(r.claim)&&r.status==='source-found').length;
     const providerMissing=rows.filter(r=>requiresDocumentationEvidence(r.claim)&&!isPayerAccepted(r.claim)&&['needs-evidence','not-found'].includes(r.status)).length;
     const cards=[
-      {kind:'insurer-request',icon:'01',n:requested,title:'Requested by insurer',copy:'Records listed in Anthem’s initial request.',action:'View reviewed claims',filter:'all'},
+      {kind:'insurer-request',icon:'01',n:requested,title:'Requested by insurer',copy:'Records listed in Anthem’s initial request.',action:'View 30 mapped rows',filter:'all'},
       {kind:'submitted',icon:'02',n:submitted?submitted:'Not verified',title:'Evidence submitted to insurer',copy:'Claims with proof showing what was delivered to Anthem.',action:'Add submission proof',target:'documents'},
       {kind:'accepted',icon:'03',n:counts.accepted,title:'Evidence accepted by insurer',copy:'Claims Anthem later marked supported.',action:'View accepted claims',filter:'accepted'},
       {kind:'payer-missing',icon:'04',n:payerMissing,title:'Insurer says evidence is missing',copy:'Documentation findings Anthem still treated as unsupported.',action:'View insurer findings',filter:'payer-missing'},
@@ -50,6 +50,8 @@
     $('providerKpis').innerHTML=cards.map(x=>`<article class="pw-kpi ${x.kind}"><div class="pw-kpi-top"><span class="pw-kpi-icon">${x.icon}</span><strong class="${typeof x.n==='string'?'text-value':''}">${x.n}</strong></div><h2>${x.title}</h2><p>${x.copy}</p><button ${x.target?`data-provider-target="${x.target}"`:`data-provider-filter="${x.filter}"`}>${x.action} →</button></article>`).join('');
     $('missingBadge').textContent=providerMissing;$('resultBadge').textContent=rows.length;
     $('nextStepCount').textContent=providerMissing?`Resolve evidence for ${providerMissing} claims`:submitted<providerFound?`Confirm what was sent for ${providerFound} located records`:'No provider evidence remains unmatched';
+    $('nextStepHelp').textContent=providerMissing?'Upload or identify the missing record. If it cannot be supplied, record why so your attorney sees the same status.':'All documentation findings have a provider source match. Now identify which versions were sent to the insurer and add proof of delivery.';
+    const nextAction=$('nextStepAction');if(providerMissing){nextAction.textContent='Review missing evidence →';nextAction.dataset.providerFilter='provider-missing';delete nextAction.dataset.providerTarget}else{nextAction.textContent='Add submission proof →';nextAction.dataset.providerTarget='documents';delete nextAction.dataset.providerFilter}
     const located=(caseContext.located97153Matches||0)+(caseContext.located97155Matches||0);if($('providerSourceCount'))$('providerSourceCount').textContent=located
   }
   function payerFinding(claim){return claim.issues?.length?claim.issues.join(' + '):'Supported'}
