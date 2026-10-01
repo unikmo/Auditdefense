@@ -4,6 +4,9 @@ window.AuditDefendCaseData = Object.freeze({
   caseContext: Object.freeze({
     payer:'Anthem',program:'NY Medicaid Managed Care',state:'NY',dosPrecision:'YEAR_ONLY_REDACTED',
     recordsRequestDate:'2024-12-12',recordsRequestEntries:60,
+    providerReportedSubmissionCount:60,providerSubmissionReportedOn:'2026-03-20',
+    providerSubmissionBasis:'The provider rebuttal states that all requested documentation was compiled and shipped in January 2025 as hard copy and USB, approximately 2,000 pages.',
+    providerSubmissionStatus:'Provider-reported from attached rebuttal; not independently verified',
     initialDemandDate:'2026-03-13',initialDemand:64733,direct97153:160,extrapolated97155:64573,
     providerRebuttalDate:'2026-03-20',initialResponseDeadline:'2026-04-14',
     laterReviewLines:30,laterReportedComponents:567096.77,
