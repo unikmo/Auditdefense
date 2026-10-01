@@ -37,15 +37,22 @@ async function syncClient(c){if(!fb())return false;try{await window.AuditDefendF
 async function syncCase(c){if(!fb())return false;try{await window.AuditDefendFirebaseAPI.saveAttorneyCase(c.id,{...c,attorneyUids:[uid()],providerUids:[],firmId:state.firm.id,redacted:true,containsPhi:false});return true}catch(e){console.warn(e);return false}}
 async function syncNote(n){if(!fb())return false;try{await window.AuditDefendFirebaseAPI.saveCounselNote(n.caseId,n.id,{body:n.body,category:n.category,counselOnly:true,redacted:true,containsPhi:false});return true}catch(e){console.warn(e);return false}}
 function kpis(){
-  const cards=[
-    {kind:'insurer-request',icon:'01',n:60,title:'Requested by insurer',copy:'Records listed in Anthem’s initial request.',action:'Review source request',tab:'documents'},
-    {kind:'submitted',icon:'02',n:'Not verified',title:'Evidence submitted to insurer',copy:'The current record does not yet establish exactly what Anthem received.',action:'Review submission history',tab:'documents'},
-    {kind:'accepted',icon:'03',n:3,title:'Evidence accepted by insurer',copy:'Claim lines Anthem later marked supported.',action:'View accepted claims',tab:'claims',filter:'accepted'},
-    {kind:'payer-missing',icon:'04',n:22,title:'Insurer says evidence is missing',copy:'Documentation findings Anthem still treated as unsupported.',action:'Review insurer findings',tab:'claims',filter:'payer-missing'},
-    {kind:'provider-found',icon:'05',n:22,title:'Provider evidence located',copy:'Matching provider records available for claim-level counsel review.',action:'Review located evidence',tab:'claims',filter:'evidence-ready'},
-    {kind:'provider-missing',icon:'06',n:0,title:'Provider evidence still missing',copy:'Claims needing a record or provider explanation before counsel review.',action:'Review unresolved claims',tab:'claims',filter:'provider-missing'}
-  ];
-  $('portfolioKpis').innerHTML=cards.map(card=>'<article class="attorney-case-kpi '+card.kind+'"><div><span>'+card.icon+'</span><strong class="'+(typeof card.n==='string'?'text-value':'')+'">'+card.n+'</strong></div><h2>'+card.title+'</h2><p>'+card.copy+'</p><button data-open-case="case-anthem" data-case-open-tab="'+card.tab+'"'+(card.filter?' data-case-open-filter="'+card.filter+'"':'')+'>'+card.action+' →</button></article>').join('');
+  const card=item=>'<article class="attorney-case-kpi '+item.kind+'"><div><span>'+item.icon+'</span><strong>'+item.n+'</strong></div><h2>'+item.title+'</h2><p>'+item.copy+'</p>'+(item.meta?'<small class="attorney-case-meta">'+item.meta+'</small>':'')+'<button data-open-case="case-anthem" data-case-open-tab="'+item.tab+'"'+(item.filter?' data-case-open-filter="'+item.filter+'"':'')+'>'+item.action+' →</button></article>';
+  const group=(step,title,equation,cards,columns)=>'<section class="attorney-stage-group"><div class="attorney-stage-head"><div><span>'+step+'</span><h2>'+title+'</h2></div><b>'+equation+'</b></div><div class="attorney-stage-grid cols-'+columns+'">'+cards.map(card).join('')+'</div></section>';
+  $('portfolioKpis').innerHTML=
+    group('STAGE 1 · ORIGINAL REQUEST','What Anthem requested and what the provider says was sent','60 requested · 60 provider-reported as submitted',[
+      {kind:'insurer-request',icon:'01',n:60,title:'Requested by insurer',copy:'Records listed in Anthem’s December 2024 request.',action:'Review source request',tab:'documents'},
+      {kind:'submitted',icon:'02',n:60,title:'Provider reports evidence submitted',copy:'Provider states all requested records were shipped by hard copy and USB.',meta:'Provider statement · March 20 rebuttal attachment · not independently verified',action:'Review submission history',tab:'documents'}
+    ],2)+
+    group('STAGE 2 · LATER INSURER WORKSHEET','How Anthem classified the 30 later worksheet rows','30 = 3 accepted + 22 documentation findings + 5 enrollment/other',[
+      {kind:'accepted',icon:'03',n:3,title:'Accepted by insurer',copy:'Rows Anthem marked supported after rebuttal review.',action:'View accepted claims',tab:'claims',filter:'accepted'},
+      {kind:'payer-missing',icon:'04',n:22,title:'Documentation findings',copy:'Rows Anthem still treated as lacking or insufficient documentation.',action:'Review documentation findings',tab:'claims',filter:'payer-missing'},
+      {kind:'other',icon:'05',n:5,title:'Enrollment or other findings',copy:'Rows involving enrollment, effective date, registration or billing entity.',action:'Review other findings',tab:'claims',filter:'other'}
+    ],3)+
+    group('STAGE 3 · PROVIDER RECORD CHECK','Whether records can now be identified for the 22 documentation findings','22 = 22 records located + 0 records still missing',[
+      {kind:'provider-found',icon:'06',n:22,title:'Provider evidence located',copy:'Documentation findings with a matching provider source record.',action:'Review located evidence',tab:'claims',filter:'evidence-ready'},
+      {kind:'provider-missing',icon:'07',n:0,title:'Provider evidence still missing',copy:'Claims needing a record or provider explanation before counsel review.',action:'Review unresolved claims',tab:'claims',filter:'provider-missing'}
+    ],2);
 }
 function caseRow(c){
   const deadline=c.deadline?date(c.deadline):'<span class="deadline-unverified">Unverified</span><small>Operative letter required</small>';
