@@ -8,8 +8,8 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>AuditDefend Attorney Workspace</title>
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/attorney.css?v=20261001-evidence-path-v9">
-  <link rel="stylesheet" href="/attorney-elite-blue.css?v=20261001-evidence-path-v9">
+  <link rel="stylesheet" href="/attorney.css?v=20261001-stage-arithmetic-v10">
+  <link rel="stylesheet" href="/attorney-elite-blue.css?v=20261001-stage-arithmetic-v11">
 </head>
 <body class="attorney-body">
 <div class="demo-banner"><span class="demo-dot"></span><strong>Sample attorney workspace</strong><span>Sample and redacted records only. Do not enter PHI. Counsel controls every legal interpretation and decision.</span></div>
@@ -40,9 +40,9 @@
     </header>
 
     <section class="attorney-view active" id="attorney-view-portfolio">
-      <div class="attorney-case-welcome"><div><span class="attorney-case-kicker">ATTORNEY CASE DASHBOARD</span><h1>Follow the evidence from request to result</h1><p>Start with the insurer’s request. Then see what was submitted, what the insurer accepted, what it still treats as unsupported, and whether the provider has the requested records.</p><div class="attorney-case-actions"><button class="attorney-case-primary" data-open-case="case-anthem" data-case-open-tab="claims" data-case-open-filter="payer-missing">Review insurer findings</button><button class="attorney-case-secondary" data-drawer-action="note" data-case-id="case-anthem">Add counsel note</button></div></div><aside><small>RECOMMENDED NEXT STEP</small><strong>Verify submission history</strong><p>Provider records were located for all 22 documentation findings. Confirm which versions were sent to Anthem and when before counsel decides how to use them.</p><button data-open-case="case-anthem" data-case-open-tab="documents">Review source packet →</button></aside></div>
+      <div class="attorney-case-welcome"><div><span class="attorney-case-kicker">ATTORNEY CASE DASHBOARD</span><h1>See exactly how the claim counts connect</h1><p>The original 60-record request and the later 30-row worksheet are separate review stages. Each stage is shown independently so counsel can see the factual record without a false 60-to-22 arithmetic.</p><div class="attorney-case-actions"><button class="attorney-case-primary" data-open-case="case-anthem" data-case-open-tab="claims" data-case-open-filter="payer-missing">Review documentation findings</button><button class="attorney-case-secondary" data-drawer-action="note" data-case-id="case-anthem">Add counsel note</button></div></div><aside><small>RECOMMENDED NEXT STEP</small><strong>Verify the reported 60-record delivery</strong><p>The provider states that all requested evidence was shipped by hard copy and USB. Confirm delivery and version history before counsel decides how the submission should be characterized.</p><button data-open-case="case-anthem" data-case-open-tab="documents">Review source packet →</button></aside></div>
       <div class="attorney-case-kpis" id="portfolioKpis"></div>
-      <div class="attorney-case-note"><span>OTHER INSURER FINDINGS</span><b>5 reviewed claims involve enrollment or another non-document issue.</b><p>They remain separate from the missing-evidence path. A provider source match does not establish payer receipt, sufficiency or a legal defense.</p></div>
+      <div class="attorney-case-note"><span>SCOPE NOTE</span><b>The original 60 and later 30 are not yet mapped one-to-one.</b><p>Provider-reported submission, payer acceptance and provider source location remain distinct facts. All legal characterization remains subject to attorney review and decision.</p></div>
     </section>
 
     <section class="attorney-view" id="attorney-view-clients"><div class="attorney-page-head"><div><span class="eyebrow">CLIENTS</span><h1>Provider client portfolio</h1><p>Practice context stays separate from findings and counsel work product.</p></div><button class="primary-btn" data-modal="clientModal">+ Add client</button></div><section class="attorney-card"><div class="client-grid" id="clientGrid"></div></section></section>
@@ -68,11 +68,11 @@
 <div class="attorney-modal" id="onboardingModal" aria-hidden="true"><div class="modal-backdrop"></div><form class="modal-panel" id="onboardingForm"><h2>Configure attorney workspace</h2><div class="onboarding-progress"><i></i><i></i><i></i><i></i></div><div class="onboard-step active"><label>Firm name<input name="firmName" value="Northstar Health Law — Sample" required></label></div><div class="onboard-step"><label>Jurisdiction<input name="jurisdiction" value="New York" required></label><label>Focus<input name="focus" value="Healthcare payer audits" required></label></div><div class="onboard-step"><label>Your name<input name="attorneyName" value="Alex Morgan" required></label><label>Email<input name="email" type="email" value="alex@example.com" required></label></div><div class="onboard-step"><label>Role<select name="role"><option>Managing Attorney</option><option>Attorney</option></select></label><p>Legal conclusions remain exclusively with counsel.</p></div><div class="onboard-actions"><button type="button" class="secondary-btn" id="onboardBack">Back</button><button type="button" class="primary-btn" id="onboardNext">Next</button><button class="primary-btn" id="onboardFinish">Open workspace</button></div></form></div>
 
 <div class="toast" id="attorneyToast" role="status"></div>
-<script src="/case-data.js?v=20260928-rebuttal-review-v2"></script>
+<script src="/case-data.js?v=20261001-stage-arithmetic-v3"></script>
 <script src="/case-evidence-data.js?v=20260930-shared-evidence"></script>
 <script src="/attorney-case-brief.js?v=20260928-attorney-evidence-v2"></script>
 <script src="/firebase-client.js"></script>
 <script src="/engagement-workflow.js"></script>
-<script src="/attorney.js?v=20261001-evidence-path-v10"></script>
+<script src="/attorney.js?v=20261001-stage-arithmetic-v11"></script>
 </body>
 </html>
