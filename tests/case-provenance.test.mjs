@@ -30,20 +30,24 @@ for(const value of ['Accepted by payer','Evidence available for rebuttal review'
 }
 assert.match(brief,/All 30 later CPT 97155 payer-review rows were matched/i,'Attorney brief does not reflect the completed claim/evidence crosswalk.');
 assert.match(brief,/rendering provider separately from the group billing NPI/i,'Attorney brief conflates rendering and billing NPI roles.');
-assert.match(attorney,/Provider records were located for all 22 documentation findings/i,'Attorney next step does not reflect the shared provider evidence status.');
+assert.match(attorney,/provider states that all requested evidence was shipped by hard copy and USB/i,'Attorney next step does not reflect the provider-reported submission.');
 assert.match(attorney,/attorney-elite-blue\.css/,'Attorney workspace is not using the elite-blue theme.');
 assert.match(attorneyTheme,/--att-brown:#0b2341/,'Attorney elite-blue theme tokens are missing.');
-for(const value of ['ATTORNEY CASE DASHBOARD','Follow the evidence from request to result','RECOMMENDED NEXT STEP','OTHER INSURER FINDINGS']){
+for(const value of ['ATTORNEY CASE DASHBOARD','See exactly how the claim counts connect','RECOMMENDED NEXT STEP','SCOPE NOTE']){
   assert.ok(attorney.includes(value),`Attorney dashboard missing ${value}`);
 }
 for(const value of ['Case home','Claims &amp; evidence','Documents','Facts &amp; issues','Counsel review','Counsel notes','Provider access']){
   assert.ok(attorney.includes(value),`Attorney navigation missing ${value}`);
 }
-for(const value of ['Requested by insurer','Evidence submitted to insurer','Evidence accepted by insurer','Insurer says evidence is missing','Provider evidence located','Provider evidence still missing']){
+for(const value of ['Requested by insurer','Provider reports evidence submitted','Accepted by insurer','Documentation findings','Enrollment or other findings','Provider evidence located','Provider evidence still missing']){
   assert.ok(attorneyJs.includes(value),`Attorney dashboard summary missing ${value}`);
 }
+for(const value of ['60 requested · 60 provider-reported as submitted','30 = 3 accepted + 22 documentation findings + 5 enrollment/other','22 = 22 records located + 0 records still missing']){
+  assert.ok(attorneyJs.includes(value),`Attorney stage arithmetic missing ${value}`);
+}
 assert.doesNotMatch(attorney,/Counsel review queue|Exposure by issue family|Upcoming deadlines<\/h2>/,'Dense secondary panels remain on the attorney dashboard.');
-assert.match(attorneyTheme,/\.attorney-case-kpis\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/,'Attorney evidence path cards do not mirror the provider dashboard.');
+assert.match(attorneyTheme,/\.attorney-case-kpis\{display:grid;gap:18px/,'Attorney staged evidence layout is missing.');
+assert.match(attorneyTheme,/\.attorney-stage-grid\.cols-3\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/,'Attorney later-worksheet arithmetic is not shown as three equal categories.');
 assert.match(attorneyJs,/value==='payer-missing'[\s\S]*value==='provider-missing'/,'Attorney claim filters do not preserve the insurer/provider distinction.');
 assert.match(attorneyJs,/if\(o\.dataset\.caseOpenFilter\)\{const button=[\s\S]*filterAttorneyEvidence\(o\.dataset\.caseOpenFilter,button\)\}/,'Attorney dashboard group filters depend on obsolete filter buttons.');
 assert.match(attorney,/case-evidence-data\.js/,'Attorney workspace does not load the shared provider evidence source.');
