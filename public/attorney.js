@@ -38,13 +38,14 @@ async function syncCase(c){if(!fb())return false;try{await window.AuditDefendFir
 async function syncNote(n){if(!fb())return false;try{await window.AuditDefendFirebaseAPI.saveCounselNote(n.caseId,n.id,{body:n.body,category:n.category,counselOnly:true,redacted:true,containsPhi:false});return true}catch(e){console.warn(e);return false}}
 function kpis(){
   const cards=[
-    {kind:'accepted',icon:'01',n:3,title:'Accepted by payer',copy:'Claim lines the payer marked supported after review.',action:'View accepted claims',filter:'accepted'},
-    {kind:'missing',icon:'02',n:0,title:'Evidence still missing',copy:'Documentation findings without a located provider record.',action:'View missing evidence',filter:'evidence-missing'},
-    {kind:'ready',icon:'03',n:22,title:'Evidence ready for counsel review',copy:'Provider records ready for claim-level comparison with payer findings.',action:'Review claim evidence',filter:'evidence-ready'},
-    {kind:'unavailable',icon:'04',n:0,title:'Provider cannot supply',copy:'Claims the provider confirmed have no supporting record available.',action:'View unresolved claims',filter:'unavailable'},
-    {kind:'other',icon:'05',n:5,title:'Enrollment or other issues',copy:'Enrollment, effective-date, registration or billing-entity findings.',action:'Review separate issues',filter:'other'}
+    {kind:'insurer-request',icon:'01',n:60,title:'Requested by insurer',copy:'Records listed in Anthem’s initial request.',action:'Review source request',tab:'documents'},
+    {kind:'submitted',icon:'02',n:'Not verified',title:'Evidence submitted to insurer',copy:'The current record does not yet establish exactly what Anthem received.',action:'Review submission history',tab:'documents'},
+    {kind:'accepted',icon:'03',n:3,title:'Evidence accepted by insurer',copy:'Claim lines Anthem later marked supported.',action:'View accepted claims',tab:'claims',filter:'accepted'},
+    {kind:'payer-missing',icon:'04',n:22,title:'Insurer says evidence is missing',copy:'Documentation findings Anthem still treated as unsupported.',action:'Review insurer findings',tab:'claims',filter:'payer-missing'},
+    {kind:'provider-found',icon:'05',n:22,title:'Provider evidence located',copy:'Matching provider records available for claim-level counsel review.',action:'Review located evidence',tab:'claims',filter:'evidence-ready'},
+    {kind:'provider-missing',icon:'06',n:0,title:'Provider evidence still missing',copy:'Claims needing a record or provider explanation before counsel review.',action:'Review unresolved claims',tab:'claims',filter:'provider-missing'}
   ];
-  $('portfolioKpis').innerHTML=cards.map(card=>'<article class="attorney-case-kpi '+card.kind+'"><div><span>'+card.icon+'</span><strong>'+card.n+'</strong></div><h2>'+card.title+'</h2><p>'+card.copy+'</p><button data-open-case="case-anthem" data-case-open-tab="claims" data-case-open-filter="'+card.filter+'">'+card.action+' →</button></article>').join('');
+  $('portfolioKpis').innerHTML=cards.map(card=>'<article class="attorney-case-kpi '+card.kind+'"><div><span>'+card.icon+'</span><strong class="'+(typeof card.n==='string'?'text-value':'')+'">'+card.n+'</strong></div><h2>'+card.title+'</h2><p>'+card.copy+'</p><button data-open-case="case-anthem" data-case-open-tab="'+card.tab+'"'+(card.filter?' data-case-open-filter="'+card.filter+'"':'')+'>'+card.action+' →</button></article>').join('');
 }
 function caseRow(c){
   const deadline=c.deadline?date(c.deadline):'<span class="deadline-unverified">Unverified</span><small>Operative letter required</small>';
@@ -100,7 +101,7 @@ function sharedEvidenceMarkup(){
 }
 function filterAttorneyEvidence(value,button){
   const records=[...document.querySelectorAll('.attorney-claim-record')];let visible=0;
-  records.forEach(record=>{const show=value==='all'||record.dataset.attorneyEvidenceStatus===value;record.hidden=!show;if(show)visible++});
+  records.forEach(record=>{const status=record.dataset.attorneyEvidenceStatus;const show=value==='all'||status===value||(value==='payer-missing'&&['evidence-ready','evidence-missing','unavailable'].includes(status))||(value==='provider-missing'&&['evidence-missing','unavailable'].includes(status));record.hidden=!show;if(show)visible++});
   document.querySelectorAll('[data-attorney-evidence-filter]').forEach(item=>item.classList.toggle('active',item===button));
   const count=$('attorneyEvidenceResultCount');if(count)count.textContent=value==='all'?`Showing all ${visible} claims`:`Showing ${visible} matching claims`;
 }
