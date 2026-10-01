@@ -13,12 +13,17 @@ const sandbox={window:{}};
 vm.runInNewContext(caseDataSource,sandbox);
 const caseData=sandbox.window.AuditDefendCaseData;
 
-for(const label of ['Case home','Add documents','Evidence results','Proof unavailable','Attorney access']){
+for(const label of ['Case home','Add documents','Evidence results','Evidence still needed','Attorney access']){
   if(!html.includes(label))throw new Error(`provider menu missing ${label}`);
 }
-for(const label of ['Accepted by payer','Still needs evidence','Available for rebuttal review','Evidence not found','Enrollment or other issue']){
+for(const label of ['Accepted by insurer','Insurer says evidence is missing','Provider evidence located','Provider evidence unavailable','Enrollment or other issue']){
   if(!html.includes(label))throw new Error(`provider result key missing ${label}`);
 }
+for(const label of ['Requested by insurer','Evidence submitted to insurer','Evidence accepted by insurer','Insurer says evidence is missing','Provider evidence located','Provider evidence still missing']){
+  if(!js.includes(label))throw new Error(`provider evidence path missing ${label}`);
+}
+if(!js.includes("recordsRequestEntries||rows.length"))throw new Error('provider evidence path does not begin with the insurer request');
+if(!js.includes("submitted?submitted:'Not verified'"))throw new Error('unverified payer submission history is being presented as a numeric fact');
 if((html.match(/data-provider-view=/g)||[]).length!==5)throw new Error('provider menu should stay focused at five items');
 if(!html.includes('providerDocumentForm')||!js.includes('submission-proof'))throw new Error('provider evidence intake is incomplete');
 for(const status of ["status:'accepted'","status:'needs-evidence'","status:'source-found'","status:'not-found'","status:'other'"]){
@@ -29,7 +34,8 @@ if(!js.includes("!requiresDocumentationEvidence(claim))return{status:'other'"))t
 if(!js.includes("hasVerifiedSource)return{status:'source-found'"))throw new Error('verified repository evidence is not used in provider results');
 if(!js.includes("label:'Evidence available for rebuttal review'"))throw new Error('matched evidence is not presented as available for rebuttal review');
 if(!js.includes("Payer identifies an NPI enrollment issue"))throw new Error('enrollment findings are not explained in the other-issues category');
-if(!js.includes("counts.accepted")||!js.includes("counts['needs-evidence']"))throw new Error('provider dashboard counts are incomplete');
+if(!js.includes("counts.accepted")||!js.includes("payerMissing=rows.filter")||!js.includes("providerFound=rows.filter"))throw new Error('provider evidence-path counts are incomplete');
+if(!js.includes("providerMissing=rows.filter")||!js.includes("['needs-evidence','not-found']"))throw new Error('provider missing-evidence queue does not include unresolved and unavailable records');
 const evidenceRecords=caseData.evidenceReconciliation.records;
 if(Object.keys(evidenceRecords).length!==30)throw new Error('all 30 payer-review rows must have a source reconciliation record');
 if(Object.values(evidenceRecords).some(record=>record.status!=='verified'))throw new Error('the reconciled source records are not verified');
