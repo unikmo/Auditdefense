@@ -24,6 +24,7 @@ for(const label of ['Requested by insurer','Evidence submitted to insurer','Evid
 }
 if(!js.includes("recordsRequestEntries||rows.length"))throw new Error('provider evidence path does not begin with the insurer request');
 if(!js.includes("submitted?submitted:'Not verified'"))throw new Error('unverified payer submission history is being presented as a numeric fact');
+if(!js.includes("nextStepHelp")||!js.includes("nextStepAction")||!js.includes("Add submission proof"))throw new Error('provider next step does not adapt to the actual missing-evidence count');
 if((html.match(/data-provider-view=/g)||[]).length!==5)throw new Error('provider menu should stay focused at five items');
 if(!html.includes('providerDocumentForm')||!js.includes('submission-proof'))throw new Error('provider evidence intake is incomplete');
 for(const status of ["status:'accepted'","status:'needs-evidence'","status:'source-found'","status:'not-found'","status:'other'"]){
