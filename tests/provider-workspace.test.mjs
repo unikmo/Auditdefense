@@ -19,11 +19,15 @@ for(const label of ['Case home','Add documents','Evidence results','Evidence sti
 for(const label of ['Accepted by insurer','Insurer says evidence is missing','Provider evidence located','Provider evidence unavailable','Enrollment or other issue']){
   if(!html.includes(label))throw new Error(`provider result key missing ${label}`);
 }
-for(const label of ['Requested by insurer','Evidence submitted to insurer','Evidence accepted by insurer','Insurer says evidence is missing','Provider evidence located','Provider evidence still missing']){
+for(const label of ['Requested by insurer','Provider reports evidence submitted','Accepted by insurer','Documentation findings','Enrollment or other findings','Provider evidence located','Provider evidence still missing']){
   if(!js.includes(label))throw new Error(`provider evidence path missing ${label}`);
 }
 if(!js.includes("recordsRequestEntries||rows.length"))throw new Error('provider evidence path does not begin with the insurer request');
-if(!js.includes("submitted?submitted:'Not verified'"))throw new Error('unverified payer submission history is being presented as a numeric fact');
+if(caseData.caseContext.providerReportedSubmissionCount!==60)throw new Error('provider-reported submission count is missing');
+if(!/not independently verified/i.test(caseData.caseContext.providerSubmissionStatus))throw new Error('provider-reported submission count lacks its verification limitation');
+for(const equation of ['requested · ${submitted} provider-reported as submitted','accepted + ${payerMissing} documentation findings + ${counts.other} enrollment/other','records located + ${providerMissing} records still missing']){
+  if(!js.includes(equation))throw new Error(`provider stage arithmetic missing ${equation}`);
+}
 if(!js.includes("nextStepHelp")||!js.includes("nextStepAction")||!js.includes("Add submission proof"))throw new Error('provider next step does not adapt to the actual missing-evidence count');
 if((html.match(/data-provider-view=/g)||[]).length!==5)throw new Error('provider menu should stay focused at five items');
 if(!html.includes('providerDocumentForm')||!js.includes('submission-proof'))throw new Error('provider evidence intake is incomplete');
