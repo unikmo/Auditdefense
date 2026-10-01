@@ -35,23 +35,31 @@
   function renderKpis(){
     const rows=results(),counts={'accepted':0,'needs-evidence':0,'source-found':0,'not-found':0,'other':0};rows.forEach(r=>counts[r.status]++);
     const requested=caseContext.recordsRequestEntries||rows.length;
-    const submitted=claims.filter(hasSubmissionProof).length;
+    const submitted=caseContext.providerReportedSubmissionCount||0;
+    const verifiedSubmissionProof=claims.filter(hasSubmissionProof).length;
     const payerMissing=rows.filter(r=>requiresDocumentationEvidence(r.claim)&&!isPayerAccepted(r.claim)).length;
     const providerFound=rows.filter(r=>requiresDocumentationEvidence(r.claim)&&!isPayerAccepted(r.claim)&&r.status==='source-found').length;
     const providerMissing=rows.filter(r=>requiresDocumentationEvidence(r.claim)&&!isPayerAccepted(r.claim)&&['needs-evidence','not-found'].includes(r.status)).length;
-    const cards=[
-      {kind:'insurer-request',icon:'01',n:requested,title:'Requested by insurer',copy:'Records listed in Anthem’s initial request.',action:'View 30 mapped rows',filter:'all'},
-      {kind:'submitted',icon:'02',n:submitted?submitted:'Not verified',title:'Evidence submitted to insurer',copy:'Claims with proof showing what was delivered to Anthem.',action:'Add submission proof',target:'documents'},
-      {kind:'accepted',icon:'03',n:counts.accepted,title:'Evidence accepted by insurer',copy:'Claims Anthem later marked supported.',action:'View accepted claims',filter:'accepted'},
-      {kind:'payer-missing',icon:'04',n:payerMissing,title:'Insurer says evidence is missing',copy:'Documentation findings Anthem still treated as unsupported.',action:'View insurer findings',filter:'payer-missing'},
-      {kind:'provider-found',icon:'05',n:providerFound,title:'Provider evidence located',copy:'Those insurer findings now have a matching provider record.',action:'Review located evidence',filter:'source-found'},
-      {kind:'provider-missing',icon:'06',n:providerMissing,title:'Provider evidence still missing',copy:'Claims needing a record upload or an explanation of why it is unavailable.',action:'Resolve missing evidence',filter:'provider-missing'}
-    ];
-    $('providerKpis').innerHTML=cards.map(x=>`<article class="pw-kpi ${x.kind}"><div class="pw-kpi-top"><span class="pw-kpi-icon">${x.icon}</span><strong class="${typeof x.n==='string'?'text-value':''}">${x.n}</strong></div><h2>${x.title}</h2><p>${x.copy}</p><button ${x.target?`data-provider-target="${x.target}"`:`data-provider-filter="${x.filter}"`}>${x.action} →</button></article>`).join('');
+    const card=x=>`<article class="pw-kpi ${x.kind}"><div class="pw-kpi-top"><span class="pw-kpi-icon">${x.icon}</span><strong>${x.n}</strong></div><h2>${x.title}</h2><p>${x.copy}</p>${x.meta?`<small class="pw-kpi-meta">${x.meta}</small>`:''}<button ${x.target?`data-provider-target="${x.target}"`:`data-provider-filter="${x.filter}"`}>${x.action} →</button></article>`;
+    const group=(step,title,equation,cards,columns)=>`<section class="pw-stage-group"><div class="pw-stage-head"><div><span>${step}</span><h2>${title}</h2></div><b>${equation}</b></div><div class="pw-stage-grid cols-${columns}">${cards.map(card).join('')}</div></section>`;
+    $('providerKpis').innerHTML=
+      group('STAGE 1 · ORIGINAL REQUEST','What Anthem requested and what the provider says was sent',`${requested} requested · ${submitted} provider-reported as submitted`,[
+        {kind:'insurer-request',icon:'01',n:requested,title:'Requested by insurer',copy:'Records listed in Anthem’s December 2024 request.',action:'View 30 later worksheet rows',filter:'all'},
+        {kind:'submitted',icon:'02',n:submitted,title:'Provider reports evidence submitted',copy:'The provider states that all requested records were shipped by hard copy and USB.',meta:'Provider statement · rebuttal attachment · not independently verified',action:'Review submission record',target:'documents'}
+      ],2)+
+      group('STAGE 2 · LATER INSURER WORKSHEET','How Anthem classified the 30 later worksheet rows',`${rows.length} = ${counts.accepted} accepted + ${payerMissing} documentation findings + ${counts.other} enrollment/other`,[
+        {kind:'accepted',icon:'03',n:counts.accepted,title:'Accepted by insurer',copy:'Rows Anthem marked supported after rebuttal review.',action:'View accepted claims',filter:'accepted'},
+        {kind:'payer-missing',icon:'04',n:payerMissing,title:'Documentation findings',copy:'Rows Anthem still treated as lacking or insufficient documentation.',action:'View documentation findings',filter:'payer-missing'},
+        {kind:'other',icon:'05',n:counts.other,title:'Enrollment or other findings',copy:'Rows involving enrollment, effective date, registration or billing entity.',action:'View other findings',filter:'other'}
+      ],3)+
+      group('STAGE 3 · PROVIDER RECORD CHECK','Whether the provider can now identify records for the 22 documentation findings',`${payerMissing} = ${providerFound} records located + ${providerMissing} records still missing`,[
+        {kind:'provider-found',icon:'06',n:providerFound,title:'Provider evidence located',copy:'Documentation findings with a matching provider source record.',action:'Review located evidence',filter:'source-found'},
+        {kind:'provider-missing',icon:'07',n:providerMissing,title:'Provider evidence still missing',copy:'Claims needing a record upload or an explanation of why it is unavailable.',action:'Resolve missing evidence',filter:'provider-missing'}
+      ],2);
     $('missingBadge').textContent=providerMissing;$('resultBadge').textContent=rows.length;
-    $('nextStepCount').textContent=providerMissing?`Resolve evidence for ${providerMissing} claims`:submitted<providerFound?`Confirm what was sent for ${providerFound} located records`:'No provider evidence remains unmatched';
+    $('nextStepCount').textContent=providerMissing?`Resolve evidence for ${providerMissing} claims`:`Verify delivery of the provider-reported ${submitted}-record submission`;
     $('nextStepHelp').textContent=providerMissing?'Upload or identify the missing record. If it cannot be supplied, record why so your attorney sees the same status.':'All documentation findings have a provider source match. Now identify which versions were sent to the insurer and add proof of delivery.';
-    const nextAction=$('nextStepAction');if(providerMissing){nextAction.textContent='Review missing evidence →';nextAction.dataset.providerFilter='provider-missing';delete nextAction.dataset.providerTarget}else{nextAction.textContent='Add submission proof →';nextAction.dataset.providerTarget='documents';delete nextAction.dataset.providerFilter}
+    const nextAction=$('nextStepAction');if(providerMissing){nextAction.textContent='Review missing evidence →';nextAction.dataset.providerFilter='provider-missing';delete nextAction.dataset.providerTarget}else{nextAction.textContent=verifiedSubmissionProof?'Review submission proof →':'Add submission proof →';nextAction.dataset.providerTarget='documents';delete nextAction.dataset.providerFilter}
     const located=(caseContext.located97153Matches||0)+(caseContext.located97155Matches||0);if($('providerSourceCount'))$('providerSourceCount').textContent=located
   }
   function payerFinding(claim){return claim.issues?.length?claim.issues.join(' + '):'Supported'}
