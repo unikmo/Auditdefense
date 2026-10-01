@@ -45,6 +45,7 @@ for(const value of ['Requested by insurer','Evidence submitted to insurer','Evid
 assert.doesNotMatch(attorney,/Counsel review queue|Exposure by issue family|Upcoming deadlines<\/h2>/,'Dense secondary panels remain on the attorney dashboard.');
 assert.match(attorneyTheme,/\.attorney-case-kpis\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/,'Attorney evidence path cards do not mirror the provider dashboard.');
 assert.match(attorneyJs,/value==='payer-missing'[\s\S]*value==='provider-missing'/,'Attorney claim filters do not preserve the insurer/provider distinction.');
+assert.match(attorneyJs,/if\(o\.dataset\.caseOpenFilter\)\{const button=[\s\S]*filterAttorneyEvidence\(o\.dataset\.caseOpenFilter,button\)\}/,'Attorney dashboard group filters depend on obsolete filter buttons.');
 assert.match(attorney,/case-evidence-data\.js/,'Attorney workspace does not load the shared provider evidence source.');
 assert.match(app,/case-evidence-data\.js[\s\S]*evidence-workspace\.js/,'Provider/counsel evidence workspace does not load shared evidence before its UI.');
 assert.match(evidenceWorkspace,/window\.AuditDefendEvidenceCaseSeed/,'Evidence workspace does not use the shared case-evidence source.');
