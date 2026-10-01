@@ -8,8 +8,8 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <title>AuditDefend Attorney Workspace</title>
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/attorney.css?v=20261001-counsel-focus-v6">
-  <link rel="stylesheet" href="/attorney-elite-blue.css?v=20261001-counsel-focus-v6">
+  <link rel="stylesheet" href="/attorney.css?v=20261001-counsel-focus-v7">
+  <link rel="stylesheet" href="/attorney-elite-blue.css?v=20261001-counsel-focus-v7">
 </head>
 <body class="attorney-body">
 <div class="demo-banner"><span class="demo-dot"></span><strong>Sample attorney workspace</strong><span>Sample and redacted records only. Do not enter PHI. Counsel controls every legal interpretation and decision.</span></div>
@@ -46,20 +46,17 @@
     </header>
 
     <section class="attorney-view active" id="attorney-view-portfolio">
-      <div class="attorney-page-head"><div><span class="eyebrow">ATTORNEY DASHBOARD</span><h1>Everything requiring counsel attention.</h1><p>See active matters, evidence ready for review and unresolved issues without drawing a legal conclusion.</p></div><button class="primary-btn" data-modal="caseModal">+ Open client matter</button></div>
-      <div class="attorney-kpis" id="portfolioKpis"></div>
-      <section class="attorney-focus" aria-labelledby="focusTitle">
+      <div class="attorney-page-head focused-head"><div><span class="eyebrow">COUNSEL WORKSPACE</span><h1>Start with the matter needing review.</h1><p>One next task first. Portfolio detail remains available without competing for attention.</p></div></div>
+      <section class="attorney-focus attorney-next-matter" aria-labelledby="focusTitle">
         <div>
-          <span class="attorney-focus-label">Current matter focus</span>
-          <h2 id="focusTitle">Anthem SIU · claim/evidence reconciliation completed</h2>
-          <p>All 30 later CPT 97155 review rows have a source match. Counsel can move directly to the factual comparison while keeping enrollment and demand-stage questions separate.</p>
+          <span class="attorney-focus-label">NEXT COUNSEL TASK · ANTHEM SIU</span>
+          <h2 id="focusTitle">Compare 22 matched records with the payer findings</h2>
+          <p>Redacted Behavioral Health Practice · 22 evidence-ready claims · 5 enrollment or other issues</p>
         </div>
-        <button class="primary-btn" data-open-case="case-anthem">Open complete case file →</button>
+        <button class="primary-btn" data-open-case="case-anthem">Begin review →</button>
       </section>
-      <div class="attorney-grid portfolio-grid">
-        <section class="attorney-card span-2"><div class="card-head"><div><h2>Active matters</h2><p>Core status, asserted exposure and controlling-date status in one view.</p></div><button class="link-btn" data-attorney-view-target="cases">View all matters →</button></div><div class="table-wrap"><table class="attorney-table"><thead><tr><th>Client / matter</th><th>Payer</th><th>Asserted exposure</th><th>Stage</th><th>Response date</th><th>Priority</th><th></th></tr></thead><tbody id="portfolioCases"></tbody></table></div></section>
-        <aside class="attorney-card priority-card counsel-review-card"><div class="card-head"><div><h2>Counsel review queue</h2><p>Four concrete questions in the current matter.</p></div></div><div id="priorityQueue"></div><button class="secondary-btn review-queue-button" data-open-case="case-anthem">Review all facts and sources</button></aside>
-      </div>
+      <div class="attorney-kpis compact-portfolio-strip" id="portfolioKpis"></div>
+      <section class="attorney-card other-matters-card"><div class="card-head"><div><h2>Other active matters</h2><p>Open only when you are ready to change matters.</p></div><button class="link-btn" data-attorney-view-target="cases">View all matters →</button></div><div class="table-wrap"><table class="attorney-table"><thead><tr><th>Client / matter</th><th>Payer</th><th>Asserted exposure</th><th>Stage</th><th>Response date</th><th>Priority</th><th></th></tr></thead><tbody id="portfolioCases"></tbody></table></div></section>
     </section>
 
     <section class="attorney-view" id="attorney-view-clients"><div class="attorney-page-head"><div><span class="eyebrow">CLIENTS</span><h1>Provider client portfolio</h1><p>Practice context stays separate from findings and counsel work product.</p></div><button class="primary-btn" data-modal="clientModal">+ Add client</button></div><section class="attorney-card"><div class="client-grid" id="clientGrid"></div></section></section>
@@ -90,6 +87,6 @@
 <script src="/attorney-case-brief.js?v=20260928-attorney-evidence-v2"></script>
 <script src="/firebase-client.js"></script>
 <script src="/engagement-workflow.js"></script>
-<script src="/attorney.js?v=20261001-counsel-focus-v6"></script>
+<script src="/attorney.js?v=20261001-counsel-focus-v7"></script>
 </body>
 </html>
