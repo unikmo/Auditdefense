@@ -45,6 +45,10 @@ for(const value of ['Requested by insurer','Provider reports evidence submitted'
 for(const value of ['60 requested · 60 provider-reported as submitted','30 = 3 accepted + 22 documentation findings + 5 enrollment/other','22 = 22 records located + 0 records still missing']){
   assert.ok(attorneyJs.includes(value),`Attorney stage arithmetic missing ${value}`);
 }
+for(const value of ['OPEN ISSUE · ENROLLMENT / REGISTRATION',' affected rows = ','Provider response to enrollment finding','Provider says evidence exists; upload pending']){
+  assert.ok(attorneyJs.includes(value),`Attorney enrollment-response workflow missing ${value}`);
+}
+assert.match(attorneyJs,/issueResponses:\{\}[\s\S]*appliesTo\?\.includes/,'Attorney workspace does not read provider yes/no responses and multi-claim evidence scope.');
 assert.doesNotMatch(attorney,/Counsel review queue|Exposure by issue family|Upcoming deadlines<\/h2>/,'Dense secondary panels remain on the attorney dashboard.');
 assert.match(attorneyTheme,/\.attorney-case-kpis\{display:grid;gap:18px/,'Attorney staged evidence layout is missing.');
 assert.match(attorneyTheme,/\.attorney-stage-grid\.cols-3\{grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/,'Attorney later-worksheet arithmetic is not shown as three equal categories.');

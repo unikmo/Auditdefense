@@ -35,12 +35,19 @@ for(const status of ["status:'accepted'","status:'needs-evidence'","status:'sour
   if(!js.includes(status))throw new Error(`provider evidence category is missing ${status}`);
 }
 if(!js.includes("if(isPayerAccepted(claim))return{status:'accepted'"))throw new Error('payer-accepted claims are not separated');
-if(!js.includes("!requiresDocumentationEvidence(claim))return{status:'other'"))throw new Error('other claim issues are not separated');
+if(!js.includes("if(!requiresDocumentationEvidence(claim)){"))throw new Error('other claim issues are not separated');
 if(!js.includes("hasVerifiedSource)return{status:'source-found'"))throw new Error('verified repository evidence is not used in provider results');
 if(!js.includes("label:'Evidence available for rebuttal review'"))throw new Error('matched evidence is not presented as available for rebuttal review');
-if(!js.includes("Payer identifies an NPI enrollment issue"))throw new Error('enrollment findings are not explained in the other-issues category');
+if(!js.includes("Anthem’s enrollment finding appears on"))throw new Error('enrollment findings are not explained in the open-issue workflow');
 if(!js.includes("counts.accepted")||!js.includes("payerMissing=rows.filter")||!js.includes("providerFound=rows.filter"))throw new Error('provider evidence-path counts are incomplete');
 if(!js.includes("providerMissing=rows.filter")||!js.includes("['needs-evidence','not-found']"))throw new Error('provider missing-evidence queue does not include unresolved and unavailable records');
+const enrollmentAffected=caseData.claims.filter(claim=>claim.rebuttal!=='A'&&claim.issues.includes('NPI enrollment on DOS'));
+if(enrollmentAffected.length!==27)throw new Error(`expected 27 rows with an enrollment finding, found ${enrollmentAffected.length}`);
+for(const value of ['Do you have evidence that addresses Anthem’s enrollment or registration finding?','Yes — upload evidence','No — explain why']){
+  if(!js.includes(value))throw new Error(`provider enrollment workflow missing ${value}`);
+}
+if(!js.includes("issueResponses:{}")||!js.includes("appliesTo")||!js.includes("enrollmentExplanation"))throw new Error('provider yes/no enrollment response is not persisted with evidence scope and explanation');
+if(!html.includes('providerApplicationScope')||!html.includes('enrollmentNoDialog'))throw new Error('provider enrollment upload/explanation UI is incomplete');
 const evidenceRecords=caseData.evidenceReconciliation.records;
 if(Object.keys(evidenceRecords).length!==30)throw new Error('all 30 payer-review rows must have a source reconciliation record');
 if(Object.values(evidenceRecords).some(record=>record.status!=='verified'))throw new Error('the reconciled source records are not verified');
