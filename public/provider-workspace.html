@@ -53,7 +53,7 @@
     <section class="pw-view" id="provider-view-results">
       <div class="pw-page-head"><div><span class="pw-kicker">EVIDENCE RESULTS</span><h1>See the insurer’s finding and your evidence together.</h1><p>Use the filters to separate what the insurer accepted, what it says is unsupported, what your practice located, and what your practice still cannot supply.</p></div><button class="pw-primary" id="runProviderCheck">Run document check again</button></div>
       <div class="pw-result-key"><span class="accepted">Accepted by insurer</span><span class="needs-evidence">Insurer says evidence is missing</span><span class="source-found">Provider evidence located</span><span class="not-found">Provider evidence unavailable</span><span class="other">Enrollment or other issue</span></div>
-      <div class="pw-filters"><label>Status<select id="providerStatusFilter"><option value="all">All reviewed claims</option><option value="accepted">Evidence accepted by insurer</option><option value="payer-missing">Insurer says evidence is missing</option><option value="source-found">Provider evidence located</option><option value="provider-missing">Provider evidence still missing</option><option value="other">Enrollment or other claim issues</option></select></label><label>Find claim<input id="providerClaimSearch" type="search" placeholder="CL-004 or enrollment"></label><span id="providerResultCount"></span></div>
+      <div class="pw-filters"><label>Status<select id="providerStatusFilter"><option value="all">All reviewed claims</option><option value="accepted">Evidence accepted by insurer</option><option value="payer-missing">Insurer says evidence is missing</option><option value="source-found">Provider evidence located</option><option value="provider-missing">Provider evidence still missing</option><option value="enrollment">All rows with enrollment findings</option><option value="other">Enrollment-only or other claim issues</option></select></label><label>Find claim<input id="providerClaimSearch" type="search" placeholder="CL-004 or enrollment"></label><span id="providerResultCount"></span></div>
       <section class="pw-card pw-table-card"><div class="pw-table-wrap"><table><thead><tr><th>Claim</th><th>Service</th><th>Payer says</th><th>What we found</th><th>Provider result</th><th>Next step</th></tr></thead><tbody id="providerResultsBody"></tbody></table></div></section>
     </section>
 
@@ -81,5 +81,5 @@
   </form>
 </dialog>
 <script src="/case-data.js?v=20261001-stage-arithmetic-v3"></script>
-<script src="/provider-workspace.js?v=20261002-open-issue-v1"></script>
+<script src="/provider-workspace.js?v=20261002-open-issue-v2"></script>
 </body></html>
