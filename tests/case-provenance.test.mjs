@@ -48,6 +48,7 @@ for(const value of ['60 requested · 60 provider-reported as submitted','30 = 3 
 for(const value of ['OPEN ISSUE · ENROLLMENT / REGISTRATION','enrollment + documentation','enrollment only','Provider says evidence exists; upload pending']){
   assert.ok(attorneyJs.includes(value),`Attorney enrollment-response workflow missing ${value}`);
 }
+assert.match(attorneyJs,/enrollment:enrollmentClaims\.length,'enrollment-doc':enrollmentWithDocumentation\.length,'enrollment-only':enrollmentOnly\.length/,'Attorney enrollment filter badges must show the 27, 22 and 5 claim counts.');
 assert.match(attorneyJs,/issueResponses:\{\}[\s\S]*appliesTo\?\.includes/,'Attorney workspace does not read provider yes/no responses and multi-claim evidence scope.');
 assert.doesNotMatch(attorney,/Counsel review queue|Exposure by issue family|Upcoming deadlines<\/h2>/,'Dense secondary panels remain on the attorney dashboard.');
 assert.match(attorneyTheme,/\.attorney-case-kpis\{display:grid;gap:18px/,'Attorney staged evidence layout is missing.');
