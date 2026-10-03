@@ -5,7 +5,7 @@
 <meta name="theme-color" content="#0b2341"><meta name="robots" content="noindex,nofollow,noarchive">
 <meta name="description" content="AuditDefend provider workspace for matching payer findings to supporting documents.">
 <title>AuditDefend — Provider Workspace</title>
-<link rel="stylesheet" href="/provider-workspace.css?v=20261001-evidence-path-v3">
+<link rel="stylesheet" href="/provider-workspace.css?v=20261003-two-categories-v1">
 </head>
 <body>
 <div class="pw-demo"><span></span><strong>Redacted provider demonstration</strong><small>No patient names, member IDs or full claim identifiers are displayed.</small></div>
@@ -53,12 +53,12 @@
     <section class="pw-view" id="provider-view-results">
       <div class="pw-page-head"><div><span class="pw-kicker">EVIDENCE RESULTS</span><h1>See the insurer’s finding and your evidence together.</h1><p>Use the filters to separate what the insurer accepted, what it says is unsupported, what your practice located, and what your practice still cannot supply.</p></div><button class="pw-primary" id="runProviderCheck">Run document check again</button></div>
       <div class="pw-result-key"><span class="accepted">Accepted by insurer</span><span class="needs-evidence">Insurer says evidence is missing</span><span class="source-found">Provider evidence located</span><span class="not-found">Provider evidence unavailable</span><span class="other">Enrollment or other issue</span></div>
-      <div class="pw-filters"><label>Status<select id="providerStatusFilter"><option value="all">All reviewed claims</option><option value="accepted">Evidence accepted by insurer</option><option value="payer-missing">Insurer says evidence is missing</option><option value="source-found">Provider evidence located</option><option value="provider-missing">Provider evidence still missing</option><option value="enrollment">All rows with enrollment findings</option><option value="other">Enrollment-only or other claim issues</option></select></label><label>Find claim<input id="providerClaimSearch" type="search" placeholder="CL-004 or enrollment"></label><span id="providerResultCount"></span></div>
+      <div class="pw-filters"><label>Status<select id="providerStatusFilter"><option value="all">All reviewed claims</option><option value="accepted">Evidence accepted by insurer</option><option value="payer-missing">Insurer says documentation is missing</option><option value="source-found">Provider documentation located</option><option value="provider-missing">Provider documentation still missing</option><option value="enrollment">All 27 enrollment findings</option><option value="enrollment-doc">22 enrollment + documentation</option><option value="enrollment-only">5 enrollment only</option></select></label><label>Find claim<input id="providerClaimSearch" type="search" placeholder="CL-004 or enrollment"></label><span id="providerResultCount"></span></div>
       <section class="pw-card pw-table-card"><div class="pw-table-wrap"><table><thead><tr><th>Claim</th><th>Service</th><th>Payer says</th><th>What we found</th><th>Provider result</th><th>Next step</th></tr></thead><tbody id="providerResultsBody"></tbody></table></div></section>
     </section>
 
     <section class="pw-view" id="provider-view-missing">
-      <div class="pw-page-head"><div><span class="pw-kicker">OPEN EVIDENCE TASKS</span><h1>Answer what is available and what is not.</h1><p>For each open issue, provide the record or explain why it is unavailable. Your attorney sees the same response and attachment.</p></div><button class="pw-primary" data-provider-target="results">Review all findings</button></div>
+      <div class="pw-page-head"><div><span class="pw-kicker">ENROLLMENT EVIDENCE</span><h1>Complete the remaining enrollment check.</h1><p>The documentation records have been located. Now tell us whether enrollment or registration proof is available for the affected claims.</p></div><button class="pw-primary" data-provider-target="results">Review all findings</button></div>
       <div class="pw-missing-list" id="providerMissingList"></div>
     </section>
 
@@ -81,5 +81,5 @@
   </form>
 </dialog>
 <script src="/case-data.js?v=20261001-stage-arithmetic-v3"></script>
-<script src="/provider-workspace.js?v=20261002-open-issue-v4"></script>
+<script src="/provider-workspace.js?v=20261003-two-categories-v1"></script>
 </body></html>
