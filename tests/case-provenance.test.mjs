@@ -42,6 +42,8 @@ for(const value of ['Case home','Claims &amp; evidence','Documents','Facts &amp;
 for(const value of ['Requested by insurer','Provider reports evidence submitted','Accepted by insurer','Documentation findings','Enrollment or other findings','Provider evidence located','Provider evidence still missing']){
   assert.ok(attorneyJs.includes(value),`Attorney dashboard summary missing ${value}`);
 }
+assert.equal((attorneyJs.match(/title:'Comments'/g)||[]).length,3,'Every attorney stage that previously had two cards must include a third comments card.');
+assert.doesNotMatch(attorneyJs,/\],2\)[+;]/,'Attorney dashboard still contains a two-card stage.');
 for(const value of ['60 requested · 60 provider-reported as submitted','30 = 3 accepted + 22 documentation findings + 5 enrollment/other','22 = 22 records located + 0 records still missing']){
   assert.ok(attorneyJs.includes(value),`Attorney stage arithmetic missing ${value}`);
 }

@@ -22,6 +22,8 @@ for(const label of ['Accepted by insurer','Insurer says evidence is missing','Pr
 for(const label of ['Requested by insurer','Provider reports evidence submitted','Accepted by insurer','Documentation findings','Enrollment or other findings','Provider evidence located','Provider evidence still missing']){
   if(!js.includes(label))throw new Error(`provider evidence path missing ${label}`);
 }
+if((js.match(/title:'Comments'/g)||[]).length!==3)throw new Error('every provider stage that previously had two cards must include a third comments card');
+if(/\],2\)[+;]/.test(js))throw new Error('provider dashboard still contains a two-card stage');
 if(!js.includes("recordsRequestEntries||rows.length"))throw new Error('provider evidence path does not begin with the insurer request');
 if(caseData.caseContext.providerReportedSubmissionCount!==60)throw new Error('provider-reported submission count is missing');
 if(!/not independently verified/i.test(caseData.caseContext.providerSubmissionStatus))throw new Error('provider-reported submission count lacks its verification limitation');

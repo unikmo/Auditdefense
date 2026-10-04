@@ -39,26 +39,29 @@ async function syncNote(n){if(!fb())return false;try{await window.AuditDefendFir
 function kpis(){
   const enrollmentRows=(window.AuditDefendCaseData?.claims||[]).filter(claim=>claim.rebuttal!=='A'&&claim.issues?.includes('NPI enrollment on DOS'));
   const enrollmentWithDocumentation=enrollmentRows.filter(claim=>claim.issues?.includes('Documentation support')),enrollmentOnly=enrollmentRows.filter(claim=>!claim.issues?.includes('Documentation support'));
-  const card=item=>'<article class="attorney-case-kpi '+item.kind+'"><div><span>'+item.icon+'</span><strong>'+item.n+'</strong></div><h2>'+item.title+'</h2><p>'+item.copy+'</p>'+(item.meta?'<small class="attorney-case-meta">'+item.meta+'</small>':'')+'<button data-open-case="case-anthem" data-case-open-tab="'+item.tab+'"'+(item.filter?' data-case-open-filter="'+item.filter+'"':'')+'>'+item.action+' →</button></article>';
+  const card=item=>'<article class="attorney-case-kpi '+item.kind+'"><div><span>'+item.icon+'</span><strong class="'+(item.textValue?'text-value':'')+'">'+item.n+'</strong></div><h2>'+item.title+'</h2><p>'+item.copy+'</p>'+(item.meta?'<small class="attorney-case-meta">'+item.meta+'</small>':'')+'<button data-open-case="case-anthem" data-case-open-tab="'+item.tab+'"'+(item.filter?' data-case-open-filter="'+item.filter+'"':'')+'>'+item.action+' →</button></article>';
   const group=(step,title,equation,cards,columns)=>'<section class="attorney-stage-group"><div class="attorney-stage-head"><div><span>'+step+'</span><h2>'+title+'</h2></div><b>'+equation+'</b></div><div class="attorney-stage-grid cols-'+columns+'">'+cards.map(card).join('')+'</div></section>';
   $('portfolioKpis').innerHTML=
     group('STAGE 1 · ORIGINAL REQUEST','What Anthem requested and what the provider says was sent','60 requested · 60 provider-reported as submitted',[
       {kind:'insurer-request',icon:'01',n:60,title:'Requested by insurer',copy:'Records listed in Anthem’s December 2024 request.',action:'Review source request',tab:'documents'},
-      {kind:'submitted',icon:'02',n:60,title:'Provider reports evidence submitted',copy:'Provider states all requested records were shipped by hard copy and USB.',meta:'Provider statement · March 20 rebuttal attachment · not independently verified',action:'Review submission history',tab:'documents'}
-    ],2)+
+      {kind:'submitted',icon:'02',n:60,title:'Provider reports evidence submitted',copy:'Provider states all requested records were shipped by hard copy and USB.',meta:'Provider statement · March 20 rebuttal attachment · not independently verified',action:'Review submission history',tab:'documents'},
+      {kind:'comments',icon:'03',n:'Case context',textValue:true,title:'Comments',copy:'Review provider context about delivery dates, tracking details and what was sent.',action:'Review case comments',tab:'documents'}
+    ],3)+
     group('STAGE 2 · LATER INSURER WORKSHEET','How Anthem classified the 30 later worksheet rows','30 = 3 accepted + 22 documentation findings + 5 enrollment/other',[
-      {kind:'accepted',icon:'03',n:3,title:'Accepted by insurer',copy:'Rows Anthem marked supported after rebuttal review.',action:'View accepted claims',tab:'claims',filter:'accepted'},
-      {kind:'payer-missing',icon:'04',n:22,title:'Documentation findings',copy:'Rows Anthem still treated as lacking or insufficient documentation.',action:'Review documentation findings',tab:'claims',filter:'payer-missing'},
-      {kind:'other',icon:'05',n:5,title:'Enrollment or other findings',copy:'Rows involving enrollment, effective date, registration or billing entity.',action:'Review other findings',tab:'claims',filter:'other'}
+      {kind:'accepted',icon:'04',n:3,title:'Accepted by insurer',copy:'Rows Anthem marked supported after rebuttal review.',action:'View accepted claims',tab:'claims',filter:'accepted'},
+      {kind:'payer-missing',icon:'05',n:22,title:'Documentation findings',copy:'Rows Anthem still treated as lacking or insufficient documentation.',action:'Review documentation findings',tab:'claims',filter:'payer-missing'},
+      {kind:'other',icon:'06',n:5,title:'Enrollment or other findings',copy:'Rows involving enrollment, effective date, registration or billing entity.',action:'Review other findings',tab:'claims',filter:'other'}
     ],3)+
     group('STAGE 3 · PROVIDER RECORD CHECK','Whether records can now be identified for the 22 documentation findings','22 = 22 records located + 0 records still missing',[
-      {kind:'provider-found',icon:'06',n:22,title:'Provider evidence located',copy:'Documentation findings with a matching provider source record. Located does not mean the claim is closed.',action:'Review located evidence',tab:'claims',filter:'evidence-ready'},
-      {kind:'provider-missing',icon:'07',n:0,title:'Provider evidence still missing',copy:'Claims needing a record or provider explanation before counsel review.',action:'Review unresolved claims',tab:'claims',filter:'provider-missing'}
-    ],2)+
+      {kind:'provider-found',icon:'07',n:22,title:'Provider evidence located',copy:'Documentation findings with a matching provider source record. Located does not mean the claim is closed.',action:'Review located evidence',tab:'claims',filter:'evidence-ready'},
+      {kind:'provider-missing',icon:'08',n:0,title:'Provider evidence still missing',copy:'Claims needing a record or provider explanation before counsel review.',action:'Review unresolved claims',tab:'claims',filter:'provider-missing'},
+      {kind:'comments',icon:'09',n:'Provider context',textValue:true,title:'Comments',copy:'Review the provider’s explanation of where records were found or why any record is unavailable.',action:'Review evidence comments',tab:'claims'}
+    ],3)+
     group('OPEN ISSUE · ENROLLMENT / REGISTRATION','Two categories within the 27 enrollment findings',enrollmentRows.length+' = '+enrollmentWithDocumentation.length+' enrollment + documentation + '+enrollmentOnly.length+' enrollment only',[
-      {kind:'provider-found',icon:'08',n:enrollmentWithDocumentation.length,title:'Enrollment + documentation',copy:'Responsive provider records are available for the documentation findings. Enrollment proof remains a separate issue.',action:'Review 22 claims',tab:'claims',filter:'enrollment-doc'},
-      {kind:'other',icon:'09',n:enrollmentOnly.length,title:'Enrollment only',copy:'No documentation finding remains on these rows. Review enrollment or registration evidence only.',action:'Review 5 claims',tab:'claims',filter:'enrollment-only'}
-    ],2);
+      {kind:'provider-found',icon:'10',n:enrollmentWithDocumentation.length,title:'Enrollment + documentation',copy:'Responsive provider records are available for the documentation findings. Enrollment proof remains a separate issue.',action:'Review 22 claims',tab:'claims',filter:'enrollment-doc'},
+      {kind:'other',icon:'11',n:enrollmentOnly.length,title:'Enrollment only',copy:'No documentation finding remains on these rows. Review enrollment or registration evidence only.',action:'Review 5 claims',tab:'claims',filter:'enrollment-only'},
+      {kind:'comments',icon:'12',n:'Provider context',textValue:true,title:'Comments',copy:'Review enrollment dates, entity details and any explanation for unavailable proof.',action:'Review enrollment comments',tab:'claims',filter:'enrollment'}
+    ],3);
 }
 function caseRow(c){
   const deadline=c.deadline?date(c.deadline):'<span class="deadline-unverified">Unverified</span><small>Operative letter required</small>';
