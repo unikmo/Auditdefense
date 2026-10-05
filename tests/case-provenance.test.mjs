@@ -37,8 +37,12 @@ for(const value of ['FIRM PORTFOLIO','Cases, priorities and upcoming dates','Cas
   assert.ok(attorney.includes(value),`Attorney dashboard missing ${value}`);
 }
 assert.doesNotMatch(attorney,/case-drawer|drawer-overlay/,'Attorney case details must not appear in an overlay or drawer.');
+assert.doesNotMatch(attorney,/attorney-plan-card|4 active cases[\s\S]*View all cases/,'Redundant case-count/sidebar card remains on the attorney portfolio.');
+assert.match(attorney,/← Shared case record/,'Sidebar link should name the shared case destination accurately.');
 assert.match(attorney,/attorney-view-case-detail[\s\S]*casePageContent/,'Attorney case detail needs a dedicated full-page view.');
 assert.match(attorneyJs,/function openCase\(c\)[\s\S]*view\('case-detail'\)/,'Opening a case must navigate to the dedicated case page.');
+assert.match(attorneyJs,/Open shared case record/,'Case action must not mislabel the Counsel Workspace as a provider-only workspace.');
+assert.match(attorneyJs,/sharedCaseAction=c\.id==='case-anthem'\?[\s\S]*Open shared case record/,'Shared case link should only appear for the case it actually opens.');
 assert.match(attorneyJs,/function selectCaseTab\(name,button\)[\s\S]*data-case-panel[\s\S]*scrollIntoView/,'Choosing a case section must bring the selected section into view.');
 assert.match(attorneyJs,/portfolioTimeline[\s\S]*upcoming\.slice/,'Portfolio timeline should list only upcoming verified dates.');
 assert.match(attorneyTheme,/\.case-tab-panel \.fact-table td::before\{content:attr\(data-label\)/,'Case evidence tables must become labeled cards on small screens.');
