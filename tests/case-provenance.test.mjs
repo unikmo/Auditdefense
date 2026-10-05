@@ -30,14 +30,22 @@ for(const value of ['Accepted by payer','Evidence available for rebuttal review'
 }
 assert.match(brief,/All 30 later CPT 97155 payer-review rows were matched/i,'Attorney brief does not reflect the completed claim/evidence crosswalk.');
 assert.match(brief,/rendering provider separately from the group billing NPI/i,'Attorney brief conflates rendering and billing NPI roles.');
-assert.match(attorney,/provider states that all requested evidence was shipped by hard copy and USB/i,'Attorney next step does not reflect the provider-reported submission.');
+assert.match(attorneyJs,/Provider states all requested records were shipped by hard copy and USB/i,'Attorney case details do not reflect the provider-reported submission.');
 assert.match(attorney,/attorney-elite-blue\.css/,'Attorney workspace is not using the elite-blue theme.');
 assert.match(attorneyTheme,/--att-brown:#0b2341/,'Attorney elite-blue theme tokens are missing.');
-for(const value of ['ATTORNEY CASE DASHBOARD','See exactly how the claim counts connect','RECOMMENDED NEXT STEP','SCOPE NOTE']){
+for(const value of ['FIRM PORTFOLIO','Cases, priorities and upcoming dates','Cases needing attention','Upcoming timeline']){
   assert.ok(attorney.includes(value),`Attorney dashboard missing ${value}`);
 }
-for(const value of ['Case home','Claims &amp; evidence','Documents','Facts &amp; issues','Counsel review','Counsel notes','Provider access']){
+assert.doesNotMatch(attorney,/case-drawer|drawer-overlay/,'Attorney case details must not appear in an overlay or drawer.');
+assert.match(attorney,/attorney-view-case-detail[\s\S]*casePageContent/,'Attorney case detail needs a dedicated full-page view.');
+assert.match(attorneyJs,/function openCase\(c\)[\s\S]*view\('case-detail'\)/,'Opening a case must navigate to the dedicated case page.');
+assert.match(attorneyJs,/portfolioTimeline[\s\S]*upcoming\.slice/,'Portfolio timeline should list only upcoming verified dates.');
+assert.match(attorneyTheme,/\.case-tab-panel \.fact-table td::before\{content:attr\(data-label\)/,'Case evidence tables must become labeled cards on small screens.');
+for(const value of ['Case home','Clients','Cases','Timelines','Counsel notes','Provider access']){
   assert.ok(attorney.includes(value),`Attorney navigation missing ${value}`);
+}
+for(const value of ['Claims & evidence','Documents','Facts','Legal review']){
+  assert.ok(attorneyJs.includes(value),`Attorney case detail section missing ${value}`);
 }
 for(const value of ['Requested by insurer','Provider reports evidence submitted','Accepted by insurer','Documentation findings','Enrollment or other findings','Provider evidence located','Provider evidence still missing']){
   assert.ok(attorneyJs.includes(value),`Attorney dashboard summary missing ${value}`);
