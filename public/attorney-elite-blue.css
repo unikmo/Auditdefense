@@ -101,7 +101,7 @@
 .case-tab-nav button{flex:none;border:0;border-radius:8px;background:transparent;color:#536d84;padding:9px 12px;font:inherit;font-size:12px;font-weight:800;cursor:pointer}
 .case-tab-nav button:hover{background:#edf5fb;color:#174f7d}
 .case-tab-nav button.active{background:#173f66;color:#fff}
-.case-tab-panel{display:none;padding-top:18px}
+.case-tab-panel{display:none;padding-top:18px;scroll-margin-top:104px}
 .case-tab-panel.active{display:block}
 .case-table-wrap{overflow:visible}.case-tab-panel .fact-table{table-layout:fixed}.case-tab-panel .fact-table th,.case-tab-panel .fact-table td{white-space:normal;overflow-wrap:anywhere;word-break:normal}.case-tab-panel .fact-table td:first-child{min-width:0}.case-tab-panel .fact-table th:nth-child(1){width:36%}.case-tab-panel .fact-table th:nth-child(2){width:19%}.case-tab-panel .fact-table th:nth-child(3){width:45%}
 .case-focus-card{max-width:780px;padding:29px 31px;border:1px solid #bdd8eb;border-radius:14px;background:linear-gradient(135deg,#e8f4fc 0%,#f7fbfe 72%)}

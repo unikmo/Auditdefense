@@ -39,6 +39,7 @@ for(const value of ['FIRM PORTFOLIO','Cases, priorities and upcoming dates','Cas
 assert.doesNotMatch(attorney,/case-drawer|drawer-overlay/,'Attorney case details must not appear in an overlay or drawer.');
 assert.match(attorney,/attorney-view-case-detail[\s\S]*casePageContent/,'Attorney case detail needs a dedicated full-page view.');
 assert.match(attorneyJs,/function openCase\(c\)[\s\S]*view\('case-detail'\)/,'Opening a case must navigate to the dedicated case page.');
+assert.match(attorneyJs,/function selectCaseTab\(name,button\)[\s\S]*data-case-panel[\s\S]*scrollIntoView/,'Choosing a case section must bring the selected section into view.');
 assert.match(attorneyJs,/portfolioTimeline[\s\S]*upcoming\.slice/,'Portfolio timeline should list only upcoming verified dates.');
 assert.match(attorneyTheme,/\.case-tab-panel \.fact-table td::before\{content:attr\(data-label\)/,'Case evidence tables must become labeled cards on small screens.');
 for(const value of ['Case home','Clients','Cases','Timelines','Counsel notes','Provider access']){
