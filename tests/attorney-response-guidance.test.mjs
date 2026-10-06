@@ -49,15 +49,25 @@ assert(product.some(item => item.id === 'product-line'));
 const prediction = tool.checkDraft('No court will allow this recovery.', brief);
 assert(prediction.some(item => item.id === 'outcome-prediction'));
 
+const admission = tool.checkDraft('Anthem legally acknowledged the care and cannot conduct a clinical audit while alleging non-enrollment.', brief);
+assert(admission.some(item => item.id === 'legal-effect-inference'));
+assert(admission.some(item => item.id === 'clinical-admission'));
+
+const enrollmentDuty = tool.checkDraft('The insurer had the duty to verify enrollment.', brief);
+assert(enrollmentDuty.some(item => item.id === 'enrollment-duty'));
+
 const noTrigger = tool.checkDraft('The provider disputes the stated audit findings.', brief);
 assert.equal(noTrigger[0].id, 'manual-review');
 assert.match(noTrigger[0].detail, /does not verify/);
 
 const markup = tool.render({
   facts: [{fact:'Group NPI history is provider-reported.',status:'Provider-reported',source:'Provider email'}],
+  providerReportedSchedule: [{title:'Group NPI',amount:'$155,576.77',period:'2021–2026',detail:'Aggregate email facts only.',source:'October 6 email',needed:'Claim-level list and paid dates.'}],
   questions: [{question:'What documentation applies?',currentAnswer:'Records are identified.',needed:'Check the complete claim match.',significance:'Counsel reviews the issue.'}]
 }, 'case-1');
 assert.match(markup, /Claim and policy issue map/);
+assert.match(markup, /Claim and demand breakdown reported to counsel/);
+assert.match(markup, /not verified payer findings/);
 assert.match(markup, /Attorney decides strategy/);
 assert.match(markup, /Example Case/);
 assert.match(markup, /Party arguments or strategy described in the opinion/);
