@@ -37,7 +37,7 @@
     if (/legally acknowledged|textbook.{0,20}bad faith|invalidates? (?:the )?audit|cannot (?:conduct|perform|review) (?:a )?clinical audit|un-enrolled.{0,50}(?:cannot|may not).{0,30}(?:audit|review)/i.test(draft)) {
       add('legal-effect-inference', 'Separate the audit record from its legal effect', 'The reported worksheet may show clinical review and enrollment findings in the same audit. Do not treat that fact alone as an admission, waiver, estoppel, bad faith, or a bar to recovery; counsel must assess the governing authority and record.');
     }
-    if (/the payer (?:admitted|conceded|accepted) (?:the )?(?:care|services|clinical|medical necessity)|documentation (?:was|is) proven (?:valid|sufficient) by (?:anthem|the payer)/i.test(draft)) {
+    if (/(?:the payer|anthem|the insurer) (?:admitted|conceded|accepted|legally acknowledged) (?:the )?(?:care|services|clinical|medical necessity)|documentation (?:was|is) proven (?:valid|sufficient) by (?:anthem|the payer)/i.test(draft)) {
       add('clinical-admission', 'Verify any claimed payer admission', 'A documentation grade and an enrollment finding are separate reported grounds. The record must show exactly what the payer found and whether it made an express admission.');
     }
     if (/97153.{0,60}(?:documentation failure|documentation unsupported|missing documentation)|(?:documentation failure|documentation unsupported).{0,60}97153/i.test(draft)) {
