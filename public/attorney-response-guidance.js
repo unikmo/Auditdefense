@@ -69,7 +69,11 @@
 
   function relatedCases(question, cases) {
     const issueIds = issueFor(question);
-    return (cases || []).filter(item => (item.relatedIssueIds || []).some(id => issueIds.includes(id)));
+    return (cases || []).filter(item => {
+      const preciseTopics = item.attorneyQuestionIds;
+      const mappedIds = Array.isArray(preciseTopics) && preciseTopics.length ? preciseTopics : item.relatedIssueIds || [];
+      return mappedIds.some(id => issueIds.includes(id));
+    });
   }
 
   function renderReference(item) {
