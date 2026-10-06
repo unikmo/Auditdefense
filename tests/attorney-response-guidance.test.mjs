@@ -4,7 +4,7 @@ import vm from 'node:vm';
 
 const sampleReferences = [{
   id: 'sample-ref',
-  relatedIssueIds: ['documentation-support'],
+  relatedIssueIds: ['erisa-assignment-standing'],
   caseName: 'Example Case',
   citation: '1 F.4th 1',
   court: 'Example Court',
@@ -32,7 +32,8 @@ const enrollmentIssues = Array.from(tool.issueFor('Which NPI was billing, render
 assert(enrollmentIssues.includes('provider-npi-enrollment'));
 assert(enrollmentIssues.includes('credentialing-network'));
 assert.equal(tool.relatedCases('documentation support', sampleReferences).length, 0, 'issue tagging must not imply that an unrelated opinion is similar');
-assert.equal(tool.relatedCases('ERISA assignment and standing', sampleReferences).length, 0);
+assert.equal(tool.relatedCases('ERISA assignment and standing', sampleReferences).length, 1);
+assert.equal(tool.relatedCases('provider NPI enrollment', sampleReferences).length, 0);
 
 const brief = { facts: [{fact:'The sample records 27 of 30 lines as unsupported after rebuttal.',status:'Calculated',source:'worksheet'}], questions: [] };
 const denominator = tool.checkDraft('27 of 30 claims were unsupported (73%).', brief);
