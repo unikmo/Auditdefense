@@ -31,7 +31,8 @@ await tool.ready;
 const enrollmentIssues = Array.from(tool.issueFor('Which NPI was billing, rendering or contracting?'));
 assert(enrollmentIssues.includes('provider-npi-enrollment'));
 assert(enrollmentIssues.includes('credentialing-network'));
-assert.equal(tool.relatedCases('documentation support', sampleReferences).length, 1);
+assert.equal(tool.relatedCases('documentation support', sampleReferences).length, 0, 'issue tagging must not imply that an unrelated opinion is similar');
+assert.equal(tool.relatedCases('ERISA assignment and standing', sampleReferences).length, 0);
 
 const brief = { facts: [{fact:'The sample records 27 of 30 lines as unsupported after rebuttal.',status:'Calculated',source:'worksheet'}], questions: [] };
 const denominator = tool.checkDraft('27 of 30 claims were unsupported (73%).', brief);
