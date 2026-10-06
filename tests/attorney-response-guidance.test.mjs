@@ -82,7 +82,9 @@ assert.match(markup, /response-reported-card/);
 assert.match(markup, /not verified payer findings/);
 assert.match(markup, /Attorney decides strategy/);
 assert.doesNotMatch(markup, /Example Case/, 'an ERISA decision must not appear under a Medicaid documentation question');
-assert.match(markup, /Party arguments or strategy described in the opinion/);
+const erisaMarkup = tool.render({facts:[],questions:[{question:'ERISA assignment and standing',currentAnswer:'Issue-specific query.',needed:'Review.',significance:'Research only.'}]}, 'case-2');
+assert.match(erisaMarkup, /Example Case/);
+assert.match(erisaMarkup, /Party arguments or strategy described in the opinion/);
 assert.match(markup, /not saved or sent/);
 assert.match(markup, /limited rules-based screen/);
 
