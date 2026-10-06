@@ -81,7 +81,7 @@ assert.match(markup, /Claim and demand breakdown reported to counsel/);
 assert.match(markup, /response-reported-card/);
 assert.match(markup, /not verified payer findings/);
 assert.match(markup, /Attorney decides strategy/);
-assert.match(markup, /Example Case/);
+assert.doesNotMatch(markup, /Example Case/, 'an ERISA decision must not appear under a Medicaid documentation question');
 assert.match(markup, /Party arguments or strategy described in the opinion/);
 assert.match(markup, /not saved or sent/);
 assert.match(markup, /limited rules-based screen/);
