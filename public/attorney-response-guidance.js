@@ -8,7 +8,9 @@
     { id: 'signatures-authentication', test: /signature|authentication|signed/i, label: 'Signatures and authentication' },
     { id: 'authorization-units', test: /authorization|units|medical necessity/i, label: 'Authorization and units' },
     { id: 'coding-ncci', test: /code|coding|97153|97155|cpt/i, label: 'Coding and billing' },
-    { id: 'credentialing-network', test: /contract|network|payer|program|standing|recovery|overpayment/i, label: 'Contract, network, and recovery process' }
+    { id: 'credentialing-network', test: /contract|network|payer|program|standing|recovery|overpayment/i, label: 'Contract, network, and recovery process' },
+    { id: 'erisa-assignment-standing', test: /\\berisa\\b|assignment|anti-assignment|assignee|fiduciary duty|exhaustion/i, label: 'ERISA assignment, standing, and exhaustion' },
+    { id: 'erisa-benefit-guidelines', test: /\\berisa\\b|plan terms|clinical guidelines|benefit denial|class action/i, label: 'ERISA benefit terms and clinical guidelines' }
   ];
 
   function issueFor(question) {
