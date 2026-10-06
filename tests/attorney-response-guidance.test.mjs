@@ -58,6 +58,15 @@ assert(admission.some(item => item.id === 'clinical-admission'));
 const enrollmentDuty = tool.checkDraft('The insurer had the duty to verify enrollment.', brief);
 assert(enrollmentDuty.some(item => item.id === 'enrollment-duty'));
 
+const quote = tool.checkDraft('The 11/29/2021 email states ABA begins 03/01/2022.', brief);
+assert(quote.some(item => item.id === 'email-date-correction'));
+
+const staffing = tool.checkDraft('The audit involved only one technician in a two-person work setting.', brief);
+assert(staffing.some(item => item.id === 'technician-count'));
+
+const residual = tool.checkDraft('We concede the $560 balance.', brief);
+assert(residual.some(item => item.id === 'residual-demand'));
+
 const noTrigger = tool.checkDraft('The provider disputes the stated audit findings.', brief);
 assert.equal(noTrigger[0].id, 'manual-review');
 assert.match(noTrigger[0].detail, /does not verify/);
@@ -69,6 +78,7 @@ const markup = tool.render({
 }, 'case-1');
 assert.match(markup, /Claim and policy issue map/);
 assert.match(markup, /Claim and demand breakdown reported to counsel/);
+assert.match(markup, /response-reported-card/);
 assert.match(markup, /not verified payer findings/);
 assert.match(markup, /Attorney decides strategy/);
 assert.match(markup, /Example Case/);
