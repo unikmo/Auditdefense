@@ -32,12 +32,12 @@ jobs:
           node -e "JSON.parse(require('fs').readFileSync('data/policy-changes.json','utf8'))"
       - name: Assert redacted no-PHI pilot boundary
         run: |
-          grep -q "PHI ingestion remains disabled" public/index.html
-          grep -q "When a payer says you owe money" public/index.html
+          grep -q "Do not upload PHI until secure document storage is available" public/index.html
+          grep -q "Clarity and control after a payer audit" public/index.html
           grep -q "Stop spending legal hours reconstructing the audit" public/attorney.html
-          grep -q "No PHI" public/attorney-workspace.html
+          grep -q "Sample and redacted records only. Do not enter PHI." public/attorney-workspace.html
           grep -q "Unclaimed public-source profile" public/attorneys.js
-          grep -q "Redacted/non-PHI only" public/provider-onboarding.html
+          grep -q "I confirm the information entered here contains no PHI" public/provider-onboarding.html
           grep -Eq "containsPhi[[:space:]]*==[[:space:]]*false" firestore.rules
           grep -Eq "counselOnly[[:space:]]*==[[:space:]]*true" firestore.rules
           grep -q "attorneyUids" firestore.rules
