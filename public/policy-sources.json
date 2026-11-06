@@ -1713,6 +1713,265 @@
         "state"
       ],
       "priority": 2
+    },
+    {
+      "id": "in-405-iac-1-1-4-9",
+      "authority": "IN Medicaid",
+      "program": "Medicaid",
+      "state": "IN",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "405 IAC 1-1.4-9 Provider audits; overpayments; recovery (Cornell LII copy of the Indiana Administrative Code)",
+      "url": "https://www.law.cornell.edu/regulations/indiana/405-IAC-1-1.4-9",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "va-code-32-1-325-1-1",
+      "authority": "VA Medicaid",
+      "program": "Medicaid",
+      "state": "VA",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Code of Virginia § 32.1-325.1:1 (Virginia Law, LIS)",
+      "url": "https://law.lis.virginia.gov/vacode/title32.1/chapter10/section32.1-325.1:1/",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ak-7-aac-105-260",
+      "authority": "AK Medicaid",
+      "program": "Medicaid",
+      "state": "AK",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "7 AAC 105.260 Recouping an overpayment (Cornell LII copy of the Alaska Administrative Code)",
+      "url": "https://www.law.cornell.edu/regulations/alaska/7-AAC-105.260",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ky-907-kar-1-671",
+      "authority": "KY Medicaid",
+      "program": "Medicaid",
+      "state": "KY",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "907 KAR 1:671 Medicaid provider participation; withholding overpayments (Cornell LII copy of Kentucky Administrative Regulations)",
+      "url": "https://www.law.cornell.edu/regulations/kentucky/907-KAR-1-671",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ms-23-miss-code-r-305-1-3",
+      "authority": "MS Medicaid",
+      "program": "Medicaid",
+      "state": "MS",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "23 Miss. Admin. Code Pt. 305, R. 1.3 Overpayments (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/mississippi/23-Miss-Code-R-SS-305-1-3",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "mo-13-csr-70-3-030",
+      "authority": "MO Medicaid",
+      "program": "Medicaid",
+      "state": "MO",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "13 CSR 70-3.030 Administrative actions for improperly paid, false or fraudulent claims for MO HealthNet services (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/missouri/13-CSR-70-3-030",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ne-471-nac-3-003",
+      "authority": "NE Medicaid",
+      "program": "Medicaid",
+      "state": "NE",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "471 Neb. Admin. Code ch. 3, § 003 Approval and payment (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/nebraska/471-Neb-Admin-Code-ch-3-SS-003",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "id-idapa-16-03-09-231",
+      "authority": "ID Medicaid",
+      "program": "Medicaid",
+      "state": "ID",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "IDAPA 16.03.09.231 Handling of overpayments and underpayments for specified providers (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/idaho/IDAPA-16.03.09.231",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "tx-1-tac-371-1723",
+      "authority": "TX Medicaid",
+      "program": "Medicaid",
+      "state": "TX",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "1 Tex. Admin. Code § 371.1723 Recoupment of overpayments identified by retrospective payment review (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/texas/1-Tex-Admin-Code-SS-371-1723",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "pa-55-pa-code-1101-69a",
+      "authority": "PA Medicaid",
+      "program": "Medicaid",
+      "state": "PA",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "55 Pa. Code § 1101.69a Uniform period for the recoupment of overpayments from providers (Pennsylvania Code & Bulletin)",
+      "url": "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/055/chapter1101/s1101.69a.html",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "il-89-iac-140-25",
+      "authority": "IL Medicaid",
+      "program": "Medicaid",
+      "state": "IL",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "89 Ill. Adm. Code 140.25 Overpayment or underpayment of claims (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/illinois/Ill-Admin-Code-tit-89-SS-140.25",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ecfr-32-cfr-199-11",
+      "authority": "Defense Health Agency (TRICARE)",
+      "program": "TRICARE",
+      "state": "US",
+      "payer": "Defense Health Agency (TRICARE)",
+      "category": "recovery-rights",
+      "title": "32 CFR § 199.11 Overpayments recovery (TRICARE)",
+      "url": "https://www.ecfr.gov/current/title-32/part-199/section-199.11",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate",
+        "state"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "anthem-ca-sem8-overpayment",
+      "authority": "Anthem Blue Cross",
+      "program": "Commercial",
+      "state": "CA",
+      "payer": "Anthem Blue Cross",
+      "category": "recovery-rights",
+      "title": "Anthem Blue Cross (California) SEM 8: Overpayment Recovery Notification Process (October 2023)",
+      "url": "https://anthembluecross.com/content/dam/digital/docs/anthembluecross/provider/commercial/general/CA_SEM_00008.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Plan communication, not a contract. The provider contract and the date of the overpayment notice control.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "blueshield-ca-refund-requests",
+      "authority": "Blue Shield of California",
+      "program": "Commercial",
+      "state": "CA",
+      "payer": "Blue Shield of California",
+      "category": "recovery-rights",
+      "title": "Blue Shield of California Provider Connection: Refund requests",
+      "url": "https://blueshieldca.com/bsca/bsc/wcm/connect/provider/provider_content_en/claims/adjustments",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Plan communication, not a contract. The provider contract and the date of the overpayment notice control.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "bcbsok-right-to-offset",
+      "authority": "Blue Cross and Blue Shield of Oklahoma",
+      "program": "Commercial",
+      "state": "OK",
+      "payer": "Blue Cross and Blue Shield of Oklahoma",
+      "category": "recovery-rights",
+      "title": "Blue Cross and Blue Shield of Oklahoma: Right to Offset",
+      "url": "https://www.bcbsok.com/provider/claims/claims-eligibility/right-to-offset",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Plan communication, not a contract. The provider contract and the date of the overpayment notice control.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate",
+        "state"
+      ],
+      "priority": 2
     }
   ]
 }

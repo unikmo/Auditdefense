@@ -3373,6 +3373,612 @@
         "locator": "Welf. & Inst. Code § 14172.5(b)",
         "excerpt": "the department shall not begin liquidation of the overpayment until 60 days after issuance of the first statement of accountability or demand for repayment"
       }
+    },
+    {
+      "id": "STATE-MEDICAID-IN-AUDIT-LOOKBACK-3-YEARS-180-DAYS",
+      "title": "Indiana Medicaid: audit look-back of 3 years and 180 days",
+      "authority": "IN Medicaid",
+      "sourceId": "in-405-iac-1-1-4-9",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/indiana/405-IAC-1-1.4-9",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "IN",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "For Indiana Medicaid audits initiated on or after July 1, 2019, the office may recover only for claims within a look-back of 3 years and 180 days, counted from the date the audit starts (or the date a credible allegation of fraud is discovered, if earlier). The period includes the timely-filing window. Claims inside the period stay open through the audit and appeal.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "405 IAC 1-1.4-9 Provider audits; overpayments; recovery (Cornell LII copy of the Indiana Administrative Code)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/indiana/405-IAC-1-1.4-9",
+        "deepLink": "https://www.law.cornell.edu/regulations/indiana/405-IAC-1-1.4-9#:~:text=For%20audits%20initiated%20on%20or%20after%20July%201%2C%202019%2C",
+        "locator": "405 IAC 1-1.4-9(b)(2)",
+        "excerpt": "For audits initiated on or after July 1, 2019, the audit look-back period shall be three (3) years and one hundred eighty (180) days"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-IN-LOOKBACK-7-YEARS-FRAUD-OR-30-PERCENT-ERROR",
+      "title": "Indiana Medicaid: look-back may extend to 7 years for credible fraud or an error rate above 30%",
+      "authority": "IN Medicaid",
+      "sourceId": "in-405-iac-1-1-4-9",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/indiana/405-IAC-1-1.4-9",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "IN",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "If the office finds information that may indicate a credible allegation of fraud or abusive billing, or a claims-processing error rate above 30 percent, it may extend the audit look-back from 3 years and 180 days to 7 years. Audits started on or before June 30, 2019 had a 7-year look-back.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "405 IAC 1-1.4-9 Provider audits; overpayments; recovery (Cornell LII copy of the Indiana Administrative Code)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/indiana/405-IAC-1-1.4-9",
+        "deepLink": "https://www.law.cornell.edu/regulations/indiana/405-IAC-1-1.4-9#:~:text=it%20may%20increase%20the%20audit%20look%2Dback%20period%20from%20three",
+        "locator": "405 IAC 1-1.4-9(d)",
+        "excerpt": "it may increase the audit look-back period from three (3) years and one hundred eighty (180) days to seven (7) years"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-VA-INITIAL-DETERMINATION-4-YEARS",
+      "title": "Virginia Medicaid: initial overpayment determination within 4 years",
+      "authority": "VA Medicaid",
+      "sourceId": "va-code-32-1-325-1-1",
+      "sourceUrl": "https://law.lis.virginia.gov/vacode/title32.1/chapter10/section32.1-325.1:1/",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "VA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "The Director of Medical Assistance Services must make the initial overpayment determination within the earlier of four years, or 15 months after the provider files its final cost report following a sale of the facility or termination. The section does not say what follows if the deadline is missed; read § 32.1-325.1 (appeals) and the case law before relying on it as a bar.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Code of Virginia § 32.1-325.1:1 (Virginia Law, LIS)",
+        "sourceUrl": "https://law.lis.virginia.gov/vacode/title32.1/chapter10/section32.1-325.1:1/",
+        "deepLink": "https://law.lis.virginia.gov/vacode/title32.1/chapter10/section32.1-325.1:1/#:~:text=Such%20initial%20determination%20shall%20be%20made%20within%20the%20earlier",
+        "locator": "Va. Code § 32.1-325.1:1(B)",
+        "excerpt": "Such initial determination shall be made within the earlier of (i) four years, or (ii) 15 months after filing of the final cost report by the provider subsequent to sale of the facility or termination of the provider"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-AK-60-DAYS-NOTICE-BEFORE-RECOUPMENT-105-260",
+      "title": "Alaska Medicaid: 60 days written notice before recouping an overpayment older than 120 days",
+      "authority": "AK Medicaid",
+      "sourceId": "ak-7-aac-105-260",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/alaska/7-AAC-105.260",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "AK",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Alaska Medicaid may recoup by reducing future payments without notice up to 120 days after the overpayment. Beyond that it must give at least 60 days written notice stating the reason, the amount and the right to appeal under 7 AAC 105.270. The rule does not apply to audits under 7 AAC 160.100 to 160.130, DSH hospital audits or certain prospective-rate recoupments.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "7 AAC 105.260 Recouping an overpayment (Cornell LII copy of the Alaska Administrative Code)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/alaska/7-AAC-105.260",
+        "deepLink": "https://www.law.cornell.edu/regulations/alaska/7-AAC-105.260#:~:text=recoups%20an%20overpayment%20more%20than%20120%20days%20after%20the",
+        "locator": "7 AAC 105.260(c)(1)",
+        "excerpt": "recoups an overpayment more than 120 days after the date of the overpayment under (b)(1) of this section, the department will notify the provider in writing at least 60 days before recoupment of the overpayment begins"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-KY-60-DAYS-TO-PAY-907-KAR-1-671",
+      "title": "Kentucky Medicaid: 60 calendar days from the demand letter to pay or request a payment plan",
+      "authority": "KY Medicaid",
+      "sourceId": "ky-907-kar-1-671",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/kentucky/907-KAR-1-671",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "KY",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "A Kentucky Medicaid provider has 60 calendar days from the date of the demand letter to pay the overpayment in full, or to request a payment plan in writing (also allowed during the administrative appeal). The department's notification must give 60 days advance notice that repayment is due in full.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "907 KAR 1:671 Medicaid provider participation; withholding overpayments (Cornell LII copy of Kentucky Administrative Regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/kentucky/907-KAR-1-671",
+        "deepLink": "https://www.law.cornell.edu/regulations/kentucky/907-KAR-1-671#:~:text=Sixty%20%2860%29%20calendar%20days%20from%20the%20date%20of%20the",
+        "locator": "907 KAR 1:671 § (3)(a)",
+        "excerpt": "Sixty (60) calendar days from the date of the demand letter, pay the amount of overpayment in full"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MS-30-DAYS-SELF-DISCLOSURE-305-1-3",
+      "title": "Mississippi Medicaid: notify the Division of an overpayment within 30 calendar days of discovery",
+      "authority": "MS Medicaid",
+      "sourceId": "ms-23-miss-code-r-305-1-3",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/mississippi/23-Miss-Code-R-SS-305-1-3",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MS",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "A Mississippi Medicaid provider must notify the Division of Medicaid's Office of Program Integrity in writing within 30 calendar days of discovering an overpayment, and refund through the claims adjustment process or by check within 30 calendar days of discovery.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "23 Miss. Admin. Code Pt. 305, R. 1.3 Overpayments (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/mississippi/23-Miss-Code-R-SS-305-1-3",
+        "deepLink": "https://www.law.cornell.edu/regulations/mississippi/23-Miss-Code-R-SS-305-1-3#:~:text=Providers%20must%20notify%20the%20Division%20of%20Medicaid's%20Office%20of",
+        "locator": "23 Miss. Admin. Code Pt. 305, R. 1.3(A)",
+        "excerpt": "Providers must notify the Division of Medicaid's Office of Program Integrity in writing within thirty (30) calendar days of the discovery of any overpayments"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MS-30-DAYS-AFTER-DEMAND-LETTER-305-1-3",
+      "title": "Mississippi Medicaid: 30 calendar days after a certified-mail demand letter to request a hearing or refund",
+      "authority": "MS Medicaid",
+      "sourceId": "ms-23-miss-code-r-305-1-3",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/mississippi/23-Miss-Code-R-SS-305-1-3",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MS",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "After a demand letter by certified mail for an overpayment found on audit or investigation, a Mississippi Medicaid provider has 30 calendar days from receipt (or from the date of the letter if the notice is not signed for) to request an administrative hearing or to refund by lump sum, offset or a repayment agreement.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "23 Miss. Admin. Code Pt. 305, R. 1.3 Overpayments (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/mississippi/23-Miss-Code-R-SS-305-1-3",
+        "deepLink": "https://www.law.cornell.edu/regulations/mississippi/23-Miss-Code-R-SS-305-1-3#:~:text=On%20or%20before%20thirty%20%2830%29%20calendar%20days%20of%20the",
+        "locator": "23 Miss. Admin. Code Pt. 305, R. 1.3(B)(1)",
+        "excerpt": "On or before thirty (30) calendar days of the receipt of the demand letter, sent via certified mail, or thirty (30) calendar days from the date of the letter if the provider does not sign the certified mail notice, the provider must"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MO-45-DAYS-TO-REFUND-13-CSR-70-3-030",
+      "title": "Missouri MO HealthNet: 45 days to refund a requested overpayment",
+      "authority": "MO Medicaid",
+      "sourceId": "mo-13-csr-70-3-030",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/missouri/13-CSR-70-3-030",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MO",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "A MO HealthNet provider has 45 days to refund a requested overpayment or make arrangements to repay. Failure is a listed program violation, and failure to respond to a notice of overpayment within the 45-day limit is cause to withhold future payments (subsection (4)(A)).",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "13 CSR 70-3.030 Administrative actions for improperly paid, false or fraudulent claims for MO HealthNet services (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/missouri/13-CSR-70-3-030",
+        "deepLink": "https://www.law.cornell.edu/regulations/missouri/13-CSR-70-3-030#:~:text=Failure%20to%20repay%20or%20make%20arrangements%20for%20the%20repayment",
+        "locator": "13 CSR 70-3.030(3)",
+        "excerpt": "Failure to repay or make arrangements for the repayment of identified overpayments or otherwise improper payments prior to the allowed forty-five (45) days which the provider has to refund the requested amount"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-NE-30-DAYS-REFUND-REQUEST-471-NAC-3-003-06",
+      "title": "Nebraska Medicaid: 30 days to respond to a refund request",
+      "authority": "NE Medicaid",
+      "sourceId": "ne-471-nac-3-003",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/nebraska/471-Neb-Admin-Code-ch-3-SS-003",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NE",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "When Nebraska Medicaid requests a refund of all or part of a paid claim, the provider has 30 days to refund, show it was already refunded, document why the request is in error, or appeal. Failure to respond within 30 days allows the Department to recoup from future payments until paid in full, or to sanction the provider. The refund request is the notice of the recoupment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "471 Neb. Admin. Code ch. 3, § 003 Approval and payment (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/nebraska/471-Neb-Admin-Code-ch-3-SS-003",
+        "deepLink": "https://www.law.cornell.edu/regulations/nebraska/471-Neb-Admin-Code-ch-3-SS-003#:~:text=the%20provider%20is%20allowed%2030%20days%20to%20refund%20the",
+        "locator": "471 NAC 3-003.06(A)",
+        "excerpt": "the provider is allowed 30 days to refund the amount requested, to show the refund has already been made, to document why the refund request is in error, or appeal"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-ID-30-DAYS-RESPOND-60-DAYS-INTEREST-16-03-09-231",
+      "title": "Idaho Medicaid (hospitals, FQHCs, RHCs, home health): 30 days to respond, interest after 60 days",
+      "authority": "ID Medicaid",
+      "sourceId": "id-idapa-16-03-09-231",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/idaho/IDAPA-16.03.09.231",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "ID",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "This rule applies only to hospitals, federally qualified health centers, rural health centers and home health providers. If the provider does not respond to the notice of program reimbursement within 30 days, the Department recovers the whole unpaid balance. Interest accrues from receipt of the notice if full repayment is not received within 60 days.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "IDAPA 16.03.09.231 Handling of overpayments and underpayments for specified providers (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/idaho/IDAPA-16.03.09.231",
+        "deepLink": "https://www.law.cornell.edu/regulations/idaho/IDAPA-16.03.09.231#:~:text=The%20Department%20will%20recover%20the%20entire%20unpaid%20balance%20of",
+        "locator": "IDAPA 16.03.09.231.01 and .02",
+        "excerpt": "The Department will recover the entire unpaid balance of the overpayment of any settlement amount in which the provider does not respond to the notice of program reimbursement within thirty (30) days of receiving the notice"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-TX-60-DAYS-AFTER-FINAL-NOTICE-371-1723",
+      "title": "Texas Medicaid (OIG retrospective review): 60 calendar days after the final notice to pay or sign a payment plan",
+      "authority": "TX Medicaid",
+      "sourceId": "tx-1-tac-371-1723",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/texas/1-Tex-Admin-Code-SS-371-1723",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "TX",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "For an overpayment found by an OIG retrospective payment review, the results become final and unappealable 30 calendar days after receipt unless a timely first-level appeal is filed (subsections (f)(1) to (f)(3)). After a final notice the person has 60 calendar days to pay or to execute an OIG-approved payment plan. Records must be produced within the OIG's requested period or 10 calendar days, whichever is later (subsection (b)(1)).",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "1 Tex. Admin. Code § 371.1723 Recoupment of overpayments identified by retrospective payment review (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/texas/1-Tex-Admin-Code-SS-371-1723",
+        "deepLink": "https://www.law.cornell.edu/regulations/texas/1-Tex-Admin-Code-SS-371-1723#:~:text=must%2C%20within%2060%20calendar%20days%20after%20receipt%20of%20the",
+        "locator": "1 TAC § 371.1723(f)(5)",
+        "excerpt": "must, within 60 calendar days after receipt of the final notice: (A) pay the overpayment; or (B) submit a request for, and execute, a final payment plan agreement approved by the OIG"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-PA-15-DAYS-TO-CONTACT-COMPTROLLER-1101-69A",
+      "title": "Pennsylvania Medical Assistance: 15 days to contact the Comptroller after a cost-settlement overpayment letter",
+      "authority": "PA Medicaid",
+      "sourceId": "pa-55-pa-code-1101-69a",
+      "sourceUrl": "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/055/chapter1101/s1101.69a.html",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "PA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "For overpayments tied to cost reporting periods ending on or after October 1, 1985, the Department's letter asks the provider to contact the Office of the Comptroller within 15 days to set a repayment schedule. If the provider does not respond or submit an acceptable plan, the Department offsets against pending MA payments until paid (subsection (b)(2)). The date of the cost settlement letter is day one. This is a cost-settlement rule, not a limit on audits of fee-for-service claims.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "55 Pa. Code § 1101.69a Uniform period for the recoupment of overpayments from providers (Pennsylvania Code & Bulletin)",
+        "sourceUrl": "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/055/chapter1101/s1101.69a.html",
+        "deepLink": "https://www.pacodeandbulletin.gov/Display/pacode?file=/secure/pacode/data/055/chapter1101/s1101.69a.html#:~:text=The%20letter%20will%20request%20that%20the%20provider%20contact%20the",
+        "locator": "55 Pa. Code § 1101.69a(b)(1)",
+        "excerpt": "The letter will request that the provider contact the Office of the Comptroller within 15 days of the date of the letter to establish a repayment schedule"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-IL-RECOVERY-BY-SETOFF-89-IAC-140-25",
+      "title": "Illinois Medicaid: overpayments recovered by setoff, crediting against future billings or direct repayment",
+      "authority": "IL Medicaid",
+      "sourceId": "il-89-iac-140-25",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/illinois/Ill-Admin-Code-tit-89-SS-140.25",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "IL",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Illinois HFS recovers overpayments from improper billing practices by setoff, by crediting against future billings or by requiring direct repayment. A provider that believes it was underpaid must request review within 12 months of payment authorization (subsection (b)); that 12-month limit is for underpayment requests, not a limit on recovering overpayments.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "89 Ill. Adm. Code 140.25 Overpayment or underpayment of claims (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/illinois/Ill-Admin-Code-tit-89-SS-140.25",
+        "deepLink": "https://www.law.cornell.edu/regulations/illinois/Ill-Admin-Code-tit-89-SS-140.25#:~:text=Recovery%20may%20occur%20by%20setoff%2C%20crediting%20against%20future%20billings",
+        "locator": "89 Ill. Adm. Code 140.25(a)",
+        "excerpt": "Recovery may occur by setoff, crediting against future billings or requiring direct repayment to the Department"
+      }
+    },
+    {
+      "id": "TRICARE-ADMIN-OFFSET-10-YEAR-LIMIT-199-11",
+      "title": "TRICARE: administrative offset may not be conducted more than 10 years after the right to collect first accrued",
+      "authority": "Defense Health Agency (TRICARE)",
+      "sourceId": "ecfr-32-cfr-199-11",
+      "sourceUrl": "https://www.ecfr.gov/current/title-32/part-199/section-199.11",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Tricare"
+      },
+      "currentSourceStatement": "For TRICARE erroneous-payment debts, administrative offset under 31 U.S.C. 3716 is limited to 10 years after the right to collect first accrued, unless the facts were not known and could not reasonably have been known to the responsible TRICARE official. The limit does not apply to debts reduced to judgment. Network agreements may modify recoupment procedures; this section applies if recoupment under the network agreement is not successful.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "32 CFR § 199.11 Overpayments recovery (TRICARE)",
+        "sourceUrl": "https://www.ecfr.gov/current/title-32/part-199/section-199.11",
+        "deepLink": "https://www.ecfr.gov/current/title-32/part-199/section-199.11#:~:text=administrative%20offset%20of%20payments%20under%20the%20authority%20of%2031",
+        "locator": "32 CFR 199.11 (administrative offset)",
+        "excerpt": "administrative offset of payments under the authority of 31 U.S.C. 3716 may not be conducted more than 10 years after the Government's right to collect the debt first accrued"
+      }
+    },
+    {
+      "id": "TRICARE-ADMIN-REVIEW-90-DAYS-199-11",
+      "title": "TRICARE: 90 days from the initial demand letter to request an administrative review",
+      "authority": "Defense Health Agency (TRICARE)",
+      "sourceId": "ecfr-32-cfr-199-11",
+      "sourceUrl": "https://www.ecfr.gov/current/title-32/part-199/section-199.11",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Tricare"
+      },
+      "currentSourceStatement": "Where no oral hearing is required, a TRICARE debtor gets an administrative review if the contractor receives a written request within 90 days of the initial demand letter. The demand letter must also state the basis and amount of the debt and the right to inspect and copy TRICARE records about it.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "32 CFR § 199.11 Overpayments recovery (TRICARE)",
+        "sourceUrl": "https://www.ecfr.gov/current/title-32/part-199/section-199.11",
+        "deepLink": "https://www.ecfr.gov/current/title-32/part-199/section-199.11#:~:text=the%20debtor%20will%20be%20afforded%20an%20administrative%20review%20if",
+        "locator": "32 CFR 199.11 (administrative review)",
+        "excerpt": "the debtor will be afforded an administrative review if the TRICARE contractor receives a written request for an administrative review within 90 days from the date of the initial demand letter"
+      }
+    },
+    {
+      "id": "TRICARE-INTEREST-WAIVED-IF-PAID-30-DAYS-199-11",
+      "title": "TRICARE: interest waived on a debt paid within 30 days of the initial demand",
+      "authority": "Defense Health Agency (TRICARE)",
+      "sourceId": "ecfr-32-cfr-199-11",
+      "sourceUrl": "https://www.ecfr.gov/current/title-32/part-199/section-199.11",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Tricare"
+      },
+      "currentSourceStatement": "The initial demand letter tells the debtor that interest accrues from the date of the letter and is waived on any part paid within 30 days of it. Administrative costs and penalties are charged under 31 CFR 901.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "32 CFR § 199.11 Overpayments recovery (TRICARE)",
+        "sourceUrl": "https://www.ecfr.gov/current/title-32/part-199/section-199.11",
+        "deepLink": "https://www.ecfr.gov/current/title-32/part-199/section-199.11#:~:text=interest%20will%20be%20waived%20on%20the%20debt%2C%20or%20any",
+        "locator": "32 CFR 199.11 (demand notification)",
+        "excerpt": "interest will be waived on the debt, or any portion thereof, which is paid within 30 days from the date of the initial demand notification letter"
+      }
+    },
+    {
+      "id": "ANTHEM-CA-OVERPAYMENT-DEDUCTED-IF-NO-RESPONSE-SEM-8",
+      "title": "Anthem Blue Cross (California): overpayment deducted from claim payments if no payment or direction is received",
+      "authority": "Anthem Blue Cross",
+      "sourceId": "anthem-ca-sem8-overpayment",
+      "sourceUrl": "https://anthembluecross.com/content/dam/digital/docs/anthembluecross/provider/commercial/general/CA_SEM_00008.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Anthem",
+        "state": "CA"
+      },
+      "currentSourceStatement": "Anthem Blue Cross (California) identifies the overpayment on the EOB/RA, then sends a series of letters on a calendar-day schedule. If it has received no payment or directions it deducts the overpayment from claim payments and shows it on the EOB/RA; if that is not feasible it sends further letters and then refers the debt to collections. Read the dated sequence in SEM 8 itself, which is a plan communication, not a contract.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Anthem Blue Cross (California) SEM 8: Overpayment Recovery Notification Process (October 2023)",
+        "sourceUrl": "https://anthembluecross.com/content/dam/digital/docs/anthembluecross/provider/commercial/general/CA_SEM_00008.pdf",
+        "deepLink": "https://anthembluecross.com/content/dam/digital/docs/anthembluecross/provider/commercial/general/CA_SEM_00008.pdf#page=1",
+        "locator": "PDF page 1 — SEM 8, Overpayment Recovery Notification Process",
+        "excerpt": "If Anthem Blue Cross has not received payment or directions, the overpayment is deducted from the claims payment and is reflected on the EOB/RA."
+      }
+    },
+    {
+      "id": "ANTHEM-CA-OVERPAYMENT-DAYS-ARE-CALENDAR-DAYS-SEM-8",
+      "title": "Anthem Blue Cross (California): overpayment timeline is counted in calendar days",
+      "authority": "Anthem Blue Cross",
+      "sourceId": "anthem-ca-sem8-overpayment",
+      "sourceUrl": "https://anthembluecross.com/content/dam/digital/docs/anthembluecross/provider/commercial/general/CA_SEM_00008.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Anthem",
+        "state": "CA"
+      },
+      "currentSourceStatement": "The day counts in the Anthem Blue Cross (California) overpayment notification timeline are calendar days, not business days.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Anthem Blue Cross (California) SEM 8: Overpayment Recovery Notification Process (October 2023)",
+        "sourceUrl": "https://anthembluecross.com/content/dam/digital/docs/anthembluecross/provider/commercial/general/CA_SEM_00008.pdf",
+        "deepLink": "https://anthembluecross.com/content/dam/digital/docs/anthembluecross/provider/commercial/general/CA_SEM_00008.pdf#page=1",
+        "locator": "PDF page 1 — SEM 8, Overpayment Recovery Notification Process",
+        "excerpt": "Note: These are calendar days, not business days."
+      }
+    },
+    {
+      "id": "BLUESHIELD-CA-REFUND-REQUEST-365-DAYS",
+      "title": "Blue Shield of California: refund requested within 365 days of the original payment",
+      "authority": "Blue Shield of California",
+      "sourceId": "blueshield-ca-refund-requests",
+      "sourceUrl": "https://blueshieldca.com/bsca/bsc/wcm/connect/provider/provider_content_en/claims/adjustments",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Blue Shield",
+        "state": "CA"
+      },
+      "currentSourceStatement": "When Blue Shield of California finds a payment was issued in error it will request a refund within 365 days of the original payment date, in writing, with the patient name, date of service, claim number and an explanation of the overpayment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Blue Shield of California Provider Connection: Refund requests",
+        "sourceUrl": "https://blueshieldca.com/bsca/bsc/wcm/connect/provider/provider_content_en/claims/adjustments",
+        "deepLink": "https://blueshieldca.com/bsca/bsc/wcm/connect/provider/provider_content_en/claims/adjustments#:~:text=Blue%20Shield%20will%20request%20a%20refund%20of%20the%20overpayment",
+        "locator": "Provider Connection, Refund requests",
+        "excerpt": "Blue Shield will request a refund of the overpayment within 365 days of the original payment date"
+      }
+    },
+    {
+      "id": "BLUESHIELD-CA-PROVIDER-30-WORKING-DAYS-TO-REFUND-OR-DISPUTE",
+      "title": "Blue Shield of California: 30 working days to refund or dispute",
+      "authority": "Blue Shield of California",
+      "sourceId": "blueshield-ca-refund-requests",
+      "sourceUrl": "https://blueshieldca.com/bsca/bsc/wcm/connect/provider/provider_content_en/claims/adjustments",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Blue Shield",
+        "state": "CA"
+      },
+      "currentSourceStatement": "The provider has 30 working days from receipt of the refund request to refund or give written notice that it disagrees, stating why the original payment was correct. If it does not appeal within 30 working days (or as the contract provides), Blue Shield will pursue the refund and may offset the account or assign it for recovery.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Blue Shield of California Provider Connection: Refund requests",
+        "sourceUrl": "https://blueshieldca.com/bsca/bsc/wcm/connect/provider/provider_content_en/claims/adjustments",
+        "deepLink": "https://blueshieldca.com/bsca/bsc/wcm/connect/provider/provider_content_en/claims/adjustments#:~:text=Within%2030%20working%20days%20of%20receipt%20of%20the%20refund",
+        "locator": "Provider Connection, Refund requests",
+        "excerpt": "Within 30 working days of receipt of the refund request, the provider must issue a refund or notify Blue Shield that they disagree with the request"
+      }
+    },
+    {
+      "id": "BCBSOK-REFUND-30-DAYS-BEFORE-AUTOMATIC-RETRACTION",
+      "title": "Blue Cross and Blue Shield of Oklahoma: 30 days to refund before automatic retraction",
+      "authority": "Blue Cross and Blue Shield of Oklahoma",
+      "sourceId": "bcbsok-right-to-offset",
+      "sourceUrl": "https://www.bcbsok.com/provider/claims/claims-eligibility/right-to-offset",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Blue Cross and Blue Shield of Oklahoma",
+        "state": "OK"
+      },
+      "currentSourceStatement": "For lines of business converted to its new claims system, BCBSOK sends a letter requesting a refund and gives 30 days to submit it before an automatic retraction (offset). It says it contractually has the right to offset and notes the offset on the Explanation of Claims Summary. Other lines of business offset directly.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Blue Cross and Blue Shield of Oklahoma: Right to Offset",
+        "sourceUrl": "https://www.bcbsok.com/provider/claims/claims-eligibility/right-to-offset",
+        "deepLink": "https://www.bcbsok.com/provider/claims/claims-eligibility/right-to-offset#:~:text=Providers%20will%20be%20given%2030%20days%20to%20submit%20the",
+        "locator": "Provider site, Right to Offset",
+        "excerpt": "Providers will be given 30 days to submit the refund, prior to an automatic retraction occurring"
+      }
     }
   ],
   "citationContract": {

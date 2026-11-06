@@ -191,3 +191,21 @@ if(policyWindow.AuditDefendPolicyEngine.appliesToCase(fedMc,{state:'TX',program:
 const caMc=byId('STATE-MEDICAID-CA-DEMAND-60-DAYS-AFTER-AUDIT-14172-5');
 if(!policyWindow.AuditDefendPolicyEngine.appliesToCase(caMc,{state:'CA',program:'Medicaid'})||policyWindow.AuditDefendPolicyEngine.appliesToCase(caMc,{state:'TX',program:'Medicaid'}))throw new Error('California Medi-Cal rule is scoped to California Medicaid.');
 console.log('Medicaid rule tests passed.');
+
+// State Medicaid batch 2 and further payers: every rule exists, is primary-verified, and is scoped to its own state or payer
+{
+  const E2=policyWindow.AuditDefendPolicyEngine;
+  const stateMc={IN:'STATE-MEDICAID-IN-AUDIT-LOOKBACK-3-YEARS-180-DAYS',VA:'STATE-MEDICAID-VA-INITIAL-DETERMINATION-4-YEARS',AK:'STATE-MEDICAID-AK-60-DAYS-NOTICE-BEFORE-RECOUPMENT-105-260',KY:'STATE-MEDICAID-KY-60-DAYS-TO-PAY-907-KAR-1-671',MS:'STATE-MEDICAID-MS-30-DAYS-AFTER-DEMAND-LETTER-305-1-3',MO:'STATE-MEDICAID-MO-45-DAYS-TO-REFUND-13-CSR-70-3-030',NE:'STATE-MEDICAID-NE-30-DAYS-REFUND-REQUEST-471-NAC-3-003-06',ID:'STATE-MEDICAID-ID-30-DAYS-RESPOND-60-DAYS-INTEREST-16-03-09-231',TX:'STATE-MEDICAID-TX-60-DAYS-AFTER-FINAL-NOTICE-371-1723',PA:'STATE-MEDICAID-PA-15-DAYS-TO-CONTACT-COMPTROLLER-1101-69A',IL:'STATE-MEDICAID-IL-RECOVERY-BY-SETOFF-89-IAC-140-25'};
+  for(const [st,id] of Object.entries(stateMc)){
+    const r=byId(id);if(!r)throw new Error('Missing rule '+id);
+    if(r.sourceSupportStatus!=='CURRENT_SOURCE_VERIFIED'||!r.citation.excerpt)throw new Error(id+' must carry a verified excerpt.');
+    if(!E2.appliesToCase(r,{state:st,program:'Medicaid'}))throw new Error(id+' must apply to '+st+' Medicaid.');
+    if(E2.appliesToCase(r,{state:st,program:'Commercial'}))throw new Error(id+' must not apply to commercial coverage.');
+    if(E2.appliesToCase(r,{state:st==='TX'?'OH':'TX',program:'Medicaid'}))throw new Error(id+' is scoped to '+st+'.');
+  }
+  const tri=byId('TRICARE-ADMIN-OFFSET-10-YEAR-LIMIT-199-11');if(!tri||!E2.appliesToCase(tri,{payer:'Tricare',state:'VA',program:'Tricare'})||E2.appliesToCase(tri,{payer:'Humana',state:'VA'}))throw new Error('Tricare rule is scoped to Tricare.');
+  const bsc=byId('BLUESHIELD-CA-REFUND-REQUEST-365-DAYS');if(!bsc||!E2.appliesToCase(bsc,{payer:'Blue Shield of California',state:'CA'})||E2.appliesToCase(bsc,{payer:'Blue Shield of California',state:'TX'}))throw new Error('Blue Shield of California rule is scoped to California.');
+  const ant=byId('ANTHEM-CA-OVERPAYMENT-DEDUCTED-IF-NO-RESPONSE-SEM-8');if(!ant||!E2.appliesToCase(ant,{payer:'Anthem Blue Cross',state:'CA'})||E2.appliesToCase(ant,{payer:'Anthem Blue Cross',state:'NY'}))throw new Error('Anthem California rule is scoped to California.');
+  const bok=byId('BCBSOK-REFUND-30-DAYS-BEFORE-AUTOMATIC-RETRACTION');if(!bok||!E2.appliesToCase(bok,{payer:'Blue Cross and Blue Shield of Oklahoma',state:'OK'})||E2.appliesToCase(bok,{payer:'Blue Cross and Blue Shield of Oklahoma',state:'TX'}))throw new Error('BCBSOK rule is scoped to Oklahoma.');
+  console.log('State Medicaid batch 2 and payer batch 3 rule tests passed.');
+}
