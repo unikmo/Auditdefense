@@ -1902,6 +1902,23 @@
       "priority": 2
     },
     {
+      "id": "oh-oac-5160-1-17-2",
+      "authority": "OH Medicaid",
+      "program": "Medicaid",
+      "state": "OH",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Ohio Admin. Code 5160-1-17.2 Provider agreement for providers (Cornell LII copy of the Ohio Administrative Code)",
+      "url": "https://www.law.cornell.edu/regulations/ohio/Ohio-Admin-Code-5160-1-17.2",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
       "id": "ecfr-32-cfr-199-11",
       "authority": "Defense Health Agency (TRICARE)",
       "program": "TRICARE",

@@ -3752,6 +3752,35 @@
       }
     },
     {
+      "id": "STATE-MEDICAID-OH-RECORDS-6-YEARS-5160-1-17-2",
+      "title": "Ohio Medicaid: keep provider records six years from payment, or until an audit started in that period ends",
+      "authority": "OH Medicaid",
+      "sourceId": "oh-oac-5160-1-17-2",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/ohio/Ohio-Admin-Code-5160-1-17.2",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OH",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Under the Ohio Medicaid provider agreement, a provider must keep the records that support each claim for six years from the date it received payment, or until any audit started within those six years is finished. This is a record-retention rule, not an overpayment look-back: the Ohio recovery look-back is not yet verified.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Ohio Admin. Code 5160-1-17.2 Provider agreement for providers (Cornell LII copy of the Ohio Administrative Code)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/ohio/Ohio-Admin-Code-5160-1-17.2",
+        "deepLink": "https://www.law.cornell.edu/regulations/ohio/Ohio-Admin-Code-5160-1-17.2#:~:text=The%20provider%20will%20maintain%20such%20records%20for%20a%20period",
+        "locator": "OAC 5160-1-17.2(D)",
+        "excerpt": "The provider will maintain such records for a period of six years from the date of receipt of payment based upon those records or until any audit initiated within the required six year record maintenance period is completed."
+      }
+    },
+    {
       "id": "TRICARE-ADMIN-OFFSET-10-YEAR-LIMIT-199-11",
       "title": "TRICARE: administrative offset may not be conducted more than 10 years after the right to collect first accrued",
       "authority": "Defense Health Agency (TRICARE)",
