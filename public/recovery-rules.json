@@ -69,6 +69,1161 @@
         "locator": "Payment and Risk Arrangements — notice",
         "excerpt": "Written notice is required 30 days before engaging in overpayment recovery efforts."
       }
+    },
+    {
+      "id": "MEDICARE-REOPENING-12M",
+      "title": "Medicare contractor reopening: one year for any reason",
+      "jurisdiction": "US",
+      "programClass": "medicare-reopening",
+      "windowMonths": 12,
+      "anchorField": "initialDeterminationDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "good cause (up to 4 years from the initial determination or redetermination)",
+        "reliable evidence of fraud or similar fault (any time)",
+        "correction of a clerical error",
+        "reopening of a determination that is unfavorable to the party"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 405.980",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.980",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-405.980#:~:text=Within%201%20year%20from%20the%20date%20of%20the%20initial",
+        "locator": "42 CFR 405.980(b)(1)",
+        "excerpt": "Within 1 year from the date of the initial determination or redetermination for any reason"
+      }
+    },
+    {
+      "id": "CA-INS-10133-66-OVERPAYMENT-365D",
+      "title": "California health insurers: overpayment reimbursement request within 365 days",
+      "jurisdiction": "CA",
+      "programClass": "commercial-health-plan",
+      "windowDays": 365,
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "overpayment caused in whole or in part by fraud or misrepresentation",
+        "plans regulated under the Knox-Keene Act (Health and Safety Code) rather than the Insurance Code",
+        "self-insured ERISA plans",
+        "government-program coverage"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "California Insurance Code § 10133.66 (California.Public.Law copy of the code)",
+        "sourceUrl": "https://california.public.law/codes/ca_ins_code_section_10133.66",
+        "deepLink": "https://california.public.law/codes/ca_ins_code_section_10133.66#:~:text=unless%20a%20written%20request%20for%20reimbursement%20is%20sent%20to",
+        "locator": "Cal. Ins. Code § 10133.66(b)",
+        "excerpt": "unless a written request for reimbursement is sent to the provider within 365 days of the date of payment on the overpaid claim"
+      }
+    },
+    {
+      "id": "FL-627-6131-OVERPAYMENT-30M",
+      "title": "Florida health insurers: overpayment claims within 30 months (retroactive review not related to fraud)",
+      "jurisdiction": "FL",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 30,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud",
+        "self-insured ERISA plans",
+        "government-program coverage"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Florida Statutes § 627.6131",
+        "sourceUrl": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+        "deepLink": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html#:~:text=All%20claims%20for%20overpayment%20must%20be%20submitted%20to%20a",
+        "locator": "Fla. Stat. § 627.6131(6)(a)1.",
+        "excerpt": "All claims for overpayment must be submitted to a provider within 30 months after the health insurer's payment of the claim"
+      }
+    },
+    {
+      "id": "FL-627-6131-OVERPAYMENT-12M-LICENSED",
+      "title": "Florida health insurers: overpayment claims within 12 months for chapter 458, 459, 460, 461, 466 and 490 providers",
+      "jurisdiction": "FL",
+      "programClass": "commercial-health-plan",
+      "providerTypes": [
+        "physician",
+        "osteopath",
+        "chiropractor",
+        "podiatrist",
+        "dentist",
+        "psychologist"
+      ],
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "providers convicted of fraud under s. 817.234",
+        "self-insured ERISA plans",
+        "government-program coverage"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Florida Statutes § 627.6131",
+        "sourceUrl": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+        "deepLink": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html#:~:text=all%20claims%20for%20overpayment%20submitted%20to%20a%20provider%20licensed",
+        "locator": "Fla. Stat. § 627.6131(18)",
+        "excerpt": "all claims for overpayment submitted to a provider licensed under chapter 458, chapter 459, chapter 460, chapter 461, chapter 466, or chapter 490 must be submitted to the provider within 12 months after the health insurer's payment of the claim"
+      }
+    },
+    {
+      "id": "STATE-AZ-OVERPAYMENT-RECOVERY",
+      "title": "Arizona health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "AZ",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud",
+        "self-insured ERISA plans",
+        "government-program coverage"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Arizona Revised Statutes § 20-3102",
+        "sourceUrl": "https://www.azleg.gov/ars/20/03102.htm",
+        "deepLink": "https://www.azleg.gov/ars/20/03102.htm#:~:text=shall%20not%20adjust%20or%20request%20adjustment%20of%20the%20payment",
+        "locator": "A.R.S. § 20-3102",
+        "excerpt": "shall not adjust or request adjustment of the payment or denial of a claim more than one year after the health care insurer has paid or denied that claim"
+      }
+    },
+    {
+      "id": "STATE-CT-OVERPAYMENT-RECOVERY",
+      "title": "Connecticut health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "CT",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "documented basis to believe the claim was submitted fraudulently",
+        "coordination of benefits or subrogation",
+        "self-insured ERISA plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Connecticut General Statutes § 38a-479b (chapter 700c)",
+        "sourceUrl": "https://www.cga.ct.gov/current/pub/chap_700c.htm",
+        "deepLink": "https://www.cga.ct.gov/current/pub/chap_700c.htm#:~:text=more%20than%20eighteen%20months%20after%20the%20date%20of%20the",
+        "locator": "Conn. Gen. Stat. § 38a-479b",
+        "excerpt": "more than eighteen months after the date of the receipt of a clean claim"
+      }
+    },
+    {
+      "id": "STATE-DE-OVERPAYMENT-RECOVERY",
+      "title": "Delaware health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "DE",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud and statutory exceptions",
+        "self-insured ERISA plans",
+        "government-program coverage"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "18 Delaware Code § 2730",
+        "sourceUrl": "https://delcode.delaware.gov/title18/c027/sc01/index.html",
+        "deepLink": "https://delcode.delaware.gov/title18/c027/sc01/index.html#:~:text=may%20not%20initiate%20overpayment%20recovery%20efforts%20more%20than%2012",
+        "locator": "18 Del. C. § 2730",
+        "excerpt": "may not initiate overpayment recovery efforts more than 12 months after the original payment for the claim was made"
+      }
+    },
+    {
+      "id": "STATE-KS-OVERPAYMENT-RECOVERY",
+      "title": "Kansas health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "KS",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud",
+        "self-insured ERISA plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Kansas Statutes § 40-2442",
+        "sourceUrl": "https://www.ksrevisor.org/statutes/chapters/ch40/040_024_0042.html",
+        "deepLink": "https://www.ksrevisor.org/statutes/chapters/ch40/040_024_0042.html#:~:text=unless%20such%20action%20is%20initiated%20within%2018%20months%20after",
+        "locator": "K.S.A. § 40-2442",
+        "excerpt": "unless such action is initiated within 18 months after the end of the month in which the erroneous payment was made"
+      }
+    },
+    {
+      "id": "STATE-MD-OVERPAYMENT-RECOVERY",
+      "title": "Maryland health insurers: overpayment recovery limit (6 months)",
+      "jurisdiction": "MD",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 6,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "coordination of benefits (18 months)",
+        "fraud and statutory exceptions",
+        "self-insured ERISA plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Maryland Insurance Code § 15-1008",
+        "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gin&section=15-1008&enactments=false",
+        "deepLink": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gin&section=15-1008&enactments=false#:~:text=during%20the%206%2Dmonth%20period%20after%20the%20date%20that%20the",
+        "locator": "Md. Code, Ins. § 15-1008",
+        "excerpt": "during the 6-month period after the date that the carrier paid the health care provider"
+      }
+    },
+    {
+      "id": "STATE-MO-OVERPAYMENT-RECOVERY",
+      "title": "Missouri health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "MO",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud or misrepresentation by the provider",
+        "self-insured ERISA plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Missouri Revised Statutes § 376.384",
+        "sourceUrl": "https://revisor.mo.gov/main/OneSection.aspx?section=376.384",
+        "deepLink": "https://revisor.mo.gov/main/OneSection.aspx?section=376.384#:~:text=more%20than%20twelve%20months%20after%20a%20health%20carrier%20has",
+        "locator": "Mo. Rev. Stat. § 376.384",
+        "excerpt": "more than twelve months after a health carrier has paid a claim"
+      }
+    },
+    {
+      "id": "STATE-SC-OVERPAYMENT-RECOVERY",
+      "title": "South Carolina health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "SC",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "reasonable belief of fraud or other intentional misconduct",
+        "recovery required by a self-insured plan",
+        "recovery required by a state or federal government program"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "South Carolina Code § 38-59-250",
+        "sourceUrl": "https://www.scstatehouse.gov/code/t38c059.php",
+        "deepLink": "https://www.scstatehouse.gov/code/t38c059.php#:~:text=more%20than%20eighteen%20months%20after%20the%20initial%20payment%20was",
+        "locator": "S.C. Code § 38-59-250",
+        "excerpt": "more than eighteen months after the initial payment was received by the provider"
+      }
+    },
+    {
+      "id": "STATE-TX-OVERPAYMENT-RECOVERY",
+      "title": "Texas health insurers: overpayment recovery limit (180 days)",
+      "jurisdiction": "TX",
+      "programClass": "commercial-health-plan",
+      "windowDays": 180,
+      "windowMonths": 6,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "statutory exceptions in subsections (b) to (d)",
+        "self-insured ERISA plans",
+        "government-program coverage"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Texas Insurance Code § 1301.132 (texas.public.law copy of the code)",
+        "sourceUrl": "https://texas.public.law/statutes/tex._ins._code_section_1301.132",
+        "deepLink": "https://texas.public.law/statutes/tex._ins._code_section_1301.132#:~:text=not%20later%20than%20the%20180th%20day%20after%20the%20date",
+        "locator": "Tex. Ins. Code § 1301.132(a)(1)",
+        "excerpt": "not later than the 180th day after the date the physician or provider receives the payment"
+      }
+    },
+    {
+      "id": "STATE-VA-OVERPAYMENT-RECOVERY",
+      "title": "Virginia health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "VA",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "original claim submitted fraudulently",
+        "provider already paid for the service, or service not delivered",
+        "written agreement to offset against future payments after 12 months"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Code of Virginia § 38.2-3407.15",
+        "sourceUrl": "https://law.lis.virginia.gov/vacode/title38.2/chapter34/section38.2-3407.15/",
+        "deepLink": "https://law.lis.virginia.gov/vacode/title38.2/chapter34/section38.2-3407.15/#:~:text=the%20time%20which%20has%20elapsed%20since%20the%20date%20of",
+        "locator": "Va. Code § 38.2-3407.15",
+        "excerpt": "the time which has elapsed since the date of the payment of the original challenged claim does not exceed 12 months"
+      }
+    },
+    {
+      "id": "STATE-WA-OVERPAYMENT-RECOVERY",
+      "title": "Washington health insurers: overpayment recovery limit (24 months)",
+      "jurisdiction": "WA",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 24,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud",
+        "mental health and substance use disorder services (six months)",
+        "self-insured ERISA plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "RCW 48.43.600",
+        "sourceUrl": "https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.600",
+        "deepLink": "https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.600#:~:text=within%20twenty%2Dfour%20months%20after%20the%20date%20that%20the%20payment",
+        "locator": "RCW 48.43.600",
+        "excerpt": "within twenty-four months after the date that the payment was made"
+      }
+    },
+    {
+      "id": "STATE-WV-OVERPAYMENT-RECOVERY",
+      "title": "West Virginia health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "WV",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud and the reasons the statute leaves without a time limit",
+        "self-insured ERISA plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "West Virginia Code § 33-45-2",
+        "sourceUrl": "https://code.wvlegislature.gov/33-45-2/",
+        "deepLink": "https://code.wvlegislature.gov/33-45-2/#:~:text=for%20a%20period%20of%20one%20year%20from%20the%20date",
+        "locator": "W. Va. Code § 33-45-2",
+        "excerpt": "for a period of one year from the date the claim was originally paid"
+      }
+    },
+    {
+      "id": "STATE-AL-OVERPAYMENT-RECOVERY",
+      "title": "Alabama health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "AL",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud",
+        "coordination of benefits",
+        "duplicate payments"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Ala. Code § 27-1-17; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Ala. Code § 27-1-17",
+        "excerpt": "after the expiration of one year from the date that the initial claim was paid"
+      }
+    },
+    {
+      "id": "STATE-AK-OVERPAYMENT-RECOVERY",
+      "title": "Alaska health insurers: overpayment recovery limit (365 days)",
+      "jurisdiction": "AK",
+      "programClass": "commercial-health-plan",
+      "windowDays": 365,
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "clear and documented reason to believe of fraud or intentional misconduct"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 3 AAC 26.110; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "3 AAC 26.110",
+        "excerpt": "more than 365 days after the date the original payment was made"
+      }
+    },
+    {
+      "id": "STATE-AR-OVERPAYMENT-RECOVERY",
+      "title": "Arkansas health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "AR",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud committed by a healthcare provider"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Ark. Code § 23-63-1803; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Ark. Code § 23-63-1803",
+        "excerpt": "only during the eighteen-month period after the date that the healthcare insurer paid the claim"
+      }
+    },
+    {
+      "id": "STATE-CO-OVERPAYMENT-RECOVERY",
+      "title": "Colorado health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "CO",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "applies where no provider-carrier contract exists"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes C.R.S. § 10-16-704(4.5); the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "C.R.S. § 10-16-704(4.5)",
+        "excerpt": "within twelve months after the date of the original explanation of benefits"
+      }
+    },
+    {
+      "id": "STATE-GA-OVERPAYMENT-RECOVERY",
+      "title": "Georgia health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "GA",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "statutory exceptions"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes O.C.G.A. § 33-20A-62; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "O.C.G.A. § 33-20A-62",
+        "excerpt": "within the sooner of 18 months after the claimant's initial submission"
+      }
+    },
+    {
+      "id": "STATE-HI-OVERPAYMENT-RECOVERY",
+      "title": "Hawaii health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "HI",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "self-insured employer groups",
+        "Medicaid, Medicare, Medigap and other federally financed plans",
+        "fraud or material misrepresentation (72 months)"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Haw. Rev. Stat. § 431:13-108; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Haw. Rev. Stat. § 431:13-108",
+        "excerpt": "more than eighteen months after the initial claim payment was received by the health care provider or health care entity"
+      }
+    },
+    {
+      "id": "STATE-IN-OVERPAYMENT-RECOVERY",
+      "title": "Indiana health insurers: overpayment recovery limit (24 months)",
+      "jurisdiction": "IN",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 24,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Ind. Code § 27-8-5.7-10; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Ind. Code § 27-8-5.7-10",
+        "excerpt": "more than two (2) years after the date on which an overpayment on a provider claim was made"
+      }
+    },
+    {
+      "id": "STATE-KY-OVERPAYMENT-RECOVERY",
+      "title": "Kentucky health insurers: overpayment recovery limit (24 months)",
+      "jurisdiction": "KY",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 24,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes KRS § 304.17A-708; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "KRS § 304.17A-708",
+        "excerpt": "twenty-four (24) month period after the date that the insurer paid the claim"
+      }
+    },
+    {
+      "id": "STATE-LA-OVERPAYMENT-RECOVERY",
+      "title": "Louisiana health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "LA",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "statutory exceptions"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes La. R.S. § 22:1838; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "La. R.S. § 22:1838",
+        "excerpt": "after the expiration of eighteen months from the date the initial claim was paid"
+      }
+    },
+    {
+      "id": "STATE-MT-OVERPAYMENT-RECOVERY",
+      "title": "Montana health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "MT",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "statutory exceptions in subsections (3) to (5)"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Mont. Code Ann. § 33-22-150; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Mont. Code Ann. § 33-22-150",
+        "excerpt": "more than 12 months after the payment of an invalid or overpaid claim"
+      }
+    },
+    {
+      "id": "STATE-NH-OVERPAYMENT-RECOVERY",
+      "title": "New Hampshire health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "NH",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "statutory exceptions"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes N.H. RSA § 420-J:8-b; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "N.H. RSA § 420-J:8-b",
+        "excerpt": "does not exceed 12 months"
+      }
+    },
+    {
+      "id": "STATE-NJ-OVERPAYMENT-RECOVERY",
+      "title": "New Jersey health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "NJ",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "claims submitted fraudulently",
+        "providers with a pattern of inappropriate billing",
+        "coordination of benefits"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes N.J.S.A. § 17B:27-44.2; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "N.J.S.A. § 17B:27-44.2",
+        "excerpt": "later than 18 months after the date the first payment on the claim was made"
+      }
+    },
+    {
+      "id": "STATE-NC-OVERPAYMENT-RECOVERY",
+      "title": "North Carolina health insurers: overpayment recovery limit (24 months)",
+      "jurisdiction": "NC",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 24,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "reasonable belief of fraud or intentional misconduct",
+        "provider receiving payment for the same service from a government payor"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes N.C. Gen. Stat. § 58-3-225; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "N.C. Gen. Stat. § 58-3-225",
+        "excerpt": "shall be made within the two years after the date of the original claim payment"
+      }
+    },
+    {
+      "id": "STATE-OH-OVERPAYMENT-RECOVERY",
+      "title": "Ohio health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "OH",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "statutory exceptions",
+        "payments made before the SB 162 effective date may be governed by the prior 24-month limit"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Ohio Rev. Code § 3901.388; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Ohio Rev. Code § 3901.388",
+        "excerpt": "not later than two years after the payment was made to the provider"
+      }
+    },
+    {
+      "id": "STATE-OK-OVERPAYMENT-RECOVERY",
+      "title": "Oklahoma health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "OK",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud",
+        "agreement to refund"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 36 Okla. Stat. § 1250.5; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "36 Okla. Stat. § 1250.5",
+        "excerpt": "more than eighteen (18) months after the payment is made"
+      }
+    },
+    {
+      "id": "STATE-TN-OVERPAYMENT-RECOVERY",
+      "title": "Tennessee health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "TN",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud committed by the health care provider"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Tenn. Code § 56-7-110; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Tenn. Code § 56-7-110",
+        "excerpt": "during the eighteen-month period after the date that the health insurance entity paid the claim"
+      }
+    },
+    {
+      "id": "STATE-UT-OVERPAYMENT-RECOVERY",
+      "title": "Utah health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "UT",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "coordination of benefits error (24 months)",
+        "Medicaid, Medicare or CHIP recovery (36 months)"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Utah Code § 31A-26-301.6(14); the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Utah Code § 31A-26-301.6(14)",
+        "excerpt": "within 12 months of the amount improperly paid for any other reason"
+      }
+    },
+    {
+      "id": "STATE-VT-OVERPAYMENT-RECOVERY",
+      "title": "Vermont health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "VT",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "reasonable belief of fraud or intentional misconduct",
+        "provider already paid",
+        "service not delivered",
+        "adjustment with another health plan",
+        "legal action"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 18 V.S.A. § 9418; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "18 V.S.A. § 9418",
+        "excerpt": "shall be permitted beyond 12 months from the date of payment"
+      }
+    },
+    {
+      "id": "STATE-PA-OVERPAYMENT-RECOVERY",
+      "title": "Pennsylvania health insurers: overpayment recovery limit (24 months)",
+      "jurisdiction": "PA",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 24,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "exceptions in 40 Pa.C.S. § 3804 (retroactive denial)",
+        "self-insured ERISA plans",
+        "government-program coverage"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "40 Pa.C.S. § 3803 (Pennsylvania General Assembly)",
+        "sourceUrl": "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/40/00.038.003.000..HTM",
+        "deepLink": "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/40/00.038.003.000..HTM#:~:text=an%20insurer%20may%20not%20retroactively%20deny%20reimbursement%20as%20a",
+        "locator": "40 Pa.C.S. § 3803",
+        "excerpt": "an insurer may not retroactively deny reimbursement as a result of an overpayment determination more than 24 months after the date the insurer initially paid the health care provider"
+      }
+    },
+    {
+      "id": "STATE-ME-OVERPAYMENT-RECOVERY",
+      "title": "Maine health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "ME",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "listed reasons permitting denial from 12 to 36 months",
+        "claim submitted fraudulently",
+        "services covered by Title XVIII, XIX or XXI of the Social Security Act",
+        "self-insured ERISA plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "24-A M.R.S. § 4303 (Maine Legislature)",
+        "sourceUrl": "https://legislature.maine.gov/statutes/24-A/title24-Asec4303.html",
+        "deepLink": "https://legislature.maine.gov/statutes/24-A/title24-Asec4303.html#:~:text=the%20time%20that%20has%20elapsed%20since%20the%20date%20of",
+        "locator": "24-A M.R.S. § 4303(10)",
+        "excerpt": "the time that has elapsed since the date of payment of the previously paid claim does not exceed 12 months"
+      }
+    },
+    {
+      "id": "STATE-OR-OVERPAYMENT-RECOVERY",
+      "title": "Oregon health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "OR",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraud or abuse of billing",
+        "coordination of benefits",
+        "self-insured ERISA plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "ORS 743B.451 (oregon.public.law copy of the code)",
+        "sourceUrl": "https://oregon.public.law/statutes/ors_743B.451",
+        "deepLink": "https://oregon.public.law/statutes/ors_743B.451#:~:text=Requests%20the%20refund%20in%20writing%20on%20or%20before%20the",
+        "locator": "ORS 743B.451",
+        "excerpt": "Requests the refund in writing on or before the last day of the period specified by the contract with the health care provider or 18 months after the date the payment was made, whichever is earlier"
+      }
+    },
+    {
+      "id": "STATE-MN-OVERPAYMENT-RECOVERY",
+      "title": "Minnesota health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "MN",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "coordination of benefits",
+        "subrogation",
+        "duplicate claims",
+        "retroactive terminations",
+        "fraud and abuse",
+        "pharmacy contracts (paragraph (b))"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Minnesota Statutes § 62Q.75",
+        "sourceUrl": "https://www.revisor.mn.gov/statutes/cite/62Q.75",
+        "deepLink": "https://www.revisor.mn.gov/statutes/cite/62Q.75#:~:text=the%20contract%20must%20provide%20a%2012%2Dmonth%20deadline%20on%20all",
+        "locator": "Minn. Stat. § 62Q.75, subd. 4(a)",
+        "excerpt": "the contract must provide a 12-month deadline on all adjustments to and recoupments of the payment"
+      }
+    },
+    {
+      "id": "STATE-SD-OVERPAYMENT-RECOVERY",
+      "title": "South Dakota health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "SD",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "claim determined to be fraudulent or to involve waste or abuse",
+        "adjustment with a different carrier or payor",
+        "casualty insurance",
+        "self-insured ERISA plan",
+        "Medicare, Medicaid or other federal law",
+        "workers compensation",
+        "provider or member already paid"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "South Dakota 2026 Session Law, Chapter 200 (House Bill 1292), new section in chapter 58-17H",
+        "sourceUrl": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/306319.pdf?Year=2026",
+        "deepLink": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/306319.pdf?Year=2026#:~:text=a%20previously%20paid%20claim%20may%20be%20recouped%2C%20recovered%2C%20or",
+        "locator": "S.D. 2026 Session Laws ch. 200 (HB 1292), new section in SDCL ch. 58-17H",
+        "excerpt": "a previously paid claim may be recouped, recovered, or retroactively denied by the health carrier only within eighteen months from the date the claim payment was made, if the health carrier has provided written notice of the reason to the provider"
+      }
+    },
+    {
+      "id": "STATE-MS-OVERPAYMENT-RECOVERY",
+      "title": "Mississippi health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "MS",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "audits opened before July 1, 2012",
+        "pharmacy audits",
+        "Medicaid program claims (five-year audit limit)",
+        "misrepresentation, omission, concealment or fraud by the provider"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-source",
+        "sourceTitle": "SECONDARY SOURCE — Mississippi HB 1011 (2021) as introduced, quoting existing Miss. Code § 83-41-219; current code text not yet checked",
+        "sourceUrl": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/1000-1099/HB1011IN.pdf",
+        "deepLink": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/1000-1099/HB1011IN.pdf",
+        "locator": "Miss. Code § 83-41-219(2)",
+        "excerpt": "more than twelve (12) months after the payment of an"
+      }
+    },
+    {
+      "id": "STATE-NM-OVERPAYMENT-RECOVERY",
+      "title": "New Mexico health insurers: overpayment recovery limit (18 months)",
+      "jurisdiction": "NM",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 18,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "health care professional miscoding",
+        "claim submission error",
+        "suspected fraud and abuse",
+        "adjustments required by other federal or state agencies"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "13.10.22 NMAC (New Mexico State Records Center)",
+        "sourceUrl": "https://www.srca.nm.gov/parts/title13/13.010.0022.html",
+        "deepLink": "https://www.srca.nm.gov/parts/title13/13.010.0022.html#:~:text=Retroactive%20adjustments%20by%20a%20health%20care%20insurer%20or%20MHCP",
+        "locator": "13.10.22.12(R) NMAC",
+        "excerpt": "Retroactive adjustments by a health care insurer or MHCP for overpayment must be made within 18 months absent health care professional miscoding, claim submission error, suspected fraud and abuse; or retroactive adjustments required by other federal or state agencies"
+      }
+    },
+    {
+      "id": "STATE-ND-OVERPAYMENT-RECOVERY",
+      "title": "North Dakota health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "ND",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "reasonable belief of fraud, abuse or other intentional misconduct",
+        "recovery required by or at the request of a self-insured plan",
+        "recovery required by a state or federal government plan"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "providerTypes": [
+        "dentist"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "N.D.C.C. chapter 26.1-47, section 26.1-47-02.3 (North Dakota Legislative Council)",
+        "sourceUrl": "https://ndlegis.gov/cencode/t26-1c47.pdf",
+        "deepLink": "https://ndlegis.gov/cencode/t26-1c47.pdf#:~:text=initiate%20overpayment%20recovery%20efforts%20more%20than%20twelve%20months%20after",
+        "locator": "N.D.C.C. § 26.1-47-02.3(4) (dental insurers only)",
+        "excerpt": "initiate overpayment recovery efforts more than twelve months after the original payment for the claim was made"
+      }
+    },
+    {
+      "id": "STATE-MA-OVERPAYMENT-RECOVERY",
+      "title": "Massachusetts health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "MA",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "claimSubmissionDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "claim submitted fraudulently",
+        "claim or services subject to legal action",
+        "provider or insured already paid for the services",
+        "services not delivered",
+        "self-insured, Medicare and other federally regulated plans"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "providerTypes": [
+        "behavioral health",
+        "mental health",
+        "substance use disorder",
+        "aba",
+        "psychologist",
+        "counselor",
+        "social worker"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "M.G.L. c. 176G, § 6B (Massachusetts Legislature; text read from an Internet Archive copy dated 2026-01-16)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXII/Chapter176G/Section6B",
+        "deepLink": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXII/Chapter176G/Section6B#:~:text=An%20insurer%20or%20other%20entity%20shall%20not%20impose%20a",
+        "locator": "M.G.L. c. 176G, § 6B(b) (behavioral health services only)",
+        "excerpt": "An insurer or other entity shall not impose a retroactive claims denial for behavioral health services on a provider unless: (i) less than 12 months have elapsed from the time of submission of the claim by the provider to the insurer or other entity"
+      }
+    },
+    {
+      "id": "STATE-NV-OVERPAYMENT-RECOVERY",
+      "title": "Nevada health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "NV",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "reasonable belief of fraud, abuse or other intentional misconduct",
+        "initiated by or at the request of a self-insured employer",
+        "dental care covered by the Public Employees’ Benefits Program"
+      ],
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "providerTypes": [
+        "dentist"
+      ],
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "NRS 687B.725 (Nevada Legislature; text read from an Internet Archive copy)",
+        "sourceUrl": "https://www.leg.state.nv.us/nrs/NRS-687B.html",
+        "deepLink": "https://www.leg.state.nv.us/nrs/NRS-687B.html#:~:text=shall%20not%20attempt%20to%20recover%20an%20overpayment%20more%20than",
+        "locator": "NRS 687B.725(3) (dental coverage only)",
+        "excerpt": "shall not attempt to recover an overpayment more than 12 months after the date of the overpayment"
+      }
+    },
+    {
+      "id": "STATE-DC-OVERPAYMENT-RECOVERY",
+      "title": "District of Columbia health insurers: overpayment recovery limit (6 months)",
+      "jurisdiction": "DC",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 6,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "coordination of benefits (18 months)"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes D.C. Code § 31-3133(a); the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "D.C. Code § 31-3133(a)",
+        "excerpt": "during the 6-month period after the date that the health insurer paid the health care provider"
+      }
+    },
+    {
+      "id": "STATE-NE-OVERPAYMENT-RECOVERY",
+      "title": "Nebraska health insurers: overpayment recovery limit (6 months)",
+      "jurisdiction": "NE",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 6,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "error prompted by claimant representations or nondisclosures (15 days after documented discovery)"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 210 Neb. Admin. Code ch. 60, § 011; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "210 Neb. Admin. Code ch. 60, § 011",
+        "excerpt": "has notified the claimant within six (6) months of the date of the error"
+      }
+    },
+    {
+      "id": "STATE-IA-OVERPAYMENT-RECOVERY",
+      "title": "Iowa health insurers: overpayment recovery limit (24 months)",
+      "jurisdiction": "IA",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 24,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "reasonable basis to suspect fraud"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Iowa Admin. Code r. 191-15.33; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Iowa Admin. Code r. 191-15.33",
+        "excerpt": "an insurer may not audit a claim more than two years after the submission of the claim to the insurer"
+      }
+    },
+    {
+      "id": "STATE-IL-OVERPAYMENT-RECOVERY",
+      "title": "Illinois health insurers: overpayment recovery limit (12 months)",
+      "jurisdiction": "IL",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 12,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "statutory exceptions in 215 ILCS 5/368d",
+        "self-insured ERISA plans",
+        "government-program coverage"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-source",
+        "sourceTitle": "SECONDARY SOURCE — Illinois Chiropractic Society (Oct. 2, 2024) describing 215 ILCS 5/368d(c); the statute text has not yet been checked",
+        "sourceUrl": "https://ilchiro.org/?p=26457",
+        "deepLink": "https://ilchiro.org/?p=26457",
+        "locator": "215 ILCS 5/368d(c)",
+        "excerpt": "now restricts recoupments to within 12 months after the original payment was made"
+      }
+    },
+    {
+      "id": "STATE-WY-OVERPAYMENT-RECOVERY",
+      "title": "Wyoming health insurers: overpayment recovery limit (24 months)",
+      "jurisdiction": "WY",
+      "programClass": "commercial-health-plan",
+      "windowMonths": 24,
+      "anchorField": "paymentReceivedDate",
+      "recoveryField": "recoveryInitiatedDate",
+      "noticeDays": null,
+      "exceptions": [
+        "fraudulent claim"
+      ],
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Wyo. Stat. § 26-15-137; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Wyo. Stat. § 26-15-137",
+        "excerpt": "more than two (2) years after the date the claim was paid"
+      }
     }
   ]
 }

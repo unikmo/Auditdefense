@@ -1,10 +1,13 @@
 (() => {
 const normalize=value=>String(value||'').toLowerCase().trim();
 
+const squash=value=>normalize(value).replace(/[^a-z0-9]/g,'');
+function payerMatches(rulePayer,casePayer){const a=squash(rulePayer),b=squash(casePayer);return !!a&&!!b&&(a===b||(Math.min(a.length,b.length)>=4&&(a.includes(b)||b.includes(a))))}
+
 function appliesToCase(rule,context){
   const a=rule.appliesTo||{};
   if(a.state&&normalize(a.state)!==normalize(context.state))return false;
-  if(a.payer&&normalize(a.payer)!==normalize(context.payer))return false;
+  if(a.payer&&!payerMatches(a.payer,context.payer))return false;
   if(a.program&&!normalize(context.program).includes(normalize(a.program))&&!normalize(a.program).includes(normalize(context.program)))return false;
   return true;
 }

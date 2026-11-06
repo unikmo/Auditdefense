@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import gates from '../public/production-gates.js';
+const cfg=JSON.parse(fs.readFileSync(new URL('../data/production-gates.json',import.meta.url)));
+assert.equal(gates.phiAllowed(cfg),false,'Shipped config must keep PHI blocked.');
+assert.equal(gates.phiAllowed(null),false);
+assert.equal(gates.phiAllowed({gates:[]}),false,'Empty gate list fails closed.');
+const done=g=>({...g,status:'complete',evidence:'doc ref'});
+assert.equal(gates.phiAllowed({gates:cfg.gates.map(done)}),true);
+assert.equal(gates.phiAllowed({gates:cfg.gates.map(g=>({...g,status:'complete'}))}),false,'Complete without evidence does not count.');
+const one=cfg.gates.map(done);one[3]={...one[3],status:'open'};
+assert.deepEqual(gates.evaluate({gates:one}).open,[cfg.gates[3].id]);
+console.log('Production gate tests passed.');

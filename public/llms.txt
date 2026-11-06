@@ -23,6 +23,7 @@ AuditDefend is a healthcare payer-audit response workspace for providers and ind
 - Medicaid provider audit: https://auditdefense.vercel.app/medicaid-provider-audit
 - Behavioral-health audit response: https://auditdefense.vercel.app/behavioral-health-audit-response
 - ABA provider audit: https://auditdefense.vercel.app/aba-provider-audit
+- PT, OT and speech therapy audit: https://auditdefense.vercel.app/pt-ot-slp-audit-response
 - NPI and provider-enrollment audit findings: https://auditdefense.vercel.app/npi-provider-enrollment-audit
 
 ## Important boundaries

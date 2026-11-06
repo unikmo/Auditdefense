@@ -138,6 +138,24 @@ service cloud.firestore {
       allow delete:if signedIn()&&resource.data.claimantUid==request.auth.uid&&resource.data.status=='Pending';
     }
 
+    // Per-case key wraps: copies of the case data key, each locked by a different secret (a case password or a
+    // recovery code; see public/case-crypto.js). The server never sees a secret or the key. Case participants can
+    // read wraps and add new ones (this is how password reset and recovery work). Wraps cannot be edited.
+    // Recovery wraps can be removed only by their creator; password wraps by any participant (to cut off a leaked password).
+    function validKeyWrap(d){return d.keys().hasOnly(['version','kind','salt','iterations','iv','wrappedKey','createdByUid','createdAt'])&&d.version==1&&d.kind in ['password','recovery']&&d.salt is string&&d.iv is string&&d.wrappedKey is string&&d.iterations is int&&d.iterations>=600000&&d.createdByUid==request.auth.uid&&d.createdAt==request.time;}
+    function isAnyCaseParticipant(caseId){return isProviderParticipant(caseId)||isAttorneyParticipant(caseId)||isCaseParticipant(caseId);}
+    function caseCreatorUid(caseId){return providerCaseExists(caseId)?providerCaseData(caseId).createdByUid:(caseExists(caseId)?attorneyCaseData(caseId).createdByUid:null);}
+    function verifiedEmail(){return signedIn()&&request.auth.token.email_verified==true;}
+    match /caseKeys/{caseId}/wraps/{wrapId}{
+      allow read:if isAnyCaseParticipant(caseId);
+      // Adding a wrap needs a verified email and case membership, and is stamped with who/when. A wrap added by someone
+      // without the case key cannot open any file; it only helps if they already know the key.
+      allow create:if verifiedEmail()&&isAnyCaseParticipant(caseId)&&validKeyWrap(request.resource.data);
+      allow update:if false;
+      // Only the wrap's creator or the case creator can remove a wrap, so one participant cannot lock the other out.
+      allow delete:if verifiedEmail()&&isAnyCaseParticipant(caseId)&&(resource.data.createdByUid==request.auth.uid||caseCreatorUid(caseId)==request.auth.uid);
+    }
+
     match /{document=**}{allow read,write:if false;}
   }
 }

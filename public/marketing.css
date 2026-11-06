@@ -207,3 +207,15 @@ a{color:inherit}
 .resource-card b{font-size:11px;color:var(--brand-orange-deep)}
 @media(max-width:960px){.seo-hero-grid,.seo-main{grid-template-columns:1fr}.seo-aside{position:static}.resource-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.seo-hero{padding:50px 0 42px}.seo-hero h1{font-size:43px}.seo-card-grid,.resource-grid{grid-template-columns:1fr}.seo-main{padding:52px 0 62px;gap:34px}.seo-content section{padding-bottom:38px;margin-bottom:38px}}
+
+/* Convert-stage additions: trust strip, quiet credibility line, next steps, who-it's-for */
+.m-trust-strip{margin:30px 0 0;padding:12px 18px;border:1px solid var(--brand-line);border-radius:10px;background:#fbf8f5;font-size:13px;line-height:1.6;color:var(--brand-muted);text-align:center}
+.m-quiet{margin:12px 0 26px;font-size:13px;line-height:1.6;color:var(--brand-muted);text-align:center}
+.m-price-note{display:block;margin-top:12px;font-size:12px;line-height:1.5;color:var(--brand-muted)}
+.m-next-steps{margin-top:34px;padding:30px 34px;border:1px solid var(--brand-line);border-radius:14px;background:#fbf8f5}
+.m-next-steps h3{margin:0 0 14px;font-size:22px;letter-spacing:-.02em}
+.m-next-steps ol{margin:0 0 22px;padding-left:22px;font-size:15px;line-height:1.75;color:var(--brand-muted)}
+.who-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+.who-grid .seo-card{margin:0}
+.who-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+@media(max-width:760px){.who-grid{grid-template-columns:1fr}.m-next-steps{padding:24px 20px}}

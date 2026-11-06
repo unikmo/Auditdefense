@@ -8,7 +8,7 @@ const indexable=[
   ['index.html','/'],['provider.html','/provider'],['attorney.html','/attorney'],['attorneys.html','/attorneys'],
   ['resources.html','/resources'],['healthcare-payer-audit-response.html','/healthcare-payer-audit-response'],
   ['healthcare-overpayment-demand.html','/healthcare-overpayment-demand'],['medicaid-provider-audit.html','/medicaid-provider-audit'],
-  ['behavioral-health-audit-response.html','/behavioral-health-audit-response'],['aba-provider-audit.html','/aba-provider-audit'],
+  ['behavioral-health-audit-response.html','/behavioral-health-audit-response'],['aba-provider-audit.html','/aba-provider-audit'],['pt-ot-slp-audit-response.html','/pt-ot-slp-audit-response'],['who-its-for.html','/who-its-for'],
   ['npi-provider-enrollment-audit.html','/npi-provider-enrollment-audit'],['policies.html','/policies']
 ];
 const noindex=['app.html','attorney-workspace.html','provider-onboarding.html','provider-workspace.html','auth.html'];

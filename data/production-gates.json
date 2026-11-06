@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "note": "A gate is complete only when status is 'complete' AND evidence (document ref, signer, date) is filled in. PHI stays blocked until every gate is complete. Edit this file only after the real-world step is done.",
+  "gates": [
+    {"id":"baa-gcp","category":"HIPAA","title":"Signed BAA with Google Cloud covering every service used","owner":"Founder","status":"open","evidence":""},
+    {"id":"baa-hosting","category":"HIPAA","title":"BAA (or HIPAA-eligible hosting) for the web host; Vercel BAA needs Enterprise","owner":"Founder","status":"open","evidence":""},
+    {"id":"baa-email","category":"HIPAA","title":"BAA with any email/notification vendor that could carry PHI","owner":"Founder","status":"open","evidence":""},
+    {"id":"risk-assessment","category":"HIPAA","title":"HIPAA Security Rule risk assessment completed and documented","owner":"Founder + compliance advisor","status":"open","evidence":""},
+    {"id":"policies","category":"HIPAA","title":"Privacy, security, retention and breach-response policies adopted","owner":"Founder + compliance advisor","status":"open","evidence":""},
+    {"id":"mfa-roles","category":"Security","title":"MFA enforced and role model in place; orgId claims provisioned server-side","owner":"Engineering","status":"open","evidence":""},
+    {"id":"malware-scan","category":"Security","title":"Malware/quarantine scan before uploaded files enter the evidence workflow","owner":"Engineering","status":"open","evidence":""},
+    {"id":"audit-logging","category":"Security","title":"Immutable security logging for reads, exports, counsel sharing, binder generation","owner":"Engineering","status":"open","evidence":""},
+    {"id":"rules-tested","category":"Security","title":"Firestore and Storage rules deployed and passing emulator negative tests (npm run test:rules)","owner":"Engineering","status":"open","evidence":""},
+    {"id":"backup-restore","category":"Security","title":"Backup/restore and incident-response procedures tested","owner":"Engineering","status":"open","evidence":""},
+    {"id":"legal-upl","category":"Legal","title":"Healthcare/regulatory attorney review: unauthorized practice of law boundary","owner":"Outside counsel","status":"open","evidence":""},
+    {"id":"legal-terms","category":"Legal","title":"Terms of service, privacy policy and attorney-referral model reviewed","owner":"Outside counsel","status":"open","evidence":""},
+    {"id":"powergm-schema","category":"Integration","title":"PowerGM redacted export/API schema supplied and validated","owner":"Founder","status":"open","evidence":""},
+    {"id":"phi-approval","category":"Authorization","title":"Written production/PHI authorization after all gates above","owner":"Founder","status":"open","evidence":""}
+  ]
+}

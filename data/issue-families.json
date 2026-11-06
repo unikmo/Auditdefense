@@ -50,6 +50,13 @@
       "reviewQuestion": "Do the codes, modifiers, units, and code combinations conform to the applicable coding authority and policy version?",
       "evidenceExamples": ["Claim detail", "Code-set version", "NCCI edit or payer coding policy"],
       "boundary": "Coding flags require source-linked human review and are not automated fraud findings."
+    },
+    {
+      "id": "medical-necessity",
+      "label": "Medical necessity",
+      "reviewQuestion": "What does the record show about why the service was needed, and which payer or program criteria did the reviewer apply?",
+      "evidenceExamples": ["Evaluation or assessment", "Progress and functional measures", "Payer or program coverage criteria"],
+      "boundary": "The system organizes the clinical record against the stated criteria; the medical-necessity determination remains with qualified clinical and legal reviewers."
     }
   ]
 }

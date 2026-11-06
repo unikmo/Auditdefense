@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "scope": "Initial current-source rule map for NY Medicaid + Anthem NY",
-  "generatedAt": "2026-09-19",
+  "scope": "Source-verified rule map: NY Medicaid + Anthem NY; federal Medicare (incl. Medicare Advantage, NCD/LCD), Medicaid enrollment and ERISA; California and Florida overpayment statutes; UnitedHealthcare, Fidelis/Centene and EmblemHealth policies",
+  "generatedAt": "2026-11-05",
   "notice": "These are source-attribution rules, not automated legal conclusions. Historical DOS applicability must be established from the version effective on the DOS.",
   "rules": [
     {
@@ -164,6 +164,2811 @@
         "deepLink": "https://providers.anthem.com/new-york-provider/claims/claims-submissions-and-disputes",
         "locator": "Provider payment disputes",
         "excerpt": "Provider payment disputes apply when a provider disagrees with a finalized claim outcome."
+      }
+    },
+    {
+      "id": "MEDICARE-SUFFICIENT-INFORMATION-424-5",
+      "title": "Medicare payment requires sufficient information",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-424-5",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-424.5",
+      "category": "documentation",
+      "issueFamilies": [
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Federal regulation lists furnishing sufficient information to determine whether payment is due as a condition of Medicare payment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 424.5",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-424.5",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-424.5#:~:text=must%20furnish%20to%20the%20intermediary%20or%20carrier%20sufficient%20information",
+        "locator": "42 CFR 424.5(a)(6)",
+        "excerpt": "must furnish to the intermediary or carrier sufficient information to determine whether payment is due and the amount of payment"
+      }
+    },
+    {
+      "id": "MEDICARE-REASONABLE-NECESSARY-1862",
+      "title": "Medicare covers only reasonable and necessary services",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "usc-42-1395y",
+      "sourceUrl": "https://www.law.cornell.edu/uscode/text/42/1395y",
+      "category": "medical-necessity",
+      "issueFamilies": [
+        "Medical necessity"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The Social Security Act excludes from Medicare payment items and services that are not reasonable and necessary for diagnosis or treatment, subject to the statute’s stated exceptions.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 U.S.C. § 1395y (Social Security Act § 1862)",
+        "sourceUrl": "https://www.law.cornell.edu/uscode/text/42/1395y",
+        "deepLink": "https://www.law.cornell.edu/uscode/text/42/1395y#:~:text=are%20not%20reasonable%20and%20necessary%20for%20the%20diagnosis%20or",
+        "locator": "SSA § 1862(a)(1)(A); 42 U.S.C. 1395y(a)(1)(A)",
+        "excerpt": "are not reasonable and necessary for the diagnosis or treatment of illness or injury or to improve the functioning of a malformed body member"
+      }
+    },
+    {
+      "id": "MEDICARE-THERAPY-PLAN-REQUIRED-410-61",
+      "title": "Outpatient therapy requires a written plan of treatment",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-410-61",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-410.61",
+      "category": "plan-of-care",
+      "issueFamilies": [
+        "Assessment / treatment plan"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Outpatient rehabilitation services must be furnished under a written plan of treatment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 410.61",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-410.61",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-410.61#:~:text=must%20be%20furnished%20under%20a%20written%20plan%20of%20treatment",
+        "locator": "42 CFR 410.61(a)",
+        "excerpt": "must be furnished under a written plan of treatment"
+      }
+    },
+    {
+      "id": "MEDICARE-THERAPY-PLAN-BEFORE-TREATMENT-410-61",
+      "title": "Therapy plan is established before treatment begins",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-410-61",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-410.61",
+      "category": "plan-of-care",
+      "issueFamilies": [
+        "Assessment / treatment plan"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The plan of treatment is established before treatment begins by a physician, the treating therapist, or another listed practitioner.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 410.61",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-410.61",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-410.61#:~:text=The%20plan%20is%20established%20before%20treatment%20is%20begun%20by",
+        "locator": "42 CFR 410.61(b)",
+        "excerpt": "The plan is established before treatment is begun by one of the following"
+      }
+    },
+    {
+      "id": "MEDICARE-THERAPY-PLAN-CONTENT-410-61",
+      "title": "Therapy plan content",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-410-61",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-410.61",
+      "category": "plan-of-care",
+      "issueFamilies": [
+        "Assessment / treatment plan"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The plan states the type, amount, frequency and duration of services, and indicates the diagnosis and anticipated goals.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 410.61",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-410.61",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-410.61#:~:text=prescribes%20the%20type%2C%20amount%2C%20frequency%2C%20and%20duration%20of%20the",
+        "locator": "42 CFR 410.61(c)",
+        "excerpt": "prescribes the type, amount, frequency, and duration of the physical therapy, occupational therapy, or speech-language pathology services to be furnished to the individual, and indicates the diagnosis and anticipated goals"
+      }
+    },
+    {
+      "id": "MEDICARE-THERAPY-PLAN-CHANGES-410-61",
+      "title": "Therapy plan changes must be written and signed",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-410-61",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-410.61",
+      "category": "plan-of-care",
+      "issueFamilies": [
+        "Assessment / treatment plan",
+        "Signatures / authentication"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Changes to the plan must be made in writing and signed by a listed practitioner.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 410.61",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-410.61",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-410.61#:~:text=Are%20made%20in%20writing%20and%20signed%20by%20one%20of",
+        "locator": "42 CFR 410.61(d)(1)",
+        "excerpt": "Are made in writing and signed by one of the following"
+      }
+    },
+    {
+      "id": "MEDICARE-THERAPY-PLAN-MANUAL-220-1-2",
+      "title": "Therapy plan: signature, professional identity and date",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "cms-mbpm-ch15",
+      "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c15.pdf",
+      "category": "plan-of-care",
+      "issueFamilies": [
+        "Assessment / treatment plan",
+        "Signatures / authentication"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The Medicare Benefit Policy Manual states that the signature, professional identity and date of the person who established the therapy plan must be recorded with the plan.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_MANUAL_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Medicare Benefit Policy Manual, Chapter 15",
+        "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c15.pdf",
+        "deepLink": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c15.pdf#page=157",
+        "locator": "PDF page 157 — Ch. 15 § 220.1.2.A",
+        "excerpt": "The signature and professional identity (e.g., MD, OTR/L) of the person who established the plan, and the date it was established must be recorded with the plan."
+      }
+    },
+    {
+      "id": "MEDICARE-THERAPY-CERTIFICATION-MANUAL-220-1-3",
+      "title": "Therapy plan certification requires a dated signature",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "cms-mbpm-ch15",
+      "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c15.pdf",
+      "category": "plan-of-care",
+      "issueFamilies": [
+        "Assessment / treatment plan",
+        "Signatures / authentication"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Certification of the therapy plan of care requires a dated signature on the plan or another document indicating approval.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_MANUAL_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Medicare Benefit Policy Manual, Chapter 15",
+        "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c15.pdf",
+        "deepLink": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c15.pdf#page=146",
+        "locator": "PDF page 146 — Ch. 15 § 220.1.3.A",
+        "excerpt": "Certification requires a dated signature on the plan of care or some other document that indicates approval of the plan of care."
+      }
+    },
+    {
+      "id": "MEDICARE-TIMED-CODE-UNITS-CPM5",
+      "title": "Timed-code unit table (8-minute rule)",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "cms-cpm-ch5",
+      "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c05.pdf",
+      "category": "timed-code-units",
+      "issueFamilies": [
+        "Authorization / units",
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The Claims Processing Manual converts total timed-code minutes to billable units; 8 through 22 minutes is one unit.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_MANUAL_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Medicare Claims Processing Manual, Chapter 5",
+        "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c05.pdf",
+        "deepLink": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c05.pdf#page=40",
+        "locator": "PDF page 40 — Ch. 5 § 20.2",
+        "excerpt": "1 unit: 8 minutes through 22 minutes"
+      }
+    },
+    {
+      "id": "MEDICARE-PT-OT-SLP-RETRO-BILLING-424-521",
+      "title": "Retrospective billing before the enrollment effective date",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-424-521",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-424.521",
+      "category": "provider-enrollment",
+      "issueFamilies": [
+        "Provider / NPI enrollment",
+        "NPI enrollment on DOS"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Physical therapists, occupational therapists and speech-language pathologists, among others, may retrospectively bill up to 30 days before the effective date if circumstances precluded enrollment in advance.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 424.521",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-424.521",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-424.521#:~:text=may%20retrospectively%20bill%20for%20services%20when%20the%20provider%20or",
+        "locator": "42 CFR 424.521(a)(1)",
+        "excerpt": "may retrospectively bill for services when the provider or supplier has met all program requirements"
+      }
+    },
+    {
+      "id": "MEDICARE-HOME-HEALTH-FACE-TO-FACE-424-22",
+      "title": "Home health face-to-face encounter timing",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-424-22",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-424.22",
+      "category": "home-health",
+      "issueFamilies": [
+        "Documentation support",
+        "Medical necessity"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Home health certification requires a face-to-face encounter within 90 days before or 30 days after the start of care.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 424.22",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-424.22",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-424.22#:~:text=occurred%20no%20more%20than%2090%20days%20prior%20to%20the",
+        "locator": "42 CFR 424.22(a)(1)(v)",
+        "excerpt": "occurred no more than 90 days prior to the home health start of care date or within 30 days of the start of the home health care"
+      }
+    },
+    {
+      "id": "MEDICARE-HOSPICE-CERTIFICATION-BEFORE-CLAIM-418-22",
+      "title": "Hospice certification before claim submission",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-418-22",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-418.22",
+      "category": "hospice",
+      "issueFamilies": [
+        "Documentation support",
+        "Signatures / authentication"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Subject to stated exceptions, the hospice must obtain the written certification of terminal illness before submitting a claim.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 418.22",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-418.22",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-418.22#:~:text=the%20hospice%20must%20obtain%20the%20written%20certification%20before%20it",
+        "locator": "42 CFR 418.22(a)(2)",
+        "excerpt": "the hospice must obtain the written certification before it submits a claim for payment"
+      }
+    },
+    {
+      "id": "MEDICARE-HOSPICE-PROGNOSIS-418-22",
+      "title": "Hospice certification prognosis statement",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-418-22",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-418.22",
+      "category": "hospice",
+      "issueFamilies": [
+        "Medical necessity",
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The certification must specify a prognosis of a life expectancy of 6 months or less if the terminal illness runs its normal course.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 418.22",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-418.22",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-418.22#:~:text=prognosis%20is%20for%20a%20life%20expectancy%20of%206%20months",
+        "locator": "42 CFR 418.22(b)(1)",
+        "excerpt": "prognosis is for a life expectancy of 6 months or less if the terminal illness runs its normal course"
+      }
+    },
+    {
+      "id": "MEDICARE-HOSPICE-CLINICAL-INFORMATION-418-22",
+      "title": "Hospice clinical information supporting prognosis",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-418-22",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-418.22",
+      "category": "hospice",
+      "issueFamilies": [
+        "Documentation support",
+        "Medical necessity"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Clinical information supporting the prognosis must accompany the certification and be filed in the medical record.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 418.22",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-418.22",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-418.22#:~:text=Clinical%20information%20and%20other%20documentation%20that%20support%20the%20medical",
+        "locator": "42 CFR 418.22(b)(2)",
+        "excerpt": "Clinical information and other documentation that support the medical prognosis must accompany the certification"
+      }
+    },
+    {
+      "id": "MEDICARE-HOSPICE-RECERTIFICATION-MANUAL-CH9",
+      "title": "Hospice certification for each benefit period",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "cms-mbpm-ch9",
+      "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c09.pdf",
+      "category": "hospice",
+      "issueFamilies": [
+        "Documentation support",
+        "Signatures / authentication"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The Medicare Benefit Policy Manual repeats that written certification is required for each benefit period.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_MANUAL_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Medicare Benefit Policy Manual, Chapter 9",
+        "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c09.pdf",
+        "deepLink": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c09.pdf#page=6",
+        "locator": "PDF page 6 — Ch. 9",
+        "excerpt": "The hospice must obtain written certification of terminal illness for each benefit period, even if a single election continues in effect."
+      }
+    },
+    {
+      "id": "MEDICARE-SIGNATURE-REQUIREMENTS-PIM-3-3-2-4",
+      "title": "Medical review signature requirements",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "cms-pim-ch3",
+      "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c03.pdf",
+      "category": "signatures",
+      "issueFamilies": [
+        "Signatures / authentication"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Contractors consider the totality of the medical record when reviewing whether the person responsible for care is identifiable; signatures are required to satisfy specific rules or to resolve authenticity concerns.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_MANUAL_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Medicare Program Integrity Manual, Chapter 3",
+        "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c03.pdf",
+        "deepLink": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c03.pdf#page=42",
+        "locator": "PDF page 42 — PIM Ch. 3 § 3.3.2.4",
+        "excerpt": "Medicare contractors shall consider the totality of the medical record when reviewing for compliance with the above."
+      }
+    },
+    {
+      "id": "MEDICARE-DME-PROOF-OF-DELIVERY-PIM-4",
+      "title": "Supplier proof of delivery retention",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "cms-pim-ch4",
+      "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c04.pdf",
+      "category": "dme",
+      "issueFamilies": [
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Suppliers must keep proof of delivery documentation for seven years from the date of service.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_MANUAL_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Medicare Program Integrity Manual, Chapter 4",
+        "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c04.pdf",
+        "deepLink": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c04.pdf#page=54",
+        "locator": "PDF page 54 — PIM Ch. 4 § 4.26",
+        "excerpt": "Proof of delivery documentation must be maintained in the supplier's files for seven years"
+      }
+    },
+    {
+      "id": "MEDICARE-EXTRAPOLATION-CONDITION-1893F3",
+      "title": "Extrapolation limited to sustained error or failed education",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "usc-42-1395ddd",
+      "sourceUrl": "https://www.law.cornell.edu/uscode/text/42/1395ddd",
+      "category": "extrapolation",
+      "issueFamilies": [
+        "Documentation support",
+        "Medical necessity",
+        "Authorization / units"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "Medicare contractors may not use extrapolation to determine overpayments unless there is a sustained or high level of payment error, or documented educational intervention has failed.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 U.S.C. § 1395ddd (Social Security Act § 1893)",
+        "sourceUrl": "https://www.law.cornell.edu/uscode/text/42/1395ddd",
+        "deepLink": "https://www.law.cornell.edu/uscode/text/42/1395ddd#:~:text=may%20not%20use%20extrapolation%20to%20determine%20overpayment%20amounts%20to",
+        "locator": "SSA § 1893(f)(3); 42 U.S.C. 1395ddd(f)(3)",
+        "excerpt": "may not use extrapolation to determine overpayment amounts to be recovered by recoupment, offset, or otherwise unless the Secretary determines that"
+      }
+    },
+    {
+      "id": "MEDICARE-EXTRAPOLATION-PIM-8",
+      "title": "Statistical sampling and extrapolation instructions",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "cms-pim-ch8",
+      "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c08.pdf",
+      "category": "extrapolation",
+      "issueFamilies": [
+        "Documentation support",
+        "Medical necessity",
+        "Authorization / units"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The Program Integrity Manual gives contractors instructions on statistical sampling and estimating overpayments.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_MANUAL_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Medicare Program Integrity Manual, Chapter 8",
+        "sourceUrl": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c08.pdf",
+        "deepLink": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c08.pdf#page=32",
+        "locator": "PDF page 32 — PIM Ch. 8 § 8.4.1.1",
+        "excerpt": "The purpose of this section is to provide instructions for contractors on the use of statistical sampling in their reviews and estimation of overpayments"
+      }
+    },
+    {
+      "id": "MEDICARE-RECOUPMENT-LIMIT-1893F2",
+      "title": "Recoupment limited while a reconsideration is pending",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "usc-42-1395ddd",
+      "sourceUrl": "https://www.law.cornell.edu/uscode/text/42/1395ddd",
+      "category": "appeal-procedure",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "For a provider or supplier that seeks a qualified independent contractor reconsideration, recoupment may not begin until the reconsideration decision is rendered.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 U.S.C. § 1395ddd (Social Security Act § 1893)",
+        "sourceUrl": "https://www.law.cornell.edu/uscode/text/42/1395ddd",
+        "deepLink": "https://www.law.cornell.edu/uscode/text/42/1395ddd#:~:text=the%20Secretary%20may%20not%20take%20any%20action%20%28or%20authorize",
+        "locator": "SSA § 1893(f)(2)(A); 42 U.S.C. 1395ddd(f)(2)(A)",
+        "excerpt": "the Secretary may not take any action (or authorize any other person, including any medicare contractor, as defined in subparagraph (C)) to recoup the overpayment until the date the decision on the reconsideration has been rendered"
+      }
+    },
+    {
+      "id": "MEDICARE-REDETERMINATION-120-DAYS-405-942",
+      "title": "Redetermination request deadline",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-405-942",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.942",
+      "category": "appeal-procedure",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "A redetermination request must be filed within 120 calendar days of receiving the notice of the initial determination, subject to the good-cause exception.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 405.942",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.942",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-405.942#:~:text=any%20request%20for%20redetermination%20must%20be%20filed%20within%20120",
+        "locator": "42 CFR 405.942(a)",
+        "excerpt": "any request for redetermination must be filed within 120 calendar days from the date a party receives the notice of the initial determination"
+      }
+    },
+    {
+      "id": "MEDICARE-RECONSIDERATION-180-DAYS-405-962",
+      "title": "Reconsideration request deadline",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-405-962",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.962",
+      "category": "appeal-procedure",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "A QIC reconsideration request must be filed within 180 calendar days of receiving the redetermination notice.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 405.962",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.962",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-405.962#:~:text=any%20request%20for%20a%20reconsideration%20must%20be%20filed%20within",
+        "locator": "42 CFR 405.962(a)",
+        "excerpt": "any request for a reconsideration must be filed within 180 calendar days from the date the party receives the notice of the redetermination"
+      }
+    },
+    {
+      "id": "MEDICARE-REOPENING-12-MONTHS-405-980",
+      "title": "Contractor reopening within one year for any reason",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-405-980",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.980",
+      "category": "appeal-procedure",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "A contractor may reopen on its own motion within one year of the initial determination or redetermination for any reason; longer periods apply for good cause and fraud.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 405.980",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.980",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-405.980#:~:text=Within%201%20year%20from%20the%20date%20of%20the%20initial",
+        "locator": "42 CFR 405.980(b)(1)",
+        "excerpt": "Within 1 year from the date of the initial determination or redetermination for any reason"
+      }
+    },
+    {
+      "id": "MEDICARE-OVERPAYMENT-IDENTIFIED-401-305",
+      "title": "When an overpayment is identified",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-401-305",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-401.305",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "A person has identified an overpayment when the person knowingly receives or retains it.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 401.305",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-401.305",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-401.305#:~:text=A%20person%20has%20identified%20an%20overpayment%20when%20the%20person",
+        "locator": "42 CFR 401.305(a)(2)",
+        "excerpt": "A person has identified an overpayment when the person knowingly receives or retains an overpayment"
+      }
+    },
+    {
+      "id": "MEDICARE-OVERPAYMENT-60-DAYS-401-305",
+      "title": "Report and return deadline: 60 days",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-401-305",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-401.305",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "A person who has received an overpayment must report and return it by the later of 60 days after identification or the date any corresponding cost report is due.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 401.305",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-401.305",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-401.305#:~:text=The%20date%20which%20is%2060%20days%20after%20the%20date",
+        "locator": "42 CFR 401.305(b)(1)",
+        "excerpt": "The date which is 60 days after the date on which the overpayment was identified"
+      }
+    },
+    {
+      "id": "MEDICARE-OVERPAYMENT-LOOKBACK-401-305",
+      "title": "Overpayment lookback period: 6 years",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-401-305",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-401.305",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "An overpayment must be reported and returned if identified within 6 years of the date it was received.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 401.305",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-401.305",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-401.305#:~:text=within%206%20years%20of%20the%20date%20the%20overpayment%20was",
+        "locator": "42 CFR 401.305(f)",
+        "excerpt": "within 6 years of the date the overpayment was received"
+      }
+    },
+    {
+      "id": "MEDICAID-ORDERING-REFERRING-ENROLLMENT-455-410",
+      "title": "Medicaid ordering and referring providers must be enrolled",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-455-410",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-455.410",
+      "category": "provider-enrollment",
+      "issueFamilies": [
+        "Provider / NPI enrollment",
+        "NPI enrollment on DOS"
+      ],
+      "appliesTo": {
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "State Medicaid agencies must require ordering or referring professionals to be enrolled as participating providers.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 455.410",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-455.410",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-455.410#:~:text=must%20require%20all%20ordering%20or%20referring%20physicians%20or%20other",
+        "locator": "42 CFR 455.410(b)",
+        "excerpt": "must require all ordering or referring physicians or other professionals providing services under the State plan or under a waiver of the plan to be enrolled as participating providers"
+      }
+    },
+    {
+      "id": "ERISA-APPEAL-180-DAYS-2560-503-1",
+      "title": "Group health plan: at least 180 days to appeal an adverse determination",
+      "authority": "U.S. Department of Labor",
+      "sourceId": "ecfr-29-cfr-2560-503-1",
+      "sourceUrl": "https://www.ecfr.gov/current/title-29/section-2560.503-1",
+      "category": "appeal-procedure",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Commercial"
+      },
+      "currentSourceStatement": "ERISA group health plan claims procedures must give claimants at least 180 days after an adverse benefit determination to appeal.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "29 CFR § 2560.503-1",
+        "sourceUrl": "https://www.ecfr.gov/current/title-29/section-2560.503-1",
+        "deepLink": "https://www.ecfr.gov/current/title-29/section-2560.503-1#:~:text=Provide%20claimants%20at%20least%20180%20days%20following%20receipt%20of",
+        "locator": "29 CFR 2560.503-1(h)(3)(i)",
+        "excerpt": "Provide claimants at least 180 days following receipt of a notification of an adverse benefit determination within which to appeal the determination"
+      }
+    },
+    {
+      "id": "ERISA-MEDICAL-JUDGMENT-REVIEW-2560-503-1",
+      "title": "Group health plan: medical-judgment appeals reviewed by a health care professional",
+      "authority": "U.S. Department of Labor",
+      "sourceId": "ecfr-29-cfr-2560-503-1",
+      "sourceUrl": "https://www.ecfr.gov/current/title-29/section-2560.503-1",
+      "category": "medical-necessity",
+      "issueFamilies": [
+        "Medical necessity"
+      ],
+      "appliesTo": {
+        "program": "Commercial"
+      },
+      "currentSourceStatement": "When an appeal turns on a medical judgment, including whether treatment is not medically necessary, the plan fiduciary must consult an appropriately trained health care professional.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-03",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "29 CFR § 2560.503-1",
+        "sourceUrl": "https://www.ecfr.gov/current/title-29/section-2560.503-1",
+        "deepLink": "https://www.ecfr.gov/current/title-29/section-2560.503-1#:~:text=the%20appropriate%20named%20fiduciary%20shall%20consult%20with%20a%20health",
+        "locator": "29 CFR 2560.503-1(h)(3)(iii)",
+        "excerpt": "the appropriate named fiduciary shall consult with a health care professional who has appropriate training and experience in the field of medicine involved in the medical judgment"
+      }
+    },
+    {
+      "id": "MEDICARE-HOSPICE-AGGREGATE-CAP-418-309",
+      "title": "Hospice aggregate cap",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-418-309",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-418.309",
+      "category": "hospice",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "The hospice aggregate cap is the adjusted cap amount multiplied by the number of Medicare beneficiaries, by one of two stated methodologies. It is a provider-level calculation, not a claim finding.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 418.309",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-418.309",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-418.309#:~:text=A%20hospice's%20aggregate%20cap%20is%20calculated%20by%20multiplying%20the",
+        "locator": "42 CFR 418.309",
+        "excerpt": "A hospice's aggregate cap is calculated by multiplying the adjusted cap amount"
+      }
+    },
+    {
+      "id": "MEDICARE-ADVANTAGE-COVERAGE-CRITERIA-422-101",
+      "title": "Medicare Advantage plans apply Traditional Medicare coverage conditions",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-422-101",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-422.101",
+      "category": "medical-necessity",
+      "issueFamilies": [
+        "Medical necessity",
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "program": "Medicare Advantage"
+      },
+      "currentSourceStatement": "Medicare Advantage organizations must comply with national coverage determinations and with general coverage and benefit conditions in Traditional Medicare law, unless superseded by MA-specific law.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 422.101",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-422.101",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-422.101#:~:text=General%20coverage%20and%20benefit%20conditions%20included%20in%20Traditional%20Medicare",
+        "locator": "42 CFR 422.101(b)(2)",
+        "excerpt": "General coverage and benefit conditions included in Traditional Medicare laws, unless superseded by laws applicable to MA plans"
+      }
+    },
+    {
+      "id": "MEDICARE-ADVANTAGE-RECONSIDERATION-60-DAYS-422-582",
+      "title": "Medicare Advantage reconsideration request deadline",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-422-582",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-422.582",
+      "category": "appeal-procedure",
+      "issueFamilies": [],
+      "appliesTo": {
+        "program": "Medicare Advantage"
+      },
+      "currentSourceStatement": "A request for a standard reconsideration of an MA organization determination must be filed within 60 calendar days of receiving the written notice, subject to the good-cause provisions.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 422.582",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-422.582",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-422.582#:~:text=a%20request%20for%20reconsideration%20must%20be%20filed%20within%2060",
+        "locator": "42 CFR 422.582(b)",
+        "excerpt": "a request for reconsideration must be filed within 60 calendar days after receipt of the written organization determination notice"
+      }
+    },
+    {
+      "id": "MEDICARE-NCD-BINDING-405-1060",
+      "title": "National coverage determinations bind appeal adjudicators",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-405-1060",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.1060",
+      "category": "medical-necessity",
+      "issueFamilies": [
+        "Medical necessity"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "An NCD is binding on contractors, QICs, ALJs and the Council.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 405.1060",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.1060",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-405.1060#:~:text=An%20NCD%20is%20binding%20on%20fiscal%20intermediaries%2C%20carriers%2C%20QIOs%2C",
+        "locator": "42 CFR 405.1060(a)(4)",
+        "excerpt": "An NCD is binding on fiscal intermediaries, carriers, QIOs, QICs, ALJs and attorney adjudicators, and the Council"
+      }
+    },
+    {
+      "id": "MEDICARE-LCD-DEFERENCE-405-1062",
+      "title": "Local coverage determinations: substantial deference, not binding on ALJs",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-405-1062",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.1062",
+      "category": "medical-necessity",
+      "issueFamilies": [
+        "Medical necessity",
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "program": "Medicare"
+      },
+      "currentSourceStatement": "ALJs and the Council are not bound by LCDs or CMS program guidance but give them substantial deference when applicable.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 405.1062",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-405.1062",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-405.1062#:~:text=are%20not%20bound%20by%20LCDs%2C%20LMRPs%2C%20or%20CMS%20program",
+        "locator": "42 CFR 405.1062(a)",
+        "excerpt": "are not bound by LCDs, LMRPs, or CMS program guidance, such as program memoranda and manual instructions, but will give substantial deference to these policies if they are applicable to a particular case"
+      }
+    },
+    {
+      "id": "CA-INS-10133-66-OVERPAYMENT-365-DAYS",
+      "title": "California insurers: overpayment reimbursement request within 365 days",
+      "authority": "California Legislature",
+      "sourceId": "ca-ins-10133-66",
+      "sourceUrl": "https://california.public.law/codes/ca_ins_code_section_10133.66",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "appliesTo": {
+        "state": "CA"
+      },
+      "currentSourceStatement": "A California health insurer may not request reimbursement of an overpayment unless a written request is sent to the provider within 365 days of payment. A fraud-or-misrepresentation exception applies.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "California Insurance Code § 10133.66 (California.Public.Law copy of the code)",
+        "sourceUrl": "https://california.public.law/codes/ca_ins_code_section_10133.66",
+        "deepLink": "https://california.public.law/codes/ca_ins_code_section_10133.66#:~:text=unless%20a%20written%20request%20for%20reimbursement%20is%20sent%20to",
+        "locator": "Cal. Ins. Code § 10133.66(b)",
+        "excerpt": "unless a written request for reimbursement is sent to the provider within 365 days of the date of payment on the overpaid claim"
+      }
+    },
+    {
+      "id": "CA-HSC-1371-1-PROVIDER-REPAY-30-WORKING-DAYS",
+      "title": "California plans: provider repays or contests an overpayment within 30 working days",
+      "authority": "California Legislature",
+      "sourceId": "ca-hsc-1371-1",
+      "sourceUrl": "https://california.public.law/codes/health_and_safety_code_section_1371.1",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "appliesTo": {
+        "state": "CA"
+      },
+      "currentSourceStatement": "After a plan’s notice of overpayment, the provider must reimburse within 30 working days or contest in writing within the same period.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "California Health and Safety Code § 1371.1 (California.Public.Law copy of the code)",
+        "sourceUrl": "https://california.public.law/codes/health_and_safety_code_section_1371.1",
+        "deepLink": "https://california.public.law/codes/health_and_safety_code_section_1371.1#:~:text=the%20provider%20shall%20reimburse%20the%20health%20care%20service%20plan",
+        "locator": "Cal. Health & Safety Code § 1371.1(a)(1)",
+        "excerpt": "the provider shall reimburse the health care service plan within 30 working days of receipt by the provider of the notice of overpayment"
+      }
+    },
+    {
+      "id": "FL-627-6131-6-OVERPAYMENT-30-MONTHS",
+      "title": "Florida insurers: overpayment claims within 30 months",
+      "authority": "Florida Legislature",
+      "sourceId": "fl-627-6131",
+      "sourceUrl": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "appliesTo": {
+        "state": "FL"
+      },
+      "currentSourceStatement": "For retroactive review or audit not related to fraud, a Florida health insurer must submit overpayment claims within 30 months of its payment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Florida Statutes § 627.6131",
+        "sourceUrl": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+        "deepLink": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html#:~:text=All%20claims%20for%20overpayment%20must%20be%20submitted%20to%20a",
+        "locator": "Fla. Stat. § 627.6131(6)(a)1.",
+        "excerpt": "All claims for overpayment must be submitted to a provider within 30 months after the health insurer's payment of the claim"
+      }
+    },
+    {
+      "id": "FL-627-6131-18-LICENSED-PROFESSIONALS-12-MONTHS",
+      "title": "Florida insurers: overpayment claims within 12 months for listed licensed professionals",
+      "authority": "Florida Legislature",
+      "sourceId": "fl-627-6131",
+      "sourceUrl": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "appliesTo": {
+        "state": "FL"
+      },
+      "currentSourceStatement": "For providers licensed under chapters 458 (physicians), 459 (osteopaths), 460 (chiropractors), 461 (podiatrists), 466 (dentists) and 490 (psychologists), overpayment claims must be submitted within 12 months, except for providers convicted of fraud.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Florida Statutes § 627.6131",
+        "sourceUrl": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+        "deepLink": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html#:~:text=all%20claims%20for%20overpayment%20submitted%20to%20a%20provider%20licensed",
+        "locator": "Fla. Stat. § 627.6131(18)",
+        "excerpt": "all claims for overpayment submitted to a provider licensed under chapter 458, chapter 459, chapter 460, chapter 461, chapter 466, or chapter 490 must be submitted to the provider within 12 months after the health insurer's payment of the claim"
+      }
+    },
+    {
+      "id": "FL-627-6131-6-PROVIDER-40-DAYS-TO-RESPOND",
+      "title": "Florida: provider must pay, deny or contest an overpayment claim within 40 days",
+      "authority": "Florida Legislature",
+      "sourceId": "fl-627-6131",
+      "sourceUrl": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "appliesTo": {
+        "state": "FL"
+      },
+      "currentSourceStatement": "A Florida provider must pay, deny or contest an insurer’s overpayment claim within 40 days of receipt; failure to pay or deny within 140 days creates an uncontestable obligation.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "crossCutting": true,
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Florida Statutes § 627.6131",
+        "sourceUrl": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+        "deepLink": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html#:~:text=A%20provider%20must%20pay%2C%20deny%2C%20or%20contest%20the%20health",
+        "locator": "Fla. Stat. § 627.6131(6)(a)1.",
+        "excerpt": "A provider must pay, deny, or contest the health insurer's claim for overpayment within 40 days after the receipt of the claim"
+      }
+    },
+    {
+      "id": "UHC-COMM-TIMED-CODE-8-MINUTES-R0101",
+      "title": "UnitedHealthcare Commercial: 8-minute minimum for one timed unit",
+      "authority": "UnitedHealthcare",
+      "sourceId": "uhc-comm-phys-med-max-frequency",
+      "sourceUrl": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-Max-Combined-Frequency-Per-Day-Policy.pdf",
+      "category": "timed-code-units",
+      "issueFamilies": [
+        "Authorization / units",
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "payer": "UnitedHealthcare"
+      },
+      "currentSourceStatement": "UnitedHealthcare aligns with CMS: at least eight minutes of therapy are required to bill one 15-minute unit.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "UnitedHealthcare Commercial — Physical Medicine & Rehabilitation: Maximum Combined Frequency per Day Policy (2026R0101A)",
+        "sourceUrl": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-Max-Combined-Frequency-Per-Day-Policy.pdf",
+        "deepLink": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-Max-Combined-Frequency-Per-Day-Policy.pdf#page=1",
+        "locator": "PDF page 1 — Policy 2026R0101A, Overview",
+        "excerpt": "at least eight minutes of therapy services must be performed to meet the minimum time qualification to bill one 15 minute unit"
+      }
+    },
+    {
+      "id": "UHC-COMM-MAX-FOUR-TIMED-CODES-R0101",
+      "title": "UnitedHealthcare Commercial: maximum four timed codes per date of service",
+      "authority": "UnitedHealthcare",
+      "sourceId": "uhc-comm-phys-med-max-frequency",
+      "sourceUrl": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-Max-Combined-Frequency-Per-Day-Policy.pdf",
+      "category": "timed-code-units",
+      "issueFamilies": [
+        "Authorization / units"
+      ],
+      "appliesTo": {
+        "payer": "UnitedHealthcare"
+      },
+      "currentSourceStatement": "UnitedHealthcare reimburses timed therapy codes in any combination up to four timed codes per date of service for the same specialty provider, subject to the policy’s exceptions.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "UnitedHealthcare Commercial — Physical Medicine & Rehabilitation: Maximum Combined Frequency per Day Policy (2026R0101A)",
+        "sourceUrl": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-Max-Combined-Frequency-Per-Day-Policy.pdf",
+        "deepLink": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-Max-Combined-Frequency-Per-Day-Policy.pdf#page=2",
+        "locator": "PDF page 2 — Policy 2026R0101A, Reimbursement Guidelines",
+        "excerpt": "up to a maximum of four timed codes (equivalent to one hour of therapy) per date of service"
+      }
+    },
+    {
+      "id": "UHC-COMM-THERAPY-ASSISTANT-EVAL-CODES-R0098",
+      "title": "UnitedHealthcare Commercial: assistants are not reimbursed for therapy evaluation codes",
+      "authority": "UnitedHealthcare",
+      "sourceId": "uhc-comm-phys-med-pt-ot-em",
+      "sourceUrl": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-PT-OT-Eval-Mgmt-Policy.pdf",
+      "category": "coding",
+      "issueFamilies": [
+        "Coding / NCCI"
+      ],
+      "appliesTo": {
+        "payer": "UnitedHealthcare"
+      },
+      "currentSourceStatement": "Therapy assistants are not reimbursed for PT or OT evaluation and re-evaluation codes.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "UnitedHealthcare Commercial — Physical Medicine & Rehabilitation: PT, OT and Evaluation & Management Policy (2026R0098A)",
+        "sourceUrl": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-PT-OT-Eval-Mgmt-Policy.pdf",
+        "deepLink": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-PT-OT-Eval-Mgmt-Policy.pdf#page=1",
+        "locator": "PDF page 1 — Policy 2026R0098A, Reimbursement Guidelines",
+        "excerpt": "Physical and Occupational Therapy Assistants will not be reimbursed for CPT codes 97161-97164 or 97165-97168"
+      }
+    },
+    {
+      "id": "UHC-COMM-CQ-CO-MODIFIERS-R0098",
+      "title": "UnitedHealthcare Commercial: CQ and CO modifiers for assistant services",
+      "authority": "UnitedHealthcare",
+      "sourceId": "uhc-comm-phys-med-pt-ot-em",
+      "sourceUrl": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-PT-OT-Eval-Mgmt-Policy.pdf",
+      "category": "coding",
+      "issueFamilies": [
+        "Coding / NCCI"
+      ],
+      "appliesTo": {
+        "payer": "UnitedHealthcare"
+      },
+      "currentSourceStatement": "For dates of service on or after January 1, 2020, services furnished in whole or in part by a PTA or OTA require modifier CQ or CO alongside GP or GO.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": "2020-01-01",
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "UnitedHealthcare Commercial — Physical Medicine & Rehabilitation: PT, OT and Evaluation & Management Policy (2026R0098A)",
+        "sourceUrl": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-PT-OT-Eval-Mgmt-Policy.pdf",
+        "deepLink": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-PT-OT-Eval-Mgmt-Policy.pdf#page=2",
+        "locator": "PDF page 2 — Policy 2026R0098A, Reimbursement Guidelines",
+        "excerpt": "the HCPCS modifiers CQ and CO modifiers are required to be used for services furnished In Whole or In Part by a Physical Therapy Assistant (PTA) or Occupational Therapy Assistant (OTA)"
+      }
+    },
+    {
+      "id": "FIDELIS-ABA-UNITS-NOT-SUPPORTED-CPBH105",
+      "title": "Fidelis/Centene ABA: unsupported billed units may be denied or recouped",
+      "authority": "Fidelis Care / Centene",
+      "sourceId": "fidelis-aba-documentation-cpbh105",
+      "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "category": "documentation",
+      "issueFamilies": [
+        "Documentation support",
+        "Authorization / units"
+      ],
+      "appliesTo": {
+        "payer": "Fidelis"
+      },
+      "currentSourceStatement": "The Centene ABA documentation policy states that billed units not fully supported by documentation may be denied or recouped.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Fidelis Care / Centene — Clinical Policy CP.BH.105 ABA Documentation Requirements",
+        "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+        "deepLink": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf#page=1",
+        "locator": "PDF page 1 — CP.BH.105, Policy/Criteria I",
+        "excerpt": "Billed units not fully supported by documentation may be subject to payment denial or recoupment"
+      }
+    },
+    {
+      "id": "FIDELIS-ABA-PRIOR-AUTH-CPBH105",
+      "title": "Fidelis/Centene ABA: prior authorization where required",
+      "authority": "Fidelis Care / Centene",
+      "sourceId": "fidelis-aba-documentation-cpbh105",
+      "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "category": "authorization",
+      "issueFamilies": [
+        "Authorization / units"
+      ],
+      "appliesTo": {
+        "payer": "Fidelis"
+      },
+      "currentSourceStatement": "ABA documentation must show prior authorization was obtained where required.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Fidelis Care / Centene — Clinical Policy CP.BH.105 ABA Documentation Requirements",
+        "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+        "deepLink": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf#page=1",
+        "locator": "PDF page 1 — CP.BH.105, Policy/Criteria I.A",
+        "excerpt": "Prior authorization approval for ABA services has been obtained, if required"
+      }
+    },
+    {
+      "id": "FIDELIS-ABA-SIGNATURES-CPBH105",
+      "title": "Fidelis/Centene ABA: required signatures and printed names",
+      "authority": "Fidelis Care / Centene",
+      "sourceId": "fidelis-aba-documentation-cpbh105",
+      "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "category": "signatures",
+      "issueFamilies": [
+        "Signatures / authentication"
+      ],
+      "appliesTo": {
+        "payer": "Fidelis"
+      },
+      "currentSourceStatement": "Clinical documentation must include the signature and printed names of the member or guardian, rendering clinician or technician and supervising practitioner, as applicable.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Fidelis Care / Centene — Clinical Policy CP.BH.105 ABA Documentation Requirements",
+        "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+        "deepLink": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf#page=1",
+        "locator": "PDF page 1 — CP.BH.105, Policy/Criteria I.B",
+        "excerpt": "signature and printed names of the member/enrollee, legal guardian, rendering clinician/technician and supervising practitioner"
+      }
+    },
+    {
+      "id": "FIDELIS-ABA-ACTIVE-TREATMENT-CPBH105",
+      "title": "Fidelis/Centene ABA: active treatment throughout billed time",
+      "authority": "Fidelis Care / Centene",
+      "sourceId": "fidelis-aba-documentation-cpbh105",
+      "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "category": "documentation",
+      "issueFamilies": [
+        "Documentation support",
+        "Medical necessity"
+      ],
+      "appliesTo": {
+        "payer": "Fidelis"
+      },
+      "currentSourceStatement": "Documentation must support that active treatment was delivered throughout the billed duration.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Fidelis Care / Centene — Clinical Policy CP.BH.105 ABA Documentation Requirements",
+        "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+        "deepLink": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf#page=1",
+        "locator": "PDF page 1 — CP.BH.105, Policy/Criteria I.C.1",
+        "excerpt": "Continuous and efficient use of session time that is clinically justified and consistent with treatment plan goals"
+      }
+    },
+    {
+      "id": "FIDELIS-ABA-NOTES-BEFORE-CLAIM-CPBH105",
+      "title": "Fidelis/Centene ABA: service notes completed before claim submission",
+      "authority": "Fidelis Care / Centene",
+      "sourceId": "fidelis-aba-documentation-cpbh105",
+      "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "category": "documentation",
+      "issueFamilies": [
+        "Documentation support"
+      ],
+      "appliesTo": {
+        "payer": "Fidelis"
+      },
+      "currentSourceStatement": "Service activity notes must be completed before the claim is submitted.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Fidelis Care / Centene — Clinical Policy CP.BH.105 ABA Documentation Requirements",
+        "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+        "deepLink": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf#page=1",
+        "locator": "PDF page 1 — CP.BH.105, Policy/Criteria I.D",
+        "excerpt": "Service activity notes for all services rendered are completed prior to claim submission"
+      }
+    },
+    {
+      "id": "FIDELIS-ABA-SESSION-TIMES-CPBH105",
+      "title": "Fidelis/Centene ABA: exact session date and start and end times",
+      "authority": "Fidelis Care / Centene",
+      "sourceId": "fidelis-aba-documentation-cpbh105",
+      "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "category": "documentation",
+      "issueFamilies": [
+        "Documentation support",
+        "Authorization / units"
+      ],
+      "appliesTo": {
+        "payer": "Fidelis"
+      },
+      "currentSourceStatement": "Notes must record the exact date and time of each session, including start and end time.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Fidelis Care / Centene — Clinical Policy CP.BH.105 ABA Documentation Requirements",
+        "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+        "deepLink": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf#page=2",
+        "locator": "PDF page 2 — CP.BH.105, Policy/Criteria I.D.2",
+        "excerpt": "Exact date and time of session to include start and end time"
+      }
+    },
+    {
+      "id": "FIDELIS-ABA-LATE-NOTE-RATIONALE-CPBH105",
+      "title": "Fidelis/Centene ABA: late-note creation date and rationale",
+      "authority": "Fidelis Care / Centene",
+      "sourceId": "fidelis-aba-documentation-cpbh105",
+      "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "category": "documentation",
+      "issueFamilies": [
+        "Documentation support",
+        "Signatures / authentication"
+      ],
+      "appliesTo": {
+        "payer": "Fidelis"
+      },
+      "currentSourceStatement": "If a note was created on a different date from the service, it must state the creation date and the reason.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Fidelis Care / Centene — Clinical Policy CP.BH.105 ABA Documentation Requirements",
+        "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+        "deepLink": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf#page=2",
+        "locator": "PDF page 2 — CP.BH.105, Policy/Criteria I.D.3",
+        "excerpt": "the note includes the date of note creation with rationale for why note was created on a date different than the service was rendered"
+      }
+    },
+    {
+      "id": "FIDELIS-ABA-PROTOCOL-MODIFICATION-97155-CPBH105",
+      "title": "Fidelis/Centene ABA: protocol modification hours (97155/97158)",
+      "authority": "Fidelis Care / Centene",
+      "sourceId": "fidelis-aba-documentation-cpbh105",
+      "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "category": "documentation",
+      "issueFamilies": [
+        "Documentation support",
+        "Authorization / units"
+      ],
+      "appliesTo": {
+        "payer": "Fidelis"
+      },
+      "currentSourceStatement": "For 97155 and/or 97158, protocol modification must meet the stated hours threshold; the policy describes denial or recoupment of unsupported hours.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Fidelis Care / Centene — Clinical Policy CP.BH.105 ABA Documentation Requirements",
+        "sourceUrl": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+        "deepLink": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf#page=2",
+        "locator": "PDF page 2 — CP.BH.105, Policy/Criteria I.D.8.f",
+        "excerpt": "Protocol modification occurs for at least two hours per week or 10% of the direct service hours provided, whichever is greater"
+      }
+    },
+    {
+      "id": "EMBLEM-HAB-REHAB-MODIFIERS-96-97-RPC20240052",
+      "title": "EmblemHealth Commercial: modifier 96 or 97 on habilitative and rehabilitative services",
+      "authority": "EmblemHealth",
+      "sourceId": "emblem-hab-rehab-rpc20240052",
+      "sourceUrl": "https://www.emblemhealth.com/content/dam/emblemhealth/pdfs/provider/reimbursement-policies/habilitative-and-rehabilitative-services-reimbursement-policy-emblemhealth.pdf",
+      "category": "coding",
+      "issueFamilies": [
+        "Coding / NCCI"
+      ],
+      "appliesTo": {
+        "payer": "EmblemHealth"
+      },
+      "currentSourceStatement": "Effective 1/1/2025, claims for habilitative services require modifier 96 and rehabilitative services modifier 97; lines billed without the correct modifier are denied.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "EmblemHealth — Billing for Habilitative and Rehabilitative Services Policy (Commercial), RPC20240052",
+        "sourceUrl": "https://www.emblemhealth.com/content/dam/emblemhealth/pdfs/provider/reimbursement-policies/habilitative-and-rehabilitative-services-reimbursement-policy-emblemhealth.pdf",
+        "deepLink": "https://www.emblemhealth.com/content/dam/emblemhealth/pdfs/provider/reimbursement-policies/habilitative-and-rehabilitative-services-reimbursement-policy-emblemhealth.pdf#page=2",
+        "locator": "PDF page 2 — RPC20240052, Reimbursement Guidelines",
+        "excerpt": "EmblemHealth requires claims for habilitative and rehabilitative services to be billed according to the following guidelines"
+      }
+    },
+    {
+      "id": "EMBLEM-HAB-REHAB-MODIFIER-MISSING-DENIAL-RPC20240052",
+      "title": "EmblemHealth Commercial: denial when modifier 96 or 97 is missing",
+      "authority": "EmblemHealth",
+      "sourceId": "emblem-hab-rehab-rpc20240052",
+      "sourceUrl": "https://www.emblemhealth.com/content/dam/emblemhealth/pdfs/provider/reimbursement-policies/habilitative-and-rehabilitative-services-reimbursement-policy-emblemhealth.pdf",
+      "category": "coding",
+      "issueFamilies": [
+        "Coding / NCCI"
+      ],
+      "appliesTo": {
+        "payer": "EmblemHealth"
+      },
+      "currentSourceStatement": "A claim line is denied if modifier 96 or 97 is missing on a habilitative or rehabilitative service.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": "2025-01-01",
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "EmblemHealth — Billing for Habilitative and Rehabilitative Services Policy (Commercial), RPC20240052",
+        "sourceUrl": "https://www.emblemhealth.com/content/dam/emblemhealth/pdfs/provider/reimbursement-policies/habilitative-and-rehabilitative-services-reimbursement-policy-emblemhealth.pdf",
+        "deepLink": "https://www.emblemhealth.com/content/dam/emblemhealth/pdfs/provider/reimbursement-policies/habilitative-and-rehabilitative-services-reimbursement-policy-emblemhealth.pdf#page=2",
+        "locator": "PDF page 2 — RPC20240052, Billing Tips",
+        "excerpt": "Denied if modifier 96 or 97 is not billed on a habilitative or rehabilitative service"
+      }
+    },
+    {
+      "id": "STATE-AZ-OVERPAYMENT-RECOVERY",
+      "title": "Arizona health insurers: overpayment recovery limit (12 months)",
+      "authority": "Arizona Legislature",
+      "sourceId": "state-az-overpayment",
+      "sourceUrl": "https://www.azleg.gov/ars/20/03102.htm",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "AZ"
+      },
+      "currentSourceStatement": "Except in cases of fraud, an Arizona insurer or provider may not adjust or request adjustment of a paid or denied claim more than one year after payment or denial.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Arizona Revised Statutes § 20-3102",
+        "sourceUrl": "https://www.azleg.gov/ars/20/03102.htm",
+        "deepLink": "https://www.azleg.gov/ars/20/03102.htm#:~:text=shall%20not%20adjust%20or%20request%20adjustment%20of%20the%20payment",
+        "locator": "A.R.S. § 20-3102",
+        "excerpt": "shall not adjust or request adjustment of the payment or denial of a claim more than one year after the health care insurer has paid or denied that claim"
+      }
+    },
+    {
+      "id": "STATE-CT-OVERPAYMENT-RECOVERY",
+      "title": "Connecticut health insurers: overpayment recovery limit (18 months)",
+      "authority": "Connecticut Legislature",
+      "sourceId": "state-ct-overpayment",
+      "sourceUrl": "https://www.cga.ct.gov/current/pub/chap_700c.htm",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CT"
+      },
+      "currentSourceStatement": "A contracting health organization may not cancel, deny or demand return of payment for an authorized covered service because of administrative or eligibility error more than eighteen months after receipt of a clean claim, subject to stated exceptions.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Connecticut General Statutes § 38a-479b (chapter 700c)",
+        "sourceUrl": "https://www.cga.ct.gov/current/pub/chap_700c.htm",
+        "deepLink": "https://www.cga.ct.gov/current/pub/chap_700c.htm#:~:text=more%20than%20eighteen%20months%20after%20the%20date%20of%20the",
+        "locator": "Conn. Gen. Stat. § 38a-479b",
+        "excerpt": "more than eighteen months after the date of the receipt of a clean claim"
+      }
+    },
+    {
+      "id": "STATE-DE-OVERPAYMENT-RECOVERY",
+      "title": "Delaware health insurers: overpayment recovery limit (12 months)",
+      "authority": "Delaware Legislature",
+      "sourceId": "state-de-overpayment",
+      "sourceUrl": "https://delcode.delaware.gov/title18/c027/sc01/index.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "DE"
+      },
+      "currentSourceStatement": "A Delaware health insurer or plan may not initiate overpayment recovery efforts more than 12 months after the original payment; recovery is initiated when the insurer first identifies the error through an initial audit report or similar communication.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "18 Delaware Code § 2730",
+        "sourceUrl": "https://delcode.delaware.gov/title18/c027/sc01/index.html",
+        "deepLink": "https://delcode.delaware.gov/title18/c027/sc01/index.html#:~:text=may%20not%20initiate%20overpayment%20recovery%20efforts%20more%20than%2012",
+        "locator": "18 Del. C. § 2730",
+        "excerpt": "may not initiate overpayment recovery efforts more than 12 months after the original payment for the claim was made"
+      }
+    },
+    {
+      "id": "STATE-KS-OVERPAYMENT-RECOVERY",
+      "title": "Kansas health insurers: overpayment recovery limit (18 months)",
+      "authority": "Kansas Legislature",
+      "sourceId": "state-ks-overpayment",
+      "sourceUrl": "https://www.ksrevisor.org/statutes/chapters/ch40/040_024_0042.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "KS"
+      },
+      "currentSourceStatement": "A Kansas insurer may not initiate a reimbursement request or otherwise seek to recoup an erroneous payment unless initiated within 18 months after the end of the month of payment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Kansas Statutes § 40-2442",
+        "sourceUrl": "https://www.ksrevisor.org/statutes/chapters/ch40/040_024_0042.html",
+        "deepLink": "https://www.ksrevisor.org/statutes/chapters/ch40/040_024_0042.html#:~:text=unless%20such%20action%20is%20initiated%20within%2018%20months%20after",
+        "locator": "K.S.A. § 40-2442",
+        "excerpt": "unless such action is initiated within 18 months after the end of the month in which the erroneous payment was made"
+      }
+    },
+    {
+      "id": "STATE-MD-OVERPAYMENT-RECOVERY",
+      "title": "Maryland health insurers: overpayment recovery limit (6 months)",
+      "authority": "Maryland Legislature",
+      "sourceId": "state-md-overpayment",
+      "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gin&section=15-1008&enactments=false",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MD"
+      },
+      "currentSourceStatement": "A Maryland carrier may retroactively deny reimbursement only during the 6-month period after payment (18 months where coordination of benefits with another carrier, Medicaid or Medicare applies).",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Maryland Insurance Code § 15-1008",
+        "sourceUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gin&section=15-1008&enactments=false",
+        "deepLink": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gin&section=15-1008&enactments=false#:~:text=during%20the%206%2Dmonth%20period%20after%20the%20date%20that%20the",
+        "locator": "Md. Code, Ins. § 15-1008",
+        "excerpt": "during the 6-month period after the date that the carrier paid the health care provider"
+      }
+    },
+    {
+      "id": "STATE-MO-OVERPAYMENT-RECOVERY",
+      "title": "Missouri health insurers: overpayment recovery limit (12 months)",
+      "authority": "Missouri Legislature",
+      "sourceId": "state-mo-overpayment",
+      "sourceUrl": "https://revisor.mo.gov/main/OneSection.aspx?section=376.384",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MO"
+      },
+      "currentSourceStatement": "A Missouri health carrier may not request a refund or offset against a claim more than twelve months after payment, except for fraud or misrepresentation by the provider.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Missouri Revised Statutes § 376.384",
+        "sourceUrl": "https://revisor.mo.gov/main/OneSection.aspx?section=376.384",
+        "deepLink": "https://revisor.mo.gov/main/OneSection.aspx?section=376.384#:~:text=more%20than%20twelve%20months%20after%20a%20health%20carrier%20has",
+        "locator": "Mo. Rev. Stat. § 376.384",
+        "excerpt": "more than twelve months after a health carrier has paid a claim"
+      }
+    },
+    {
+      "id": "STATE-SC-OVERPAYMENT-RECOVERY",
+      "title": "South Carolina health insurers: overpayment recovery limit (18 months)",
+      "authority": "South Carolina Legislature",
+      "sourceId": "state-sc-overpayment",
+      "sourceUrl": "https://www.scstatehouse.gov/code/t38c059.php",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "SC"
+      },
+      "currentSourceStatement": "A South Carolina insurer may not initiate overpayment recovery more than eighteen months after the initial payment was received by the provider.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "South Carolina Code § 38-59-250",
+        "sourceUrl": "https://www.scstatehouse.gov/code/t38c059.php",
+        "deepLink": "https://www.scstatehouse.gov/code/t38c059.php#:~:text=more%20than%20eighteen%20months%20after%20the%20initial%20payment%20was",
+        "locator": "S.C. Code § 38-59-250",
+        "excerpt": "more than eighteen months after the initial payment was received by the provider"
+      }
+    },
+    {
+      "id": "STATE-TX-OVERPAYMENT-RECOVERY",
+      "title": "Texas health insurers: overpayment recovery limit (180 days)",
+      "authority": "Texas Legislature",
+      "sourceId": "state-tx-overpayment",
+      "sourceUrl": "https://texas.public.law/statutes/tex._ins._code_section_1301.132",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "TX"
+      },
+      "currentSourceStatement": "A Texas insurer may recover an overpayment from a physician or provider only if, by the 180th day after the provider received the payment, it gives written notice stating the basis and specific reasons for the request. The anchor is the date the provider received the payment and the milestone is written notice of the overpayment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Texas Insurance Code § 1301.132 (texas.public.law copy of the code)",
+        "sourceUrl": "https://texas.public.law/statutes/tex._ins._code_section_1301.132",
+        "deepLink": "https://texas.public.law/statutes/tex._ins._code_section_1301.132#:~:text=not%20later%20than%20the%20180th%20day%20after%20the%20date",
+        "locator": "Tex. Ins. Code § 1301.132(a)(1)",
+        "excerpt": "not later than the 180th day after the date the physician or provider receives the payment"
+      }
+    },
+    {
+      "id": "STATE-VA-OVERPAYMENT-RECOVERY",
+      "title": "Virginia health insurers: overpayment recovery limit (12 months)",
+      "authority": "Virginia Legislature",
+      "sourceId": "state-va-overpayment",
+      "sourceUrl": "https://law.lis.virginia.gov/vacode/title38.2/chapter34/section38.2-3407.15/",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "VA"
+      },
+      "currentSourceStatement": "A Virginia carrier may not impose a retroactive denial or seek recovery of a paid claim unless the claim was fraudulent, the provider was already paid or did not deliver the service, or no more than 12 months have elapsed; 30 days’ written notice is required.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Code of Virginia § 38.2-3407.15",
+        "sourceUrl": "https://law.lis.virginia.gov/vacode/title38.2/chapter34/section38.2-3407.15/",
+        "deepLink": "https://law.lis.virginia.gov/vacode/title38.2/chapter34/section38.2-3407.15/#:~:text=the%20time%20which%20has%20elapsed%20since%20the%20date%20of",
+        "locator": "Va. Code § 38.2-3407.15",
+        "excerpt": "the time which has elapsed since the date of the payment of the original challenged claim does not exceed 12 months"
+      }
+    },
+    {
+      "id": "STATE-WA-OVERPAYMENT-RECOVERY",
+      "title": "Washington health insurers: overpayment recovery limit (24 months)",
+      "authority": "Washington Legislature",
+      "sourceId": "state-wa-overpayment",
+      "sourceUrl": "https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.600",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "WA"
+      },
+      "currentSourceStatement": "Except for fraud, a Washington carrier may not request a refund of a payment unless it does so in writing within twenty-four months of payment (six months for mental health and substance use disorder services, per the statute).",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "RCW 48.43.600",
+        "sourceUrl": "https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.600",
+        "deepLink": "https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.600#:~:text=within%20twenty%2Dfour%20months%20after%20the%20date%20that%20the%20payment",
+        "locator": "RCW 48.43.600",
+        "excerpt": "within twenty-four months after the date that the payment was made"
+      }
+    },
+    {
+      "id": "STATE-WV-OVERPAYMENT-RECOVERY",
+      "title": "West Virginia health insurers: overpayment recovery limit (12 months)",
+      "authority": "West Virginia Legislature",
+      "sourceId": "state-wv-overpayment",
+      "sourceUrl": "https://code.wvlegislature.gov/33-45-2/",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "WV"
+      },
+      "currentSourceStatement": "A West Virginia health plan may retroactively deny a claim only for the reasons listed in the statute for one year from the original payment; two categories have no time limit.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "West Virginia Code § 33-45-2",
+        "sourceUrl": "https://code.wvlegislature.gov/33-45-2/",
+        "deepLink": "https://code.wvlegislature.gov/33-45-2/#:~:text=for%20a%20period%20of%20one%20year%20from%20the%20date",
+        "locator": "W. Va. Code § 33-45-2",
+        "excerpt": "for a period of one year from the date the claim was originally paid"
+      }
+    },
+    {
+      "id": "STATE-AL-OVERPAYMENT-RECOVERY",
+      "title": "Alabama health insurers: overpayment recovery limit (12 months)",
+      "authority": "Alabama Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "AL"
+      },
+      "currentSourceStatement": "An Alabama insurer may not retroactively deny, adjust or seek recoupment of a paid claim after one year from the initial payment, other than for fraud, coordination of benefits or duplicate payments.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Ala. Code § 27-1-17; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Ala. Code § 27-1-17",
+        "excerpt": "after the expiration of one year from the date that the initial claim was paid"
+      }
+    },
+    {
+      "id": "STATE-AK-OVERPAYMENT-RECOVERY",
+      "title": "Alaska health insurers: overpayment recovery limit (365 days)",
+      "authority": "Alaska Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "AK"
+      },
+      "currentSourceStatement": "An Alaska health care insurer may not initiate recovery of an overpayment more than 365 days after the original payment unless it has clear and documented reason to believe the provider committed fraud or other intentional misconduct.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 3 AAC 26.110; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "3 AAC 26.110",
+        "excerpt": "more than 365 days after the date the original payment was made"
+      }
+    },
+    {
+      "id": "STATE-AR-OVERPAYMENT-RECOVERY",
+      "title": "Arkansas health insurers: overpayment recovery limit (18 months)",
+      "authority": "Arkansas Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "AR"
+      },
+      "currentSourceStatement": "Except for fraud by the provider, an Arkansas insurer may recoup from a provider only during the eighteen months after it paid the claim.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Ark. Code § 23-63-1803; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Ark. Code § 23-63-1803",
+        "excerpt": "only during the eighteen-month period after the date that the healthcare insurer paid the claim"
+      }
+    },
+    {
+      "id": "STATE-CO-OVERPAYMENT-RECOVERY",
+      "title": "Colorado health insurers: overpayment recovery limit (12 months)",
+      "authority": "Colorado Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CO"
+      },
+      "currentSourceStatement": "Where there is no contract between provider and carrier, Colorado claim adjustments must be made within twelve months after the original explanation of benefits, for both provider and carrier.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes C.R.S. § 10-16-704(4.5); the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "C.R.S. § 10-16-704(4.5)",
+        "excerpt": "within twelve months after the date of the original explanation of benefits"
+      }
+    },
+    {
+      "id": "STATE-GA-OVERPAYMENT-RECOVERY",
+      "title": "Georgia health insurers: overpayment recovery limit (18 months)",
+      "authority": "Georgia Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "GA"
+      },
+      "currentSourceStatement": "A Georgia audit or retroactive denial of payment must be completed, with notice, within the sooner of 18 months after the initial claim submission or 24 months after the date of service.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes O.C.G.A. § 33-20A-62; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "O.C.G.A. § 33-20A-62",
+        "excerpt": "within the sooner of 18 months after the claimant's initial submission"
+      }
+    },
+    {
+      "id": "STATE-HI-OVERPAYMENT-RECOVERY",
+      "title": "Hawaii health insurers: overpayment recovery limit (18 months)",
+      "authority": "Hawaii Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "HI"
+      },
+      "currentSourceStatement": "A Hawaii entity may not initiate recoupment or offset more than eighteen months after the initial payment (seventy-two months for fraud or material misrepresentation); self-insured groups and federal programs are excluded.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Haw. Rev. Stat. § 431:13-108; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Haw. Rev. Stat. § 431:13-108",
+        "excerpt": "more than eighteen months after the initial claim payment was received by the health care provider or health care entity"
+      }
+    },
+    {
+      "id": "STATE-IN-OVERPAYMENT-RECOVERY",
+      "title": "Indiana health insurers: overpayment recovery limit (24 months)",
+      "authority": "Indiana Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "IN"
+      },
+      "currentSourceStatement": "An Indiana insurer may not, more than two years after an overpayment was made, request repayment or adjust a later claim to recover it.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Ind. Code § 27-8-5.7-10; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Ind. Code § 27-8-5.7-10",
+        "excerpt": "more than two (2) years after the date on which an overpayment on a provider claim was made"
+      }
+    },
+    {
+      "id": "STATE-KY-OVERPAYMENT-RECOVERY",
+      "title": "Kentucky health insurers: overpayment recovery limit (24 months)",
+      "authority": "Kentucky Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "KY"
+      },
+      "currentSourceStatement": "Except for fraud, a Kentucky insurer may retroactively deny reimbursement to a provider only during the twenty-four months after paying the claim.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes KRS § 304.17A-708; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "KRS § 304.17A-708",
+        "excerpt": "twenty-four (24) month period after the date that the insurer paid the claim"
+      }
+    },
+    {
+      "id": "STATE-LA-OVERPAYMENT-RECOVERY",
+      "title": "Louisiana health insurers: overpayment recovery limit (18 months)",
+      "authority": "Louisiana Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "LA"
+      },
+      "currentSourceStatement": "A Louisiana health insurance issuer may not retroactively deny, adjust or seek recoupment of a paid claim after eighteen months from the initial payment.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes La. R.S. § 22:1838; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "La. R.S. § 22:1838",
+        "excerpt": "after the expiration of eighteen months from the date the initial claim was paid"
+      }
+    },
+    {
+      "id": "STATE-MT-OVERPAYMENT-RECOVERY",
+      "title": "Montana health insurers: overpayment recovery limit (12 months)",
+      "authority": "Montana Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MT"
+      },
+      "currentSourceStatement": "Where the issuer does not limit the provider’s claim-submission time, a Montana issuer may not request reimbursement or offset for an invalid or overpaid claim more than 12 months after payment, subject to stated exceptions.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Mont. Code Ann. § 33-22-150; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Mont. Code Ann. § 33-22-150",
+        "excerpt": "more than 12 months after the payment of an invalid or overpaid claim"
+      }
+    },
+    {
+      "id": "STATE-NH-OVERPAYMENT-RECOVERY",
+      "title": "New Hampshire health insurers: overpayment recovery limit (12 months)",
+      "authority": "New Hampshire Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NH"
+      },
+      "currentSourceStatement": "A New Hampshire carrier may not impose a retroactive denial of a previously paid claim unless it gave the reason in writing and no more than 12 months have elapsed since payment.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes N.H. RSA § 420-J:8-b; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "N.H. RSA § 420-J:8-b",
+        "excerpt": "does not exceed 12 months"
+      }
+    },
+    {
+      "id": "STATE-NJ-OVERPAYMENT-RECOVERY",
+      "title": "New Jersey health insurers: overpayment recovery limit (18 months)",
+      "authority": "New Jersey Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NJ"
+      },
+      "currentSourceStatement": "A New Jersey payer may not seek reimbursement for overpayment later than 18 months after the first payment on the claim, and only once per claim.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes N.J.S.A. § 17B:27-44.2; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "N.J.S.A. § 17B:27-44.2",
+        "excerpt": "later than 18 months after the date the first payment on the claim was made"
+      }
+    },
+    {
+      "id": "STATE-NC-OVERPAYMENT-RECOVERY",
+      "title": "North Carolina health insurers: overpayment recovery limit (24 months)",
+      "authority": "North Carolina Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NC"
+      },
+      "currentSourceStatement": "A North Carolina insurer must make overpayment recovery or offset within two years of the original payment, with at least 30 days’ written notice beforehand.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes N.C. Gen. Stat. § 58-3-225; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "N.C. Gen. Stat. § 58-3-225",
+        "excerpt": "shall be made within the two years after the date of the original claim payment"
+      }
+    },
+    {
+      "id": "STATE-OH-OVERPAYMENT-RECOVERY",
+      "title": "Ohio health insurers: overpayment recovery limit (12 months)",
+      "authority": "Ohio Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OH"
+      },
+      "currentSourceStatement": "AMENDED: Ohio SB 162 (136th General Assembly) reduced the recovery window under R.C. 3901.388 from two years to one year, per a law-firm client alert; the signing and effective dates were not verified. Payments made before the change may remain under the prior two-year limit. The excerpt below is the prior text quoted by the 50-state survey. Recovery requires notice and an opportunity to appeal.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Ohio Rev. Code § 3901.388; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Ohio Rev. Code § 3901.388",
+        "excerpt": "not later than two years after the payment was made to the provider"
+      }
+    },
+    {
+      "id": "STATE-OK-OVERPAYMENT-RECOVERY",
+      "title": "Oklahoma health insurers: overpayment recovery limit (18 months)",
+      "authority": "Oklahoma Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OK"
+      },
+      "currentSourceStatement": "An Oklahoma insurer may not request a refund from a health care provider more than eighteen months after payment (twelve months for a claimant), unless the payment was due to fraud or the provider agreed to refund.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 36 Okla. Stat. § 1250.5; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "36 Okla. Stat. § 1250.5",
+        "excerpt": "more than eighteen (18) months after the payment is made"
+      }
+    },
+    {
+      "id": "STATE-TN-OVERPAYMENT-RECOVERY",
+      "title": "Tennessee health insurers: overpayment recovery limit (18 months)",
+      "authority": "Tennessee Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "TN"
+      },
+      "currentSourceStatement": "Except for fraud by the provider, a Tennessee health insurance entity may recoup from a provider only during the eighteen months after paying the claim.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Tenn. Code § 56-7-110; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Tenn. Code § 56-7-110",
+        "excerpt": "during the eighteen-month period after the date that the health insurance entity paid the claim"
+      }
+    },
+    {
+      "id": "STATE-UT-OVERPAYMENT-RECOVERY",
+      "title": "Utah health insurers: overpayment recovery limit (12 months)",
+      "authority": "Utah Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "UT"
+      },
+      "currentSourceStatement": "A Utah insurer may recover improperly paid amounts within 12 months for reasons other than coordination of benefits (24 months) or federal-program recoveries (36 months).",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Utah Code § 31A-26-301.6(14); the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Utah Code § 31A-26-301.6(14)",
+        "excerpt": "within 12 months of the amount improperly paid for any other reason"
+      }
+    },
+    {
+      "id": "STATE-VT-OVERPAYMENT-RECOVERY",
+      "title": "Vermont health insurers: overpayment recovery limit (12 months)",
+      "authority": "Vermont Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "VT"
+      },
+      "currentSourceStatement": "In Vermont, retrospective denial of a paid claim is limited to 12 months from payment except for five stated reasons (fraud, duplicate payment, service not delivered, coordination with another plan, legal action).",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 18 V.S.A. § 9418; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "18 V.S.A. § 9418",
+        "excerpt": "shall be permitted beyond 12 months from the date of payment"
+      }
+    },
+    {
+      "id": "STATE-PA-OVERPAYMENT-RECOVERY",
+      "title": "Pennsylvania health insurers: overpayment recovery limit (24 months)",
+      "authority": "Pennsylvania Legislature",
+      "sourceId": "state-pa-overpayment",
+      "sourceUrl": "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/40/00.038.003.000..HTM",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "PA"
+      },
+      "currentSourceStatement": "A Pennsylvania insurer may not retroactively deny reimbursement as a result of an overpayment determination more than 24 months after it initially paid the provider, subject to the exceptions in 40 Pa.C.S. § 3804.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "40 Pa.C.S. § 3803 (Pennsylvania General Assembly)",
+        "sourceUrl": "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/40/00.038.003.000..HTM",
+        "deepLink": "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/40/00.038.003.000..HTM#:~:text=an%20insurer%20may%20not%20retroactively%20deny%20reimbursement%20as%20a",
+        "locator": "40 Pa.C.S. § 3803",
+        "excerpt": "an insurer may not retroactively deny reimbursement as a result of an overpayment determination more than 24 months after the date the insurer initially paid the health care provider"
+      }
+    },
+    {
+      "id": "STATE-ME-OVERPAYMENT-RECOVERY",
+      "title": "Maine health insurers: overpayment recovery limit (12 months)",
+      "authority": "Maine Legislature",
+      "sourceId": "state-me-overpayment",
+      "sourceUrl": "https://legislature.maine.gov/statutes/24-A/title24-Asec4303.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "ME"
+      },
+      "currentSourceStatement": "A Maine carrier may not impose a retrospective denial of a previously paid claim unless it gave the reason in writing and no more than 12 months have elapsed since payment. The statute permits denial from 12 to 36 months for listed reasons (for example duplicate payment or services not delivered) and beyond 12 months for fraud and certain federal-program claims.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "24-A M.R.S. § 4303 (Maine Legislature)",
+        "sourceUrl": "https://legislature.maine.gov/statutes/24-A/title24-Asec4303.html",
+        "deepLink": "https://legislature.maine.gov/statutes/24-A/title24-Asec4303.html#:~:text=the%20time%20that%20has%20elapsed%20since%20the%20date%20of",
+        "locator": "24-A M.R.S. § 4303(10)",
+        "excerpt": "the time that has elapsed since the date of payment of the previously paid claim does not exceed 12 months"
+      }
+    },
+    {
+      "id": "STATE-OR-OVERPAYMENT-RECOVERY",
+      "title": "Oregon health insurers: overpayment recovery limit (18 months)",
+      "authority": "Oregon Legislature",
+      "sourceId": "state-or-overpayment",
+      "sourceUrl": "https://oregon.public.law/statutes/ors_743B.451",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OR"
+      },
+      "currentSourceStatement": "Except for fraud or abuse of billing, an Oregon health insurer may not request a refund unless it does so in writing by the earlier of the contract period or 18 months after payment, and states why the provider owes the refund.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "ORS 743B.451 (oregon.public.law copy of the code)",
+        "sourceUrl": "https://oregon.public.law/statutes/ors_743B.451",
+        "deepLink": "https://oregon.public.law/statutes/ors_743B.451#:~:text=Requests%20the%20refund%20in%20writing%20on%20or%20before%20the",
+        "locator": "ORS 743B.451",
+        "excerpt": "Requests the refund in writing on or before the last day of the period specified by the contract with the health care provider or 18 months after the date the payment was made, whichever is earlier"
+      }
+    },
+    {
+      "id": "STATE-MN-OVERPAYMENT-RECOVERY",
+      "title": "Minnesota health insurers: overpayment recovery limit (12 months)",
+      "authority": "Minnesota Legislature",
+      "sourceId": "state-mn-overpayment",
+      "sourceUrl": "https://www.revisor.mn.gov/statutes/cite/62Q.75",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MN"
+      },
+      "currentSourceStatement": "Once a clean claim has been paid, a Minnesota health plan contract must provide a 12-month deadline on adjustments and recoupments, with exceptions.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Minnesota Statutes § 62Q.75",
+        "sourceUrl": "https://www.revisor.mn.gov/statutes/cite/62Q.75",
+        "deepLink": "https://www.revisor.mn.gov/statutes/cite/62Q.75#:~:text=the%20contract%20must%20provide%20a%2012%2Dmonth%20deadline%20on%20all",
+        "locator": "Minn. Stat. § 62Q.75, subd. 4(a)",
+        "excerpt": "the contract must provide a 12-month deadline on all adjustments to and recoupments of the payment"
+      }
+    },
+    {
+      "id": "STATE-SD-OVERPAYMENT-RECOVERY",
+      "title": "South Dakota health insurers: overpayment recovery limit (18 months)",
+      "authority": "South Dakota Legislature",
+      "sourceId": "state-sd-overpayment",
+      "sourceUrl": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/306319.pdf?Year=2026",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "SD"
+      },
+      "currentSourceStatement": "A South Dakota health carrier may recoup, recover or retroactively deny a previously paid claim only within eighteen months of payment and only after written notice of the reason. The effective date and codified section number were not verified; the text is the enrolled session law.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "South Dakota 2026 Session Law, Chapter 200 (House Bill 1292), new section in chapter 58-17H",
+        "sourceUrl": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/306319.pdf?Year=2026",
+        "deepLink": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/306319.pdf?Year=2026#:~:text=a%20previously%20paid%20claim%20may%20be%20recouped%2C%20recovered%2C%20or",
+        "locator": "S.D. 2026 Session Laws ch. 200 (HB 1292), new section in SDCL ch. 58-17H",
+        "excerpt": "a previously paid claim may be recouped, recovered, or retroactively denied by the health carrier only within eighteen months from the date the claim payment was made, if the health carrier has provided written notice of the reason to the provider"
+      }
+    },
+    {
+      "id": "STATE-MS-OVERPAYMENT-RECOVERY",
+      "title": "Mississippi health insurers: overpayment recovery limit (12 months)",
+      "authority": "Mississippi Legislature",
+      "sourceId": "secondary-ms-overpayment",
+      "sourceUrl": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/1000-1099/HB1011IN.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MS"
+      },
+      "currentSourceStatement": "Where a Mississippi issuer does not limit the provider’s claim-submission time, it may not request reimbursement or offset another claim payment more than twelve months after payment of an invalid or overpaid claim; if it does limit submission time, the same period applies reciprocally. Text taken from the existing-law portion of a Mississippi House bill; confirm in the code.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-source",
+        "sourceTitle": "SECONDARY SOURCE — Mississippi HB 1011 (2021) as introduced, quoting existing Miss. Code § 83-41-219; current code text not yet checked",
+        "sourceUrl": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/1000-1099/HB1011IN.pdf",
+        "deepLink": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/1000-1099/HB1011IN.pdf",
+        "locator": "Miss. Code § 83-41-219(2)",
+        "excerpt": "more than twelve (12) months after the payment of an"
+      }
+    },
+    {
+      "id": "STATE-NM-OVERPAYMENT-RECOVERY",
+      "title": "New Mexico health insurers: overpayment recovery limit (18 months)",
+      "authority": "New Mexico Legislature",
+      "sourceId": "state-nm-overpayment",
+      "sourceUrl": "https://www.srca.nm.gov/parts/title13/13.010.0022.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NM"
+      },
+      "currentSourceStatement": "A New Mexico health care insurer or managed health care plan must make retroactive overpayment adjustments within 18 months, unless the cause is provider miscoding, a claim submission error, suspected fraud or abuse, or an adjustment required by another federal or state agency. This is an administrative rule, not a statute.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "13.10.22 NMAC (New Mexico State Records Center)",
+        "sourceUrl": "https://www.srca.nm.gov/parts/title13/13.010.0022.html",
+        "deepLink": "https://www.srca.nm.gov/parts/title13/13.010.0022.html#:~:text=Retroactive%20adjustments%20by%20a%20health%20care%20insurer%20or%20MHCP",
+        "locator": "13.10.22.12(R) NMAC",
+        "excerpt": "Retroactive adjustments by a health care insurer or MHCP for overpayment must be made within 18 months absent health care professional miscoding, claim submission error, suspected fraud and abuse; or retroactive adjustments required by other federal or state agencies"
+      }
+    },
+    {
+      "id": "STATE-ND-OVERPAYMENT-RECOVERY",
+      "title": "North Dakota health insurers: overpayment recovery limit (12 months)",
+      "authority": "North Dakota Legislature",
+      "sourceId": "state-nd-overpayment",
+      "sourceUrl": "https://ndlegis.gov/cencode/t26-1c47.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "ND"
+      },
+      "currentSourceStatement": "A North Dakota dental insurer may not initiate overpayment recovery more than twelve months after the original payment. This rule applies to dental coverage only; no medical-claims equivalent was found in chapters 26.1-36 or 26.1-47.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "N.D.C.C. chapter 26.1-47, section 26.1-47-02.3 (North Dakota Legislative Council)",
+        "sourceUrl": "https://ndlegis.gov/cencode/t26-1c47.pdf",
+        "deepLink": "https://ndlegis.gov/cencode/t26-1c47.pdf#:~:text=initiate%20overpayment%20recovery%20efforts%20more%20than%20twelve%20months%20after",
+        "locator": "N.D.C.C. § 26.1-47-02.3(4) (dental insurers only)",
+        "excerpt": "initiate overpayment recovery efforts more than twelve months after the original payment for the claim was made"
+      }
+    },
+    {
+      "id": "STATE-MA-OVERPAYMENT-RECOVERY",
+      "title": "Massachusetts health insurers: overpayment recovery limit (12 months)",
+      "authority": "Massachusetts Legislature",
+      "sourceId": "state-ma-overpayment",
+      "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXII/Chapter176G/Section6B",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MA"
+      },
+      "currentSourceStatement": "A Massachusetts insurer or other entity may not impose a retroactive claims denial for behavioral health services unless less than 12 months have elapsed since the provider submitted the claim, and it has given a written reason and allowed 30 days to correct. The 12 months run from claim submission, not payment. After 12 months a denial is allowed only for fraud, pending legal action, payment already made, or services not delivered. No general limit for non-behavioral claims was found. The statute does not reach self-insured, Medicare or other federal plans.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "M.G.L. c. 176G, § 6B (Massachusetts Legislature; text read from an Internet Archive copy dated 2026-01-16)",
+        "sourceUrl": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXII/Chapter176G/Section6B",
+        "deepLink": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXII/Chapter176G/Section6B#:~:text=An%20insurer%20or%20other%20entity%20shall%20not%20impose%20a",
+        "locator": "M.G.L. c. 176G, § 6B(b) (behavioral health services only)",
+        "excerpt": "An insurer or other entity shall not impose a retroactive claims denial for behavioral health services on a provider unless: (i) less than 12 months have elapsed from the time of submission of the claim by the provider to the insurer or other entity"
+      }
+    },
+    {
+      "id": "STATE-NV-OVERPAYMENT-RECOVERY",
+      "title": "Nevada health insurers: overpayment recovery limit (12 months)",
+      "authority": "Nevada Legislature",
+      "sourceId": "state-nv-overpayment",
+      "sourceUrl": "https://www.leg.state.nv.us/nrs/NRS-687B.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NV"
+      },
+      "currentSourceStatement": "A Nevada health carrier or administrator providing dental coverage may not attempt to recover an overpayment more than 12 months after the date of the overpayment. Dental coverage only; no equivalent was found in NRS chapters 689A, 689B, 695C or 695G.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "NRS 687B.725 (Nevada Legislature; text read from an Internet Archive copy)",
+        "sourceUrl": "https://www.leg.state.nv.us/nrs/NRS-687B.html",
+        "deepLink": "https://www.leg.state.nv.us/nrs/NRS-687B.html#:~:text=shall%20not%20attempt%20to%20recover%20an%20overpayment%20more%20than",
+        "locator": "NRS 687B.725(3) (dental coverage only)",
+        "excerpt": "shall not attempt to recover an overpayment more than 12 months after the date of the overpayment"
+      }
+    },
+    {
+      "id": "STATE-DC-OVERPAYMENT-RECOVERY",
+      "title": "District of Columbia health insurers: overpayment recovery limit (6 months)",
+      "authority": "District of Columbia Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "DC"
+      },
+      "currentSourceStatement": "A District of Columbia health insurer may retroactively deny reimbursement only during the 6 months after payment (18 months where the adjustment is due to coordination of benefits with another insurer).",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes D.C. Code § 31-3133(a); the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "D.C. Code § 31-3133(a)",
+        "excerpt": "during the 6-month period after the date that the health insurer paid the health care provider"
+      }
+    },
+    {
+      "id": "STATE-NE-OVERPAYMENT-RECOVERY",
+      "title": "Nebraska health insurers: overpayment recovery limit (6 months)",
+      "authority": "Nebraska Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NE"
+      },
+      "currentSourceStatement": "A Nebraska insurer may not withhold benefits or request a refund as an adjustment of an overpayment on a prior claim unless it notified the claimant within six months of the date of the error (fifteen days after documented discovery where the error was prompted by the claimant’s misrepresentation).",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 210 Neb. Admin. Code ch. 60, § 011; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "210 Neb. Admin. Code ch. 60, § 011",
+        "excerpt": "has notified the claimant within six (6) months of the date of the error"
+      }
+    },
+    {
+      "id": "STATE-IA-OVERPAYMENT-RECOVERY",
+      "title": "Iowa health insurers: overpayment recovery limit (24 months)",
+      "authority": "Iowa Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "IA"
+      },
+      "currentSourceStatement": "Absent a reasonable basis to suspect fraud, an Iowa insurer may not audit a claim more than two years after the claim was submitted. This is an audit limit, not a recoupment deadline as such; it still requires records requests to be allowed.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Iowa Admin. Code r. 191-15.33; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Iowa Admin. Code r. 191-15.33",
+        "excerpt": "an insurer may not audit a claim more than two years after the submission of the claim to the insurer"
+      }
+    },
+    {
+      "id": "STATE-IL-OVERPAYMENT-RECOVERY",
+      "title": "Illinois health insurers: overpayment recovery limit (12 months)",
+      "authority": "Illinois Legislature",
+      "sourceId": "secondary-il-overpayment",
+      "sourceUrl": "https://ilchiro.org/?p=26457",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "IL"
+      },
+      "currentSourceStatement": "Illinois restricts an insurer’s recoupment or offset to within 12 months after the original payment, with statutory exceptions (for example court or agency decisions and coordination of benefits).",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-source",
+        "sourceTitle": "SECONDARY SOURCE — Illinois Chiropractic Society (Oct. 2, 2024) describing 215 ILCS 5/368d(c); the statute text has not yet been checked",
+        "sourceUrl": "https://ilchiro.org/?p=26457",
+        "deepLink": "https://ilchiro.org/?p=26457",
+        "locator": "215 ILCS 5/368d(c)",
+        "excerpt": "now restricts recoupments to within 12 months after the original payment was made"
+      }
+    },
+    {
+      "id": "STATE-WY-OVERPAYMENT-RECOVERY",
+      "title": "Wyoming health insurers: overpayment recovery limit (24 months)",
+      "authority": "Wyoming Legislature",
+      "sourceId": "survey-50-state-lookback",
+      "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "WY"
+      },
+      "currentSourceStatement": "A Wyoming insurer may not seek recovery of an overpayment to a provider more than two years after the claim was paid, unless the claim was fraudulent.",
+      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "secondary-survey",
+        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Wyo. Stat. § 26-15-137; the statute text has not yet been checked)",
+        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "locator": "Wyo. Stat. § 26-15-137",
+        "excerpt": "more than two (2) years after the date the claim was paid"
+      }
+    },
+    {
+      "id": "STATE-RI-RETROACTIVE-TERMINATION-RECOUPMENT-4-11",
+      "title": "Rhode Island insurers must stop recoupment after a retroactive termination",
+      "authority": "Rhode Island Office of the Health Insurance Commissioner",
+      "sourceId": "state-ri-regulation-4-11",
+      "sourceUrl": "https://rules.sos.ri.gov/regulations/part/230-20-30-4",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "RI"
+      },
+      "currentSourceStatement": "Rhode Island health insurers (including self-insured plans and government programs, for this section) must cease seeking recoupment from providers after a retroactive termination of an enrollee, unless the enrollee is verified as covered by another insurer for the service.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-05",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "230-RICR-20-30-4.11 (Rhode Island Department of State)",
+        "sourceUrl": "https://rules.sos.ri.gov/regulations/part/230-20-30-4",
+        "deepLink": "https://rules.sos.ri.gov/regulations/part/230-20-30-4#:~:text=Health%20Insurers%20shall%20cease%20the%20administrative%20process%20of%20seeking",
+        "locator": "230-RICR-20-30-4.11(B)(2)",
+        "excerpt": "Health Insurers shall cease the administrative process of seeking recoupment of payment from providers in the case of retroactive terminations of an enrollee, except when verified by the Health Insurer that the enrollee is covered by another Health Insurer for the service provided during the retroactivity period"
       }
     }
   ],

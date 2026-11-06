@@ -12,6 +12,54 @@ service firebase.storage {
                    && request.resource.metadata.synthetic == 'true';
     }
 
+    // Evidence vault (redacted/synthetic only until all production gates pass).
+    // Access follows case membership in Firestore (providerCases / attorneyCases),
+    // so provider and attorney participants can both read. Overwrite is denied;
+    // delete is allowed only for the uploader, and only for files marked redacted.
+    // Not deployed: firebase.json has no storage target and Storage needs the Blaze plan.
+    function caseDoc(kind, caseId) {
+      return /databases/(default)/documents/$(kind)/$(caseId);
+    }
+    function onCase(kind, caseId) {
+      return firestore.exists(caseDoc(kind, caseId))
+          && (request.auth.uid in firestore.get(caseDoc(kind, caseId)).data.providerUids
+           || request.auth.uid in firestore.get(caseDoc(kind, caseId)).data.attorneyUids);
+    }
+    function isCaseParticipant(caseId) {
+      return request.auth != null
+          && (onCase('providerCases', caseId) || onCase('attorneyCases', caseId));
+    }
+
+    // Every stored object must be ciphertext produced in the browser with the case key
+    // (public/case-crypto.js): octet-stream, flagged encrypted, real type in metadata.
+    function validBlob() {
+      return request.resource.size > 28
+          && request.resource.size < 10 * 1024 * 1024 + 64
+          && request.resource.contentType == 'application/octet-stream'
+          && request.resource.metadata.encrypted == 'true'
+          && request.resource.metadata.originalType in ['application/pdf', 'text/csv', 'application/json']
+          && request.resource.metadata.redacted == 'true'
+          && request.resource.metadata.attested == 'true'
+          && request.resource.metadata.uploadedBy == request.auth.uid
+          && request.resource.metadata.sha256.matches('^[0-9a-f]{64}$');
+    }
+
+    // Evidence: immutable once uploaded (no overwrite). The uploader may delete it,
+    // e.g. when a wrong document was uploaded by mistake.
+    match /evidence/{caseId}/{fileId} {
+      allow read: if isCaseParticipant(caseId);
+      allow create: if isCaseParticipant(caseId) && resource == null && validBlob();
+      allow update: if false;
+      allow delete: if isCaseParticipant(caseId) && resource.metadata.uploadedBy == request.auth.uid;
+    }
+
+    // Written documents: may be redacted, edited and replaced by any case participant.
+    match /documents/{caseId}/{fileId} {
+      allow read: if isCaseParticipant(caseId);
+      allow create, update: if isCaseParticipant(caseId) && validBlob();
+      allow delete: if isCaseParticipant(caseId);
+    }
+
     match /{allPaths=**} {
       allow read, write: if false;
     }

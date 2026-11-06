@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "scope": "NY Medicaid + major national payer policy intelligence",
+  "scope": "NY Medicaid + major national payer policy intelligence + federal Medicare, Medicaid and ERISA authority",
   "generatedAt": "2026-09-19T00:00:00Z",
   "sources": [
     {
@@ -429,6 +429,1015 @@
         "program"
       ],
       "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-424-5",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "regulation",
+      "title": "42 CFR 424.5 — Basic conditions",
+      "url": "https://www.ecfr.gov/current/title-42/section-424.5",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-410-61",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "regulation",
+      "title": "42 CFR 410.61 — Plan of treatment requirements for outpatient rehabilitation",
+      "url": "https://www.ecfr.gov/current/title-42/section-410.61",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-424-521",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "regulation",
+      "title": "42 CFR 424.521 — Retrospective billing",
+      "url": "https://www.ecfr.gov/current/title-42/section-424.521",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-424-22",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "regulation",
+      "title": "42 CFR 424.22 — Home health certification",
+      "url": "https://www.ecfr.gov/current/title-42/section-424.22",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-418-22",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "regulation",
+      "title": "42 CFR 418.22 — Hospice certification of terminal illness",
+      "url": "https://www.ecfr.gov/current/title-42/section-418.22",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-401-305",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "regulation",
+      "title": "42 CFR 401.305 — Overpayments: report and return",
+      "url": "https://www.ecfr.gov/current/title-42/section-401.305",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-405-942",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "appeals",
+      "title": "42 CFR 405.942 — Redetermination timeframe",
+      "url": "https://www.ecfr.gov/current/title-42/section-405.942",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-405-962",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "appeals",
+      "title": "42 CFR 405.962 — Reconsideration timeframe",
+      "url": "https://www.ecfr.gov/current/title-42/section-405.962",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-405-980",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "appeals",
+      "title": "42 CFR 405.980 — Reopenings",
+      "url": "https://www.ecfr.gov/current/title-42/section-405.980",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-455-410",
+      "authority": "eCFR",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "Medicaid",
+      "category": "regulation",
+      "title": "42 CFR 455.410 — Medicaid enrollment and screening",
+      "url": "https://www.ecfr.gov/current/title-42/section-455.410",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-29-cfr-2560-503-1",
+      "authority": "eCFR",
+      "program": "Commercial / ERISA",
+      "state": "US",
+      "payer": "Commercial / ERISA",
+      "category": "regulation",
+      "title": "29 CFR 2560.503-1 — ERISA claims procedure",
+      "url": "https://www.ecfr.gov/current/title-29/section-2560.503-1",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "usc-42-1395y",
+      "authority": "Cornell LII (U.S. Code)",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "statute",
+      "title": "42 U.S.C. 1395y — Exclusions from coverage",
+      "url": "https://www.law.cornell.edu/uscode/text/42/1395y",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "usc-42-1395ddd",
+      "authority": "Cornell LII (U.S. Code)",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "statute",
+      "title": "42 U.S.C. 1395ddd — Medicare Integrity Program",
+      "url": "https://www.law.cornell.edu/uscode/text/42/1395ddd",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cms-mbpm-ch15",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "benefit-policy-manual",
+      "title": "Medicare Benefit Policy Manual, Chapter 15 (covered services; therapy)",
+      "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c15.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cms-mbpm-ch9",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "benefit-policy-manual",
+      "title": "Medicare Benefit Policy Manual, Chapter 9 (hospice)",
+      "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/bp102c09.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cms-pim-ch3",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "program-integrity-manual",
+      "title": "Medicare Program Integrity Manual, Chapter 3 (verifying potential errors)",
+      "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c03.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cms-pim-ch4",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "program-integrity-manual",
+      "title": "Medicare Program Integrity Manual, Chapter 4 (benefit integrity; DMEPOS)",
+      "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c04.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cms-pim-ch8",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "program-integrity-manual",
+      "title": "Medicare Program Integrity Manual, Chapter 8 (statistical sampling and extrapolation)",
+      "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/pim83c08.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cms-cpm-ch5",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "claims-processing-manual",
+      "title": "Medicare Claims Processing Manual, Chapter 5 (therapy services)",
+      "url": "https://www.cms.gov/regulations-and-guidance/guidance/manuals/downloads/clm104c05.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Federal text; the version in force on the date of service must be established from the eCFR, U.S. Code or CMS manual change history.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "dos",
+        "renderingNpi"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-418-309",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "regulation",
+      "title": "42 CFR 418.309 — Hospice aggregate cap",
+      "url": "https://www.ecfr.gov/current/title-42/section-418.309",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-422-101",
+      "authority": "eCFR",
+      "program": "Medicare Advantage",
+      "state": "US",
+      "payer": "Medicare Advantage",
+      "category": "regulation",
+      "title": "42 CFR 422.101 — Requirements relating to basic benefits",
+      "url": "https://www.ecfr.gov/current/title-42/section-422.101",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-422-582",
+      "authority": "eCFR",
+      "program": "Medicare Advantage",
+      "state": "US",
+      "payer": "Medicare Advantage",
+      "category": "appeals",
+      "title": "42 CFR 422.582 — Request for a standard reconsideration",
+      "url": "https://www.ecfr.gov/current/title-42/section-422.582",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-405-1060",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "coverage",
+      "title": "42 CFR 405.1060 — Applicability of national coverage determinations",
+      "url": "https://www.ecfr.gov/current/title-42/section-405.1060",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-405-1062",
+      "authority": "eCFR",
+      "program": "Medicare",
+      "state": "US",
+      "payer": "Medicare",
+      "category": "coverage",
+      "title": "42 CFR 405.1062 — Applicability of local coverage determinations",
+      "url": "https://www.ecfr.gov/current/title-42/section-405.1062",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ca-ins-10133-66",
+      "authority": "California Legislature",
+      "program": "Commercial",
+      "state": "CA",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "California Insurance Code § 10133.66",
+      "url": "https://california.public.law/codes/ca_ins_code_section_10133.66",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ca-hsc-1371-1",
+      "authority": "California Legislature",
+      "program": "Commercial",
+      "state": "CA",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "California Health and Safety Code § 1371.1",
+      "url": "https://california.public.law/codes/health_and_safety_code_section_1371.1",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "fl-627-6131",
+      "authority": "Florida Legislature",
+      "program": "Commercial",
+      "state": "FL",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Florida Statutes § 627.6131",
+      "url": "https://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0600-0699/0627/Sections/0627.6131.html",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "uhc-comm-phys-med-max-frequency",
+      "authority": "UnitedHealthcare",
+      "program": "Commercial",
+      "state": "US",
+      "payer": "Commercial",
+      "category": "reimbursement-policy",
+      "title": "UHC Commercial — Physical Medicine & Rehabilitation: Maximum Combined Frequency per Day",
+      "url": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-Max-Combined-Frequency-Per-Day-Policy.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "uhc-comm-phys-med-pt-ot-em",
+      "authority": "UnitedHealthcare",
+      "program": "Commercial",
+      "state": "US",
+      "payer": "Commercial",
+      "category": "reimbursement-policy",
+      "title": "UHC Commercial — Physical Medicine & Rehabilitation: PT, OT and E/M",
+      "url": "https://www.uhcprovider.com/content/dam/provider/docs/public/policies/comm-reimbursement/COMM-Physical-Med-Rehab-PT-OT-Eval-Mgmt-Policy.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "fidelis-aba-documentation-cpbh105",
+      "authority": "Fidelis Care / Centene",
+      "program": "NY Medicaid / Medicare / plan-specific",
+      "state": "NY",
+      "payer": "NY Medicaid / Medicare / plan-specific",
+      "category": "clinical-policy",
+      "title": "Fidelis Clinical Policy CP.BH.105 — ABA Documentation Requirements",
+      "url": "https://www.fideliscare.org/Portals/0/Providers/CP.BH.105-ABA-Documentation.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "emblem-hab-rehab-rpc20240052",
+      "authority": "EmblemHealth",
+      "program": "Commercial",
+      "state": "NY",
+      "payer": "Commercial",
+      "category": "reimbursement-policy",
+      "title": "EmblemHealth — Habilitative and Rehabilitative Services (Commercial)",
+      "url": "https://www.emblemhealth.com/content/dam/emblemhealth/pdfs/provider/reimbursement-policies/habilitative-and-rehabilitative-services-reimbursement-policy-emblemhealth.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher’s revision history or archive.",
+      "claimFields": [
+        "cpt",
+        "hcpcs",
+        "modifier",
+        "dos",
+        "units"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-az-overpayment",
+      "authority": "Arizona Legislature",
+      "program": "Commercial",
+      "state": "AZ",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Arizona Revised Statutes § 20-3102",
+      "url": "https://www.azleg.gov/ars/20/03102.htm",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-ct-overpayment",
+      "authority": "Connecticut Legislature",
+      "program": "Commercial",
+      "state": "CT",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Connecticut General Statutes § 38a-479b (chapter 700c)",
+      "url": "https://www.cga.ct.gov/current/pub/chap_700c.htm",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-de-overpayment",
+      "authority": "Delaware Legislature",
+      "program": "Commercial",
+      "state": "DE",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "18 Delaware Code § 2730",
+      "url": "https://delcode.delaware.gov/title18/c027/sc01/index.html",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-ks-overpayment",
+      "authority": "Kansas Legislature",
+      "program": "Commercial",
+      "state": "KS",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Kansas Statutes § 40-2442",
+      "url": "https://www.ksrevisor.org/statutes/chapters/ch40/040_024_0042.html",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-md-overpayment",
+      "authority": "Maryland Legislature",
+      "program": "Commercial",
+      "state": "MD",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Maryland Insurance Code § 15-1008",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=gin&section=15-1008&enactments=false",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-mo-overpayment",
+      "authority": "Missouri Legislature",
+      "program": "Commercial",
+      "state": "MO",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Missouri Revised Statutes § 376.384",
+      "url": "https://revisor.mo.gov/main/OneSection.aspx?section=376.384",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-sc-overpayment",
+      "authority": "South Carolina Legislature",
+      "program": "Commercial",
+      "state": "SC",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "South Carolina Code § 38-59-250",
+      "url": "https://www.scstatehouse.gov/code/t38c059.php",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-tx-overpayment",
+      "authority": "Texas Legislature",
+      "program": "Commercial",
+      "state": "TX",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Texas Insurance Code § 1301.132 (texas.public.law copy of the code)",
+      "url": "https://texas.public.law/statutes/tex._ins._code_section_1301.132",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-va-overpayment",
+      "authority": "Virginia Legislature",
+      "program": "Commercial",
+      "state": "VA",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Code of Virginia § 38.2-3407.15",
+      "url": "https://law.lis.virginia.gov/vacode/title38.2/chapter34/section38.2-3407.15/",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-wa-overpayment",
+      "authority": "Washington Legislature",
+      "program": "Commercial",
+      "state": "WA",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "RCW 48.43.600",
+      "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=48.43.600",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-wv-overpayment",
+      "authority": "West Virginia Legislature",
+      "program": "Commercial",
+      "state": "WV",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "West Virginia Code § 33-45-2",
+      "url": "https://code.wvlegislature.gov/33-45-2/",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-pa-overpayment",
+      "authority": "Pennsylvania Legislature",
+      "program": "Commercial",
+      "state": "PA",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "40 Pa.C.S. § 3803 (Pennsylvania General Assembly)",
+      "url": "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/40/00.038.003.000..HTM",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-me-overpayment",
+      "authority": "Maine Legislature",
+      "program": "Commercial",
+      "state": "ME",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "24-A M.R.S. § 4303 (Maine Legislature)",
+      "url": "https://legislature.maine.gov/statutes/24-A/title24-Asec4303.html",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-or-overpayment",
+      "authority": "Oregon Legislature",
+      "program": "Commercial",
+      "state": "OR",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "ORS 743B.451 (oregon.public.law copy of the code)",
+      "url": "https://oregon.public.law/statutes/ors_743B.451",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-mn-overpayment",
+      "authority": "Minnesota Legislature",
+      "program": "Commercial",
+      "state": "MN",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Minnesota Statutes § 62Q.75",
+      "url": "https://www.revisor.mn.gov/statutes/cite/62Q.75",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-sd-overpayment",
+      "authority": "South Dakota Legislature",
+      "program": "Commercial",
+      "state": "SD",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "South Dakota 2026 Session Law, Chapter 200 (House Bill 1292), new section in chapter 58-17H",
+      "url": "https://mylrc.sdlegislature.gov/api/Documents/SessionLaw/306319.pdf?Year=2026",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "secondary-ms-overpayment",
+      "authority": "Third-party source (not official)",
+      "program": "Commercial",
+      "state": "MS",
+      "payer": "Commercial",
+      "category": "secondary-survey",
+      "title": "SECONDARY SOURCE — Mississippi HB 1011 (2021) as introduced, quoting existing Miss. Code § 83-41-219; current code text not yet checked",
+      "url": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/1000-1099/HB1011IN.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-nm-overpayment",
+      "authority": "New Mexico Legislature",
+      "program": "Commercial",
+      "state": "NM",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "13.10.22 NMAC (New Mexico State Records Center)",
+      "url": "https://www.srca.nm.gov/parts/title13/13.010.0022.html",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-nd-overpayment",
+      "authority": "North Dakota Legislature",
+      "program": "Commercial",
+      "state": "ND",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "N.D.C.C. chapter 26.1-47, section 26.1-47-02.3 (North Dakota Legislative Council)",
+      "url": "https://ndlegis.gov/cencode/t26-1c47.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-ma-overpayment",
+      "authority": "Massachusetts Legislature",
+      "program": "Commercial",
+      "state": "MA",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "M.G.L. c. 176G, § 6B (Massachusetts Legislature; text read from an Internet Archive copy dated 2026-01-16)",
+      "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXXII/Chapter176G/Section6B",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-nv-overpayment",
+      "authority": "Nevada Legislature",
+      "program": "Commercial",
+      "state": "NV",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "NRS 687B.725 (Nevada Legislature; text read from an Internet Archive copy)",
+      "url": "https://www.leg.state.nv.us/nrs/NRS-687B.html",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "secondary-il-overpayment",
+      "authority": "Third-party source (not official)",
+      "program": "Commercial",
+      "state": "IL",
+      "payer": "Commercial",
+      "category": "secondary-survey",
+      "title": "SECONDARY SOURCE — Illinois Chiropractic Society (Oct. 2, 2024) describing 215 ILCS 5/368d(c); the statute text has not yet been checked",
+      "url": "https://ilchiro.org/?p=26457",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-ri-regulation-4-11",
+      "authority": "Rhode Island Department of State",
+      "program": "Commercial",
+      "state": "RI",
+      "payer": "Commercial",
+      "category": "regulation",
+      "title": "230-RICR-20-30-4.11 (Administrative simplification)",
+      "url": "https://rules.sos.ri.gov/regulations/part/230-20-30-4",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "survey-50-state-lookback",
+      "authority": "Third-party survey (not an official source)",
+      "program": "Commercial",
+      "state": "US",
+      "payer": "Commercial",
+      "category": "secondary-survey",
+      "title": "50-State Survey: Look Back Laws",
+      "url": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Secondary source used to locate statutes whose text could not be fetched; each statute must still be read in the code.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 3
     }
   ]
 }
