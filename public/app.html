@@ -138,6 +138,8 @@
 
   <section class="card"><div class="section-heading"><div><h3>Recovery rights / lookback</h3><p>AuditDefend separately tests whether the payer appears to be within the applicable recovery window and notice period. The anchor is generally the payment-received date, not simply the DOS.</p></div><span class="pill warning">Exceptions require review</span></div><div id="recoveryRights" class="recovery-grid"></div></section>
 
+  <section class="card"><div class="section-heading"><div><h3>State Medicaid coverage</h3><p>Federal Medicaid rules apply in every state. This shows which states also have a state Medicaid rule in AuditDefend. <b>Not yet reviewed</b> means nobody has read that state's Medicaid code or provider manual here. It does not mean the state has no rule or no limit.</p></div><span class="pill warning">Federal rules only where not reviewed</span></div><div id="medicaidCoverage"></div></section>
+
   <section class="card"><div class="section-heading"><div><h3>Monitored policy sources</h3><p>Sources are checked daily. A changed source is queued for human policy review; the system does not silently reinterpret claims.</p></div><span class="pill info">Daily source review</span></div><div class="table-wrap"><table><thead><tr><th>Source</th><th>Authority</th><th>Program</th><th>Cadence</th><th>Monitor state</th><th></th></tr></thead><tbody id="policySourcesBody"></tbody></table></div></section>
 </section>
 

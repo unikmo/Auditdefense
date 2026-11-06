@@ -64,6 +64,19 @@ function renderRecovery(){
   root.innerHTML=block('This Anthem NY Medicaid Managed Care sample',current,false)+block('Example: NY commercial claim recovered after 25 months',commercialExample,true)+block('Same 25-month example under NY Medicaid Managed Care',medicaidExample,true);
 }
 
+function renderMedicaidCoverage(){
+  const root=$('medicaidCoverage'); if(!root)return;
+  const NAMES={AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming'};
+  const SCOPE={NY:'managed care only',CA:'cost reports and audits',ID:'hospitals, FQHCs, RHCs, home health',PA:'cost settlements',TX:'OIG retrospective review'};
+  const covered=new Map();
+  const bump=st=>covered.set(st,(covered.get(st)||0)+1);
+  for(const r of policyRules){const a=r.appliesTo||{};if(a.state&&!a.payer&&/medicaid/i.test(a.program||''))bump(a.state)}
+  for(const r of recoveryRules){if(/medicaid/i.test(r.programClass||'')&&r.jurisdiction)bump(r.jurisdiction)}
+  const codes=Object.keys(NAMES).sort((a,b)=>NAMES[a].localeCompare(NAMES[b]));
+  const have=codes.filter(c=>covered.has(c)), missing=codes.filter(c=>!covered.has(c));
+  const chip=(c,ok)=>'<span class="policy-chip '+(ok?'good':'warning')+'" title="'+esc(NAMES[c])+'">'+esc(NAMES[c])+(ok?' ('+covered.get(c)+(SCOPE[c]?', '+esc(SCOPE[c]):'')+')':'')+'</span> ';
+  root.innerHTML='<h4>State rule encoded ('+have.length+' of '+codes.length+')</h4><p>'+have.map(c=>chip(c,true)).join('')+'</p><h4>Not yet reviewed: federal Medicaid rules only ('+missing.length+')</h4><p>'+missing.map(c=>chip(c,false)).join('')+'</p>';
+}
 function renderUpcomingChanges(){
   const root=$('upcomingPolicyChanges'); if(!root)return;
   const upcoming=(policyChanges||[]).filter(x=>x.status==='UPCOMING_VERIFIED').sort((a,b)=>a.effectiveFrom.localeCompare(b.effectiveFrom));
@@ -90,7 +103,7 @@ async function renderSources(){
     policyChanges=changesPayload.announcements||[];
     evaluations=window.AuditDefendPolicyEngine?.evaluateCase(claims,policyRules,caseContext)||[];
     window.AuditDefendPolicyState={rules:policyRules,evaluations,recoveryRules,policyChanges};
-    renderClaimPolicyLinks();renderSourcePacket();renderRecovery();renderUpcomingChanges();
+    renderClaimPolicyLinks();renderSourcePacket();renderRecovery();renderMedicaidCoverage();renderUpcomingChanges();
 
     const sourceMap=new Map(status.sources.map(s=>[s.id,s]));
     if(count)count.textContent=registry.sources.length;
