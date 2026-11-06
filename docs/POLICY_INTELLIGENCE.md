@@ -151,6 +151,9 @@ Also source-verified (excerpts matched verbatim against the retrieved text):
 | UnitedHealthcare Commercial: 8-minute unit minimum, four timed codes per day, assistants and evaluation codes, CQ/CO modifiers | policies 2026R0101A, 2026R0098A |
 | Fidelis Care / Centene ABA documentation (units, authorization, signatures, session times, late notes, 97155 protocol modification, active treatment) | CP.BH.105 |
 | EmblemHealth habilitative/rehabilitative modifiers 96/97 | RPC20240052 |
+| Humana Indiana PathWays for Aging (Indiana Medicaid): 48-hour written notice; 60 calendar days to dispute, refund or allow offset | Humana presentation, 2026 IHCP Works seminar |
+| Molina Healthcare of Iowa: dispute within 45 days of notification; return identified overpayments within 60 days | Molina provider presentation hosted by Iowa HHS |
+| Cigna Behavioral Health (HMO/insured): retroactive denial within 18 months; eligibility-based denial within 6 months | Cigna provider page TN_HmoInsuredOnly |
 
 Recovery windows now exist for California (365 days), Florida (30 months; 12 months for listed professions, selected by `providerType`) and New York, plus Medicare reopening. A state with no configured rule returns `NO_RULE_CONFIGURED`. It never borrows another state's window, and commercial windows are never applied to Medicaid or Medicare.
 
@@ -171,8 +174,9 @@ Payer matching is loose on purpose (`Fidelis Care`, `United Healthcare` and `Uni
 - **California plans.** Knox-Keene plans are also reachable through the DMHC regulation 28 CCR § 1300.71 (365 days, fraud excepted), named in one search result; not yet read in the text.
   - **Mixed meanings.** Some statutes limit recovery requests, others retroactive denials or audits. Iowa's is an audit limit; Texas sets a 180-day deadline for written notice; Maine, Minnesota and Pennsylvania add exception tiers. The title and statement on each rule say which.
 - **California scope.** § 10133.66 governs health insurers. Knox-Keene health plans fall under the Health and Safety Code, whose own refund-request limit was not verified. The CA statute text was verified from the California.Public.Law copy, not leginfo.legislature.ca.gov.
-- **State Medicaid programs** other than New York have no rules.
-- **Payers without rules.** Humana, Aetna, Molina and Anthem policies beyond the existing five are monitored but have no extracted rules. Humana's index had no relevant policy links, Molina blocks automated requests, and Aetna publishes announcements rather than policy text.
+- **State Medicaid programs** other than New York have almost no rules. Indiana (Humana plan) and Iowa (Molina plan) have the plan-level notice and dispute windows above. Texas Medicaid and its MCOs reportedly may request refunds for up to five years (Texas Medical Association guide); that is a secondary summary, 1 TAC 371.1711 sets no time limit, and no Texas rule is encoded. Florida and California Medicaid lookbacks were not found.
+- **Payer rules are plan communications, not contracts.** The Humana, Molina and Cigna rules come from the plans' own presentations or provider pages. They give notice and dispute windows, not lookback limits, and the provider contract and the date on the overpayment notice control. The Cigna page address begins TN_ but its text names no state, so its rules are tagged Tennessee with that caveat.
+- **Payers still without rules.** Aetna (commercial), Anthem outside NY, Blue Cross plans, Centene/Ambetter outside Fidelis, Kaiser, Tricare and the Humana and Molina commercial manuals. Aetna Better Health state Medicaid notices (for example Kentucky, 30 days) were found in search but their pages block automated access, so they are not encoded.
 - **Commercial policies change often.** Each carries a policy number or revision; `effectiveFrom` is set only where the policy states an effective date. For any date of service the version in force then must be established.
 - **Individual LCDs and NCDs** (specific services) are not extracted; the two rules state how they bind.
 - A rule is a sourced pointer, never a conclusion.

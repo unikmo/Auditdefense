@@ -171,3 +171,14 @@ if(nvDental.status!=='POTENTIALLY_OUTSIDE_WINDOW')throw new Error('Nevada dental
 const nvMedical=recoveryWindow.AuditDefendRecoveryEngine.evaluate({paymentReceivedDate:'2025-01-01',recoveryInitiatedDate:'2026-06-01'},recoveryRules,{state:'NV',program:'Commercial',providerType:'physician'});
 if(nvMedical.status!=='NO_RULE_CONFIGURED')throw new Error('The Nevada dental-only rule must not apply to medical providers.');
 console.log('Scoped state rule tests passed.');
+
+// Payer-specific overpayment rules: Humana (IN Medicaid), Molina (IA), Cigna Behavioral Health (TN page)
+for(const id of ['HUMANA-IN-PATHWAYS-OVERPAYMENT-60-DAYS-TO-RESPOND','MOLINA-IA-OVERPAYMENT-DISPUTE-45-DAYS','CIGNA-BH-RETROACTIVE-DENIAL-18-MONTHS']){if(!byId(id))throw new Error('Missing rule '+id);}
+const E=policyWindow.AuditDefendPolicyEngine;
+const humRule=byId('HUMANA-IN-PATHWAYS-OVERPAYMENT-60-DAYS-TO-RESPOND');
+if(!E.appliesToCase(humRule,{payer:'Humana',state:'IN',program:'Medicaid'}))throw new Error('Humana Indiana Medicaid rule should apply to a Humana Indiana Medicaid case.');
+if(E.appliesToCase(humRule,{payer:'Humana',state:'TX',program:'Commercial'}))throw new Error('Humana Indiana rule must not apply to a Texas case.');
+if(E.appliesToCase(humRule,{payer:'Aetna',state:'IN',program:'Medicaid'}))throw new Error('Humana rule must not apply to another payer.');
+const molRule=byId('MOLINA-IA-OVERPAYMENT-DISPUTE-45-DAYS');
+if(!E.appliesToCase(molRule,{payer:'Molina Healthcare',state:'IA',program:'Medicaid'})||E.appliesToCase(molRule,{payer:'Molina Healthcare',state:'OH',program:'Medicaid'}))throw new Error('Molina Iowa rule is scoped to Iowa.');
+console.log('Payer overpayment rule tests passed.');

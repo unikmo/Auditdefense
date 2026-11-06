@@ -1,7 +1,7 @@
 {
   "version": 1,
   "scope": "Source-verified rule map: NY Medicaid + Anthem NY; federal Medicare (incl. Medicare Advantage, NCD/LCD), Medicaid enrollment and ERISA; California and Florida overpayment statutes; UnitedHealthcare, Fidelis/Centene and EmblemHealth policies",
-  "generatedAt": "2026-11-05",
+  "generatedAt": "2026-11-06",
   "notice": "These are source-attribution rules, not automated legal conclusions. Historical DOS applicability must be established from the version effective on the DOS.",
   "rules": [
     {
@@ -2969,6 +2969,182 @@
         "deepLink": "https://rules.sos.ri.gov/regulations/part/230-20-30-4#:~:text=Health%20Insurers%20shall%20cease%20the%20administrative%20process%20of%20seeking",
         "locator": "230-RICR-20-30-4.11(B)(2)",
         "excerpt": "Health Insurers shall cease the administrative process of seeking recoupment of payment from providers in the case of retroactive terminations of an enrollee, except when verified by the Health Insurer that the enrollee is covered by another Health Insurer for the service provided during the retroactivity period"
+      }
+    },
+    {
+      "id": "HUMANA-IN-PATHWAYS-OVERPAYMENT-60-DAYS-TO-RESPOND",
+      "title": "Humana Indiana PathWays for Aging: 60 calendar days to dispute, refund or allow offset",
+      "authority": "Humana",
+      "sourceId": "humana-in-pathways-overpayments-2026",
+      "sourceUrl": "https://www.in.gov/medicaid/providers/files/IHCP-Works-2026-Humana-Overpayments-and-Recoupments.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Humana",
+        "program": "Medicaid",
+        "state": "IN"
+      },
+      "currentSourceStatement": "After an overpayment letter, the provider has 60 calendar days to dispute through Availity, refund to the designated P.O. box, or allow offset on future claims. The source is a Humana presentation at the 2026 IHCP Works seminar for Indiana PathWays for Aging (Indiana Medicaid), not a contract.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Indiana PathWays for Aging: Overpayments and Recoupments (Humana, 2026 IHCP Works Annual Seminar)",
+        "sourceUrl": "https://www.in.gov/medicaid/providers/files/IHCP-Works-2026-Humana-Overpayments-and-Recoupments.pdf",
+        "deepLink": "https://www.in.gov/medicaid/providers/files/IHCP-Works-2026-Humana-Overpayments-and-Recoupments.pdf#page=12",
+        "locator": "PDF page 12 — Overpayments and Recoupments, Recoupments slide",
+        "excerpt": "providers have 60 calendar days to choose between three options"
+      }
+    },
+    {
+      "id": "HUMANA-IN-PATHWAYS-OVERPAYMENT-NOTICE-48-HOURS",
+      "title": "Humana Indiana PathWays for Aging: written overpayment notice within 48 hours",
+      "authority": "Humana",
+      "sourceId": "humana-in-pathways-overpayments-2026",
+      "sourceUrl": "https://www.in.gov/medicaid/providers/files/IHCP-Works-2026-Humana-Overpayments-and-Recoupments.pdf",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Humana",
+        "program": "Medicaid",
+        "state": "IN"
+      },
+      "currentSourceStatement": "Once a claim is identified as overpaid, Humana states it sends a written notice within 48 hours; a provider can use the notice date to start the 60-day response period.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Indiana PathWays for Aging: Overpayments and Recoupments (Humana, 2026 IHCP Works Annual Seminar)",
+        "sourceUrl": "https://www.in.gov/medicaid/providers/files/IHCP-Works-2026-Humana-Overpayments-and-Recoupments.pdf",
+        "deepLink": "https://www.in.gov/medicaid/providers/files/IHCP-Works-2026-Humana-Overpayments-and-Recoupments.pdf#page=12",
+        "locator": "PDF page 12 — Overpayments and Recoupments, Recoupments slide",
+        "excerpt": "Humana will send a written notice of overpayment within 48 hours for each of Humana's products"
+      }
+    },
+    {
+      "id": "MOLINA-IA-OVERPAYMENT-DISPUTE-45-DAYS",
+      "title": "Molina Healthcare of Iowa: dispute an overpayment within 45 days of notification",
+      "authority": "Molina Healthcare",
+      "sourceId": "molina-ia-provider-presentation",
+      "sourceUrl": "https://hhs.iowa.gov/media/17451/download",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Molina",
+        "state": "IA"
+      },
+      "currentSourceStatement": "Molina Healthcare of Iowa asks providers to dispute an overpayment determination through Availity, with supporting documents, within 45 days of the overpayment notification. The source is a plan presentation hosted by Iowa HHS; the product line is not stated on that slide.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Molina Healthcare of Iowa provider presentation (hosted by Iowa HHS)",
+        "sourceUrl": "https://hhs.iowa.gov/media/17451/download",
+        "deepLink": "https://hhs.iowa.gov/media/17451/download#page=14",
+        "locator": "PDF page 14 — Provider presentation, Cost Recovery/Overpayments",
+        "excerpt": "please dispute via the Availity Provider Portal, with supporting documentation, within 45 days of this overpayment notification"
+      }
+    },
+    {
+      "id": "MOLINA-IA-OVERPAYMENT-RETURN-60-DAYS",
+      "title": "Molina Healthcare of Iowa: provider returns an identified overpayment within 60 calendar days",
+      "authority": "Molina Healthcare",
+      "sourceId": "molina-ia-provider-presentation",
+      "sourceUrl": "https://hhs.iowa.gov/media/17451/download",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Molina",
+        "state": "IA"
+      },
+      "currentSourceStatement": "Providers must notify Molina and return an overpayment they identify within 60 calendar days of identifying it.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "pdf-page",
+        "sourceTitle": "Molina Healthcare of Iowa provider presentation (hosted by Iowa HHS)",
+        "sourceUrl": "https://hhs.iowa.gov/media/17451/download",
+        "deepLink": "https://hhs.iowa.gov/media/17451/download#page=13",
+        "locator": "PDF page 13 — Provider presentation, Cost Recovery/Overpayments",
+        "excerpt": "return the overpayment to Molina within 60 calendar days after the identification of overpayment"
+      }
+    },
+    {
+      "id": "CIGNA-BH-RETROACTIVE-DENIAL-18-MONTHS",
+      "title": "Cigna Behavioral Health (HMO/insured): retroactive denial only within 18 months of payment",
+      "authority": "Cigna Healthcare",
+      "sourceId": "cigna-bh-hmo-insured-overpayment",
+      "sourceUrl": "https://static.cigna.com/assets/chcp/resourceLibrary/behavioralResources/medicalMgmt/providerGuide/TN_HmoInsuredOnly.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Cigna",
+        "state": "TN"
+      },
+      "currentSourceStatement": "Except in cases of fraud, Cigna Behavioral Health may retroactively deny reimbursement only within 18 months after paying the claim. The page address begins TN_ and the page text does not name a state, so confirm that the state of the claim is Tennessee before relying on it.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Cigna Healthcare for health care professionals: Concerning HMO and/or Insured Participants Only (Overpayment Recovery Procedure)",
+        "sourceUrl": "https://static.cigna.com/assets/chcp/resourceLibrary/behavioralResources/medicalMgmt/providerGuide/TN_HmoInsuredOnly.html",
+        "deepLink": "https://static.cigna.com/assets/chcp/resourceLibrary/behavioralResources/medicalMgmt/providerGuide/TN_HmoInsuredOnly.html#:~:text=Cigna%20Behavioral%20Health%20may%20only%20retroactively%20deny%20reimbursements%20to",
+        "locator": "Overpayment Recovery Procedure",
+        "excerpt": "Cigna Behavioral Health may only retroactively deny reimbursements to the professional during the eighteen (18) month period after the date Cigna Behavioral Health paid the claim"
+      }
+    },
+    {
+      "id": "CIGNA-BH-ELIGIBILITY-RETRO-DENIAL-6-MONTHS",
+      "title": "Cigna Behavioral Health (HMO/insured): no retroactive eligibility denial after 6 months once eligibility was verified",
+      "authority": "Cigna Healthcare",
+      "sourceId": "cigna-bh-hmo-insured-overpayment",
+      "sourceUrl": "https://static.cigna.com/assets/chcp/resourceLibrary/behavioralResources/medicalMgmt/providerGuide/TN_HmoInsuredOnly.html",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "payer": "Cigna",
+        "state": "TN"
+      },
+      "currentSourceStatement": "If Cigna Behavioral Health verified eligibility and the professional relied on it, it may deny retroactively for ineligibility only within 6 months of considering the claim, except in cases of fraud. The page address begins TN_ and the page text does not name a state.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_POLICY_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Cigna Healthcare for health care professionals: Concerning HMO and/or Insured Participants Only (Overpayment Recovery Procedure)",
+        "sourceUrl": "https://static.cigna.com/assets/chcp/resourceLibrary/behavioralResources/medicalMgmt/providerGuide/TN_HmoInsuredOnly.html",
+        "deepLink": "https://static.cigna.com/assets/chcp/resourceLibrary/behavioralResources/medicalMgmt/providerGuide/TN_HmoInsuredOnly.html#:~:text=Cigna%20Behavioral%20Health%20may%20not%20thereafter%20retroactively%20deny%20a",
+        "locator": "Overpayment Recovery Procedure",
+        "excerpt": "Cigna Behavioral Health may not thereafter retroactively deny a claim on the basis that a participant is not eligible for benefit unless such retroactive denial occurs within six (6) months of the date Cigna Behavioral Health considered the claim for benefit"
       }
     }
   ],

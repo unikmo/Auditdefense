@@ -1438,6 +1438,60 @@
         "paymentReceivedDate"
       ],
       "priority": 3
+    },
+    {
+      "id": "humana-in-pathways-overpayments-2026",
+      "authority": "Humana",
+      "program": "Medicaid",
+      "state": "IN",
+      "payer": "Humana",
+      "category": "recovery-rights",
+      "title": "Indiana PathWays for Aging: Overpayments and Recoupments (Humana, 2026 IHCP Works Annual Seminar)",
+      "url": "https://www.in.gov/medicaid/providers/files/IHCP-Works-2026-Humana-Overpayments-and-Recoupments.pdf",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Plan communication, not a contract. The provider contract and the date of the overpayment notice control.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "molina-ia-provider-presentation",
+      "authority": "Molina Healthcare",
+      "program": "Medicaid / Medicare",
+      "state": "IA",
+      "payer": "Molina Healthcare",
+      "category": "recovery-rights",
+      "title": "Molina Healthcare of Iowa provider presentation (hosted by Iowa HHS)",
+      "url": "https://hhs.iowa.gov/media/17451/download",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Plan communication, not a contract. The provider contract and the date of the overpayment notice control.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "cigna-bh-hmo-insured-overpayment",
+      "authority": "Cigna Healthcare",
+      "program": "Commercial (HMO/insured)",
+      "state": "TN",
+      "payer": "Cigna Healthcare",
+      "category": "recovery-rights",
+      "title": "Cigna Healthcare for health care professionals: Concerning HMO and/or Insured Participants Only (Overpayment Recovery Procedure)",
+      "url": "https://static.cigna.com/assets/chcp/resourceLibrary/behavioralResources/medicalMgmt/providerGuide/TN_HmoInsuredOnly.html",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Plan communication, not a contract. The provider contract and the date of the overpayment notice control.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate",
+        "state"
+      ],
+      "priority": 2
     }
   ]
 }
