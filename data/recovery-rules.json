@@ -472,12 +472,12 @@
       "exceptions": [
         "clear and documented reason to believe of fraud or intentional misconduct"
       ],
-      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
       "citation": {
-        "kind": "secondary-survey",
-        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 3 AAC 26.110; the statute text has not yet been checked)",
-        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
-        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "kind": "html-text-fragment",
+        "sourceTitle": "3 AAC 26.110(d) (Alaska Administrative Code, Justia regulations copy, current through May 30, 2025)",
+        "sourceUrl": "https://regulations.justia.com/states/alaska/title-3/part-2/chapter-26/article-1/section-3-aac-26-110",
+        "deepLink": "https://regulations.justia.com/states/alaska/title-3/part-2/chapter-26/article-1/section-3-aac-26-110#:~:text=more%20than%20365%20days%20after%20the%20date%20the%20original",
         "locator": "3 AAC 26.110",
         "excerpt": "more than 365 days after the date the original payment was made"
       }
@@ -837,12 +837,12 @@
         "adjustment with another health plan",
         "legal action"
       ],
-      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
       "citation": {
-        "kind": "secondary-survey",
-        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 18 V.S.A. § 9418; the statute text has not yet been checked)",
-        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
-        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "kind": "html-text-fragment",
+        "sourceTitle": "18 V.S.A. § 9418(h)-(i) (2025 Vermont Statutes, Justia copy of the code)",
+        "sourceUrl": "https://law.justia.com/codes/vermont/title-18/chapter-221/section-9418/",
+        "deepLink": "https://law.justia.com/codes/vermont/title-18/chapter-221/section-9418/#:~:text=shall%20be%20permitted%20beyond%2012%20months%20from%20the%20date",
         "locator": "18 V.S.A. § 9418",
         "excerpt": "shall be permitted beyond 12 months from the date of payment"
       }

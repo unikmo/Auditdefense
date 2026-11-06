@@ -1219,6 +1219,23 @@
       "priority": 1
     },
     {
+      "id": "state-ak-overpayment",
+      "authority": "Alaska Legislature",
+      "program": "Commercial",
+      "state": "AK",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "3 AAC 26.110(d) (Alaska Administrative Code, Justia regulations copy, current through May 30, 2025)",
+      "url": "https://regulations.justia.com/states/alaska/title-3/part-2/chapter-26/article-1/section-3-aac-26-110",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
       "id": "state-la-overpayment",
       "authority": "Louisiana Legislature",
       "program": "Commercial",
@@ -1278,6 +1295,23 @@
       "category": "recovery-rights",
       "title": "Tenn. Code § 56-7-110 (2025 Tennessee Code, Justia copy of the code)",
       "url": "https://law.justia.com/codes/tennessee/title-56/chapter-7/part-1/section-56-7-110/",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-vt-overpayment",
+      "authority": "Vermont Legislature",
+      "program": "Commercial",
+      "state": "VT",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "18 V.S.A. § 9418(h)-(i) (2025 Vermont Statutes, Justia copy of the code)",
+      "url": "https://law.justia.com/codes/vermont/title-18/chapter-221/section-9418/",
       "cadence": "daily check via policy monitor",
       "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
       "claimFields": [
