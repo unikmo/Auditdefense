@@ -628,12 +628,12 @@
       "exceptions": [
         "statutory exceptions"
       ],
-      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
       "citation": {
-        "kind": "secondary-survey",
-        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes La. R.S. § 22:1838; the statute text has not yet been checked)",
-        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
-        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "kind": "html-text-fragment",
+        "sourceTitle": "La. R.S. 22:1838 (2025 Louisiana Laws, Justia copy of the code)",
+        "sourceUrl": "https://law.justia.com/codes/louisiana/revised-statutes/title-22/rs-22-1838/",
+        "deepLink": "https://law.justia.com/codes/louisiana/revised-statutes/title-22/rs-22-1838/#:~:text=after%20the%20expiration%20of%20eighteen%20months%20from%20the%20date",
         "locator": "La. R.S. § 22:1838",
         "excerpt": "after the expiration of eighteen months from the date the initial claim was paid"
       }
@@ -672,12 +672,12 @@
       "exceptions": [
         "statutory exceptions"
       ],
-      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
       "citation": {
-        "kind": "secondary-survey",
-        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes N.H. RSA § 420-J:8-b; the statute text has not yet been checked)",
-        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
-        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
+        "kind": "html-text-fragment",
+        "sourceTitle": "N.H. RSA 420-J:8-b (2025 New Hampshire Revised Statutes, Justia copy of the code)",
+        "sourceUrl": "https://law.justia.com/codes/new-hampshire/title-xxxvii/chapter-420-j/section-420-j-8-b/",
+        "deepLink": "https://law.justia.com/codes/new-hampshire/title-xxxvii/chapter-420-j/section-420-j-8-b/#:~:text=does%20not%20exceed%2012%20months",
         "locator": "N.H. RSA § 420-J:8-b",
         "excerpt": "does not exceed 12 months"
       }
@@ -754,10 +754,10 @@
     },
     {
       "id": "STATE-OK-OVERPAYMENT-RECOVERY",
-      "title": "Oklahoma health insurers: overpayment recovery limit (18 months)",
+      "title": "Oklahoma health insurers: overpayment recovery limit (12 months)",
       "jurisdiction": "OK",
       "programClass": "commercial-health-plan",
-      "windowMonths": 18,
+      "windowMonths": 12,
       "anchorField": "paymentReceivedDate",
       "recoveryField": "recoveryInitiatedDate",
       "noticeDays": null,
@@ -765,36 +765,37 @@
         "fraud",
         "agreement to refund"
       ],
-      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
       "citation": {
-        "kind": "secondary-survey",
-        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes 36 Okla. Stat. § 1250.5; the statute text has not yet been checked)",
-        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
-        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
-        "locator": "36 Okla. Stat. § 1250.5",
-        "excerpt": "more than eighteen (18) months after the payment is made"
+        "kind": "html-text-fragment",
+        "sourceTitle": "36 O.S. § 1250.5 (2025 Oklahoma Statutes, Justia copy of the code)",
+        "sourceUrl": "https://law.justia.com/codes/oklahoma/title-36/section-36-1250-5/",
+        "deepLink": "https://law.justia.com/codes/oklahoma/title-36/section-36-1250-5/#:~:text=a%20health%20care%20provider%20more%20than%20twelve%20%2812%29%20months",
+        "locator": "36 Okla. Stat. § 1250.5(15)",
+        "excerpt": "a health care provider more than twelve (12) months after the payment is made"
       }
     },
     {
       "id": "STATE-TN-OVERPAYMENT-RECOVERY",
-      "title": "Tennessee health insurers: overpayment recovery limit (18 months)",
+      "title": "Tennessee health insurers: overpayment recovery limit (15 months)",
       "jurisdiction": "TN",
       "programClass": "commercial-health-plan",
-      "windowMonths": 18,
+      "windowMonths": 15,
       "anchorField": "paymentReceivedDate",
       "recoveryField": "recoveryInitiatedDate",
       "noticeDays": null,
       "exceptions": [
-        "fraud committed by the health care provider"
+        "fraud or suspected fraud committed by the health care provider",
+        "state employee health plan (18 months)"
       ],
-      "sourceSupportStatus": "SECONDARY_SOURCE_ONLY",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
       "citation": {
-        "kind": "secondary-survey",
-        "sourceTitle": "SECONDARY SOURCE — 50-State Survey: Look Back Laws (quotes Tenn. Code § 56-7-110; the statute text has not yet been checked)",
-        "sourceUrl": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
-        "deepLink": "https://richellemarting.com/wp-content/uploads/2025/11/50-State-Survey-Look-Back-Laws.pdf",
-        "locator": "Tenn. Code § 56-7-110",
-        "excerpt": "during the eighteen-month period after the date that the health insurance entity paid the claim"
+        "kind": "html-text-fragment",
+        "sourceTitle": "Tenn. Code § 56-7-110 (2025 Tennessee Code, Justia copy of the code)",
+        "sourceUrl": "https://law.justia.com/codes/tennessee/title-56/chapter-7/part-1/section-56-7-110/",
+        "deepLink": "https://law.justia.com/codes/tennessee/title-56/chapter-7/part-1/section-56-7-110/#:~:text=may%20only%20recoup%20reimbursements%20made%20to%20the%20provider%20during",
+        "locator": "Tenn. Code § 56-7-110(c)(1)",
+        "excerpt": "may only recoup reimbursements made to the provider during the fifteen-month period after the date that the health insurance entity paid the claim"
       }
     },
     {

@@ -1219,6 +1219,74 @@
       "priority": 1
     },
     {
+      "id": "state-la-overpayment",
+      "authority": "Louisiana Legislature",
+      "program": "Commercial",
+      "state": "LA",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "La. R.S. 22:1838 (2025 Louisiana Laws, Justia copy of the code)",
+      "url": "https://law.justia.com/codes/louisiana/revised-statutes/title-22/rs-22-1838/",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-nh-overpayment",
+      "authority": "New Hampshire Legislature",
+      "program": "Commercial",
+      "state": "NH",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "N.H. RSA 420-J:8-b (2025 New Hampshire Revised Statutes, Justia copy of the code)",
+      "url": "https://law.justia.com/codes/new-hampshire/title-xxxvii/chapter-420-j/section-420-j-8-b/",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-ok-overpayment",
+      "authority": "Oklahoma Legislature",
+      "program": "Commercial",
+      "state": "OK",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "36 O.S. § 1250.5 (2025 Oklahoma Statutes, Justia copy of the code)",
+      "url": "https://law.justia.com/codes/oklahoma/title-36/section-36-1250-5/",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "state-tn-overpayment",
+      "authority": "Tennessee Legislature",
+      "program": "Commercial",
+      "state": "TN",
+      "payer": "Commercial",
+      "category": "recovery-rights",
+      "title": "Tenn. Code § 56-7-110 (2025 Tennessee Code, Justia copy of the code)",
+      "url": "https://law.justia.com/codes/tennessee/title-56/chapter-7/part-1/section-56-7-110/",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the legislature’s code history.",
+      "claimFields": [
+        "dos",
+        "paymentReceivedDate"
+      ],
+      "priority": 1
+    },
+    {
       "id": "state-pa-overpayment",
       "authority": "Pennsylvania Legislature",
       "program": "Commercial",
