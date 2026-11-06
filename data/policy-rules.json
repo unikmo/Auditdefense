@@ -3146,6 +3146,233 @@
         "locator": "Overpayment Recovery Procedure",
         "excerpt": "Cigna Behavioral Health may not thereafter retroactively deny a claim on the basis that a participant is not eligible for benefit unless such retroactive denial occurs within six (6) months of the date Cigna Behavioral Health considered the claim for benefit"
       }
+    },
+    {
+      "id": "MEDICAID-STATE-1-YEAR-TO-RECOVER-433-312",
+      "title": "Medicaid: state has 1 year from discovery to recover an overpayment before refunding the federal share",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-433-312",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-433.312",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "The 1-year clock is a financing rule between the state and CMS (the federal share is refunded after 1 year whether or not the state recovered). It is not a statute of limitations on the provider, and it runs from the date of discovery, not the date of payment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 433.312",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-433.312",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-433.312#:~:text=the%20State%20Medicaid%20agency%20has%201%20year%20from%20the",
+        "locator": "42 CFR 433.312(a)(1)",
+        "excerpt": "the State Medicaid agency has 1 year from the date of discovery of an overpayment to a provider to recover or seek to recover the overpayment before the Federal share must be refunded to CMS"
+      }
+    },
+    {
+      "id": "MEDICAID-OVERPAYMENT-DISCOVERY-DATE-433-316",
+      "title": "Medicaid: how the discovery date of an overpayment is fixed",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-433-316",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-433.316",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "For non-fraud overpayments, discovery is the earliest of: the state's first written notice stating a dollar amount, the provider's written acknowledgment of a specific amount, or the start of a formal recoupment without notice. For fraud it is the date of the final written notice of the determination.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 433.316",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-433.316",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-433.316#:~:text=The%20date%20on%20which%20an%20overpayment%20is%20discovered%20is",
+        "locator": "42 CFR 433.316(a)",
+        "excerpt": "The date on which an overpayment is discovered is the beginning date of the 1-year period allowed for a State to recover or seek to recover an overpayment before a refund of the Federal share of an overpayment must be made to CMS"
+      }
+    },
+    {
+      "id": "MEDICAID-MCO-NETWORK-PROVIDER-RETURN-60-DAYS-438-608",
+      "title": "Medicaid managed care: network providers return an overpayment within 60 calendar days of identifying it",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-438-608",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-438.608",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "State contracts with Medicaid MCOs, PIHPs and PAHPs must require network providers to report and return overpayments within 60 calendar days of identifying them and to notify the plan in writing of the reason.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 438.608",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-438.608",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-438.608#:~:text=to%20return%20the%20overpayment%20to%20the%20MCO%2C%20PIHP%20or",
+        "locator": "42 CFR 438.608(d)(2)",
+        "excerpt": "to return the overpayment to the MCO, PIHP or PAHP within 60 calendar days after the date on which the overpayment was identified"
+      }
+    },
+    {
+      "id": "MEDICAID-OVERPAYMENT-60-DAYS-1320A-7K",
+      "title": "Medicaid and Medicare: report and return an overpayment within 60 days of identification",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "usc-42-1320a-7k",
+      "sourceUrl": "https://www.law.cornell.edu/uscode/text/42/1320a-7k",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "A person who has received an overpayment must report and return it, with the reason, by the later of 60 days after identification or the date any corresponding cost report is due.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 U.S.C. § 1320a-7k (Social Security Act § 1128J)",
+        "sourceUrl": "https://www.law.cornell.edu/uscode/text/42/1320a-7k",
+        "deepLink": "https://www.law.cornell.edu/uscode/text/42/1320a-7k#:~:text=the%20date%20which%20is%2060%20days%20after%20the%20date",
+        "locator": "42 U.S.C. § 1320a-7k(d)(2)",
+        "excerpt": "the date which is 60 days after the date on which the overpayment was identified"
+      }
+    },
+    {
+      "id": "MEDICAID-CLAIMS-SUBMISSION-12-MONTHS-447-45",
+      "title": "Medicaid: providers must submit claims within 12 months of the date of service",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "sourceId": "ecfr-42-cfr-447-45",
+      "sourceUrl": "https://www.ecfr.gov/current/title-42/section-447.45",
+      "category": "authorization",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "State Medicaid agencies must require claims to be submitted no later than 12 months from the date of service, subject to the exceptions in the rule.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "42 CFR § 447.45",
+        "sourceUrl": "https://www.ecfr.gov/current/title-42/section-447.45",
+        "deepLink": "https://www.ecfr.gov/current/title-42/section-447.45#:~:text=The%20Medicaid%20agency%20must%20require%20providers%20to%20submit%20all",
+        "locator": "42 CFR 447.45(d)(1)",
+        "excerpt": "The Medicaid agency must require providers to submit all claims no later than 12 months from the date of service"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-CA-COST-REPORT-AUDIT-3-YEARS-14170",
+      "title": "Medi-Cal: cost reports are final unless audited within 3 years",
+      "authority": "CA Medicaid",
+      "sourceId": "ca-wic-14170",
+      "sourceUrl": "https://california.public.law/codes/ca_welf_and_inst_code_section_14170",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "For cost reporting periods beginning on or after January 1, 1972, Medi-Cal cost reports and data are treated as true and correct unless the department audits or reviews them within three years after the close of the period or the submission of the report, whichever is later. This reaches providers paid on cost reports (for example institutional providers); it is not a limit on fee-for-service claim audits. Read the full section for exceptions.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "California Welfare and Institutions Code § 14170 (California.Public.Law copy)",
+        "sourceUrl": "https://california.public.law/codes/ca_welf_and_inst_code_section_14170",
+        "deepLink": "https://california.public.law/codes/ca_welf_and_inst_code_section_14170#:~:text=shall%20be%20considered%20true%20and%20correct%20unless%20audited%20or",
+        "locator": "Welf. & Inst. Code § 14170(a)(1)",
+        "excerpt": "shall be considered true and correct unless audited or reviewed within three years after the close of the period covered by the report, or after the date of submission of the original or amended report by the provider, whichever is later"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-CA-DEMAND-60-DAYS-AFTER-AUDIT-14172-5",
+      "title": "Medi-Cal: first demand for repayment within 60 days after an audit is completed",
+      "authority": "CA Medicaid",
+      "sourceId": "ca-wic-14172-5",
+      "sourceUrl": "https://california.public.law/codes/welfare_and_institutions_code_section_14172.5",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "No later than 60 days after completing an audit or examination under Sections 10722 and 14170, the department must issue the first statement of account status or demand for repayment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "California Welfare and Institutions Code § 14172.5 (California.Public.Law copy)",
+        "sourceUrl": "https://california.public.law/codes/welfare_and_institutions_code_section_14172.5",
+        "deepLink": "https://california.public.law/codes/welfare_and_institutions_code_section_14172.5#:~:text=the%20department%20shall%20issue%20the%20first%20statement%20of%20account",
+        "locator": "Welf. & Inst. Code § 14172.5(a)",
+        "excerpt": "the department shall issue the first statement of account status or demand for repayment"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-CA-NO-LIQUIDATION-FOR-60-DAYS-14172-5",
+      "title": "Medi-Cal: recovery may not begin until 60 days after the first demand",
+      "authority": "CA Medicaid",
+      "sourceId": "ca-wic-14172-5",
+      "sourceUrl": "https://california.public.law/codes/welfare_and_institutions_code_section_14172.5",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Where an overpayment, penalty or similar amount is due from a provider, the department must wait 60 days after the first statement of accountability or demand before it begins liquidating (recouping) the amount, subject to the subdivision's listed circumstances.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "California Welfare and Institutions Code § 14172.5 (California.Public.Law copy)",
+        "sourceUrl": "https://california.public.law/codes/welfare_and_institutions_code_section_14172.5",
+        "deepLink": "https://california.public.law/codes/welfare_and_institutions_code_section_14172.5#:~:text=the%20department%20shall%20not%20begin%20liquidation%20of%20the%20overpayment",
+        "locator": "Welf. & Inst. Code § 14172.5(b)",
+        "excerpt": "the department shall not begin liquidation of the overpayment until 60 days after issuance of the first statement of accountability or demand for repayment"
+      }
     }
   ],
   "citationContract": {

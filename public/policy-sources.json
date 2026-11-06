@@ -1492,6 +1492,125 @@
         "state"
       ],
       "priority": 2
+    },
+    {
+      "id": "ecfr-42-cfr-433-312",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "42 CFR § 433.312",
+      "url": "https://www.ecfr.gov/current/title-42/section-433.312",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-433-316",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "42 CFR § 433.316",
+      "url": "https://www.ecfr.gov/current/title-42/section-433.316",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-438-608",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "42 CFR § 438.608",
+      "url": "https://www.ecfr.gov/current/title-42/section-438.608",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ecfr-42-cfr-447-45",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "42 CFR § 447.45",
+      "url": "https://www.ecfr.gov/current/title-42/section-447.45",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "usc-42-1320a-7k",
+      "authority": "Centers for Medicare & Medicaid Services",
+      "program": "Medicaid",
+      "state": "US",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "42 U.S.C. § 1320a-7k (Social Security Act § 1128J)",
+      "url": "https://www.law.cornell.edu/uscode/text/42/1320a-7k",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "ca-wic-14170",
+      "authority": "CA Medicaid",
+      "program": "Medicaid",
+      "state": "CA",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "California Welfare and Institutions Code § 14170 (California.Public.Law copy)",
+      "url": "https://california.public.law/codes/ca_welf_and_inst_code_section_14170",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ca-wic-14172-5",
+      "authority": "CA Medicaid",
+      "program": "Medicaid",
+      "state": "CA",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "California Welfare and Institutions Code § 14172.5 (California.Public.Law copy)",
+      "url": "https://california.public.law/codes/welfare_and_institutions_code_section_14172.5",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
     }
   ]
 }

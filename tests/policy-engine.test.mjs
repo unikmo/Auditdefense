@@ -182,3 +182,12 @@ if(E.appliesToCase(humRule,{payer:'Aetna',state:'IN',program:'Medicaid'}))throw 
 const molRule=byId('MOLINA-IA-OVERPAYMENT-DISPUTE-45-DAYS');
 if(!E.appliesToCase(molRule,{payer:'Molina Healthcare',state:'IA',program:'Medicaid'})||E.appliesToCase(molRule,{payer:'Molina Healthcare',state:'OH',program:'Medicaid'}))throw new Error('Molina Iowa rule is scoped to Iowa.');
 console.log('Payer overpayment rule tests passed.');
+
+// Medicaid: federal rules apply in every state; state rules only in their state
+for(const id of ['MEDICAID-STATE-1-YEAR-TO-RECOVER-433-312','MEDICAID-MCO-NETWORK-PROVIDER-RETURN-60-DAYS-438-608','MEDICAID-OVERPAYMENT-60-DAYS-1320A-7K','STATE-MEDICAID-CA-DEMAND-60-DAYS-AFTER-AUDIT-14172-5']){if(!byId(id))throw new Error('Missing rule '+id);}
+const fedMc=byId('MEDICAID-STATE-1-YEAR-TO-RECOVER-433-312');
+for(const st of ['TX','OH','CA','WY'])if(!policyWindow.AuditDefendPolicyEngine.appliesToCase(fedMc,{state:st,program:'Medicaid'}))throw new Error('Federal Medicaid rule must apply in '+st);
+if(policyWindow.AuditDefendPolicyEngine.appliesToCase(fedMc,{state:'TX',program:'Commercial'}))throw new Error('Federal Medicaid rule must not apply to commercial coverage.');
+const caMc=byId('STATE-MEDICAID-CA-DEMAND-60-DAYS-AFTER-AUDIT-14172-5');
+if(!policyWindow.AuditDefendPolicyEngine.appliesToCase(caMc,{state:'CA',program:'Medicaid'})||policyWindow.AuditDefendPolicyEngine.appliesToCase(caMc,{state:'TX',program:'Medicaid'}))throw new Error('California Medi-Cal rule is scoped to California Medicaid.');
+console.log('Medicaid rule tests passed.');
