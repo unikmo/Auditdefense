@@ -1919,6 +1919,108 @@
       "priority": 2
     },
     {
+      "id": "or-oar-410-120-1397",
+      "authority": "OR Medicaid",
+      "program": "Medicaid",
+      "state": "OR",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "OAR 410-120-1397 Recovery of Overpayments to Providers - Recoupments and Refunds (Cornell LII copy of the Oregon Administrative Rules)",
+      "url": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1397",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "or-oar-410-120-1360",
+      "authority": "OR Medicaid",
+      "program": "Medicaid",
+      "state": "OR",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "OAR 410-120-1360 Requirements for Financial, Clinical and Other Records (Cornell LII copy of the Oregon Administrative Rules)",
+      "url": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1360",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "wi-dhs-106-02",
+      "authority": "WI Medicaid",
+      "program": "Medicaid",
+      "state": "WI",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Wis. Admin. Code DHS 106.02 General requirements for provision of services (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/wisconsin/Wis-Admin-Code-SS-DHS-106-02",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ok-oac-317-30-3-15",
+      "authority": "OK Medicaid",
+      "program": "Medicaid",
+      "state": "OK",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Okla. Admin. Code 317:30-3-15 Record retention (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/oklahoma/OAC-317-30-3-15",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ok-oac-317-30-3-2-1",
+      "authority": "OK Medicaid",
+      "program": "Medicaid",
+      "state": "OK",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Okla. Admin. Code 317:30-3-2.1 Program Integrity Audits/Reviews (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/oklahoma/OAC-317-30-3-2.1",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "la-lac-50-i-4187",
+      "authority": "LA Medicaid",
+      "program": "Medicaid",
+      "state": "LA",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "La. Admin. Code tit. 50, § I-4187 Arrangement to Repay (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/louisiana/La-Admin-Code-tit-50-SS-I-4187",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
       "id": "ecfr-32-cfr-199-11",
       "authority": "Defense Health Agency (TRICARE)",
       "program": "TRICARE",

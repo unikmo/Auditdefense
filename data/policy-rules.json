@@ -3781,6 +3781,209 @@
       }
     },
     {
+      "id": "STATE-MEDICAID-OR-REIMBURSE-30-DAYS-AFTER-NOTICE-410-120-1397",
+      "title": "Oregon Medicaid: provider must repay within 30 calendar days of the overpayment notice",
+      "authority": "OR Medicaid",
+      "sourceId": "or-oar-410-120-1397",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1397",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OR",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "An Oregon Medicaid provider must repay an overpayment directly within 30 calendar days of the date on the Authority's overpayment notice, unless other regulations apply. The Authority may grant more time on a written request made within the same 30 days.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "OAR 410-120-1397 Recovery of Overpayments to Providers - Recoupments and Refunds (Cornell LII copy of the Oregon Administrative Rules)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1397",
+        "deepLink": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1397#:~:text=The%20Provider%20must%20make%20a%20direct%20reimbursement%20to%20the",
+        "locator": "OAR 410-120-1397(8)(a)",
+        "excerpt": "The Provider must make a direct reimbursement to the Authority within thirty (30) calendar days from the date of the notice of the Overpayment"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-OR-APPEAL-DOES-NOT-STOP-REPAYMENT-410-120-1397",
+      "title": "Oregon Medicaid: an appeal does not change the repayment due date",
+      "authority": "OR Medicaid",
+      "sourceId": "or-oar-410-120-1397",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1397",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OR",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Asking for a hearing or administrative review does not move the repayment date. If the appeal reduces the amount, the Authority handles the amount already paid as the rule provides.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "OAR 410-120-1397 Recovery of Overpayments to Providers - Recoupments and Refunds (Cornell LII copy of the Oregon Administrative Rules)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1397",
+        "deepLink": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1397#:~:text=a%20request%20for%20a%20hearing%20or%20administrative%20review%20does",
+        "locator": "OAR 410-120-1397(8)(c)",
+        "excerpt": "a request for a hearing or administrative review does not change the date the repayment of the Overpayment is due"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-OR-RECORDS-5-YEARS-FINANCIAL-7-CLINICAL-410-120-1360",
+      "title": "Oregon Medicaid: keep clinical records 7 years and financial records at least 5 years",
+      "authority": "OR Medicaid",
+      "sourceId": "or-oar-410-120-1360",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1360",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OR",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Oregon Medicaid providers must keep clinical records for seven years and financial and other records for at least five years from the dates of service. This is a record-retention rule, not an overpayment look-back; the Oregon look-back is not yet verified.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "OAR 410-120-1360 Requirements for Financial, Clinical and Other Records (Cornell LII copy of the Oregon Administrative Rules)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1360",
+        "deepLink": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-410-120-1360#:~:text=Retain%20clinical%20records%20for%20seven%20years%20and%20financial%20and",
+        "locator": "OAR 410-120-1360(2)(e)",
+        "excerpt": "Retain clinical records for seven years and financial and other records described in paragraphs (a) and (b) of this rule for at least five years from the date(s) of service."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-WI-RECORDS-5-YEARS-RHC-6-DHS-106-02",
+      "title": "Wisconsin Medicaid: keep records at least 5 years from payment (6 for rural health clinics)",
+      "authority": "WI Medicaid",
+      "sourceId": "wi-dhs-106-02",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/wisconsin/Wis-Admin-Code-SS-DHS-106-02",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "WI",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Wisconsin Medicaid providers must retain medical, financial and other required records for at least 5 years (6 for rural health clinics), counted from the date the provider received payment. Ending participation does not end the duty to retain. This is a record-retention rule, not a recovery look-back.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Wis. Admin. Code DHS 106.02 General requirements for provision of services (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/wisconsin/Wis-Admin-Code-SS-DHS-106-02",
+        "deepLink": "https://www.law.cornell.edu/regulations/wisconsin/Wis-Admin-Code-SS-DHS-106-02#:~:text=shall%20be%20retained%20by%20a%20provider%20for%20a%20period",
+        "locator": "DHS 106.02(9)(e)2.",
+        "excerpt": "shall be retained by a provider for a period of not less than 5 years, except that a rural health clinic provider shall retain the records for not less than 6 years. This period shall begin on the date on which the provider received payment from the program for the service to which the records relate."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-OK-RECORDS-6-YEARS-317-30-3-15",
+      "title": "Oklahoma Medicaid: providers keep service records six years",
+      "authority": "OK Medicaid",
+      "sourceId": "ok-oac-317-30-3-15",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/oklahoma/OAC-317-30-3-15",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OK",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Oklahoma Health Care Authority rules require providers to keep for six years the records that show the extent of services furnished to recipients, and to produce them on request. This is a record-retention rule, not an overpayment look-back; the Oklahoma look-back is not yet verified.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Okla. Admin. Code 317:30-3-15 Record retention (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/oklahoma/OAC-317-30-3-15",
+        "deepLink": "https://www.law.cornell.edu/regulations/oklahoma/OAC-317-30-3-15#:~:text=require%20that%20the%20provider%20retain%2C%20for%20a%20period%20of",
+        "locator": "OAC 317:30-3-15",
+        "excerpt": "require that the provider retain, for a period of six years, any records necessary to disclose the extent of services"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-OK-30-DAYS-AFTER-AUDIT-NOTICE-317-30-3-2-1",
+      "title": "Oklahoma Medicaid: 30 calendar days after the audit notice to repay, seek reconsideration or appeal",
+      "authority": "OK Medicaid",
+      "sourceId": "ok-oac-317-30-3-2-1",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/oklahoma/OAC-317-30-3-2.1",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "OK",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "After an initial audit or review report, an Oklahoma Medicaid provider has 30 calendar days from the notice date to repay the overpayment, request informal reconsideration, or request a formal appeal. Claims and findings not specifically identified in an informal reconsideration request are treated as waived for a later formal appeal.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Okla. Admin. Code 317:30-3-2.1 Program Integrity Audits/Reviews (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/oklahoma/OAC-317-30-3-2.1",
+        "deepLink": "https://www.law.cornell.edu/regulations/oklahoma/OAC-317-30-3-2.1#:~:text=Within%20thirty%20%2830%29%20calendar%20days%20of%20the%20date%20of",
+        "locator": "OAC 317:30-3-2.1(c)",
+        "excerpt": "Within thirty (30) calendar days of the date of notice regarding the audit/review report, a provider may elect to: (1) Remit the identified overpayment to the OHCA; (2) Request informal reconsideration"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-LA-REPAY-LUMP-SUM-60-DAYS-INSTALLMENTS-2-YEARS-I-4187",
+      "title": "Louisiana Medicaid: repay lump sum within 60 days; installments no longer than two years unless approved",
+      "authority": "LA Medicaid",
+      "sourceId": "la-lac-50-i-4187",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/louisiana/La-Admin-Code-tit-50-SS-I-4187",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "LA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "An arrangement to repay a Louisiana Medicaid overpayment should be a single lump-sum payment within 60 days of the arrangement being reached or imposed. Installments are allowed, but the repayment period cannot extend past two years unless the secretary or the BHSF director sets a longer period and signs the agreement.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "La. Admin. Code tit. 50, § I-4187 Arrangement to Repay (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/louisiana/La-Admin-Code-tit-50-SS-I-4187",
+        "deepLink": "https://www.law.cornell.edu/regulations/louisiana/La-Admin-Code-tit-50-SS-I-4187#:~:text=should%20be%20made%20through%20a%20lump%20sum%20single%20payment",
+        "locator": "LAC 50:I-4187(A)",
+        "excerpt": "should be made through a lump sum single payment within 60 days of reaching or imposing the arrangement to repay"
+      }
+    },
+    {
       "id": "TRICARE-ADMIN-OFFSET-10-YEAR-LIMIT-199-11",
       "title": "TRICARE: administrative offset may not be conducted more than 10 years after the right to collect first accrued",
       "authority": "Defense Health Agency (TRICARE)",
