@@ -2021,6 +2021,40 @@
       "priority": 2
     },
     {
+      "id": "wa-wac-182-502-0020",
+      "authority": "WA Medicaid",
+      "program": "Medicaid",
+      "state": "WA",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Wash. Admin. Code 182-502-0020 Health care record requirements (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/washington/WAC-182-502-0020",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "ny-18-nycrr-517-3",
+      "authority": "NY Medicaid",
+      "program": "Medicaid",
+      "state": "NY",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "18 NYCRR 517.3 Audit and record retention (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
       "id": "ecfr-32-cfr-199-11",
       "authority": "Defense Health Agency (TRICARE)",
       "program": "TRICARE",

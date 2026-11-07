@@ -3984,6 +3984,151 @@
       }
     },
     {
+      "id": "STATE-MEDICAID-WA-RECORDS-6-YEARS-182-502-0020",
+      "title": "Washington Medicaid: make records available for six years from date of service",
+      "authority": "WA Medicaid",
+      "sourceId": "wa-wac-182-502-0020",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/washington/WAC-182-502-0020",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "WA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Washington Medicaid providers must make charts and records available to the Health Care Authority, its contractors and HHS on request for six years from the date of service, or longer where federal or state law requires. This is a record-retention rule, not a recovery look-back.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Wash. Admin. Code 182-502-0020 Health care record requirements (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/washington/WAC-182-502-0020",
+        "deepLink": "https://www.law.cornell.edu/regulations/washington/WAC-182-502-0020#:~:text=for%20six%20years%20from%20the%20date%20of%20service%20or",
+        "locator": "WAC 182-502-0020(5)",
+        "excerpt": "for six years from the date of service or longer if required specifically by federal or state law or regulation"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-NY-FFS-AUDIT-6-YEARS-517-3",
+      "title": "New York Medicaid fee-for-service: claims subject to audit for six years",
+      "authority": "NY Medicaid",
+      "sourceId": "ny-18-nycrr-517-3",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NY",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "For New York Medicaid fee-for-service providers, claims information is subject to audit for six years from the date the care, services or supplies were furnished or billed, whichever is later. This covers fee-for-service, not managed care plans.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "18 NYCRR 517.3 Audit and record retention (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+        "deepLink": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3#:~:text=All%20information%20regarding%20claims%20for%20payment%20submitted%20by%20or",
+        "locator": "18 NYCRR 517.3(b)(2)",
+        "excerpt": "All information regarding claims for payment submitted by or on behalf of the provider is subject to audit for a period of six years from the date the care, services or supplies were furnished or billed, whichever is later"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-NY-AUDIT-WINDOW-FRAUD-OBSTRUCTION-517-3",
+      "title": "New York Medicaid: six-year audit limit does not apply to fraud or obstruction",
+      "authority": "NY Medicaid",
+      "sourceId": "ny-18-nycrr-517-3",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NY",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "The six-year fee-for-service audit limit does not apply where fraud may be involved or where the provider or its agent prevents or obstructs an audit.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "18 NYCRR 517.3 Audit and record retention (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+        "deepLink": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3#:~:text=This%20limitation%20does%20not%20apply%20to%20situations%20in%20which",
+        "locator": "18 NYCRR 517.3(b)(2)",
+        "excerpt": "This limitation does not apply to situations in which fraud may be involved or where the provider or an agent thereof prevents or obstructs an audit."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-NY-AUDIT-NOTICE-TOLLS-6-YEARS-517-3",
+      "title": "New York Medicaid: notice of intent to audit tolls the six-year period",
+      "authority": "NY Medicaid",
+      "sourceId": "ny-18-nycrr-517-3",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NY",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Once the department notifies a New York Medicaid provider of its intent to audit, the six-year retention and audit period stops running. The department may not give that notice more than six years from the date the fiscal and statistical reports were filed or required to be filed, whichever is later.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "18 NYCRR 517.3 Audit and record retention (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+        "deepLink": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3#:~:text=Notification%20by%20the%20department%20to%20the%20provider%20of%20the",
+        "locator": "18 NYCRR 517.3(c)",
+        "excerpt": "Notification by the department to the provider of the department's intent to audit shall toll the six-year period for record retention and audit."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-NY-COST-REPORTS-AUDIT-6-YEARS-517-3",
+      "title": "New York Medicaid cost-reporting providers: fiscal reports subject to audit for six years",
+      "authority": "NY Medicaid",
+      "sourceId": "ny-18-nycrr-517-3",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+      "category": "overpayment-window",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "NY",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "For New York Medicaid providers paid on reported costs, required fiscal and statistical reports are subject to audit for six years from filing or from the date they were required to be filed, whichever is later, with the same fraud and obstruction exception.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "18 NYCRR 517.3 Audit and record retention (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3",
+        "deepLink": "https://www.law.cornell.edu/regulations/new-york/18-NYCRR-517.3#:~:text=All%20required%20fiscal%20and%20statistical%20reports%20are%20subject%20to",
+        "locator": "18 NYCRR 517.3(a)(2)",
+        "excerpt": "All required fiscal and statistical reports are subject to audit for a period of six years from the date of their filing or from the date when such reports were required to be filed, whichever is later."
+      }
+    },
+    {
       "id": "TRICARE-ADMIN-OFFSET-10-YEAR-LIMIT-199-11",
       "title": "TRICARE: administrative offset may not be conducted more than 10 years after the right to collect first accrued",
       "authority": "Defense Health Agency (TRICARE)",
