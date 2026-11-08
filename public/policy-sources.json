@@ -2140,6 +2140,91 @@
       "priority": 2
     },
     {
+      "id": "co-10-ccr-2505-10-8-076",
+      "authority": "CO Medicaid",
+      "program": "Medicaid",
+      "state": "CO",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "10 CCR 2505-10-8.076 Program Integrity (Cornell LII copy of the Colorado Code of Regulations)",
+      "url": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "co-10-ccr-2505-10-8-040",
+      "authority": "CO Medicaid",
+      "program": "Medicaid",
+      "state": "CO",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "10 CCR 2505-10-8.040 Recoveries from Providers (Cornell LII copy of the Colorado Code of Regulations)",
+      "url": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.040",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "mn-r-9505-2190",
+      "authority": "MN Medicaid",
+      "program": "Medicaid",
+      "state": "MN",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Minn. R. 9505.2190 Retention of Records (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2190",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "mn-r-9505-2185",
+      "authority": "MN Medicaid",
+      "program": "Medicaid",
+      "state": "MN",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Minn. R. 9505.2185 Access to Records (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2185",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "mn-r-9505-2215",
+      "authority": "MN Medicaid",
+      "program": "Medicaid",
+      "state": "MN",
+      "payer": "Medicaid",
+      "category": "recovery-rights",
+      "title": "Minn. R. 9505.2215 Monetary Recovery (Cornell LII copy)",
+      "url": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2215",
+      "cadence": "daily check via policy monitor",
+      "effectiveContext": "Version in force on the date of service must be established from the publisher's revision history.",
+      "claimFields": [
+        "dos",
+        "state"
+      ],
+      "priority": 2
+    },
+    {
       "id": "ecfr-32-cfr-199-11",
       "authority": "Defense Health Agency (TRICARE)",
       "program": "TRICARE",

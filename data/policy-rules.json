@@ -4303,6 +4303,267 @@
       }
     },
     {
+      "id": "STATE-MEDICAID-CO-RECORDS-45-DAYS-8-076-2-E",
+      "title": "Colorado Medicaid: 45 calendar days to produce requested records (14 for quality of care)",
+      "authority": "CO Medicaid",
+      "sourceId": "co-10-ccr-2505-10-8-076",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CO",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "A Colorado Medicaid provider must produce records requested for a review within 45 calendar days. The deadline is 14 days for quality-of-care reviews, immediate during a civil or criminal investigation, and the external auditors' timeframe during an external audit. The written request must state the due dates and how to ask for more time.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "10 CCR 2505-10-8.076 Program Integrity (Cornell LII copy of the Colorado Code of Regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076",
+        "deepLink": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076#:~:text=The%20Provider%20shall%20submit%20or%20produce%20the%20requested%20materials",
+        "locator": "10 CCR 2505-10-8.076.2.E",
+        "excerpt": "The Provider shall submit or produce the requested materials within forty-five (45) calendar days unless: 1. The review is based on quality of care concerns, in which case the materials shall be submitted within fourteen (14) calendar days of the request;"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-CO-EXTENSION-REQUEST-15-DAYS-8-076-2-F",
+      "title": "Colorado Medicaid: ask for a records extension in writing within 15 calendar days of the request",
+      "authority": "CO Medicaid",
+      "sourceId": "co-10-ccr-2505-10-8-076",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CO",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "To get more time to produce records, a Colorado Medicaid provider must get a written request to the Department within 15 calendar days of the Department's records request, stating the extra time needed and why. Telephone requests are not accepted. Records that arrive after the 45-day deadline may be considered at the Department's discretion.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "10 CCR 2505-10-8.076 Program Integrity (Cornell LII copy of the Colorado Code of Regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076",
+        "deepLink": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076#:~:text=The%20written%20request%20for%20an%20extension%20to%20submit%20records",
+        "locator": "10 CCR 2505-10-8.076.2.F",
+        "excerpt": "The written request for an extension to submit records must be received by the Department within fifteen (15) calendar days from the date of the Department's request. Telephone requests shall not be accepted."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-CO-UNDOCUMENTED-CLAIMS-ARE-OVERPAYMENT-8-076-2-G",
+      "title": "Colorado Medicaid: claims without documentation by the deadline are an overpayment, even if the service was provided",
+      "authority": "CO Medicaid",
+      "sourceId": "co-10-ccr-2505-10-8-076",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CO",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "If documentation for a claim does not reach the Department within the time limits in this section, the claim is treated as an overpayment subject to recovery, whether or not the goods or services were actually provided. Missing a records deadline is therefore a recovery risk in itself.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "10 CCR 2505-10-8.076 Program Integrity (Cornell LII copy of the Colorado Code of Regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076",
+        "deepLink": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.076#:~:text=Any%20claims%20submitted%20for%20which%20documentation%20is%20not%20received",
+        "locator": "10 CCR 2505-10-8.076.2.G",
+        "excerpt": "Any claims submitted for which documentation is not received within the time limits specified in this section shall be considered an Overpayment subject to recovery regardless of whether goods or services have been provided."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-CO-RECOVERY-METHODS-8-040",
+      "title": "Colorado Medicaid: how the Department recovers amounts a provider owes",
+      "authority": "CO Medicaid",
+      "sourceId": "co-10-ccr-2505-10-8-040",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.040",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CO",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Where an audit or other competent evidence shows a provider owes the State, the Colorado Department recovers it by repayment agreement, by offset against current and future claims, by litigation, or by other action within its legal authority.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "10 CCR 2505-10-8.040 Recoveries from Providers (Cornell LII copy of the Colorado Code of Regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.040",
+        "deepLink": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.040#:~:text=the%20Department%20shall%20recover%20this%20amount%20either%20through%20a",
+        "locator": "10 CCR 2505-10-8.040",
+        "excerpt": "the Department shall recover this amount either through a repayment agreement with the Provider, by offsetting the amount owed against current and future claims of the Provider, through litigation, or by any other appropriate action within its legal authority."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-CO-CLAIM-RECORDS-6-YEARS-8-040-2",
+      "title": "Colorado Medicaid: keep claim support records in the provider file for six years",
+      "authority": "CO Medicaid",
+      "sourceId": "co-10-ccr-2505-10-8-040",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.040",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "CO",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Colorado Medicaid providers must keep in their file for six years the records verifying the type of service, the signed certification statements and agreements, and the client information that can be matched to each claim. This is a record-retention rule, not an overpayment look-back.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "10 CCR 2505-10-8.040 Recoveries from Providers (Cornell LII copy of the Colorado Code of Regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.040",
+        "deepLink": "https://www.law.cornell.edu/regulations/colorado/10-CCR-2505-10-8.040#:~:text=shall%20be%20retained%20in%20the%20provider's%20file%20for%20six",
+        "locator": "10 CCR 2505-10-8.040.2",
+        "excerpt": "shall be retained in the provider's file for six years."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MN-RECORDS-5-YEARS-AFTER-BILLING-9505-2190",
+      "title": "Minnesota Medicaid: retain health service and financial records at least five years after initial billing",
+      "authority": "MN Medicaid",
+      "sourceId": "mn-r-9505-2190",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2190",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MN",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "A Minnesota Medicaid vendor must keep all health service and financial records for a billed service for at least five years after the initial billing date. Microfilm or electronic storage satisfies the rule in the fourth and fifth years. This is a record-retention rule, not an overpayment look-back.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Minn. R. 9505.2190 Retention of Records (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2190",
+        "deepLink": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2190#:~:text=A%20vendor%20shall%20retain%20all%20health%20service%20and%20financial",
+        "locator": "Minn. R. 9505.2190, subp. 1",
+        "excerpt": "A vendor shall retain all health service and financial records related to a health service for which payment under a program was received or billed for at least five years after the initial date of billing."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MN-RECORDS-ACCESS-24-HOURS-NOTICE-9505-2185",
+      "title": "Minnesota Medicaid: department gives at least 24 hours' notice, records made available at the vendor's place of business that day",
+      "authority": "MN Medicaid",
+      "sourceId": "mn-r-9505-2185",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2185",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MN",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "The Minnesota department must give a vendor at least 24 hours' notice before accessing health service or financial records, unless the vendor waives notice. The vendor must make records available at its place of business on the day access was requested, unless both sides agree to another location. Access is during normal business hours, 8:00 a.m. to 5:00 p.m. Monday through Friday.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Minn. R. 9505.2185 Access to Records (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2185",
+        "deepLink": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2185#:~:text=The%20department%20shall%20notify%20the%20vendor%20no%20less%20than",
+        "locator": "Minn. R. 9505.2185, subp. 2",
+        "excerpt": "The department shall notify the vendor no less than 24 hours before obtaining access to a health service or financial record, unless the vendor waives notice."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MN-RECOVERY-INCLUDES-AGENCY-ERROR-9505-2215",
+      "title": "Minnesota Medicaid: recovery sought for fraud, theft, abuse or error, including department or local agency error",
+      "authority": "MN Medicaid",
+      "sourceId": "mn-r-9505-2215",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2215",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MN",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "The Minnesota commissioner must seek recovery from a vendor when a payment resulted from fraud, theft, abuse or error on the part of the vendor, the department or a local agency. An overpayment caused by the department's own error is therefore still recoverable under this rule.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Minn. R. 9505.2215 Monetary Recovery (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2215",
+        "deepLink": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2215#:~:text=The%20commissioner%20shall%20seek%20monetary%20recovery%3A%20A.%20from%20a",
+        "locator": "Minn. R. 9505.2215, subp. 1(A)",
+        "excerpt": "The commissioner shall seek monetary recovery: A. from a vendor, if payment for a recipient's health service under a program was the result of fraud, theft, abuse, or error on the part of the vendor, department, or local agency"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MN-RECOVERY-METHODS-9505-2215",
+      "title": "Minnesota Medicaid: recovery by voluntary repayment, collection process, deduction or withholding",
+      "authority": "MN Medicaid",
+      "sourceId": "mn-r-9505-2215",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2215",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MN",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Minnesota recovers overpayments by voluntary lump-sum or installment repayment, any legal collection process, deducting or withholding program payments, and withholding under 42 CFR 447.31. Interest on installment repayments may run from the effective date of recovery.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "Minn. R. 9505.2215 Monetary Recovery (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2215",
+        "deepLink": "https://www.law.cornell.edu/regulations/minnesota/Minn-R-9505-2215#:~:text=The%20commissioner%20shall%20recover%20money%20described%20in%20subpart%201",
+        "locator": "Minn. R. 9505.2215, subp. 2",
+        "excerpt": "The commissioner shall recover money described in subpart 1 by the following means: A. permitting voluntary repayment of money, either in lump sum payment or installment payments; B. using any legal collection process; C. deducting or withholding program payments;"
+      }
+    },
+    {
       "id": "TRICARE-ADMIN-OFFSET-10-YEAR-LIMIT-199-11",
       "title": "TRICARE: administrative offset may not be conducted more than 10 years after the right to collect first accrued",
       "authority": "Defense Health Agency (TRICARE)",
