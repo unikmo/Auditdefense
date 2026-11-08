@@ -4129,6 +4129,180 @@
       }
     },
     {
+      "id": "STATE-MEDICAID-MA-RETURN-OVERPAYMENT-60-DAYS-450-235",
+      "title": "MassHealth: report and return an identified overpayment within 60 days",
+      "authority": "MA Medicaid",
+      "sourceId": "ma-130-cmr-450-235",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-235",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "A MassHealth provider that identifies an overpayment must report it in writing and return it within 60 days of identifying it. For payments reconciled on a cost report, the deadline is the cost report due date if that is later. The report must give the reason for the overpayment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "130 CMR 450.235 Overpayments (Cornell LII copy of the MassHealth regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-235",
+        "deepLink": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-235#:~:text=A%20provider%20must%20report%20in%20writing%20and%20return%20any",
+        "locator": "130 CMR 450.235(B)",
+        "excerpt": "A provider must report in writing and return any overpayments to the MassHealth agency within 60 days of the provider identifying such overpayment or, for payments subject to reconciliation based on a cost report, by the date any corresponding cost report is due, whichever is later."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MA-REPLY-30-DAYS-OVERPAYMENT-NOTICE-450-237",
+      "title": "MassHealth: written reply within 30 calendar days of the overpayment notice to keep hearing rights",
+      "authority": "MA Medicaid",
+      "sourceId": "ma-130-cmr-450-237",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-237",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "To keep the right to an adjudicatory hearing and judicial review, a MassHealth provider's written reply must be received within 30 calendar days of the date on the overpayment notice. The reply must address each allegation the provider disputes and may include evidence.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "130 CMR 450.237 Overpayments: Determination (Cornell LII copy of the MassHealth regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-237",
+        "deepLink": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-237#:~:text=To%20preserve%20its%20right%20to%20an%20adjudicatory%20hearing%20and",
+        "locator": "130 CMR 450.237(B)",
+        "excerpt": "To preserve its right to an adjudicatory hearing and judicial review, the provider must reply in writing to the MassHealth agency and such reply must be received by the MassHealth agency within 30 calendar days of the date on the overpayment notice."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MA-RECORDS-6-YEARS-450-205",
+      "title": "MassHealth: keep records at least six years after the date of service",
+      "authority": "MA Medicaid",
+      "sourceId": "ma-130-cmr-450-205",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-205",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MA",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "MassHealth providers must keep required records at least six years after the date of service (or the date services were prescribed), or longer if generally accepted standards for their provider type require, and keep cost-report support records six years from filing. This is a record-retention rule, not an overpayment look-back.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "130 CMR 450.205 Recordkeeping and Disclosure (Cornell LII copy of the MassHealth regulations)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-205",
+        "deepLink": "https://www.law.cornell.edu/regulations/massachusetts/130-CMR-450-205#:~:text=must%20be%20kept%20for%20at%20least%20six%20years%20after",
+        "locator": "130 CMR 450.205(G)",
+        "excerpt": "must be kept for at least six years after the date of medical services for which claims are made or the date services were prescribed, or for such length of time as may be dictated by the generally accepted standards for recordkeeping within the applicable provider type, whichever period is longer."
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MD-RECORDS-6-YEARS-10-09-36-03",
+      "title": "Maryland Medicaid: maintain adequate records for a minimum of 6 years",
+      "authority": "MD Medicaid",
+      "sourceId": "md-comar-10-09-36-03",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-03",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MD",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "Maryland Medical Assistance providers must keep adequate records for at least 6 years and make them available to the Department or its designee on request. This is a record-retention rule, not an overpayment look-back.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "COMAR 10.09.36.03 Conditions for Participation (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-03",
+        "deepLink": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-03#:~:text=Maintain%20adequate%20records%20for%20a%20minimum%20of%206%20years",
+        "locator": "COMAR 10.09.36.03A(9)",
+        "excerpt": "Maintain adequate records for a minimum of 6 years and make them available, upon request, to the Department or its designee"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MD-REFUND-DUPLICATE-PAYMENT-60-DAYS-10-09-36-07",
+      "title": "Maryland Medicaid: refund within 60 days when both the Program and another source paid",
+      "authority": "MD Medicaid",
+      "sourceId": "md-comar-10-09-36-07",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-07",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MD",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "If both the Maryland Medical Assistance Program and an insurance or other source paid for the same service, the provider must refund the Department within 60 days of receipt, in the amount of the lesser payment.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "COMAR 10.09.36.07 Recovery and Reimbursement (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-07",
+        "deepLink": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-07#:~:text=the%20provider%20shall%20refund%20to%20the%20Department%2C%20within%2060",
+        "locator": "COMAR 10.09.36.07A",
+        "excerpt": "the provider shall refund to the Department, within 60 days of receipt, the amount paid by the Program or the insurance or other source, whichever is less"
+      }
+    },
+    {
+      "id": "STATE-MEDICAID-MD-AUDIT-COSTS-IF-NOT-REIMBURSED-10-09-36-07",
+      "title": "Maryland Medicaid: provider who does not reimburse owes overpayment plus audit costs; audit starts at first written notice",
+      "authority": "MD Medicaid",
+      "sourceId": "md-comar-10-09-36-07",
+      "sourceUrl": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-07",
+      "category": "overpayment-obligation",
+      "issueFamilies": [],
+      "crossCutting": true,
+      "appliesTo": {
+        "state": "MD",
+        "program": "Medicaid"
+      },
+      "currentSourceStatement": "For audits commencing on or after July 1, 2004, a Maryland provider that fails to reimburse an overpayment owes the overpayment plus the Department's audit costs of seeking recovery. An audit is treated as commenced on the Department's initial written notice to the provider.",
+      "sourceSupportStatus": "CURRENT_SOURCE_VERIFIED",
+      "historicalApplicability": "REQUIRES_DOS_EFFECTIVE_VERSION",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "defaultClaimStatus": "POLICY_VERSION_UNCERTAIN",
+      "sourceRetrievedOn": "2026-11-06",
+      "citation": {
+        "kind": "html-text-fragment",
+        "sourceTitle": "COMAR 10.09.36.07 Recovery and Reimbursement (Cornell LII copy)",
+        "sourceUrl": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-07",
+        "deepLink": "https://www.law.cornell.edu/regulations/maryland/COMAR-10-09-36-07#:~:text=the%20provider%20shall%20be%20responsible%20for%20reimbursing%20the%20Department",
+        "locator": "COMAR 10.09.36.07D-E",
+        "excerpt": "the provider shall be responsible for reimbursing the Department for the amount of the overpayment and any audit costs incurred by the Department in seeking recovery of the overpayment."
+      }
+    },
+    {
       "id": "TRICARE-ADMIN-OFFSET-10-YEAR-LIMIT-199-11",
       "title": "TRICARE: administrative offset may not be conducted more than 10 years after the right to collect first accrued",
       "authority": "Defense Health Agency (TRICARE)",
