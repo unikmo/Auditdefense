@@ -20,7 +20,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AUDITDEFENSE_2CB01 }}
           projectId: auditdefense-2cb01
           expires: 7d
-          channelId: auditdefend-demo
+          channelId: heaude-demo
 
 # Intentionally no live/production deployment step.
 # Put the existing Firebase service-account JSON directly into the GitHub Actions

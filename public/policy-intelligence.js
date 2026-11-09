@@ -1,7 +1,7 @@
 (() => {
 const $=id=>document.getElementById(id);
-const claims=window.AuditDefendCaseData?.claims||[];
-const caseContext=window.AuditDefendCaseData?.caseContext||{payer:'Anthem',program:'NY Medicaid Managed Care',state:'NY',dosPrecision:'YEAR_ONLY_REDACTED'};
+const claims=window.HeaudeCaseData?.claims||[];
+const caseContext=window.HeaudeCaseData?.caseContext||{payer:'Anthem',program:'NY Medicaid Managed Care',state:'NY',dosPrecision:'YEAR_ONLY_REDACTED'};
 const enrollmentClaims=claims.filter(c=>c.issues.includes('NPI enrollment on DOS'));
 const reversals=claims.filter(c=>c.initial==='A'&&c.rebuttal==='B');
 const initialDoc=claims.filter(c=>c.initial==='B');
@@ -53,9 +53,9 @@ function renderSourcePacket(){
 
 function renderRecovery(){
   const root=$('recoveryRights'); if(!root)return;
-  const current=window.AuditDefendRecoveryEngine?.evaluate({},recoveryRules,caseContext);
-  const commercialExample=window.AuditDefendRecoveryEngine?.evaluate({paymentReceivedDate:'2024-08-01',recoveryInitiatedDate:'2026-09-02',noticeDate:'2026-08-01'},recoveryRules,{state:'NY',program:'Commercial'});
-  const medicaidExample=window.AuditDefendRecoveryEngine?.evaluate({paymentReceivedDate:'2024-08-01',recoveryInitiatedDate:'2026-09-02',noticeDate:'2026-08-01'},recoveryRules,{state:'NY',program:'NY Medicaid Managed Care'});
+  const current=window.HeaudeRecoveryEngine?.evaluate({},recoveryRules,caseContext);
+  const commercialExample=window.HeaudeRecoveryEngine?.evaluate({paymentReceivedDate:'2024-08-01',recoveryInitiatedDate:'2026-09-02',noticeDate:'2026-08-01'},recoveryRules,{state:'NY',program:'Commercial'});
+  const medicaidExample=window.HeaudeRecoveryEngine?.evaluate({paymentReceivedDate:'2024-08-01',recoveryInitiatedDate:'2026-09-02',noticeDate:'2026-08-01'},recoveryRules,{state:'NY',program:'NY Medicaid Managed Care'});
   function block(title,r,example){
     if(!r?.rule)return'<article class="recovery-card"><h3>'+esc(title)+'</h3><p>No configured rule.</p></article>';
     const citation=r.rule.citation;
@@ -88,8 +88,8 @@ async function renderSources(){
     policyRules=rulesPayload.rules||[];
     recoveryRules=recoveryPayload.rules||[];
     policyChanges=changesPayload.announcements||[];
-    evaluations=window.AuditDefendPolicyEngine?.evaluateCase(claims,policyRules,caseContext)||[];
-    window.AuditDefendPolicyState={rules:policyRules,evaluations,recoveryRules,policyChanges};
+    evaluations=window.HeaudePolicyEngine?.evaluateCase(claims,policyRules,caseContext)||[];
+    window.HeaudePolicyState={rules:policyRules,evaluations,recoveryRules,policyChanges};
     renderClaimPolicyLinks();renderSourcePacket();renderRecovery();renderUpcomingChanges();
 
     const sourceMap=new Map(status.sources.map(s=>[s.id,s]));

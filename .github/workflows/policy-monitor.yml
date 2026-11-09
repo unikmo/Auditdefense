@@ -42,7 +42,7 @@ jobs:
             echo "No material source fingerprint change."
             exit 0
           fi
-          git config user.name "auditdefend-policy-monitor"
+          git config user.name "heaude-policy-monitor"
           git config user.email "actions@users.noreply.github.com"
           git add public/policy-status.json
           git commit -m "Update policy source fingerprints"

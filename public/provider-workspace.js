@@ -1,6 +1,6 @@
 (() => {
-  const KEY='auditdefend-provider-evidence-demo-v3';
-  const claims=window.AuditDefendCaseData?.claims||[];
+  const KEY='heaude-provider-evidence-demo-v3';
+  const claims=window.HeaudeCaseData?.claims||[];
   const $=id=>document.getElementById(id);
   const esc=v=>String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const emptyState=()=>({documents:[],unavailable:[],lastRun:null});

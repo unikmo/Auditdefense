@@ -25,8 +25,8 @@
     signUpMode.classList.toggle('active', creating);
     heading.textContent = creating ? 'Create account' : 'Sign in';
     subheading.textContent = creating
-      ? 'Create your AuditDefend account. A verification email will be sent automatically.'
-      : 'Sign in to continue to your AuditDefend workspace.';
+      ? 'Create your Heaude account. A verification email will be sent automatically.'
+      : 'Sign in to continue to your Heaude workspace.';
     submitBtn.textContent = creating ? 'Create account' : 'Sign in';
     password.autocomplete = creating ? 'new-password' : 'current-password';
   }
@@ -43,10 +43,10 @@
   }
 
   function apiReady() {
-    return window.AuditDefendFirebaseAPI && window.AuditDefendFirebase?.status === 'sdk-initialized';
+    return window.HeaudeFirebaseAPI && window.HeaudeFirebase?.status === 'sdk-initialized';
   }
 
-  function renderFirebaseState(detail = window.AuditDefendFirebase) {
+  function renderFirebaseState(detail = window.HeaudeFirebase) {
     if (!detail) return;
     if (detail.status === 'sdk-initialized') {
       if (detail.user) {
@@ -61,7 +61,7 @@
     }
   }
 
-  document.addEventListener('auditdefend:firebase-status', event => renderFirebaseState(event.detail));
+  document.addEventListener('heaude:firebase-status', event => renderFirebaseState(event.detail));
   renderFirebaseState();
 
   signInMode.addEventListener('click', () => setMode('signin'));
@@ -76,11 +76,11 @@
     submitBtn.disabled = true;
     try {
       if (mode === 'signup') {
-        const user = await window.AuditDefendFirebaseAPI.signUp(email.value.trim(), password.value);
+        const user = await window.HeaudeFirebaseAPI.signUp(email.value.trim(), password.value);
         setStatus(`Account created for ${user.email}. Verification email sent.`, 'warn');
         if (nextPath) setTimeout(() => { location.href = nextPath; }, 350);
       } else {
-        const user = await window.AuditDefendFirebaseAPI.signIn(email.value.trim(), password.value);
+        const user = await window.HeaudeFirebaseAPI.signIn(email.value.trim(), password.value);
         setStatus(`Signed in as ${user.email}. Email verified: ${user.emailVerified ? 'yes' : 'no'}.`, user.emailVerified ? 'ok' : 'warn');
         if (nextPath) setTimeout(() => { location.href = nextPath; }, 350);
       }
@@ -102,7 +102,7 @@
       return;
     }
     try {
-      await window.AuditDefendFirebaseAPI.sendPasswordReset(address);
+      await window.HeaudeFirebaseAPI.sendPasswordReset(address);
       setStatus(`Password-reset email requested for ${address}.`, 'ok');
     } catch (error) {
       setStatus(friendly(error), 'error');

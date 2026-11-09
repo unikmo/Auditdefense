@@ -1,4 +1,4 @@
-# AuditDefend build status
+# Heaude build status
 
 Last updated: 2026-09-20
 
@@ -7,7 +7,7 @@ Last updated: 2026-09-20
 - GitHub repository is populated on `main`.
 - Vercel project `auditdefense` is connected to `unikmo/Auditdefense` on `main` and automatically deploys repository updates.
 - Vercel production is READY; clean routes and nested provider/attorney aliases were verified at route-config commit `fe3cf16a09601604f3b9f4b3e0a114fb22719c37`.
-- Live demo URL: `https://auditdefense.vercel.app`.
+- Live demo URL: `https://heaude.com`.
 - The previous Netlify project is disabled (not deleted) and no longer serves the public deployment.
 - The dashboard is now based on the supplied 30-line Anthem payer-review worksheet rather than the older synthetic Aetna case.
 - Real worksheet outcomes are modeled: 8/30 initially supported, 22/30 initially unsupported (73% error rate by count), 3/30 supported after rebuttal, 27/30 unsupported after rebuttal, and 5 A→B reversals.
@@ -16,7 +16,7 @@ Last updated: 2026-09-20
 - Provider-facing UX now presents status → reason → money at risk → next action.
 - Counsel workspace now highlights initial-to-rebuttal changes, NPI/DOS enrollment evidence, payer authority, claim-universe overlap and recovery-math review.
 - Firebase project identity is verified: `auditdefense-2cb01`.
-- Firebase Web App is registered and wired: `AuditDefend Web` (`1:146444139355:web:5d3f7c9b4fad32cad5f87e`).
+- Firebase Web App is registered and wired: `Heaude Web` (`1:146444139355:web:5d3f7c9b4fad32cad5f87e`).
 - Auth test surface exists at `/auth.html`.
 - Public backend verification surface removed; diagnostics are not customer-facing.
 - Firebase browser code now initializes Auth + Firestore only. Cloud Storage is disabled in the pilot.
@@ -47,7 +47,7 @@ Last updated: 2026-09-20
 - Attorney legal fees are separate and direct; the product does not rank counsel by predicted success, guarantee acceptance or take a percentage of legal fees.
 - Provider onboarding is linked from the provider demo and auth surface.
 - Provider onboarding and its nested alias are verified on the Vercel production deployment.
-- Live provider route: `https://auditdefense.vercel.app/provider`.
+- Live provider route: `https://heaude.com/provider`.
 
 ## External activation status
 

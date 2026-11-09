@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f45a1f">
+<meta name="description" content="Contact Heaude with a question about payer audit response, providers or attorneys. Please do not send patient information.">
+<title>Contact Heaude</title>
+<link rel="canonical" href="/contact">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Heaude"><meta property="og:title" content="Contact Heaude"><meta property="og:description" content="Send a question to the Heaude team."><meta property="og:url" content="https://heaude.com/contact">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/marketing.css">
+<style>
+.contact-form{display:grid;gap:16px;max-width:620px;margin:28px 0 0}
+.contact-form label{display:grid;gap:6px;font-size:13px;font-weight:600;color:#3d2f27}
+.contact-form input,.contact-form select,.contact-form textarea{border:1px solid #ddcfc6;background:#fff;border-radius:9px;padding:12px;font:inherit;font-size:14px;font-weight:400}
+.contact-form textarea{min-height:150px;resize:vertical}
+.contact-form button{justify-self:start;cursor:pointer;border:0}
+.contact-note{font-size:13px;color:#6e5d54;max-width:620px}
+.contact-warn{background:#fff4ec;border:1px solid #f0cdb8;border-radius:9px;padding:12px 14px;font-size:13px;color:#5a3a28;max-width:620px}
+.contact-status{font-size:14px;min-height:20px}
+.contact-status.ok{color:#1d6b3a}.contact-status.err{color:#a3261b}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+</style>
+</head>
+<body class="marketing-body">
+<header class="m-nav">
+  <a class="m-brand" href="/"><span class="m-mark">⚖</span><span>Heaude<small>The Audit Defense Forensic Platform</small></span></a>
+  <nav><a href="/provider">For Providers</a><a href="/attorney">For Attorneys</a><a href="/attorneys">Attorney Directory</a><a href="/resources">Resources</a><a href="/contact">Contact</a></nav>
+  <div class="m-nav-actions"><a class="m-btn ghost" href="/auth.html">Sign in</a><a class="m-btn primary" href="/provider/onboarding">Start a case</a></div>
+</header>
+<section class="m-section">
+  <div class="m-shell">
+    <span class="m-kicker">CONTACT</span>
+    <h1>Talk to the Heaude team</h1>
+    <p class="contact-note">Ask a question about the workspace, pricing or the attorney directory. We reply by email.</p>
+    <p class="contact-warn"><strong>Please do not include patient names, claim details or any health information.</strong> Describe your question in general terms. Heaude does not give legal advice.</p>
+    <form class="contact-form" id="contact-form" novalidate>
+      <label>Your name<input name="name" type="text" required maxlength="120" autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required maxlength="200" autocomplete="email"></label>
+      <label>I am a<select name="role"><option>Provider or practice</option><option>Attorney or law firm</option><option>Other</option></select></label>
+      <label>Message<textarea name="message" required maxlength="4000"></textarea></label>
+      <div class="hp" aria-hidden="true"><label>Leave empty<input name="botcheck" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <button class="m-btn primary" type="submit">Send message</button>
+      <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+    </form>
+    <p class="contact-note">Prefer email? Write to <a href="mailto:hello@heaude.com">hello@heaude.com</a>.</p>
+  </div>
+</section>
+<footer class="m-footer">
+  <div class="m-shell m-footer-grid"><div><a class="m-brand" href="/"><span class="m-mark">⚖</span><span>Heaude<small>Audit-response workspace</small></span></a><small>Human review required · Not legal advice · Do not upload PHI until secure document storage is available.</small></div><nav><a href="/provider">Providers</a><a href="/attorney">Attorneys</a><a href="/attorneys">Directory</a><a href="/resources">Resources</a><a href="/contact">Contact</a><a href="/auth.html">Sign in</a><a href="/app">Sample case</a></nav></div>
+</footer>
+<script src="/contact.js"></script>
+</body>
+</html>

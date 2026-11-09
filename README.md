@@ -1,4 +1,4 @@
-# AuditDefend
+# Heaude
 
 **Positioning:** The Audit Defense Forensic Platform.
 
@@ -26,7 +26,7 @@ This repository contains the approved **non-production interactive demo** and se
 - Project name: `AuditDefense`
 - Project ID: `auditdefense-2cb01`
 - Project number: `146444139355`
-- Web App: `AuditDefend Web`
+- Web App: `Heaude Web`
 - Web App ID: `1:146444139355:web:5d3f7c9b4fad32cad5f87e`
 - Storage bucket target: `auditdefense-2cb01.firebasestorage.app`
 - Known Admin SDK identity: `firebase-adminsdk-fbsvc@auditdefense-2cb01.iam.gserviceaccount.com`

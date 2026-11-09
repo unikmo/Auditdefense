@@ -1,6 +1,6 @@
 # Provider Onboarding
 
-AuditDefend provider onboarding is available at `/provider` and `/provider.html`.
+Heaude provider onboarding is available at `/provider` and `/provider.html`.
 
 ## Flow
 1. Account creation or sign-in

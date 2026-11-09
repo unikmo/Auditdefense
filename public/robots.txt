@@ -10,4 +10,4 @@ Disallow: /provider/demo
 Disallow: /attorney/demo
 Disallow: /attorney/workspace
 
-Sitemap: https://auditdefense.vercel.app/sitemap.xml
+Sitemap: https://heaude.com/sitemap.xml

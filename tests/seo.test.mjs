@@ -3,13 +3,13 @@ import path from 'node:path';
 
 const root=process.cwd();
 const publicDir=path.join(root,'public');
-const canonicalBase='https://auditdefense.vercel.app';
+const canonicalBase='https://heaude.com';
 const indexable=[
   ['index.html','/'],['provider.html','/provider'],['attorney.html','/attorney'],['attorneys.html','/attorneys'],
   ['resources.html','/resources'],['healthcare-payer-audit-response.html','/healthcare-payer-audit-response'],
   ['healthcare-overpayment-demand.html','/healthcare-overpayment-demand'],['medicaid-provider-audit.html','/medicaid-provider-audit'],
   ['behavioral-health-audit-response.html','/behavioral-health-audit-response'],['aba-provider-audit.html','/aba-provider-audit'],
-  ['npi-provider-enrollment-audit.html','/npi-provider-enrollment-audit'],['policies.html','/policies']
+  ['npi-provider-enrollment-audit.html','/npi-provider-enrollment-audit'],['policies.html','/policies'],['contact.html','/contact']
 ];
 const noindex=['app.html','attorney-workspace.html','provider-onboarding.html','provider-workspace.html','auth.html'];
 const titles=new Set(),descriptions=new Set();

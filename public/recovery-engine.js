@@ -34,5 +34,5 @@ function evaluate(input, rules, context={}){
       : 'Recovery appears to fall within the configured ordinary window. Other policy and notice challenges may still exist.'
   };
 }
-window.AuditDefendRecoveryEngine=Object.freeze({selectRule,evaluate});
+window.HeaudeRecoveryEngine=Object.freeze({selectRule,evaluate});
 })();

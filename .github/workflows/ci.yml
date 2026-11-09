@@ -1,4 +1,4 @@
-name: AuditDefend demo CI
+name: Heaude demo CI
 
 on:
   push:

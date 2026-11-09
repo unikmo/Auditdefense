@@ -64,7 +64,7 @@ async function fetchCandidate(url) {
   const response = await fetch(url, {
     redirect: 'follow',
     headers: {
-      'user-agent': 'AuditDefend-PolicyMonitor/0.2 (+https://auditdefense.netlify.app)',
+      'user-agent': 'Heaude-PolicyMonitor/0.2 (+https://heaude.com)',
       'accept': 'text/html,application/pdf,application/json,text/plain;q=0.8,*/*;q=0.5'
     },
     signal: AbortSignal.timeout(30000)

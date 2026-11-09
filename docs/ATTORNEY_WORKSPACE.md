@@ -1,6 +1,6 @@
 # Attorney Workspace
 
-AuditDefend includes a separate non-production attorney workspace at `/attorney.html`.
+Heaude includes a separate non-production attorney workspace at `/attorney.html`.
 
 ## Implemented pilot capabilities
 - 4-step firm/attorney onboarding

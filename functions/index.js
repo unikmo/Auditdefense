@@ -9,7 +9,7 @@ exports.health = onRequest({ cors: false }, (req, res) => {
   res.set('Cache-Control', 'no-store');
   res.status(200).json({
     ok: true,
-    service: 'auditdefend-backend',
+    service: 'heaude-backend',
     mode: 'non-production',
     phiAccepted: false
   });

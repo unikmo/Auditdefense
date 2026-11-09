@@ -1,4 +1,4 @@
-# AuditDefend Phase-1 evidence model
+# Heaude Phase-1 evidence model
 
 Status: **non-production design contract**. No PHI may be loaded until production security/compliance gates are separately approved.
 

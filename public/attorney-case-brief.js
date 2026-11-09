@@ -1,4 +1,4 @@
-window.AuditDefendAttorneyBriefs = Object.freeze({
+window.HeaudeAttorneyBriefs = Object.freeze({
   'case-anthem': Object.freeze({
     title: 'Counsel issue brief — source validation in progress',
     notice: 'This workspace organizes facts, open questions and potentially relevant authorities. It does not determine liability, predict an outcome or recommend a legal position. Every assessment remains subject to attorney review and decision.',

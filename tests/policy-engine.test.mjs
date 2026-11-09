@@ -13,14 +13,14 @@ const recoveryWindow=loadBrowserScript('public/recovery-engine.js');
 const referenceWindow=loadBrowserScript('public/reference-engine.js');
 
 const recoveryRules=JSON.parse(fs.readFileSync('data/recovery-rules.json','utf8')).rules;
-const commercial=recoveryWindow.AuditDefendRecoveryEngine.evaluate(
+const commercial=recoveryWindow.HeaudeRecoveryEngine.evaluate(
   {paymentReceivedDate:'2024-08-01',recoveryInitiatedDate:'2026-09-02',noticeDate:'2026-08-01'},
   recoveryRules,
   {state:'NY',program:'Commercial'}
 );
 if(commercial.status!=='POTENTIALLY_OUTSIDE_WINDOW') throw new Error('Expected 25-month NY commercial example to flag potential outside-window recovery.');
 
-const medicaid=recoveryWindow.AuditDefendRecoveryEngine.evaluate(
+const medicaid=recoveryWindow.HeaudeRecoveryEngine.evaluate(
   {paymentReceivedDate:'2024-08-01',recoveryInitiatedDate:'2026-09-02',noticeDate:'2026-08-01'},
   recoveryRules,
   {state:'NY',program:'NY Medicaid Managed Care'}
@@ -36,10 +36,10 @@ const baseRule={
   issueFamilies:['Documentation support'],
   effectiveFrom:'2026-01-01'
 };
-const noCitation=policyWindow.AuditDefendPolicyEngine.evaluateClaim(claim,[baseRule],context,{mismatchVerified:true});
+const noCitation=policyWindow.HeaudePolicyEngine.evaluateClaim(claim,[baseRule],context,{mismatchVerified:true});
 if(noCitation.status!=='HUMAN_REVIEW_REQUIRED') throw new Error('Policy conflict must not be emitted without a citation.');
 
-const withCitation=policyWindow.AuditDefendPolicyEngine.evaluateClaim(claim,[{...baseRule,citation:{sourceTitle:'Test',sourceUrl:'https://example.com',deepLink:'https://example.com#x',locator:'Section 1',excerpt:'Short source excerpt.'}}],context,{mismatchVerified:true});
+const withCitation=policyWindow.HeaudePolicyEngine.evaluateClaim(claim,[{...baseRule,citation:{sourceTitle:'Test',sourceUrl:'https://example.com',deepLink:'https://example.com#x',locator:'Section 1',excerpt:'Short source excerpt.'}}],context,{mismatchVerified:true});
 if(withCitation.status!=='POLICY_CONFLICT_CANDIDATE') throw new Error('Verified mismatch with citation should permit policy conflict candidate.');
 
 const issueFamilies=JSON.parse(fs.readFileSync('data/issue-families.json','utf8')).issueFamilies;
@@ -63,9 +63,9 @@ for(const item of references){
   if(!item.source.publisher||!item.source.locator||!item.source.verifiedOn)throw new Error('Verified reference '+item.id+' lacks source-verification metadata.');
   for(const field of forbiddenFields){if(Object.hasOwn(item,field))throw new Error('Predictive field is prohibited in reference records: '+field);}
 }
-const credentialingReferences=referenceWindow.AuditDefendReferenceEngine.filterCases(references,{issueId:'credentialing-network'});
+const credentialingReferences=referenceWindow.HeaudeReferenceEngine.filterCases(references,{issueId:'credentialing-network'});
 if(credentialingReferences.length!==1||credentialingReferences[0].id!=='spinedex-v-united-2014')throw new Error('Issue filtering must return only matching historical references.');
-const researchResult=referenceWindow.AuditDefendReferenceEngine.buildReferenceResult(references[0]);
+const researchResult=referenceWindow.HeaudeReferenceEngine.buildReferenceResult(references[0]);
 if(researchResult.resultType!=='HISTORICAL_REFERENCE')throw new Error('Reference output must be explicitly historical.');
 for(const field of forbiddenFields){if(Object.hasOwn(researchResult,field))throw new Error('Reference engine emitted prohibited predictive field: '+field);}
 

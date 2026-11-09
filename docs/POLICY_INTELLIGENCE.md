@@ -1,4 +1,4 @@
-# AuditDefend Policy Intelligence Engine
+# Heaude Policy Intelligence Engine
 
 ## Purpose
 Policy Intelligence ties every payer finding to the authority that actually applied on the date of service (DOS). It is designed to detect a potential policy-level challenge before a payer finding is treated as final.

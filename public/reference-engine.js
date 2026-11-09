@@ -30,5 +30,5 @@
     };
   }
 
-  window.AuditDefendReferenceEngine={filterCases,buildReferenceResult};
+  window.HeaudeReferenceEngine={filterCases,buildReferenceResult};
 })();

@@ -22,7 +22,7 @@ function render(){
  $('directoryGrid').innerHTML=rows.length?rows.map(p=>`<article class="directory-card" data-profile="${p.id}">
    <span class="m-kicker">${esc(p.location)}</span><h3>${esc(p.name)}</h3><strong style="font-size:10px">${esc(p.firm)}</strong>
    <p>${esc(p.focus)}</p><div class="meta"><span>Healthcare</span><span>Audit / reimbursement</span></div>
-   <span class="unclaimed">Unclaimed public-source profile · no AuditDefend affiliation implied</span>
+   <span class="unclaimed">Unclaimed public-source profile · no Heaude affiliation implied</span>
    <footer><a href="${p.source}" target="_blank" rel="noopener noreferrer">Public source ↗</a><button class="m-btn ghost claim-btn" data-claim="${p.id}">Claim profile</button></footer>
  </article>`).join(''):'<div class="directory-empty">No matching profiles. No attorney is labeled “participating” until participation and profile control are verified.</div>';
  $('directoryCount').textContent=`${rows.length} of ${profiles.length} verified public-source profiles shown. All current profiles are unclaimed; none are represented as participating.`;
@@ -35,14 +35,14 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-claim]');i
 $('claimClose').addEventListener('click',closeClaim);
 $('claimModal').addEventListener('click',e=>{if(e.target===$('claimModal'))closeClaim()});
 $('directorySearch').addEventListener('input',render);$('directoryState').addEventListener('change',render);$('directoryParticipation').addEventListener('change',render);
-document.addEventListener('auditdefend:firebase-status',e=>{currentUser=e.detail?.user||null;if($('claimModal').classList.contains('open'))$('claimStatus').textContent=currentUser?'Signed in. Claim requests are reviewed before profile control is granted.':'Sign-in is required to submit a claim request.'});
+document.addEventListener('heaude:firebase-status',e=>{currentUser=e.detail?.user||null;if($('claimModal').classList.contains('open'))$('claimStatus').textContent=currentUser?'Signed in. Claim requests are reviewed before profile control is granted.':'Sign-in is required to submit a claim request.'});
 $('claimForm').addEventListener('submit',async e=>{
  e.preventDefault();const data=draftData();if(!data.confirm)return;
- if(!currentUser||!window.AuditDefendFirebaseAPI){localStorage.setItem('auditdefend-directory-claim-draft',JSON.stringify(data));location.href='/auth.html?next='+encodeURIComponent('/attorneys?claim='+data.profileId);return}
+ if(!currentUser||!window.HeaudeFirebaseAPI){localStorage.setItem('heaude-directory-claim-draft',JSON.stringify(data));location.href='/auth.html?next='+encodeURIComponent('/attorneys?claim='+data.profileId);return}
  const btn=$('claimSubmit');btn.disabled=true;
  try{
-   await window.AuditDefendFirebaseAPI.submitAttorneyDirectoryClaim(data.profileId,{workEmail:data.workEmail,firmWebsite:data.firmWebsite,jurisdiction:data.jurisdiction,sourceProfile:profiles.find(p=>p.id===data.profileId)?.source||null,redacted:true,containsPhi:false});
-   $('claimStatus').className='claim-status ok';$('claimStatus').textContent='Claim request submitted. Profile control is not granted until verification is completed.';localStorage.removeItem('auditdefend-directory-claim-draft');
+   await window.HeaudeFirebaseAPI.submitAttorneyDirectoryClaim(data.profileId,{workEmail:data.workEmail,firmWebsite:data.firmWebsite,jurisdiction:data.jurisdiction,sourceProfile:profiles.find(p=>p.id===data.profileId)?.source||null,redacted:true,containsPhi:false});
+   $('claimStatus').className='claim-status ok';$('claimStatus').textContent='Claim request submitted. Profile control is not granted until verification is completed.';localStorage.removeItem('heaude-directory-claim-draft');
  }catch(err){console.warn(err);$('claimStatus').className='claim-status error';$('claimStatus').textContent='The claim request could not be submitted right now. Please try again later; no profile control has been granted.'}
  finally{btn.disabled=false}
 });

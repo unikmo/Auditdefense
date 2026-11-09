@@ -1,4 +1,4 @@
-const caseData = window.AuditDefendCaseData;
+const caseData = window.HeaudeCaseData;
 const claims = caseData?.claims || [];
 
 const money = value => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(value);
@@ -133,7 +133,7 @@ function showView(view){
 function toast(msg){const t=document.getElementById('toast');if(!t)return;t.textContent=msg;t.classList.add('show');clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.classList.remove('show'),3200)}
 
 function policyEvidenceForClaim(data){
-  const result=window.AuditDefendPolicyState?.evaluations?.find(x=>x.claimId===data.id);
+  const result=window.HeaudePolicyState?.evaluations?.find(x=>x.claimId===data.id);
   if(!result){
     return '<span class="policy-chip warning">POLICY BASIS LOADING / UNVERIFIED</span><p class="drawer-copy">Open Policy Intelligence to review the exact payer/program authority and effective version.</p>';
   }
@@ -162,7 +162,7 @@ function openClaim(data){
     </div>
     <div class="drawer-section"><h3>Review history</h3>
       <div class="review-history"><div><small>Initial review</small><b>${data.initial==='A'?'A · Documentation supported':'B · Documentation not supported'}</b></div><div class="arrow">→</div><div><small>Rebuttal review</small><b>${data.rebuttal==='A'?'A · Supported':'B · Not supported'}</b></div></div>
-      ${changed?'<div class="source-box">The outcome changed after rebuttal review. AuditDefend keeps the original finding and the new reason separate so counsel can see exactly what changed.</div>':''}
+      ${changed?'<div class="source-box">The outcome changed after rebuttal review. Heaude keeps the original finding and the new reason separate so counsel can see exactly what changed.</div>':''}
     </div>
     <div class="drawer-section"><h3>Why it matters</h3><p class="drawer-copy">${primaryReason(data)}.</p>
       <div class="source-box">Payer worksheet structure, redacted for this public sample. Original source documents are excluded because they contain patient or member identifiers.</div>

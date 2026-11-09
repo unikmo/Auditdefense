@@ -1,4 +1,4 @@
-# AuditDefend security boundary — Phase 1
+# Heaude security boundary — Phase 1
 
 ## Current state
 
@@ -30,4 +30,4 @@ The Evidence Verification preview therefore stores only redacted evidence refere
 
 ## Legal boundary
 
-AuditDefend organizes evidence and surfaces review signals. It does not determine legal entitlement to recoupment, represent a provider, or replace qualified counsel.
+Heaude organizes evidence and surfaces review signals. It does not determine legal entitlement to recoupment, represent a provider, or replace qualified counsel.

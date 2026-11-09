@@ -1,5 +1,5 @@
 {
-  "name": "auditdefend-functions",
+  "name": "heaude-functions",
   "private": true,
   "main": "index.js",
   "engines": { "node": "20" },
