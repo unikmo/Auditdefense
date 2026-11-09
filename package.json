@@ -15,5 +15,8 @@
     "test:case-provenance": "node tests/case-provenance.test.mjs",
     "test:seo": "node tests/seo.test.mjs",
     "test:provider-workspace": "node tests/provider-workspace.test.mjs"
+  },
+  "dependencies": {
+    "nodemailer": "^6.10.1"
   }
 }
