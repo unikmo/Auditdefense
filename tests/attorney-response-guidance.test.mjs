@@ -25,7 +25,7 @@ const context = {
 };
 vm.createContext(context);
 vm.runInContext(fs.readFileSync('public/attorney-response-guidance.js', 'utf8'), context);
-const tool = context.window.AuditDefendAttorneyResponseGuidance;
+const tool = context.window.HeaudeAttorneyResponseGuidance;
 await tool.ready;
 
 const enrollmentIssues = Array.from(tool.issueFor('Which NPI was billing, rendering or contracting?'));

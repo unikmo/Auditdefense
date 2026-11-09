@@ -87,7 +87,7 @@
     const facts = brief.facts || [];
     const flaggedFacts = facts.filter(item => /conflict|unverified|partial|reported|verification limitation|requires/i.test(item.status || ''));
     const map = questions.map((item, index) => {
-      const matches = relatedCases(item.question, window.AuditDefendAttorneyResponseGuidance.cases);
+      const matches = relatedCases(item.question, window.HeaudeAttorneyResponseGuidance.cases);
       const labels = issueFor(item.question).map(id => issueMap.find(x => x.id === id)?.label).filter(Boolean);
       return '<details class="response-map-row" ' + (index === 0 ? 'open' : '') + '><summary><span class="response-map-number">' + (index + 1) + '</span><div><b>' + esc(item.question) + '</b><small>' + esc(labels.join(' · ') || 'Issue classification requires attorney review') + '</small></div></summary><div class="response-map-body"><div><b>Current factual record</b><p>' + esc(item.currentAnswer) + '</p></div><div><b>Evidence or policy information still needed</b><p>' + esc(item.needed) + '</p></div><div><b>Why this question is surfaced</b><p>' + esc(item.significance) + '</p></div><div class="response-related"><b>Related historical decisions</b>' + (matches.length ? matches.map(renderReference).join('') : '<p>No issue-tagged verified decision is currently linked. That is a research gap, not an inference about the law.</p>') + '</div><small class="response-reservation">Issue tags and summaries are research aids. Counsel determines relevance, governing law, and strategy.</small></div></details>';
     }).join('');
@@ -106,7 +106,7 @@
     render,
     setCases(items) { this.cases = Array.isArray(items) ? items : []; }
   };
-  window.AuditDefendAttorneyResponseGuidance = api;
+  window.HeaudeAttorneyResponseGuidance = api;
   api.ready = fetch('/reference-cases.json', { cache: 'no-store' })
     .then(response => response.ok ? response.json() : Promise.reject(new Error('Reference cases unavailable')))
     .then(payload => api.setCases(payload.cases || []))

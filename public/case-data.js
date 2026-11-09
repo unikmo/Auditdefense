@@ -1,4 +1,4 @@
-window.AuditDefendCaseData = Object.freeze({
+window.HeaudeCaseData = Object.freeze({
   caseLabel: 'Anthem SIU Case C2024-8723 — Redacted Real-Case Structure',
   source: 'Redacted structure derived from the supplied records request, March 2026 demand, provider rebuttal, provider-prepared support map, later 30-line review materials and a private provider source-repository inventory',
   caseContext: Object.freeze({

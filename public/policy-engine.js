@@ -88,5 +88,5 @@ function buildChallengePacket(result){
   };
 }
 
-window.AuditDefendPolicyEngine=Object.freeze({appliesToCase,issueMatches,temporalStatus,citationsForRule,allCitations,evaluateClaim,evaluateCase,buildChallengePacket});
+window.HeaudePolicyEngine=Object.freeze({appliesToCase,issueMatches,temporalStatus,citationsForRule,allCitations,evaluateClaim,evaluateCase,buildChallengePacket});
 })();

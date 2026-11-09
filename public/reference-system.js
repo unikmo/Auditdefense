@@ -21,7 +21,7 @@
 
   function renderCases(){
     const root=$('referenceCaseList');if(!root)return;
-    const filtered=window.AuditDefendReferenceEngine.filterCases(cases,{
+    const filtered=window.HeaudeReferenceEngine.filterCases(cases,{
       issueId:$('referenceIssueFilter')?.value||'all',
       jurisdiction:$('referenceJurisdictionFilter')?.value||'all',
       query:$('referenceSearch')?.value||''

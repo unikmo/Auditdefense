@@ -1,6 +1,6 @@
 (() => {
   const STORAGE_KEY = 'auditdefend-evidence-verification-v1';
-  const caseClaims = window.AuditDefendCaseData?.claims || [];
+  const caseClaims = window.HeaudeCaseData?.claims || [];
   const statusLabels = Object.freeze({
     'potential-conflict': 'Potential contradiction — attorney review required',
     unresolved: 'Unresolved — additional evidence required',
@@ -38,13 +38,13 @@
       {id:'AT-001',claimId:'CL-001',type:'analysis',visibility:'counsel-only',title:'Signature comparison questions',body:'Verify the original submitted version, signature date, signer credentials and whether the payer reviewed the same copy.',fileName:'',author:'Sample Counsel',addedAt:'Sep 20, 2026 · 10:35 UTC'}
     ],
     notifications: [
-      {id:'NT-001',audience:'provider',title:'Counsel requested source-version confirmation',body:'Open EV-001 in the secure workspace and identify which version was originally sent to the payer.',createdAt:'Sep 20, 2026 · 10:36 UTC',read:false,emailCopy:'New counsel item in your AuditDefend workspace.'}
+      {id:'NT-001',audience:'provider',title:'Counsel requested source-version confirmation',body:'Open EV-001 in the secure workspace and identify which version was originally sent to the payer.',createdAt:'Sep 20, 2026 · 10:36 UTC',read:false,emailCopy:'New counsel item in your Heaude workspace.'}
     ],
     activity: [
       {id:'AC-004',actor:'Counsel',action:'Created a provider evidence request',detail:'EV-001 · shared in workspace; notification contains no claim detail',createdAt:'Sep 20, 2026 · 10:36 UTC'},
       {id:'AC-003',actor:'Counsel',action:'Added counsel-only analysis',detail:'AT-001 · access limited to counsel role',createdAt:'Sep 20, 2026 · 10:35 UTC'},
       {id:'AC-002',actor:'Provider',action:'Identified evidence source',detail:'EV-003 · enrollment correspondence location recorded',createdAt:'Sep 20, 2026 · 10:24 UTC'},
-      {id:'AC-005',actor:'AuditDefend',action:'Inventoried private source repository',detail:'EV-002 · 47 CPT 97153 and 32 CPT 97155 filename matches; representative previews inspected without publishing member data',createdAt:'Sep 26, 2026 · UTC'},
+      {id:'AC-005',actor:'Heaude',action:'Inventoried private source repository',detail:'EV-002 · 47 CPT 97153 and 32 CPT 97155 filename matches; representative previews inspected without publishing member data',createdAt:'Sep 26, 2026 · UTC'},
       {id:'AC-001',actor:'Provider',action:'Identified evidence source',detail:'EV-002 · private source repository identified',createdAt:'Sep 20, 2026 · 10:18 UTC'}
     ]
   });
@@ -127,7 +127,7 @@
     const docId=uid('DOC'),name=fileName(data);
     thread.evidence.push({id:docId,type:String(data.get('documentType')),location:String(data.get('sourceLocation')),locator:String(data.get('locator')||'Not specified'),versionContext:versionLabel(String(data.get('versionContext'))),fileName:name,addedBy:'Provider',addedAt:now(),note:String(data.get('note')||'')});
     thread.status='unresolved'; thread.reviewedBy='New provider evidence awaiting attorney review';
-    state.notifications.unshift({id:uid('NT'),audience:'attorney',title:'Provider added evidence for review',body:`Open ${thread.id} in the secure workspace.`,createdAt:now(),read:false,emailCopy:'New provider evidence is available in your AuditDefend workspace.'});
+    state.notifications.unshift({id:uid('NT'),audience:'attorney',title:'Provider added evidence for review',body:`Open ${thread.id} in the secure workspace.`,createdAt:now(),read:false,emailCopy:'New provider evidence is available in your Heaude workspace.'});
     addActivity('Provider','Added evidence reference',`${thread.id} · ${docId} · ${name?'local filename recorded':'location pointer recorded'}`);
     save(); event.currentTarget.reset(); el('providerEvidenceFileState').textContent='No file selected · local only'; render(); toast('Redacted evidence reference added. Counsel was notified in the workspace.');
   }
@@ -136,7 +136,7 @@
     event.preventDefault(); const data=new FormData(event.currentTarget),visibility=String(data.get('visibility')),type=String(data.get('itemType')),item={id:uid('AT'),claimId:String(data.get('claimId')),type,visibility,title:String(data.get('title')),body:String(data.get('body')),fileName:fileName(data),author:'Sample Counsel',addedAt:now()};
     state.attorneyItems.unshift(item);
     addActivity('Counsel',visibility==='shared'?'Shared attorney item with provider':'Added counsel-only item',`${item.id} · ${item.claimId} · ${item.title}`);
-    if(visibility==='shared') state.notifications.unshift({id:uid('NT'),audience:'provider',title:type==='request'?'Counsel requested additional evidence':'Counsel shared a new workspace item',body:`Open ${item.claimId==='case-wide'?'the case workspace':item.claimId} to review the new item.`,createdAt:now(),read:false,emailCopy:'New counsel item in your AuditDefend workspace.'});
+    if(visibility==='shared') state.notifications.unshift({id:uid('NT'),audience:'provider',title:type==='request'?'Counsel requested additional evidence':'Counsel shared a new workspace item',body:`Open ${item.claimId==='case-wide'?'the case workspace':item.claimId} to review the new item.`,createdAt:now(),read:false,emailCopy:'New counsel item in your Heaude workspace.'});
     save(); event.currentTarget.reset(); el('attorneyEvidenceFileState').textContent='No file selected · local only'; render(); toast(visibility==='shared'?'Attorney item shared; provider workspace notification created.':'Counsel-only item added.');
   }
 

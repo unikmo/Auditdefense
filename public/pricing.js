@@ -1,7 +1,7 @@
 (function(root,factory){
   const api=factory();
   if(typeof module==='object'&&module.exports) module.exports=api;
-  root.AuditDefendPricing=api;
+  root.HeaudePricing=api;
 })(typeof globalThis!=='undefined'?globalThis:this,function(){
   const tiers=[
     {id:'essential',max:100000,label:'Up to $100,000',standard:999,member:299},

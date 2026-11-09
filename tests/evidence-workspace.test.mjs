@@ -18,7 +18,7 @@ for(const label of [
 assert.ok(js.includes("visibility:'counsel-only'"),'Attorney seed material must default to counsel-only.');
 assert.ok(js.includes("state.role==='attorney'||item.visibility==='shared'"),'Provider view must exclude counsel-only material.');
 assert.ok(html.includes('Files selected here remain on this device'),'Local-only evidence boundary must be visible.');
-assert.ok(js.includes('New counsel item in your AuditDefend workspace.'),'Provider notification copy must omit claim and patient details.');
+assert.ok(js.includes('New counsel item in your Heaude workspace.'),'Provider notification copy must omit claim and patient details.');
 assert.ok(!js.toLowerCase().includes('rebuttal not justified'),'Workspace must not make the requested legal conclusion.');
 
 console.log('Evidence-verification workflow contract tests passed.');

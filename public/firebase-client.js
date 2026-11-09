@@ -2,7 +2,7 @@
 const SDK_VERSION='12.19.0',PROJECT_ID='auditdefense-2cb01';
 const WEB_CONFIG=Object.freeze({projectId:PROJECT_ID,appId:'1:146444139355:web:5d3f7c9b4fad32cad5f87e',storageBucket:'auditdefense-2cb01.firebasestorage.app',apiKey:'AIzaSyAmwvYon32T72zBVJiz_CmJin5W9DXZFoU',authDomain:'auditdefense-2cb01.firebaseapp.com',messagingSenderId:'146444139355'});
 const state={status:'booting',projectId:PROJECT_ID,auth:'initializing',firestore:'initializing',storage:'disabled-free-plan',user:null,error:null};
-const emit=()=>{window.AuditDefendFirebase=state;document.dispatchEvent(new CustomEvent('auditdefend:firebase-status',{detail:{...state}}))};
+const emit=()=>{window.HeaudeFirebase=state;document.dispatchEvent(new CustomEvent('auditdefend:firebase-status',{detail:{...state}}))};
 function assertConfig(c){for(const k of ['projectId','appId','apiKey','authDomain','messagingSenderId'])if(!c[k])throw new Error('Firebase Web App config missing '+k+'.');if(c.projectId!==PROJECT_ID)throw new Error('Firebase Web App config points to the wrong project.');return c}
 function cleanId(v,l='id'){if(!v||typeof v!=='string'||!/^[a-zA-Z0-9._-]{1,120}$/.test(v))throw new Error(l+' is invalid.');return v}
 async function boot(){emit();try{
@@ -11,7 +11,7 @@ const app=appSdk.initializeApp(assertConfig(WEB_CONFIG)),auth=authSdk.getAuth(ap
 state.status='sdk-initialized';state.auth='available';state.firestore='available';state.error=null;emit();
 authSdk.onAuthStateChanged(auth,u=>{state.user=u?{uid:u.uid,email:u.email,emailVerified:u.emailVerified}:null;emit()});
 const user=()=>{if(!auth.currentUser)throw new Error('Authentication required.');return auth.currentUser};
-window.AuditDefendFirebaseAPI=Object.freeze({
+window.HeaudeFirebaseAPI=Object.freeze({
 async signUp(email,password){const r=await authSdk.createUserWithEmailAndPassword(auth,email,password);await authSdk.sendEmailVerification(r.user);return{uid:r.user.uid,email:r.user.email,emailVerified:r.user.emailVerified}},
 async signIn(email,password){const r=await authSdk.signInWithEmailAndPassword(auth,email,password);return{uid:r.user.uid,email:r.user.email,emailVerified:r.user.emailVerified}},
 async sendPasswordReset(email){await authSdk.sendPasswordResetEmail(auth,email);return{email}},
