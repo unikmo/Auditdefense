@@ -3,7 +3,7 @@
   "fingerprintVersion": 2,
   "monitoringState": "ACTIVE_WITH_SOURCE_ERRORS",
   "schedule": "Daily via GitHub Actions",
-  "lastMonitorRun": "2026-11-19T16:31:58.819Z",
+  "lastMonitorRun": "2026-11-21T15:20:06.422Z",
   "sourceCount": 21,
   "reviewRequiredCount": 15,
   "sources": [
@@ -19,17 +19,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
-      "etag": "\"1795105489-gzip\"",
-      "lastModified": "Thu, 19 Nov 2026 16:24:49 GMT",
-      "contentLength": 200330,
+      "etag": "\"1795270948-gzip\"",
+      "lastModified": "Sat, 21 Nov 2026 14:22:28 GMT",
+      "contentLength": 200651,
       "pageTitle": "Medicaid NCCI Policy Manual | CMS",
-      "hash": "13df1c1b04e8d85d3b9c856087ef6dfb81158cbdceac937ec795264e5065837a",
-      "previousHash": "056929cede34db1b34a13e6d0390c1d7a4ad19eb78433d1d4cf7bdd4b380b358",
-      "changed": false,
+      "hash": "8da546f4aea629b28bd520b149c9e7e816473a43af1753cab1d6618d3cc9430f",
+      "previousHash": "13df1c1b04e8d85d3b9c856087ef6dfb81158cbdceac937ec795264e5065837a",
+      "changed": true,
       "reviewRequired": true,
       "firstFingerprint": false,
-      "lastChangedAt": "2026-11-13T15:21:44.543Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastChangedAt": "2026-11-21T15:20:06.422Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -44,17 +44,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
-      "etag": "\"1795105458-gzip\"",
-      "lastModified": "Thu, 19 Nov 2026 16:24:18 GMT",
-      "contentLength": 198636,
+      "etag": "\"1795270291-gzip\"",
+      "lastModified": "Sat, 21 Nov 2026 14:11:31 GMT",
+      "contentLength": 198957,
       "pageTitle": "Medicaid NCCI Edit Files | CMS",
-      "hash": "aba1448150e552ea587871550eb0f455ece13c9f8ac0659c39bf87a81e00cfda",
-      "previousHash": "acec9f89e6c22c9c18ddcf3e37e059d44fe8fb7496c510891c21c058bedade56",
-      "changed": false,
+      "hash": "b7441040f2ece1101b61249a085f4005b8f282abfa5701084eebe48b37b152af",
+      "previousHash": "aba1448150e552ea587871550eb0f455ece13c9f8ac0659c39bf87a81e00cfda",
+      "changed": true,
       "reviewRequired": true,
       "firstFingerprint": false,
-      "lastChangedAt": "2026-11-13T15:21:44.543Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastChangedAt": "2026-11-21T15:20:06.422Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -71,7 +71,7 @@
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
       "lastModified": null,
-      "contentLength": 34551,
+      "contentLength": 34178,
       "pageTitle": "Medicaid Program Information - New York State Department of Health",
       "hash": "814356c872ac2f6ca9bf94b6f9a698b6aaadd3c892b46455dac2c23869b1e286",
       "previousHash": "a24d08bad1f44f72183ac6b6e95c741e16c5ff9d300e3aca59a440848a2d02a5",
@@ -79,7 +79,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-10-30T14:05:44.701Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -96,7 +96,7 @@
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
       "lastModified": null,
-      "contentLength": 88778,
+      "contentLength": 88405,
       "pageTitle": "DOH Medicaid Update",
       "hash": "ce3b142725e1808bc905971290ec09be484c92f6ce13f86b078b469bba5b0936",
       "previousHash": "887c7ea8dcec635bc2393606cb5af0280ba2b41773db4ecb8a705f38d8582358",
@@ -104,7 +104,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-10-31T13:38:17.627Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -129,7 +129,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-22T12:36:06.024Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -145,7 +145,7 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Wed, 18 Nov 2026 13:46:09 GMT",
+      "lastModified": "Sat, 21 Nov 2026 04:49:04 GMT",
       "contentLength": 33613,
       "pageTitle": "Reimbursement policies | Anthem Blue Cross and Blue Shield of New York",
       "hash": "41af29e88b1ba6be09c78c3ae8bf020ac7a4aca4969c3489e5bd51bde5b65b31",
@@ -154,7 +154,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -170,8 +170,8 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Thu, 19 Nov 2026 08:05:03 GMT",
-      "contentLength": 41362,
+      "lastModified": "Fri, 20 Nov 2026 23:49:17 GMT",
+      "contentLength": 41229,
       "pageTitle": "Manuals, policies & guidelines | Anthem Blue Cross and Blue Shield of New York",
       "hash": "36b15049a5e6987bfa6a0368b3c8bf4183809fc2f0f79825cca06d3a3fe87d7b",
       "previousHash": "cc878ad40d68d17c88831d3ad1e133a4ef1b8c613f40d122e846efc539046bec",
@@ -179,7 +179,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-10-17T11:35:30.639Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -204,7 +204,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -221,7 +221,7 @@
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
       "lastModified": null,
-      "contentLength": 32021,
+      "contentLength": 31648,
       "pageTitle": "Information for Health Care Providers - Managed Care - New York State Department of Health",
       "hash": "032a9599a631d4cd2c4a79127e303e644d4289928cf8f3ce494c03ba38a7ed31",
       "previousHash": null,
@@ -229,7 +229,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -244,8 +244,8 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html;charset=utf-8",
-      "etag": "\"30e42-660a33e23a018-gzip\"",
-      "lastModified": "Thu, 19 Nov 2026 16:01:38 GMT",
+      "etag": "W/\"30e42-660cad80ae63f-gzip\"",
+      "lastModified": "Sat, 21 Nov 2026 15:16:24 GMT",
       "contentLength": 200258,
       "pageTitle": "Reimbursement Policies for Community Plan | UHCprovider.com",
       "hash": "5ec2d06a92579a5b10baac4fb5a7101e1b150c95a257bd1ef7a2f41a190ebd07",
@@ -254,7 +254,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-11-02T17:02:22.969Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -269,9 +269,9 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html;charset=utf-8",
-      "etag": "\"25239-660a2e5ea0d3d-gzip\"",
-      "lastModified": "Thu, 19 Nov 2026 15:36:58 GMT",
-      "contentLength": 157555,
+      "etag": "\"25239-660c43757ab39-gzip\"",
+      "lastModified": "Sat, 21 Nov 2026 07:21:58 GMT",
+      "contentLength": 157557,
       "pageTitle": "OfficeLink Updates Newsletter Archive | Aetna",
       "hash": "21956fa5a5d82b47d4a4b72d303cb47bbcee0d097bc4da37abc2967e219c1398",
       "previousHash": "0f9c05186c90b2a731fc335458f309c0f7db8378f53fd53cd800a53dfc81340a",
@@ -279,7 +279,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-11-03T15:04:39.307Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -296,15 +296,15 @@
       "contentType": "text/html; charset=utf-8",
       "etag": null,
       "lastModified": null,
-      "contentLength": 105952,
+      "contentLength": 105955,
       "pageTitle": "Provider Policies | Fidelis Care",
       "hash": "05975b30b278b333decc0c6a0be2564ccb27d49f0677b25dfcce82fa0b30e811",
       "previousHash": "80f60a07c330059f17c4cde84448400f75f334d771822cac11b9f5262aede7ab",
-      "changed": true,
+      "changed": false,
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-11-19T16:31:58.819Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -329,7 +329,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-30T13:41:03.253Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": "HTTP 404",
       "attemptedUrls": [
         "https://www.molinahealthcare.com/providers/ny/medicaid/policies/payment.aspx"
@@ -357,7 +357,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-10-13T15:01:43.561Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -373,7 +373,7 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
       "etag": null,
-      "lastModified": "Thu, 19 Nov 2026 14:20:50 GMT",
+      "lastModified": "Fri, 20 Nov 2026 16:07:27 GMT",
       "contentLength": 114715,
       "pageTitle": "Health Insurance Consumer and Provider Rights and Responsibilities | Department of Financial Services",
       "hash": "48bb64e52a2d0ac35bd6aca4a8ab2811dd5a218a44d74f6078dddf128c651ca3",
@@ -382,7 +382,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-11-11T15:09:22.616Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -399,7 +399,7 @@
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
       "lastModified": null,
-      "contentLength": 58019,
+      "contentLength": 57646,
       "pageTitle": "Standard Clauses for Managed Care Provider/IPA/ACO Contracts",
       "hash": "1e6f1209520fa88fca38d61914e8b3852e6351a3c083aa299d2dfe9c2cdec88c",
       "previousHash": null,
@@ -407,7 +407,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -422,17 +422,17 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html; charset=utf-8",
-      "etag": "\"1795105924-gzip\"",
-      "lastModified": "Thu, 19 Nov 2026 16:32:04 GMT",
-      "contentLength": 193695,
+      "etag": "\"1795270875-gzip\"",
+      "lastModified": "Sat, 21 Nov 2026 14:21:15 GMT",
+      "contentLength": 194016,
       "pageTitle": "Medicaid NCCI Technical Guidance Manual | CMS",
-      "hash": "b1338914659b9f10d5d1e24dd5aac26911c2b3351fd5e6f80f9c3861b00264c2",
-      "previousHash": "2bd1cd1e9d3fbbbe9baf04f7a5500cebba02257c70089eccefd5073c9a343e0e",
-      "changed": false,
+      "hash": "bda14fcf99e83a79b1d7f3cef568d584f7102f4dac9a93f41a3ee0e1d4f1e68b",
+      "previousHash": "b1338914659b9f10d5d1e24dd5aac26911c2b3351fd5e6f80f9c3861b00264c2",
+      "changed": true,
       "reviewRequired": true,
       "firstFingerprint": false,
-      "lastChangedAt": "2026-11-13T15:21:44.543Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastChangedAt": "2026-11-21T15:20:06.422Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -457,7 +457,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-09-22T12:36:06.024Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -473,7 +473,7 @@
       "httpStatus": 200,
       "contentType": "text/html; charset=UTF-8",
       "etag": null,
-      "lastModified": "Wed, 18 Nov 2026 04:11:02 GMT",
+      "lastModified": "Fri, 20 Nov 2026 18:10:54 GMT",
       "contentLength": 34486,
       "pageTitle": "Claims submissions and disputes | Anthem Blue Cross and Blue Shield of New York",
       "hash": "d1227ae951481be87a9bb952a1acda94e6a4f6ba2404ba590fc8737c9387161e",
@@ -482,7 +482,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -497,8 +497,8 @@
       "state": "CHANGED_REVIEW_REQUIRED",
       "httpStatus": 200,
       "contentType": "text/html;charset=utf-8",
-      "etag": "\"2d881-660a349589a4e-gzip\"",
-      "lastModified": "Thu, 19 Nov 2026 16:04:46 GMT",
+      "etag": "\"2d881-660caae29497d-gzip\"",
+      "lastModified": "Sat, 21 Nov 2026 15:04:41 GMT",
       "contentLength": 186497,
       "pageTitle": "Reimbursement Policies for UnitedHealthcare Commercial Plans | UHCprovider.com",
       "hash": "035ae2f29ffd5f83b123479bb3fc938c984ae2b3363fab2077a187e463b0c36b",
@@ -507,7 +507,7 @@
       "reviewRequired": true,
       "firstFingerprint": false,
       "lastChangedAt": "2026-11-02T17:02:22.969Z",
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     },
     {
@@ -532,7 +532,7 @@
       "reviewRequired": false,
       "firstFingerprint": false,
       "lastChangedAt": null,
-      "lastObservedAt": "2026-11-19T16:31:58.819Z",
+      "lastObservedAt": "2026-11-21T15:20:06.422Z",
       "error": null
     }
   ]
